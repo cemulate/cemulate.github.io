@@ -1,0 +1,11 @@
+---
+# (ensures Jekyll notices this file)
+---
+
+@import "theme";
+
+div.math-figure {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
