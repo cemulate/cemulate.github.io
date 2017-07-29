@@ -1,5 +1,4 @@
 ---
-layout: default
 title: Proofs and textbook solutions
 permalink: /math
 ---

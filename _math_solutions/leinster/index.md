@@ -1,6 +1,6 @@
 ---
-layout: default
-title: Solutions in <em>Basic Category Theory</em>
+title: Solutions in *Basic Category Theory*
+description: Solutions from Basic Category Theory
 ---
 
 ### Chapter 1

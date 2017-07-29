@@ -1,6 +1,6 @@
 ---
-layout: default
-title: Solutions in <em>Algebraic Topology - An Introduction</em>
+title: Solutions in *Algebraic Topology - An Introduction*
+description: Solutions from Massey's 'Algebraic Topology an Introduction'
 ---
 
 * [Exercise 1.11.3](/math_solutions/massey/e1-11-3)

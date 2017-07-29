@@ -1,5 +1,4 @@
 ---
-layout: default
 title: Portfolio and Projects
 permalink: /
 ---

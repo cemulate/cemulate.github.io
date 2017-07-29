@@ -2,6 +2,8 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="chrome=1">
   <title>{{ site.title | default: site.github.repository_name }} by {{ site.github.owner_name }}</title>
+  <meta name="description" content="{% if page.description %} {{ page.description }} {% else %} {% if page.auto_description %} {{ page.content | strip_html | strip_newlines | truncate: 160 }} {% else %} {{site.description }} {% endif %} {% endif %}">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 
   <link href="https://fonts.googleapis.com/css?family=Noto+Sans:400,400i,700,700i" rel="stylesheet">
   <link rel="stylesheet" href="/css/main.css">

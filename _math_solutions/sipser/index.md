@@ -1,6 +1,6 @@
 ---
-layout: default
-title: Solutions in <em>Theory of Computation</em>
+title: Solutions in *Theory of Computation*
+description: Selected exercises from Sipser's Theory of Computation
 ---
 
 ### Chapter 1

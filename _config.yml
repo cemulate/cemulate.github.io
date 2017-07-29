@@ -28,6 +28,17 @@ collections:
   math_solutions:
     output: true
 
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
+  - scope:
+      path: ""
+      type: math_solutions
+    values:
+      auto_description: true
+
 # Build settings
 markdown: kramdown
 theme:

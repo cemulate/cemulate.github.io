@@ -1,5 +1,5 @@
 ---
-# (ensures Jekyll notices this file)
+layout: ""
 ---
 
 window.MathJax = {
