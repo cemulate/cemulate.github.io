@@ -11,3 +11,9 @@ description: Solutions from Basic Category Theory
 * [Exercise 1.3.31](/math_solutions/leinster/e1-3-31)
 * [Exercise 1.3.32](/math_solutions/leinster/e1-3-32)
 * [Exercise 1.3.34](/math_solutions/leinster/e1-3-34)
+
+#### Chapter 2
+
+* [Exercise 2.1.15](/math_solutions/leinster/e2-1-15)
+* [Exercise 2.1.16](/math_solutions/leinster/e2-1-16)
+* [Exercise 2.1.17](/math_solutions/leinster/e2-1-17)
