@@ -1,5 +1,5 @@
 ---
-layout: 
+layout:
 ---
 
 $body-font-family: "Noto Sans";
@@ -12,6 +12,7 @@ $paragraph-lineheight: 1.8;
 @include foundation-xy-grid-classes;
 @include foundation-typography;
 @include foundation-button;
+@include foundation-table;
 
 #main-site-link {
   color: inherit;
