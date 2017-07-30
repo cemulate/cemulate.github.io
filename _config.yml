@@ -39,6 +39,11 @@ defaults:
     values:
       auto_description: true
 
+sass:
+  load_paths:
+    - _sass
+    - node_modules/foundation-sites/scss
+
 # Build settings
 markdown: kramdown
 theme:
@@ -47,3 +52,5 @@ gems:
 exclude:
   - Gemfile
   - Gemfile.lock
+  - package-lock.json
+  - node_modules

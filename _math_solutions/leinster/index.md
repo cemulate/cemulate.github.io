@@ -3,7 +3,7 @@ title: Solutions in *Basic Category Theory*
 description: Solutions from Basic Category Theory
 ---
 
-### Chapter 1
+##### Chapter 1
 
 * [Exercise 1.3.26](/math_solutions/leinster/e1-3-26)
 * [Exercise 1.3.27](/math_solutions/leinster/e1-3-27)

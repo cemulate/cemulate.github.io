@@ -3,7 +3,7 @@ title: Solutions in *Theory of Computation*
 description: Selected exercises from Sipser's Theory of Computation
 ---
 
-### Chapter 1
+##### Chapter 1
 
 * [Exercise 1.29b](/math_solutions/sipser/e1-29b)
 * [Exercise 1.33](/math_solutions/sipser/e1-33)
@@ -15,7 +15,7 @@ description: Selected exercises from Sipser's Theory of Computation
 * [Exercise 1.57](/math_solutions/sipser/e1-57)
 * [Exercise 1.61](/math_solutions/sipser/e1-61)
 
-### Chapter 2
+##### Chapter 2
 
 * [Exercise 2.22](/math_solutions/sipser/e2-22)
 * [Exercise 2.23](/math_solutions/sipser/e2-23)

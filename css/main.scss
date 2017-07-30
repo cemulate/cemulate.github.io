@@ -1,8 +1,25 @@
 ---
-layout: ""
+layout: 
 ---
 
-@import "theme";
+$body-font-family: "Noto Sans";
+$button-radius: 10px;
+$paragraph-lineheight: 1.8;
+
+@import "foundation";
+
+@include foundation-global-styles;
+@include foundation-xy-grid-classes;
+@include foundation-typography;
+@include foundation-button;
+
+#main-site-link {
+  color: inherit;
+}
+
+body {
+  margin-top: 40px;
+}
 
 div.math-figure {
   text-align: center;

@@ -3,11 +3,11 @@ title: Solutions in *Algebraic Topology*
 description: Solutions in Hatcher's Algebraic Topology; selected exercises from Chapters 0, 2, and 3
 ---
 
-### Chapter 0
+##### Chapter 0
 
 * [Exercise 0.16](/math_solutions/hatcher/e0-16)
 
-### Chapter 2 Section 1
+##### Chapter 2 Section 1
 
 * [Exercise 2.1.1](/math_solutions/hatcher/e2-1-1)
 * [Exercise 2.1.4](/math_solutions/hatcher/e2-1-4)
@@ -22,7 +22,7 @@ description: Solutions in Hatcher's Algebraic Topology; selected exercises from 
 * [Exercise 2.1.17](/math_solutions/hatcher/e2-1-17)
 * [Exercise 2.1.31](/math_solutions/hatcher/e2-1-31)
 
-### Chapter 2 Section 2
+##### Chapter 2 Section 2
 
 * [Exercise 2.2.2](/math_solutions/hatcher/e2-2-2)
 * [Exercise 2.2.3](/math_solutions/hatcher/e2-2-3)
@@ -33,7 +33,7 @@ description: Solutions in Hatcher's Algebraic Topology; selected exercises from 
 * [Exercise 2.2.29](/math_solutions/hatcher/e2-2-29)
 * [Exercise 2.2.31](/math_solutions/hatcher/e2-2-31)
 
-### Chapter 3 Section 1
+##### Chapter 3 Section 1
 
 * [Exercise 3.1.5](/math_solutions/hatcher/e3-1-5)
 * [Exercise 3.1.6](/math_solutions/hatcher/e3-1-6)
