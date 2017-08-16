@@ -17,3 +17,5 @@ description: Solutions from Basic Category Theory
 * [Exercise 2.1.15](/math_solutions/leinster/e2-1-15)
 * [Exercise 2.1.16](/math_solutions/leinster/e2-1-16)
 * [Exercise 2.1.17](/math_solutions/leinster/e2-1-17)
+* [Exercise 2.2.11](/math_solutions/leinster/e2-2-11)
+* [Exercise 2.2.13](/math_solutions/leinster/e2-2-13)
