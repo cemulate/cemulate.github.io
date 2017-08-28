@@ -20,4 +20,9 @@ description: Solutions from Basic Category Theory
 * [Exercise 2.2.11](/math_solutions/leinster/e2-2-11)
 * [Exercise 2.2.13](/math_solutions/leinster/e2-2-13)
 * [Exercise 2.3.10](/math_solutions/leinster/e2-3-10)
+* [Exercise 2.3.11](/math_solutions/leinster/e2-3-11)
 * [Exercise 2.3.12](/math_solutions/leinster/e2-3-12)
+
+#### Chapter 4
+
+* [Exercise 4.1.27](/math_solutions/leinster/e4-1-27)
