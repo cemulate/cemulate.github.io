@@ -26,3 +26,6 @@ description: Solutions from Basic Category Theory
 #### Chapter 4
 
 * [Exercise 4.1.27](/math_solutions/leinster/e4-1-27)
+* [Exercise 4.1.28](/math_solutions/leinster/e4-1-27)
+* [Exercise 4.1.31](/math_solutions/leinster/e4-1-27)
+* [Yoneda Lemma](/math_solutions/leinster/yoneda)
