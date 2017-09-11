@@ -1,5 +1,6 @@
 ---
 title: Yoneda Lemma
+description: Category theory - proof of Yoneda lemma
 ---
 $$
 \newcommand{\presheaves}[1]{[{#1}^{\text{op}}, \mathbf{Set}]}
