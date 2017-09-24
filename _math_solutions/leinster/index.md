@@ -39,3 +39,7 @@ description: Solutions from Basic Category Theory
 * [Exercise 5.1.40](/math_solutions/leinster/e5-1-40)
 * [Exercise 5.1.41](/math_solutions/leinster/e5-1-41)
 * [Exercise 5.1.42](/math_solutions/leinster/e5-1-42)
+* [Exercise 5.2.23](/math_solutions/leinster/e5-2-23)
+* [Exercise 5.2.24](/math_solutions/leinster/e5-2-24)
+* [Exercise 5.2.25](/math_solutions/leinster/e5-2-25)
+* [Exercise 5.2.26](/math_solutions/leinster/e5-2-26)
