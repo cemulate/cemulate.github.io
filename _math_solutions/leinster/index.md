@@ -43,3 +43,10 @@ description: Solutions from Basic Category Theory
 * [Exercise 5.2.24](/math_solutions/leinster/e5-2-24)
 * [Exercise 5.2.25](/math_solutions/leinster/e5-2-25)
 * [Exercise 5.2.26](/math_solutions/leinster/e5-2-26)
+
+#### Chapter 6
+
+* [Exercise 6.1.6](/math_solutions/leinster/e6-1-6)
+* [Exercise 6.2.20](/math_solutions/leinster/e6-2-20)
+* [Exercise 6.2.21](/math_solutions/leinster/e6-2-21)
+* [Exercise 6.2.24](/math_solutions/leinster/e6-2-24)

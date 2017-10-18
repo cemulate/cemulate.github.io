@@ -1,5 +1,5 @@
 ---
-layout: 
+layout:
 ---
 
 window.MathJax = {
@@ -31,6 +31,7 @@ window.MathJax = {
       Sym: "\\text{Sym}",
       leadt: "\\textsc{LT}",
       dash: "\\unicode{x2013}",
+      colim: "\\text{colim}",
 
       tor: "\\text{ or }",
       tand: "\\text{ and }",
@@ -83,6 +84,8 @@ window.MathJax = {
       interior: ["\\text{int}(#1)", 1],
 
       mjqed: "\\tag*{$\\Box$}",
+
+      presheaves: ["[#1^{\\text{op}}, \\mathbf{Set}]", 1],
     }
   }
 };
