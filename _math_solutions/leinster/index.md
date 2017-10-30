@@ -50,3 +50,4 @@ description: Solutions from Basic Category Theory
 * [Exercise 6.2.20](/math_solutions/leinster/e6-2-20)
 * [Exercise 6.2.21](/math_solutions/leinster/e6-2-21)
 * [Exercise 6.2.24](/math_solutions/leinster/e6-2-24)
+* [Exercise 6.2.25 (Kan Extensions)](/math_solutions/leinster/kan)
