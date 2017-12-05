@@ -1,0 +1,134 @@
+---
+# this ensures Jekyll reads the file to be transformed into CSS later
+# only Main files contain this front matter, not partials.
+---
+
+// #mathprogramming {
+//     width: 20%;
+//
+//     img, a {
+//         display: block;
+//     }
+//
+//     img {
+//         width: 100%;
+//     }
+//
+//     span {
+//
+//     }
+//
+//     a {
+//         position: relative;
+//         width: 90%;
+//         text-align: center;
+//         font-family: "Noto Sans";
+//         font-size: 2.5vw;
+//         text-decoration: none;
+//         margin: 10px;
+//         padding: 3px;
+//         color: black;
+//         font-weight: bolder;
+//
+//         &::after {
+//             content: '';
+//             position: absolute;
+//             z-index: -1;
+//             width: 0%;
+//             height: 5%;
+//             left: 0;
+//             bottom: 0;
+//             background-color: aqua;
+//             transition: all ease 0.3s;
+//         }
+//
+//         &:hover::after {
+//             width: 100%;
+//         }
+//     }
+//
+//     .phase0 {
+//         opacity: 0;
+//     }
+//
+//     .phase1 {
+//         opacity: 1;
+//         transition-property: opacity;
+//         transition-duration: 1s;
+//     }
+//
+//     a.phase2 {
+//         color: blue;
+//         // text-decoration: underline;
+//         // transition-property: color, text-decoration;
+//         // transition-duration: 1s;
+//     }
+//
+// }
+
+#canvas {
+    * {
+        vector-effect: non-scaling-stroke;
+        animation-fill-mode:  forwards;
+    }
+
+    .node {
+        opacity: 0;
+        animation-name: fadein;
+        animation-duration: 1.2s;
+        animation-fill-mode: forwards;
+    }
+
+    .textlink {
+        font-family: "Noto Sans";
+        font-size: 0.4em;
+        font-weight: bold;
+        text-anchor: middle;
+        alignment-baseline: middle;
+    }
+
+    @keyframes fadein {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+
+    .path {
+        stroke-width: 2;
+        stroke: black;
+        fill: none;
+        stroke-dasharray: 500;
+        stroke-dashoffset: 0;
+
+        stroke-dashoffset: 500;
+        animation-name: drawline;
+        animation-duration: 1s;
+        animation-timing-function: ease-out;
+    }
+
+    @keyframes drawline {
+        from {
+            stroke-dashoffset: 500;
+        }
+        to {
+            stroke-dashoffset: 0;
+        }
+    }
+
+    .arrowtip {
+        fill: black;
+
+        opacity: 0;
+        animation-name: fadein;
+        animation-duration: 0.4s;
+    }
+
+    .stage0 { animation-delay: 0s; }
+    .stage1 { animation-delay: 0.8s; }
+    .stage2 { animation-delay: 1.2s; }
+    .stage3 { animation-delay: 2.0s; }
+    .stage4 { animation-delay: 2.2s; }
+}
