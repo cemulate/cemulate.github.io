@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "foundation-sites": "^6",
+    "snapsvg": "^0"
+  }
+}

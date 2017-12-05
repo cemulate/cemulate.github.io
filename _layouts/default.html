@@ -1,7 +1,13 @@
 <!doctype html>
 <html>
 
-{% include head.html %}
+<head>
+  {% include meta.html %}
+  <script type="text/javascript" src="{{ '/js/mathjax_config.js' | prepend: site.baseurl }}"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  <link rel="stylesheet" href="/styles/foundation.min.css">
+  <link rel="stylesheet" href="/styles/default.css">
+</head>
 
 <body>
   <div class="grid-container">

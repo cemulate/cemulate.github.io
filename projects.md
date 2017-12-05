@@ -1,6 +1,6 @@
 ---
 title: Portfolio and Projects
-permalink: /
+permalink: /projects
 ---
 
 Here you'll find some short blurbs about projects I've done over the years.

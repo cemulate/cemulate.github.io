@@ -1,0 +1,19 @@
+---
+# this ensures Jekyll reads the file to be transformed into CSS later
+# only Main files contain this front matter, not partials.
+---
+
+
+#main-site-link {
+  color: inherit;
+}
+
+body {
+  margin-top: 40px;
+}
+
+div.math-figure {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
