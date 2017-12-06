@@ -3,68 +3,7 @@
 # only Main files contain this front matter, not partials.
 ---
 
-// #mathprogramming {
-//     width: 20%;
-//
-//     img, a {
-//         display: block;
-//     }
-//
-//     img {
-//         width: 100%;
-//     }
-//
-//     span {
-//
-//     }
-//
-//     a {
-//         position: relative;
-//         width: 90%;
-//         text-align: center;
-//         font-family: "Noto Sans";
-//         font-size: 2.5vw;
-//         text-decoration: none;
-//         margin: 10px;
-//         padding: 3px;
-//         color: black;
-//         font-weight: bolder;
-//
-//         &::after {
-//             content: '';
-//             position: absolute;
-//             z-index: -1;
-//             width: 0%;
-//             height: 5%;
-//             left: 0;
-//             bottom: 0;
-//             background-color: aqua;
-//             transition: all ease 0.3s;
-//         }
-//
-//         &:hover::after {
-//             width: 100%;
-//         }
-//     }
-//
-//     .phase0 {
-//         opacity: 0;
-//     }
-//
-//     .phase1 {
-//         opacity: 1;
-//         transition-property: opacity;
-//         transition-duration: 1s;
-//     }
-//
-//     a.phase2 {
-//         color: blue;
-//         // text-decoration: underline;
-//         // transition-property: color, text-decoration;
-//         // transition-duration: 1s;
-//     }
-//
-// }
+$base-animation-time: 0.6s;
 
 #canvas {
     * {
@@ -75,7 +14,7 @@
     .node {
         opacity: 0;
         animation-name: fadein;
-        animation-duration: 1.2s;
+        animation-duration: $base-animation-time;
         animation-fill-mode: forwards;
     }
 
@@ -100,18 +39,18 @@
         stroke-width: 2;
         stroke: black;
         fill: none;
-        stroke-dasharray: 500;
+        stroke-dasharray: 700;
         stroke-dashoffset: 0;
 
-        stroke-dashoffset: 500;
+        stroke-dashoffset: 700;
         animation-name: drawline;
-        animation-duration: 1s;
+        animation-duration: $base-animation-time;
         animation-timing-function: ease-out;
     }
 
     @keyframes drawline {
         from {
-            stroke-dashoffset: 500;
+            stroke-dashoffset: 700;
         }
         to {
             stroke-dashoffset: 0;
@@ -123,12 +62,14 @@
 
         opacity: 0;
         animation-name: fadein;
-        animation-duration: 0.4s;
+        animation-duration: $base-animation-time / 2;
     }
 
-    .stage0 { animation-delay: 0s; }
-    .stage1 { animation-delay: 0.8s; }
-    .stage2 { animation-delay: 1.2s; }
-    .stage3 { animation-delay: 2.0s; }
-    .stage4 { animation-delay: 2.2s; }
+    .stage0 { animation-delay: $base-animation-time * 0; }
+    .stage1 { animation-delay: $base-animation-time * 1; }
+    .stage2 { animation-delay: $base-animation-time * 1.5; }
+    .stage3 { animation-delay: $base-animation-time * 2; }
+    .stage4 { animation-delay: $base-animation-time * 3; }
+    .stage5 { animation-delay: $base-animation-time * 3.5; }
+    .stage6 { animation-delay: $base-animation-time * 4; }
 }
