@@ -10,7 +10,13 @@ github:
   owner_url: https://github.com/cemulate
 
 collections:
-  math_solutions:
+  solutions_hatcher:
+    output: true
+  solutions_leinster:
+    output: true
+  solutions_massey:
+    output: true
+  solutions_sipser:
     output: true
 
 defaults:
