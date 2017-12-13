@@ -3,17 +3,97 @@
 # only Main files contain this front matter, not partials.
 ---
 
+@charset 'utf-8';
 
-#main-site-link {
-  color: inherit;
-}
+$theme-border-color: #033149;
+
+$global-radius: 5px;
+
+$body-background: #d1efff;
+$body-font-family: "Noto Sans";
+
+$topbar-background: $theme-border-color;
+$anchor-color: #2fb7ff;
+$anchor-color-hover: #eaa000;
+
+$hr-border: 3px solid $theme-border-color;
+
+$card-background: #185779;
+$card-divider-background: $theme-border-color;
+$card-border: none;
+$card-font-color: #FDFFF7;
+
+$callout-background: $theme-border-color;
+$callout-background-fade: 0%;
+$callout-font-color: #FDFFF7;
+
+@import 'foundation-sites/scss/foundation';
+
+@include foundation-global-styles;
+@include foundation-xy-grid-classes;
+@include foundation-typography;
+@include foundation-button;
+@include foundation-callout;
+@include foundation-card;
+@include foundation-menu;
+@include foundation-menu-icon;
+@include foundation-drilldown-menu;
+@include foundation-dropdown;
+@include foundation-dropdown-menu;
+@include foundation-thumbnail;
+@include foundation-top-bar;
+@include foundation-visibility-classes;
+@include foundation-flex-classes;
 
 body {
-  margin-top: 40px;
+  @media screen and (min-width: 64em) {
+    // background-image: url('/img/tile3.svg');
+    // background-size: 10em;
+  }
+  @media screen and (max-width: 63.9375em) {
+    &.math-body {
+      background-color: white;
+    }
+  }
 }
+
+span.exercise-badge {
+  display: inline-block;
+  border-radius: $global-radius;
+  background: $theme-border-color;
+  padding: 8px 12px 8px 12px;
+  margin: 0px 8px 20px 8px;
+}
+
+div.grid-container.math-container {
+  background-color: white;
+  @media screen and (min-width: 64em) {
+    border: 4px solid black;
+  }
+  padding-top: 20px;
+  margin-bottom: 20px;
+  hr {
+    border: 1px solid gray;
+  }
+}
+
+/* Space between top bar and body */
+
+.top-bar {
+  margin-bottom: 20px;
+}
+
+/* Figures in math pages / proofs */
 
 div.math-figure {
   text-align: center;
   margin-top: 20px;
   margin-bottom: 20px;
+}
+
+/* 'Tight' card dividers to accomodate large icons */
+
+.card-divider.card-divider-tight {
+  padding-top: 8px;
+  padding-bottom: 8px;
 }

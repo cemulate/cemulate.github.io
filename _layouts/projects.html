@@ -1,0 +1,107 @@
+<!doctype html>
+<html>
+
+<head>
+  {% include meta.html %}
+  {% include foundation.html %}
+</head>
+
+<body>
+  {% include top-bar.html %}
+
+  <div class="grid-container">
+
+    <h3><strong>Web apps</strong></h3>
+    <hr>
+
+    <div class="grid-x grid-margin-x">
+      {% for page in site.project_descriptions %}
+      {% if page.class == 'large' %}
+      <div class="cell small-12">
+        <div class="card">
+          <div class="card-divider align-justify align-middle card-divider-tight">
+            <strong><a href="https://{{site.github.owner_name}}.github.io/{{page.github}}">{{page.title}}</a></strong>
+            <a style="font-size:30px" href="{{site.github.owner_url}}/{{page.github}}"><i class="fi-social-github"></i></a>
+          </div>
+          <div class="card-section">
+            <div class="grid-x grid-margin-x">
+              <div class="cell small-12 medium-4 large-2">
+                <img class="thumbnail" src="/img/project_previews/{{page.github}}.png" alt="">
+              </div>
+              <div class="cell small-12 medium-8 large-10">
+                {{page.content | markdownify}}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endif %}
+      {% endfor %}
+    </div>
+
+    <h3><strong>Small apps and tools</strong></small></h3>
+    <hr>
+
+    <div class="grid-x grid-margin-x">
+      {% for page in site.project_descriptions %}
+      {% if page.class == 'small' %}
+      <div class="cell small-12 medium-6">
+        <div class="card">
+          <div class="card-divider align-justify align-middle card-divider-tight">
+            <strong><a href="https://{{site.github.owner_name}}.github.io/{{page.github}}">{{page.title}}</a></strong>
+            <a style="font-size:30px" href="{{site.github.owner_url}}/{{page.github}}"><i class="fi-social-github"></i></a>
+          </div>
+          <div class="card-section">
+            <div class="grid-x grid-margin-x">
+              <div class="cell small-12 medium-4">
+                <img class="thumbnail" src="/img/project_previews/{{page.github}}.png" alt="">
+              </div>
+              <div class="cell small-12 medium-8">
+                {{page.content | markdownify}}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endif %}
+      {% endfor %}
+    </div>
+
+    <h3><strong>Old projects</strong></h3>
+    <hr>
+
+    <div class="grid-x grid-margin-x">
+      {% for page in site.project_descriptions %}
+      {% if page.class == 'archived' %}
+      <div class="cell small-12">
+        <div class="card">
+          <div class="card-divider align-justify align-middle card-divider-tight">
+            <strong><a href="https://{{site.github.owner_name}}.github.io/{{page.github}}">{{page.title}}</a></strong>
+            <a style="font-size:30px" href="{{site.github.owner_url}}/{{page.github}}"><i class="fi-social-github"></i></a>
+          </div>
+          <div class="card-section">
+            <div class="grid-x grid-margin-x">
+              <div class="cell small-12 medium-4 large-2">
+                <img class="thumbnail" src="/img/project_previews/{{page.github}}.png" alt="">
+              </div>
+              <div class="cell small-12 medium-8 large-10">
+                {{page.content | markdownify}}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endif %}
+      {% endfor %}
+    </div>
+
+  <script src="/js/jquery.slim.min.js"></script>
+  <script src="/js/foundation.min.js"></script>
+  <script>
+    $(document).foundation();
+  </script>
+  <script>
+  </script>
+</body>
+
+</html>

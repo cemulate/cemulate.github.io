@@ -1,5 +1,8 @@
 ---
 title: Yoneda Lemma
+chapter: standalone
+exercise: standalone
+layout: math-page
 description: Category theory - proof of Yoneda lemma
 ---
 $$

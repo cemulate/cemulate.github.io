@@ -1,5 +1,8 @@
 ---
-title: Explicit construction of Kan Extensions
+title: Construction of Kan Extensions
+chapter: standalone
+exercise: standalone
+layout: math-page
 description: We define Kan extensions, then give an explicit construction of the Kan extension through colimits and prove that our construction is actually the Kan extension.
 ---
 

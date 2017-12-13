@@ -10,13 +10,27 @@ github:
   owner_url: https://github.com/cemulate
 
 collections:
+  project_descriptions:
+    output: false
   solutions_hatcher:
+    textbook_author: Allen Hatcher
+    textbook_name: Algebraic Topology
+    description: Various solutions through chapter 3 (homology and some cohomology)
     output: true
   solutions_leinster:
+    textbook_author: Tom Leinster
+    textbook_name: Basic Category Theory
+    description: Solutions to assorted exercises from the whole book
     output: true
   solutions_massey:
+    textbook_author: William Massey
+    textbook_name: Algebraic Topology
+    description: A few solutions from the chapters over fundamental group and covering space theory
     output: true
   solutions_sipser:
+    textbook_author: Michael Sipser
+    textbook_name: Theory of Computation
+    description: Assorted solutions covering finite automata theory
     output: true
 
 defaults:
@@ -24,11 +38,6 @@ defaults:
       path: ""
     values:
       layout: default
-  - scope:
-      path: ""
-      type: math_solutions
-    values:
-      auto_description: true
 
 sass:
   load_paths:

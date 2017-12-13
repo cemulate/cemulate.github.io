@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+
+<head>
+  {% include meta.html %}
+  {% include foundation.html %}
+</head>
+
+<body>
+  {% include top-bar.html %}
+
+  <div class="grid-container">
+
+    {% assign filteredCollections = site.collections | where: 'label', page.collection %}
+    {% assign thisCollection = filteredCollections[0] %}
+    {% assign exercises = thisCollection.docs | where_exp: 'item', 'item != page' %}
+    {% assign groups = exercises | group_by: 'chapter' %}
+    {% assign chapterGroups = groups | where_exp: 'name', 'name == blank' %}
+    <!-- {% assign extras = groups | where: 'name', blank %}
+    {% assign extraGroup = extras[0] %} -->
+
+    <h3><em><strong>{{thisCollection.textbook_name}}</strong></em> &mdash; {{thisCollection.textbook_author}}</h3>
+
+    {% for group in groups %}
+    {% if group.name != 'standalone' %}
+
+    <h4>Chapter {{group.name}}</h4>
+    <hr>
+
+    {% for ex in group.items %}
+      <span class="exercise-badge"><a href="{{ex.url}}"><strong>{{ex.exercise}}</strong></a></span>
+    {% endfor %}
+
+    {% endif %}
+    {% endfor %}
+
+
+
+    {% for group in groups %}
+    {% if group.name == 'standalone' %}
+
+    <h4>Other</h4>
+    <hr>
+
+    {% for ex in group.items %}
+      <span class="exercise-badge"><a href="{{ex.url}}"><strong>{{ex.title}}</strong></a></span>
+    {% endfor %}
+
+    {% endif %}
+    {% endfor %}
+
+  </div>
+
+  {% include mathjax.html %}
+</body>
+
+</html>
