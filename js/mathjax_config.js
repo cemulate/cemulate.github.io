@@ -87,6 +87,12 @@ window.MathJax = {
       mjqed: "\\tag*{$\\Box$}",
 
       presheaves: ["[#1^{\\text{op}}, \\mathbf{Set}]", 1],
+
+      downset: ["\\mathord{\\downarrow}#1", 1],
+
+      modcat: ["#1\\textnormal{-}\\textbf{\\textup{Mod}}", 1],
+
+      intord: "\\mathord{\\int}"
     }
   }
 };

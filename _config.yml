@@ -32,6 +32,11 @@ collections:
     textbook_name: Theory of Computation
     description: Assorted solutions covering finite automata theory
     output: true
+  solutions_maclane:
+    textbook_author: MacLane and Moerdijk
+    textbook_name: Sheaves in Geometry and Logic
+    description: Solutions to exercises and proofs of theorems in introductory topos theory
+    output: true
 
 defaults:
   - scope:
