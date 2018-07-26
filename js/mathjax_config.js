@@ -33,6 +33,7 @@ window.MathJax = {
       dash: "\\unicode{x2013}",
       colim: "\\text{colim}",
       Lan: "\\text{Lan}",
+      true: "\\text{true}",
 
       tor: "\\text{ or }",
       tand: "\\text{ and }",

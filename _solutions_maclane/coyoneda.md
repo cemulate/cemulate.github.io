@@ -1,7 +1,7 @@
 ---
 title: co-Yoneda Lemma
-chapter: standalone
-exercise: standalone
+chapter: 1
+exercise: Proposition 1 (co-Yoneda Lemma)
 layout: math-page
 description: We prove the co-Yoneda lemma directly - the fact that every presheaf is a canonical colimit of representable presheaves.
 ---
