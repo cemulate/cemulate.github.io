@@ -1,6 +1,6 @@
 ---
 title: FFXIII-2 Clock Puzzles
-github: ff13-clock-puzzles
+github: ff13-clock-puzzle
 class: small
 ---
 
