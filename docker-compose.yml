@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  builder:
+    image: jekyll/jekyll:3
+    volumes:
+      - .:/srv/jekyll
+    entrypoint: jekyll build --watch
+  server:
+    image: httpd:2
+    volumes:
+      - ./_site:/usr/local/apache2/htdocs
+      - ./httpd.conf:/usr/local/apache2/conf/httpd.conf
+    ports:
+      - 8000:80
