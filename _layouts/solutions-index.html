@@ -14,9 +14,6 @@
     {% assign thisCollection = filteredCollections[0] %}
     {% assign exercises = thisCollection.docs | where_exp: 'item', 'item != page' %}
     {% assign groups = exercises | group_by: 'chapter' %}
-    {% assign chapterGroups = groups | where_exp: 'name', 'name == blank' %}
-    <!-- {% assign extras = groups | where: 'name', blank %}
-    {% assign extraGroup = extras[0] %} -->
 
     <h3><em><strong>{{thisCollection.textbook_name}}</strong></em> &mdash; {{thisCollection.textbook_author}}</h3>
     <hr style="opacity: 0;">
