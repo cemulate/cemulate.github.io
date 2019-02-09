@@ -5,7 +5,6 @@
   {% include meta.html %}
   {% include foundation.html %}
 </head>
-
 <body>
   {% include top-bar.html %}
 
@@ -23,31 +22,21 @@
     <hr style="opacity: 0;">
 
     {% for group in groups %}
-    {% if group.name != 'standalone' %}
 
-    <h4>Chapter {{group.name}}</h4>
+    <h5>{% if group.name == 'standalone' %} Other {% else %} Chapter {{ group.name }} {% endif %}</h5>
     <hr>
 
-    {% for ex in group.items %}
-      <span class="exercise-badge"><a href="{{ex.url}}"><strong>{{ex.exercise}}</strong></a></span>
+    {% assign exercises = group.items | sort: 'order' %}
+    {% for ex in exercises %}
+      <p>
+        <a href="{{ ex.url }}" target="_blank">
+        <strong>{% if ex.exercise == 'standalone' %} {{ ex.title }} {% else %} Exercise {{ ex.exercise }} {% endif %}</strong>
+        </a>
+        &mdash;
+        {{ ex.description | markdownify | remove: '<p>' | remove: '</p>' }}
+      </p>
     {% endfor %}
 
-    {% endif %}
-    {% endfor %}
-
-
-
-    {% for group in groups %}
-    {% if group.name == 'standalone' %}
-
-    <h4>Other</h4>
-    <hr>
-
-    {% for ex in group.items %}
-      <span class="exercise-badge"><a href="{{ex.url}}"><strong>{{ex.title}}</strong></a></span>
-    {% endfor %}
-
-    {% endif %}
     {% endfor %}
 
   </div>
