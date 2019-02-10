@@ -23,7 +23,9 @@
     <h5>{% if group.name == 'standalone' %} Other {% else %} Chapter {{ group.name }} {% endif %}</h5>
     <hr>
 
-    {% assign exercises = group.items | sort: 'order' %}
+    {% assign numeric = group.items | where_exp: 'item', 'item.exercise != "standalone"' | sort: 'order' %}
+    {% assign extras = group.items | where_exp: 'item', 'item.exercise == "standalone"' | sort: 'order' %}
+    {% assign exercises = numeric | concat: extras %}
     {% for ex in exercises %}
       <p>
         <a href="{{ ex.url }}" target="_blank">
