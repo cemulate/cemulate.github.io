@@ -2,6 +2,7 @@
 title: Subobject classifer in presheaf category
 chapter: 1
 exercise: standalone
+order: 0
 layout: math-page
 description: We construct the subobject classifer in the category of Set-valued presheaves
 ---

@@ -2,6 +2,7 @@
 title: Yoneda Lemma
 chapter: standalone
 exercise: standalone
+order: 0
 layout: math-page
 description: Category theory - proof of Yoneda lemma
 ---
