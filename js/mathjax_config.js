@@ -91,7 +91,7 @@ window.MathJax = {
 
       downset: ["\\mathord{\\downarrow}#1", 1],
 
-      modcat: ["#1\\textnormal{-}\\textbf{\\textup{Mod}}", 1],
+      modcat: ["#1\\text{-}\\textbf{Mod}", 1],
 
       intord: "\\mathord{\\int}"
     }
