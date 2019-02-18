@@ -1,7 +1,8 @@
 ---
 title: Subobject classifer in presheaf category
 chapter: 1
-exercise: Subobject classifer in presheaf category
+exercise: standalone
+order: 0
 layout: math-page
 description: We construct the subobject classifer in the category of Set-valued presheaves
 ---
@@ -61,3 +62,24 @@ This is true if and only if $$f \in \theta_A(x)$$, completing the proof of equal
 To see how the final iff holds, consider that if $$f \circ g \in \theta_A(x)$$ for all $$g$$, then in particular $$f \circ 1_Z = f \in \theta_A(x)$$, and if $$f \in \theta_A(x)$$, $$f \circ g \in \theta_A(x)$$ for all appropriate $$g$$, since $$\theta_A(x)$$ is a sieve.
 
 So, $$\Omega$$ is a subobject classifier for $$\what{\mathbf{A}}$$ with characterstic function $$\chi: P \rightarrow \Omega$$ and universal subobject $$\true : \Delta T \rightarrow \Omega$$ as defined.
+
+----
+
+Let's see what this means in the case of $$[\mathbb{N}, \mathbf{Set}]$$.
+Treat this as $$\presheaves{(\mathbb{N}^{\text{op}})}$$ to apply the definitions of the previous theorem.
+A presheaf here is just a "set through time".
+A sieve on $$k \in \mathbb{N}^{\text{op}}$$ is a set $$\setbuilder{n}{n \geq s}$$ for any $$s \geq k$$.
+The maximal sieve on $$k$$ is $$\setbuilder{n}{n \geq k}$$.
+Since a sieve is just a "run of integers", we may choose to identify a sieve with its starting point $$s$$, so that a sieve on $$k$$ is identified with some $$s \geq k$$, the set of sieves on $$k$$ is the set of integers greater or equal to $$k$$, and $$\text{true}_k$$ picks out the maximal sieve $$k$$.
+All this is visualized as follows:
+
+<div class="math-figure"><img src="/img/math_solutions/maclane/presheafsubobject_2.svg" width="500"/></div>
+
+and the bolded elements are the ones selected by $$\true_k$$.
+
+The characteristic function $$\chi$$ gives the "time of truth", in the following sense.
+Take $$Q \xrightarrow{a} P$$ a subfunctor.
+Let $$\sigma$$ denote the "transition function(s)" of $$P$$, of which $$Q$$'s are restrictions.
+$$\chi_k(x)$$ is given by the integer $$n$$ such that $$\sigma^{n+t}(x) \in Q(n+t)$$ for all $$t \geq 0$$ (note then clearly this $$n$$ must be at least $$k$$).
+In other words, the time $$n$$ at which the transition function carries $$x$$ into the subfunctor $$Q$$, after which it remains there for the rest of time -- the time at which $$x$$'s membership in $$Q$$ becomes true.
+We can see that if $$x$$ is already in $$Q(k)$$ to begin with, $$\chi_k(x)$$ will be $$k$$, agreeing with $$\true_k$$.

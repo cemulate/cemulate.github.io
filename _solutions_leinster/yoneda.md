@@ -2,8 +2,9 @@
 title: Yoneda Lemma
 chapter: standalone
 exercise: standalone
+order: 0
 layout: math-page
-description: Category theory - proof of Yoneda lemma
+description: Proof of the Yoneda lemma
 ---
 $$
 \newcommand{\presheaves}[1]{[{#1}^{\text{op}}, \mathbf{Set}]}
