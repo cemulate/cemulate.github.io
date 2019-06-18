@@ -1,6 +1,7 @@
 ---
 title: Smith Chart
 github: web-component-smith-chart
+codepen: RzRjaQ
 order: 2
 ---
 

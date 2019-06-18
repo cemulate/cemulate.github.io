@@ -8,6 +8,9 @@ github:
   is_user_page: true
   owner_name: cemulate
   owner_url: https://github.com/cemulate
+codepen:
+  owner_name: cemulate
+  owner_url: https://codepen.io/cemulate
 
 collections:
   project_descriptions:

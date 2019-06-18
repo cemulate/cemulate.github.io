@@ -1,6 +1,7 @@
 ---
 title: Polyomino Control
 github: web-component-polyomino
+codepen: dExpJw
 order: 1
 ---
 
