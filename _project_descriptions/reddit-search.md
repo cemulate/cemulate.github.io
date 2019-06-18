@@ -3,6 +3,7 @@ title: Reddit Search
 image: /img/project_previews/reddit-search.png
 github: reddit-search
 class: large
+order: 5
 ---
 
 Find posts you or others have interacted with in the past on Reddit with stronger search filtering.

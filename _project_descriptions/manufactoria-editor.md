@@ -3,6 +3,7 @@ title: Manufactoria Editor
 image: /img/project_previews/manufactoria-editor.png
 github: manufactoria-editor
 class: large
+order: 1
 ---
 
 A modern re-skinned editor for levels in the classic game [Manufactoria](http://pleasingfungus.com/Manufactoria/).

@@ -12,6 +12,8 @@ github:
 collections:
   project_descriptions:
     output: false
+  web_component_descriptions:
+    output: false
   solutions_hatcher:
     textbook_author: Allen Hatcher
     textbook_name: Algebraic Topology

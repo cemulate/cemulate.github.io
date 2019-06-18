@@ -2,6 +2,7 @@
 title: Minecraft HDL
 github: minecraft-hdl
 class: archived
+order: 0
 ---
 
 A python program that compiles a very simplified ["HDL"](https://en.wikipedia.org/wiki/Hardware_description_language) to a Minecraft schematic that can be loaded into a Minecraft world by [worldedit](http://dev.bukkit.org/bukkit-plugins/worldedit/).

@@ -3,6 +3,7 @@ title: Polyomino Solver
 image: /img/project_previews/polyomino-solver.png
 github: polyomino-solver
 class: large
+order: 3
 ---
 
 Construct a collection of standard and/or completely custom polyominos, and an arbitrary region to fit them in, and this web app will find and display a valid tiling that places all of the polyominos in the region (if it exists).The solver works by [converting the problem to SAT](https://github.com/cemulate/polyomino-solver#how-it-works) and applying [boolean-sat](https://www.npmjs.com/package/boolean-sat), a javascript SAT solver.

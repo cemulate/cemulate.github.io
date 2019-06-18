@@ -25,6 +25,8 @@ $card-border: none;
 $callout-background: $theme-border-color;
 $callout-background-fade: 0%;
 
+$topbar-padding: 0px;
+
 @import 'foundation-sites/scss/foundation';
 
 @include foundation-global-styles;
@@ -94,4 +96,19 @@ div.math-figure {
 .card-divider.card-divider-tight {
   padding-top: 8px;
   padding-bottom: 8px;
+}
+
+.square-aspect {
+  height: 0;
+  overflow: hidden;
+  padding-top: 100%;
+  position: relative;
+}
+
+.square-aspect-inside {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
