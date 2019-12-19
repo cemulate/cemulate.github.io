@@ -23,7 +23,7 @@ $base-animation-time: 0.5s;
         font-size: 0.4em;
         font-weight: bold;
         text-anchor: middle;
-        alignment-baseline: middle;
+        dominant-baseline: middle;
         cursor: pointer;
 
         fill: black;
@@ -36,6 +36,9 @@ $base-animation-time: 0.5s;
         &.github-icon {
             font-family: "foundation-icons";
             font-size: 0.8em;
+            @-moz-document url-prefix() {
+                transform: translateY(2px);
+            }
         }
     }
 

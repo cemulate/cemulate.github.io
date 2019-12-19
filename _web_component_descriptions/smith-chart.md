@@ -7,7 +7,7 @@ order: 2
 
 <div class="grid-x grid-margin-x">
     <div class="cell small-12 medium-4">
-        <smith-chart id="smith-chart-demo" r="[0,0]"></smith-chart>
+        <smith-chart id="smith-chart-demo" r="[0,0]" style="width: 100%"></smith-chart>
     </div>
     <div class="cell small-12 medium-8">
         A web component for displaying and selecting points on a <a href="https://en.wikipedia.org/wiki/Smith_chart">Smith chart</a>.
