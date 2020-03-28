@@ -1,21 +1,22 @@
-$theme-border-color: #C5C5C5;
+$global-radius: 0px;
 
-$global-radius: 5px;
-
-$body-background: #f4f4f4;
-$body-font-family: "Noto Sans";
+$body-background: #ffffff;
+$body-font-family: "Open Sans";
 $body-font-color: #333;
 
-$topbar-background: $theme-border-color;
+$theme-border-color: darken($body-background, 30%);
+
+$topbar-background: darken($body-background, 15%);
 $anchor-color: #5258c5;
 
-$hr-border: 3px solid $theme-border-color;
+$hr-border: 1px solid $theme-border-color;
 
 $card-background: white;
-$card-divider-background: $theme-border-color;
-$card-border: none;
+$card-divider-background: darken($body-background, 15%);
 
-$callout-background: $theme-border-color;
+$callout-background: darken($body-background, 10%);
 $callout-background-fade: 0%;
 
 $topbar-padding: 0px;
+
+$list-lineheight: 2rem;

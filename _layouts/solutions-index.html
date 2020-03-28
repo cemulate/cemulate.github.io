@@ -26,15 +26,17 @@
     {% assign numeric = group.items | where_exp: 'item', 'item.exercise != "standalone"' | sort: 'order' %}
     {% assign extras = group.items | where_exp: 'item', 'item.exercise == "standalone"' | sort: 'order' %}
     {% assign exercises = numeric | concat: extras %}
-    {% for ex in exercises %}
-      <p>
-        <a href="{{ ex.url }}" target="_blank">
-        <strong>{% if ex.exercise == 'standalone' %} {{ ex.title }} {% else %} Exercise {{ ex.exercise }} {% endif %}</strong>
-        </a>
-        &mdash;
-        {{ ex.description | markdownify | remove: '<p>' | remove: '</p>' }}
-      </p>
-    {% endfor %}
+    <ul>
+      {% for ex in exercises %}
+        <li>
+          <a href="{{ ex.url }}" target="_blank">
+          <strong>{% if ex.exercise == 'standalone' %} {{ ex.title }} {% else %} Exercise {{ ex.exercise }} {% endif %}</strong>
+          </a>
+          &mdash;
+          {{ ex.description | markdownify | remove: '<p>' | remove: '</p>' }}
+        </li>
+      {% endfor %}  
+    </ul>
 
     {% endfor %}
 
