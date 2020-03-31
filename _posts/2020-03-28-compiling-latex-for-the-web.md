@@ -8,7 +8,7 @@ description: Compiling LaTeX for the web, tex4ht, pandoc
 
 LaTeX is the go-to markup language used by mathematicians and scientists to product technical content. Of course, LaTeX has first-class support for compiling to a PDF, which is great when the result is a a paper to be submitted to the arXiv, notes to distribute to a class, or even tests and homework assignments. But what if you want to share the content that you create on the internet? The ideal solution is to retain one single source document (the LaTeX files) and simply have a different compilation workflow that produces a webpage instead of a PDF. Though it sounds simple, a solution is not obvious, and the best results are hidden behind some obscure tools and non-default configurations. The purpose of this post is to outline the pitfalls when trying a few standard solutions, and present my current workflow that (so far) seems adequate.
 
-If you'd like less exposition, jump right to [the final workflow](#a-workflow-that-works-well-enough).
+If you'd like less exposition, jump right to [the final workflow](#a-mostly-good-enough-workflow).
 
 ## Option #1 &mdash; Pandoc: Jack of all trades, master of none
 
@@ -57,11 +57,12 @@ First create the following configuration file linked to in the [previously menti
 \Configure{@HEAD}{\HCode{<meta charset="UTF-8" />\Hnewline}}
 \Configure{@HEAD}{\HCode{<meta name="generator"  content="TeX4ht (http://www.cse.ohio-state.edu/\string~gurari/TeX4ht/)" />\Hnewline}}
 \Configure{@HEAD}{\HCode{<link rel="stylesheet" type="text/css" href="\expandafter\csname aa:CssFile\endcsname" />\Hnewline}}
-\Configure{@HEAD}{\HCode{<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>\Hnewline}}
+\Configure{@HEAD}{\HCode{<script type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/mml-svg.js"></script>\Hnewline}}
 \Configure{@HEAD}{\HCode{<style type="text/css"> .MathJax_MathML {text-indent: 0;} </style>\Hnewline}}
 \begin{document}
 \EndPreamble
 ```
+Note that I've made a minor change to the script tag to use the modern/supported way to load MathJax from a CDN.
 In your LaTeX document or preamble, include the following before loading `tikz`:
 ```
 \ifdefined\HCode
@@ -74,12 +75,36 @@ htlatex main.tex "config.cfg, charset=utf-8" " -cunihtf -utf8"
 ```
 Where `config.cfg` is the config file previously created. The result is a full "batteries-included" HTML file along with a CSS file and a collection of SVG files suitable for dumping into a folder behind a web server. But it can also be tweaked to play nicely as a source file for static site generators, such as Jekyll; for example, one can strip off all content except for that inside the `body` tag, shuffle the generated assets (a CSS file and SVG images) to an appropriate place and include the generated page inside a template that includes surrounding content and styling. Here is [a page](https://cemulate.github.io/solutions_maclane/presheafsubobject.html) on my site created with the workflow just described.
 
-## Remaining issues
+## Lingering issues and strategies to fix them
 
-Though the solution just described works fairly well, that doesn't mean it's without issues.
-Here is just a sampling of minor problems that I encountered while trying to compile some routine LaTeX documents:
+The excited reader, after trying the process outlined above on any substantial LaTeX document, will probably be disappointed.
+Sometimes the output will look "mostly right" with minor aesthetic issues cropping up, but other times you may run into malformed or invalid MathML that MathJax will refuse to render entirely.
+The following is just a sampling of minor problems that I encountered while trying to compile some routine LaTeX documents:
 * Sometimes, `^` doesn't parse correctly in macro definitions, and is omitted in the output ([discussion](https://tex.stackexchange.com/questions/306567/tex4ht-superscript-symbol-problem)). Workaround: Use `\sp{}` or `\sb{}`  for superscript and subscript in macro definitions.
 * Some advanced constructs like `\xhookrightarrow{}` from the `mathtools` package don't compile correctly or produce broken output. No known workaround, but simpler things like `\xrightarrow` or `\hookrightarrow` by themselves work.
 * Using `\text{}` or `\textnormal{}` in macro definitions sometimes compiles incorrectly and produces invalid MathML. Workaround: Use `\mathrm` for "normal" text during math mode
 
 Given the vast scope of situations that tools like `tex4ht` have to handle, these issues are relatively minor, but nonetheless, one cannot expect a document that compiles into a perfect PDF to be the flawless when put through `tex4ht`; this list is assuredly far from complete and this process will probably always require manual inspection and tweaking.
+
+Most issues like the ones above are fixable by tweaking the source TeX (and, most of the time, this is harmless to the existing PDF presentation).
+Some issues, however, take a bit more work.
+For example, `align` environments from `amsmath` typically have display style math by default (that is, things like `\frac{}{}` will appear in display style inside an `align` environment).
+This is not the case with the output from `tex4ht` when rendering to MathML: even though explicit display math environments like `$$ ... $$` and `\( ... \)` have display style math by default, `align` environments do not.
+The problem is that the MathML tags containing the contents of the `align` do not have the `displaystyle` attribute set.
+Luckily, the HTML output from `tex4ht` is rich with metadata, so we can fix issues like this with a bit of postprocessing.
+As an example, the `align` issue can be fixed by running following Python (3) script using [lxss](https://lxml.de/) and the [cssselect](https://lxml.de/cssselect.html) extension (both easily installable through Pip):
+```python
+from lxml import etree
+
+tree = etree.parse('./main.html')
+html = tree.getroot()
+
+for element in html.cssselect('.align, .align-star'):
+    element.set('displaystyle', 'true')
+
+output = etree.tostring(html, pretty_print=True, method='html')
+with open('./final.html', 'wb') as output_file:
+    output_file.write(output)
+```
+which says to simply parse `main.html`, set the attribute `displaystyle="true"` on all MathML tags with class `.align` or `.align-star` (coming from `align` and `align*` environments), and write the modified document back to `final.html`.
+It's easy to imagine that this sort of simple postprocessing could be extended to fix other issues of this flavor.
