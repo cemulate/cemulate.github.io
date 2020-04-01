@@ -8,16 +8,19 @@
   <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script> 
 </head>
 
-<body class="math-body">
+<body>
   {% include top-bar.html %}
+  {% include side-bar.html %}
 
-  <div class="grid-container math-container">
-    <h4><strong>{{page.title}}</strong></h4>
-    <hr>
-    <div class="grid-x grid-margin-x">
-        <div class="cell small-12">
-            {{page.content}}
-        </div>
+  <div class="main">
+    <div class="grid-container math-container">
+      <h4><strong>{{page.title}}</strong></h4>
+      <hr>
+      <div class="grid-x grid-margin-x">
+          <div class="cell small-12">
+              {{page.content}}
+          </div>
+      </div>
     </div>
   </div>
 </body>

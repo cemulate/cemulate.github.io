@@ -20,3 +20,25 @@ $callout-background-fade: 0%;
 $topbar-padding: 0px;
 
 $list-lineheight: 2rem;
+
+$sidebar-width: 20vw;
+
+$topbar-unstack-breakpoint: small;
+
+$body-gap: 10px;
+
+@media screen and (min-width: 64em) {
+    :root {
+        --sidebar-width: 20vw;
+    }
+}
+@media screen and (min-width: 40em) and (max-width: 63.9375em) {
+    :root {
+        --sidebar-width: 30vw;
+    }
+}
+@media screen and (max-width: 39.9375em) {
+    :root {
+        --sidebar-width: 0;
+    }
+}

@@ -1,0 +1,32 @@
+<div class="sidebar">
+    <div class="grid-y" style="height: 100%">
+        <div class="cell shrink">
+            <div class="grid-x align-middle" style="margin-bottom: 20px">
+                <div class="cell auto"></div>
+                <div class="cell shrink">
+                    <a target="_blank" href="{{site.github.owner_url}}"><img src="/img/profile-c.png" class="profile-picture"></a>
+                </div>
+                <div class="cell auto"></div>
+            </div>
+        </div>
+        <div class="cell shrink">
+            <a href="/" class="button expanded nav-link-button"><strong>{{site.title}}</strong></a>
+        </div>
+        <div class="cell shrink">
+            <a href="/projects" class="button expanded nav-link-button {% if page.url contains '/projects' %} highlighted {% endif %}">Projects</a>
+        </div>
+        <div class="cell shrink">
+            <a href="/math" class="button expanded nav-link-button {% if page.url contains '/math' or page.url contains '/solutions_' %} highlighted {% endif %}">Math</a>
+        </div>
+        <div class="cell auto"></div>
+        <div class="grid-x align-middle">
+            <div class="cell shrink">
+                <a target="_blank" href="{{site.github.owner_url}}"><strong>@{{site.github.owner_name}}</strong></a>
+            </div>
+            <div class="cell auto"></div>
+            <div class="cell shrink">
+                <a href="{{site.github.owner_url}}"><span style="font-size:30px" ><i class="fi-social-github"></i></span></a>
+            </div>
+        </div>
+    </div>
+</div>

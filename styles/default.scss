@@ -26,15 +26,46 @@
 @include foundation-visibility-classes;
 @include foundation-flex-classes;
 
-body {
-  @media screen and (min-width: 64em) {
-    // background-image: url('/img/tile3.svg');
-    // background-size: 10em;
+div.main {
+  padding-top: $body-gap;
+  margin-left: var(--sidebar-width);
+}
+
+div.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: var(--sidebar-width);
+  padding-top: $body-gap;
+  padding-left: $body-gap;
+  padding-right: $body-gap;
+  background-color: darken($body-background, 15%);
+  @media screen and (max-width: 39.9375em) {
+    display: none;
   }
-  @media screen and (max-width: 63.9375em) {
-    &.math-body {
-      background-color: white;
-    }
+}
+
+div.top-bar {
+  @media screen and (min-width: 40em) {
+    display: none;
+  }
+}
+
+img.profile-picture {
+  max-width: calc(var(--sidebar-width) / 2);
+  border-radius: 8px;
+  border: 1px solid black;
+}
+
+a.nav-link-button {
+  text-decoration: underline;
+  border: none;
+  color: black;
+  background-color: transparent;
+  &.highlighted {
+    color: white;
+    background-color: $primary-color;
   }
 }
 

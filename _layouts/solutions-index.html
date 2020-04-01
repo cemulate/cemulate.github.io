@@ -7,39 +7,42 @@
 </head>
 <body>
   {% include top-bar.html %}
+  {% include side-bar.html %}
 
-  <div class="grid-container">
-
-    {% assign filteredCollections = site.collections | where: 'label', page.collection %}
-    {% assign thisCollection = filteredCollections[0] %}
-    {% assign exercises = thisCollection.docs | where_exp: 'item', 'item != page' %}
-    {% assign groups = exercises | group_by: 'chapter' %}
-
-    <h3><em><strong>{{thisCollection.textbook_name}}</strong></em> &mdash; {{thisCollection.textbook_author}}</h3>
-    <hr style="opacity: 0;">
-
-    {% for group in groups %}
-
-    <h5>{% if group.name == 'standalone' %} Other {% else %} Chapter {{ group.name }} {% endif %}</h5>
-    <hr>
-
-    {% assign numeric = group.items | where_exp: 'item', 'item.exercise != "standalone"' | sort: 'order' %}
-    {% assign extras = group.items | where_exp: 'item', 'item.exercise == "standalone"' | sort: 'order' %}
-    {% assign exercises = numeric | concat: extras %}
-    <ul>
-      {% for ex in exercises %}
-        <li>
-          <a href="{{ ex.url }}" target="_blank">
-          <strong>{% if ex.exercise == 'standalone' %} {{ ex.title }} {% else %} Exercise {{ ex.exercise }} {% endif %}</strong>
-          </a>
-          &mdash;
-          {{ ex.description | markdownify | remove: '<p>' | remove: '</p>' }}
-        </li>
-      {% endfor %}  
-    </ul>
-
-    {% endfor %}
-
+  <div class="main">
+    <div class="grid-container">
+  
+      {% assign filteredCollections = site.collections | where: 'label', page.collection %}
+      {% assign thisCollection = filteredCollections[0] %}
+      {% assign exercises = thisCollection.docs | where_exp: 'item', 'item != page' %}
+      {% assign groups = exercises | group_by: 'chapter' %}
+  
+      <h3><em><strong>{{thisCollection.textbook_name}}</strong></em> &mdash; {{thisCollection.textbook_author}}</h3>
+      <hr style="opacity: 0;">
+  
+      {% for group in groups %}
+  
+      <h5>{% if group.name == 'standalone' %} Other {% else %} Chapter {{ group.name }} {% endif %}</h5>
+      <hr>
+  
+      {% assign numeric = group.items | where_exp: 'item', 'item.exercise != "standalone"' | sort: 'order' %}
+      {% assign extras = group.items | where_exp: 'item', 'item.exercise == "standalone"' | sort: 'order' %}
+      {% assign exercises = numeric | concat: extras %}
+      <ul>
+        {% for ex in exercises %}
+          <li>
+            <a href="{{ ex.url }}" target="_blank">
+            <strong>{% if ex.exercise == 'standalone' %} {{ ex.title }} {% else %} Exercise {{ ex.exercise }} {% endif %}</strong>
+            </a>
+            &mdash;
+            {{ ex.description | markdownify | remove: '<p>' | remove: '</p>' }}
+          </li>
+        {% endfor %}  
+      </ul>
+  
+      {% endfor %}
+  
+    </div>
   </div>
 
   {% include mathjax.html %}

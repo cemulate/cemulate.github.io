@@ -8,23 +8,25 @@
 
 <body>
   {% include top-bar.html %}
-
-  <div class="grid-container">
-
-    <h3>Textbook solutions</h3>
-    <hr>
-
-    <div class="grid-x">
-      {% for collection in site.collections %}
-      <div class="cell small-12">
-        {% if collection.label contains 'solutions' %}
-        <p>
-          <h4><a href="/{{collection.label}}"><em><strong>{{collection.textbook_name}}</strong></em> &mdash; {{collection.textbook_author}} </a></h4>
-          {{collection.description}}
-        </p>
-        {% endif %}
+  {% include side-bar.html %}
+  <div class="main">
+    <div class="grid-container">
+  
+      <h3>Textbook solutions</h3>
+      <hr>
+  
+      <div class="grid-x">
+        {% for collection in site.collections %}
+        <div class="cell small-12">
+          {% if collection.label contains 'solutions' %}
+          <p>
+            <h4><a href="/{{collection.label}}"><em><strong>{{collection.textbook_name}}</strong></em> &mdash; {{collection.textbook_author}} </a></h4>
+            {{collection.description}}
+          </p>
+          {% endif %}
+        </div>
+        {% endfor %}
       </div>
-      {% endfor %}
     </div>
   </div>
 
