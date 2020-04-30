@@ -1,7 +1,8 @@
 $global-radius: 0px;
 
 $body-background: #ffffff;
-$body-font-family: "Open Sans";
+$body-font-family: "Open Sans", sans-serif;
+$header-font-family: unset;
 $body-font-color: #333;
 
 $theme-border-color: darken($body-background, 30%);
@@ -26,6 +27,8 @@ $sidebar-width: 20vw;
 $topbar-unstack-breakpoint: small;
 
 $body-gap: 10px;
+
+$hr-width: 100%;
 
 @media screen and (min-width: 64em) {
     :root {

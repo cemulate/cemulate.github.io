@@ -20,7 +20,7 @@
         <div class="cell small-12">
           {% if collection.label contains 'solutions' %}
           <p>
-            <h4><a href="/{{collection.label}}"><em><strong>{{collection.textbook_name}}</strong></em> &mdash; {{collection.textbook_author}} </a></h4>
+            <h4><a href="/{{collection.label}}"><em><strong>{{collection.textbook_name}}</strong></em> <small>{{collection.textbook_author}}</small> </a></h4>
             {{collection.description}}
           </p>
           {% endif %}

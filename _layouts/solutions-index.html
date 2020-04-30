@@ -17,7 +17,7 @@
       {% assign exercises = thisCollection.docs | where_exp: 'item', 'item != page' %}
       {% assign groups = exercises | group_by: 'chapter' %}
   
-      <h3><em><strong>{{thisCollection.textbook_name}}</strong></em> &mdash; {{thisCollection.textbook_author}}</h3>
+      <h4><strong><em>{{thisCollection.textbook_name}}</em></strong> <small>{{thisCollection.textbook_author}}</small></h4>
       <hr style="opacity: 0;">
   
       {% for group in groups %}
@@ -31,10 +31,9 @@
       <ul>
         {% for ex in exercises %}
           <li>
-            <a href="{{ ex.url }}" target="_blank">
+            <a href="{{ ex.url }}" target="_blank" style="margin-right: 8px">
             <strong>{% if ex.exercise == 'standalone' %} {{ ex.title }} {% else %} Exercise {{ ex.exercise }} {% endif %}</strong>
             </a>
-            &mdash;
             {{ ex.description | markdownify | remove: '<p>' | remove: '</p>' }}
           </li>
         {% endfor %}  

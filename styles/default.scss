@@ -82,11 +82,15 @@ div.grid-container.math-container {
   @media screen and (min-width: 64em) {
     border: 4px solid black;
   }
+  margin-left: 10px;
+  margin-right: 10px;
   padding-top: 20px;
+  padding-bottom: 15px;
   margin-bottom: 20px;
   hr {
     border: 1px solid gray;
   }
+  font-family: "Merriweather", Helvetica, sans-serif;
 }
 
 hr {
