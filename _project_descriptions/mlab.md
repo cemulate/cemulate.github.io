@@ -2,7 +2,7 @@
 title: The mLab
 github: the-mlab
 class: large
-order: 2
+order: 1
 ---
 
 A satire generator making fun of the [nLab](https://ncatlab.org/nlab/show/HomePage), a wiki for higher mathematics and category theory.
