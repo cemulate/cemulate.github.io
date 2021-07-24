@@ -1,0 +1,5 @@
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<title>{{ page.title }}</title>
+<meta name="description" content="{% if page.description %} {{ page.description }} {% else %} {% if page.auto_description %} {{ page.content | strip_html | strip_newlines | truncate: 160 }} {% endif %} {% endif %}">
+<meta name="viewport" content="width=device-width, initial-scale=1">
