@@ -1,0 +1,86 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title> Exercise 2.3.10 |  Chase Meadors</title>
+<meta name="description" content=" An adjunction where the unit and counit are isomorphisms is an equivalence ">
+  <link rel="stylesheet" href="/styles/main.css">
+  
+  
+</head>
+
+<body class="math-body">
+  <div class="container">
+    <div class="columns">
+      <div class="column">
+        <div class="math-container">
+          <h4 class="title is-3">Exercise 2.3.10</h4>
+          <div class="content">
+             <p><strong>Theorem</strong>:
+Let <script type="math/tex">F : \mathbf{A} \leftrightharpoons \mathbf{B} : G</script> be functors and <script type="math/tex">\eta : 1_{\mathbf{A}} \rightarrow GF</script>, <script type="math/tex">\varepsilon : FG \rightarrow 1_{\mathbf{B}}</script> natural <em>isomorphisms</em> such that we have an equivalence of categories between <script type="math/tex">\mathbf{A}</script> and <script type="math/tex">\mathbf{B}</script>.
+Then <script type="math/tex">F</script> is left adjoint to <script type="math/tex">G</script>.</p>
+<p><em>Proof</em>:</p>
+<script type="math/tex; mode=display">\eta$$ and $$\varepsilon$$ are certainly natural transformations, but they may not satisfy the triangle identities.
+In particular, we may have that $$\varepsilon F \circ F \eta \neq \id_F$$.
+Define a new natural transformation $$\varepsilon' : FG \rightarrow 1_{\mathbf{B}}$$.
+We will let $$\varepsilon' = \varepsilon \circ F \eta^{-1} G \circ FG \varepsilon^{-1}$$.
+Note that since $$\eta$$ and $$\epsilon$$ are natural isomorphisms, so is each member of the composition and thus $$\varepsilon'$$ as well.
+We claim that $$\varepsilon' F \circ F\eta = \id_F$$.
+Or, expanding out, that $$\varepsilon F \circ F \eta^{-1} G F \circ FG \varepsilon^{-1} F \circ F \eta = \id_F$$.
+Let $$A$$ be arbitrary and examine the component of the left-hand side at $$A$$:</script><p>FA \xrightarrow{F(\eta<em>A)} FGFA \xrightarrow{FG(\varepsilon^{-1}</em>{FA})} FGFGFA \xrightarrow{F(\eta^{-1}<em>{GFA})} FGFA \xrightarrow{\varepsilon</em>{FA}} FA</p>
+<script type="math/tex; mode=display">
+
+we want this to be equal to $$1_{FA}$$.
+
+First, we write down some commutative diagrams that give some useful identities about the components of $$\eta$$ and $$\varepsilon$$ that depend on the fact that they are isomorphisms.
+First, note that this square commutes:
+
+<div class="math-figure"><img src="/assets/math_solutions/leinster/e2-3-10_1.svg" width="300px"/></div>
+
+since is is the statement of the naturality requirement for the natural isomorphism $$\eta : 1 \rightarrow GF$$ with respect to the arrow $$\eta_A : A \rightarrow GFA$$.
+This diagram states that $$\eta_{GFA} \circ \eta_A = GF(\eta_A) \circ \eta_A$$.
+Since $$\eta_A$$ is an isomorphism, we can compose on the right by $$\eta_A^{-1}$$ to get</script><p>\eta_{GFA} = GF(\eta_A)</p>
+<script type="math/tex; mode=display">
+
+Pull the dual trick with $$\varepsilon$$.
+That is, since this diagram commutes:
+
+<div class="math-figure"><img src="/assets/math_solutions/leinster/e2-3-10_2.svg" width="300px"/></div>
+
+we can say that $$\varepsilon_B \circ FG(\varepsilon_B) = \varepsilon_B \circ \varepsilon_{FGB}$$, and left-cancel to get:</script><p>FG(\varepsilon<em>B) = \varepsilon</em>{FGB}</p>
+<p>$$</p>
+<p>Now, we write down <em>another</em> commutative diagram:</p>
+<div class="math-figure"><img src="/assets/math_solutions/leinster/e2-3-10_3.svg" width="300px"/></div>
+
+<p>This one commutes because it is precisely the statement of the naturality for the natural isomorphism <script type="math/tex">\varepsilon^{-1} : 1 \rightarrow FG</script> with respect to the arrow <script type="math/tex">F(\eta_A) : FA \rightarrow FGFA</script>.
+Applying the identities we just derived (keeping in mind they also work for the inverses of <script type="math/tex">\eta</script> and <script type="math/tex">\varepsilon</script>), we can rewrite the right and bottom arrows.</p>
+<div class="math-figure"><img src="/assets/math_solutions/leinster/e2-3-10_4.svg" width="300px"/></div>
+
+<p><em>Finally</em>, note that the bottom arrow is an isomorphism and has an inverse <script type="math/tex">F(\eta_{GFA})^{-1} = F(\eta^{-1}_{GFA})</script>.
+With this, simply attach an <script type="math/tex">\varepsilon_{FA} : FGFA \rightarrow FA</script> to the bottom of the diagram to get the final commuting diagram:</p>
+<div class="math-figure"><img src="/assets/math_solutions/leinster/e2-3-10_5.svg" width="300px"/></div>
+
+<p>Following the diagram right, down, left, and down gives exactly the composite in question from earlier.
+But, following the left side straight down gives <script type="math/tex">\varepsilon_{FA} \circ \varepsilon^{-1}_{FA} = 1_{FA}</script>.
+Since the diagram commutes, we have the desired equality.</p>
+<p>So, <script type="math/tex">\eta</script> and <script type="math/tex">\varepsilon'</script> are natural isomorphisms satisfying the triangle inequalities.
+So <script type="math/tex">F \dashv G</script> with unit <script type="math/tex">\eta</script> and counit <script type="math/tex">\varepsilon'</script>.</p>
+ 
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <script type="text/javascript" src="/js/mathjax_config.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+</body>
+
+</html>

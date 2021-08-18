@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title> Exercise 1.3.27 |  Chase Meadors</title>
+<meta name="description" content=" The functor categories $$[\mathbf{A}^{\text{op}}, \mathbf{B}^{\text{op}}]$$ and $$[\mathbf{A}, \mathbf{B}]^{\text{op}}$$ are isomorphic ">
+  <link rel="stylesheet" href="/styles/main.css">
+  
+  
+</head>
+
+<body class="math-body">
+  <div class="container">
+    <div class="columns">
+      <div class="column">
+        <div class="math-container">
+          <h4 class="title is-3">Exercise 1.3.27</h4>
+          <div class="content">
+             <p><script type="math/tex; mode=display">\newcommand\cx{[\mathbf{A}^{op}, \mathbf{B}^{op}]}</script><script type="math/tex; mode=display">\newcommand\cy{[\mathbf{A}, \mathbf{B}]^{op}}</script><p><strong>Theorem</strong>:
+For categories <script type="math/tex">\mathbf{A}</script> and <script type="math/tex">\mathbf{B}</script>, <script type="math/tex">\cx</script> is isomorphic to <script type="math/tex">\cy</script>.</p></p>
+<p><em>Proof</em>:
+We&#39;ll first need to define a functor <script type="math/tex">\mathcal{F} : \cx \rightarrow \cy</script>.
+Let <script type="math/tex">F</script> be an object of <script type="math/tex">\cx</script> -- that is a functor <script type="math/tex">\mathbf{A}^{op} \rightarrow \mathbf{B}^{op}</script>.
+Then, let <script type="math/tex">\mathcal{F}(F)</script> be a functor <script type="math/tex">\mathbf{A} \rightarrow \mathbf{B}</script> such that for an object <script type="math/tex">A \in \mathbf{A}</script>, <script type="math/tex">\mathcal{F}(F)(A) = F(A)</script>, and for an arrow <script type="math/tex">f</script> of <script type="math/tex">\mathbf{A}</script>, <script type="math/tex">\mathcal{F}(F)(f) = F(f^{op})^{op}</script> (flip the arrow, send it through <script type="math/tex">F</script>, and flip it again).</p>
+<p>Now, having described what <script type="math/tex">\mathcal{F}</script> does to objects in <script type="math/tex">\cx</script> (functors), we need to describe what <script type="math/tex">\mathcal{F}</script> does to arrows (natural transformations).
+If <script type="math/tex">\alpha : F \rightarrow G</script> is a natural transformation between <script type="math/tex">F, G  : \mathbf{A}^{op} \rightarrow \mathbf{B}^{op}</script>,
+We need <script type="math/tex">\mathcal{F}(\alpha)</script> to be natural transformation <script type="math/tex">\mathcal{F}(G) \rightarrow \mathcal{F}(F)</script> between <script type="math/tex">\mathcal{F}(G), \mathcal{F}(F) : \mathbf{A} \rightarrow \mathbf{B}</script>.
+For <script type="math/tex">A \in \mathbf{A}</script>, notice that <script type="math/tex">\alpha_A</script> is an arrow in <script type="math/tex">\mathbf{B}^{op}</script> whose domain is <script type="math/tex">F(A)</script> and whose codomain is <script type="math/tex">G(A)</script>.
+So we can just define <script type="math/tex">\mathcal{F}(\alpha)_A = (\alpha_A)^{op}</script>, which is an arrow in <script type="math/tex">\mathbf{B}</script> whose domain is <script type="math/tex">G(A) = \mathcal{F}(G)(A)</script> and whose codomain is <script type="math/tex">F(A) = \mathcal{F}(F)(A)</script>.
+Then, we have a well-defined map <script type="math/tex">\mathcal{F}(\alpha)_A : \mathcal{F}(G)(A) \rightarrow \mathcal{F}(F)(A)</script> for each <script type="math/tex">A</script>, and <script type="math/tex">\mathcal{F}(\alpha)</script> is a natural transformation as prescribed.</p>
+<p>We quickly verify that <script type="math/tex">\mathcal{F}</script> is indeed a functor.
+If <script type="math/tex">1_F</script> is the identity natural transformation on <script type="math/tex">F \in \cx</script>, then</p>
+<script type="math/tex; mode=display">
+\mathcal{F}(1_F)_A = ((1_F)_A)^{op} = (1_{F(A)})^{op} = 1_{F(A)} = 1_{\mathcal{F}(F)(A)} = (1_{\mathcal{F}(F)})_A</script><p>so <script type="math/tex">\mathcal{F}(1_F) = 1_{\mathcal{F}(F)}</script>.</p>
+<p>Suppose <script type="math/tex">F \xrightarrow{\alpha} G \xrightarrow{\beta} H</script> are natural transformations.
+Then we have</p>
+<script type="math/tex; mode=display">
+\mathcal{F}(\beta \alpha)_A = ((\beta \alpha)_A)^{op} = (\beta_A \alpha_A)^{op} = (\alpha_A)^{op} (\beta_A)^{op} = \mathcal{F}(\alpha)_A \mathcal{F}(\beta)_A</script><p>(composed in the opposite order because <script type="math/tex">\mathcal{F}</script> is contravariant).</p>
+<p>One can obtain the inverse functor by applying the identical construction starting with <script type="math/tex">\mathcal{A}^{op}</script> and <script type="math/tex">\mathcal{B}^{op}</script>.
+In this way, we get a functor <script type="math/tex">\mathcal{G} : [\mathbf{A}, \mathbf{B}] \rightarrow [\mathbf{A}^{op}, \mathbf{B}^{op}]^{op}</script>.
+But, this can equally well be described as a functor <script type="math/tex">\mathcal{G} : \cy \rightarrow \cx</script>.
+Either way, <script type="math/tex">\mathcal{G}</script> is defined by identical rules to <script type="math/tex">\mathcal{F}</script>.
+If <script type="math/tex">F \in \cx</script>, recall <script type="math/tex">\mathcal{F}(F)(A) = F(A)</script> and <script type="math/tex">\mathcal{F}(F)(f) = F(f^{op})^{op}</script>.
+So, <script type="math/tex">\mathcal{G}(\mathcal{F}(F))(A) = \mathcal{F}(F)(A) = F(A)</script> and <script type="math/tex">\mathcal{G}(\mathcal{F}(F))(f) = (\mathcal{F}(F)(f^{op}))^{op} = (F(f)^{op})^{op} = F(f)</script>.
+So, <script type="math/tex">(\mathcal{G} \circ \mathcal{F})(F) = F</script>.
+If <script type="math/tex">\alpha : F \rightarrow G</script> is a natural transformation, recall that we have <script type="math/tex">\mathcal{F}(\alpha)_A = (\alpha_A)^{op}</script>.
+So, <script type="math/tex">\mathcal{G}(\mathcal{F}(\alpha))_A = (\mathcal{F}(\alpha)_A)^{op} = ((\alpha_A)^{op})^{op} = \alpha_A</script>.
+So <script type="math/tex">(\mathcal{G} \circ \mathcal{F})(\alpha) = \alpha</script>.
+Together, this means that <script type="math/tex">\mathcal{G} \circ \mathcal{F}</script> is the identity functor on <script type="math/tex">\cx</script>.
+It follows symmetrically that <script type="math/tex">\mathcal{F} \circ \mathcal{G}</script> is the identity on <script type="math/tex">\cy</script>.
+Thus, <script type="math/tex">\cx</script> and <script type="math/tex">\cy</script> are isomorphic.</p>
+ 
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <script type="text/javascript" src="/js/mathjax_config.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+</body>
+
+</html>

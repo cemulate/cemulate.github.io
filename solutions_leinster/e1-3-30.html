@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title> Exercise 1.3.30 |  Chase Meadors</title>
+<meta name="description" content=" For a group $$G$$ considered as a category, equivalence classes of functors $$\mathbb{Z} \rightarrow G$$ under natural isomorphism correspond to conjugacy classes of elements of $$G$$ ">
+  <link rel="stylesheet" href="/styles/main.css">
+  
+  
+</head>
+
+<body class="math-body">
+  <div class="container">
+    <div class="columns">
+      <div class="column">
+        <div class="math-container">
+          <h4 class="title is-3">Exercise 1.3.30</h4>
+          <div class="content">
+             <p>Consider <script type="math/tex">\mathbb{Z}</script> and an arbitrary group <script type="math/tex">G</script> as one-object categories.
+For each <script type="math/tex">g \in G</script>, there is a unique functor <script type="math/tex">F_g : \mathbb{Z} \rightarrow G</script> that sends the arrow <script type="math/tex">1</script> to the arrow <script type="math/tex">g</script> (such a functor is really just a group homomorphism).
+Natural isomorphism between such functors is an equivalence relation.
+Suppose <script type="math/tex">F_g</script> and <script type="math/tex">F_h</script> are naturally isomorphic, say via <script type="math/tex">\alpha</script> (note any natural transformation in this setting is necessarily a natural isomorphism, since all arrows are isomorphisms in groups).</p>
+<p><script type="math/tex">\alpha</script> only has one component, so we will just abuse notation and refer to the component as <script type="math/tex">\alpha</script>, which is an arrow/element of <script type="math/tex">G</script>.
+The only thing that &quot;matters&quot; then, about <script type="math/tex">\alpha</script> is the naturality relation, which simplifies to the following:
+For any <script type="math/tex">x</script> an arrow/element of <script type="math/tex">\mathbb{Z}</script>, we have <script type="math/tex">\alpha F_g(x) = F_h(x) \alpha</script>.
+When <script type="math/tex">x=1</script>, we have <script type="math/tex">\alpha g = h \alpha</script>, i.e. <script type="math/tex">\alpha g \alpha^{-1} = h</script>.
+So, natural isomophism of <script type="math/tex">F_g</script> and <script type="math/tex">F_h</script> implies there exists an <script type="math/tex">\alpha</script> such that this occurs -- which is to say that <script type="math/tex">g</script> and <script type="math/tex">h</script> are conjugate.
+So, equivalence classes of these functors under natural isomorphism is the same as conjugacy classes of the group elements.</p>
+ 
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <script type="text/javascript" src="/js/mathjax_config.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+</body>
+
+</html>

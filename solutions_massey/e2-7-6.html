@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title> Massey Exercise 2.7.6 |  Chase Meadors</title>
+<meta name="description" content=" A continuation of the previous exercise about topological groups ">
+  <link rel="stylesheet" href="/styles/main.css">
+  
+  
+</head>
+
+<body class="math-body">
+  <div class="container">
+    <div class="columns">
+      <div class="column">
+        <div class="math-container">
+          <h4 class="title is-3">Massey Exercise 2.7.6</h4>
+          <div class="content">
+             <p><strong>Theorem</strong>:
+Assume in addition to the hypotheses of 7.5 that there is a continuous map <script type="math/tex">c: G \rightarrow G</script> such that for all <script type="math/tex">a \in G</script>, <script type="math/tex">\mu(a, c(a)) = \mu(c(a), a) = e</script>.
+Then for any <script type="math/tex">\beta \in \pi(G,e)</script>, <script type="math/tex">c_*(\beta) = \beta^{-1}</script>.</p>
+<hr>
+<p><em>Proof</em>:
+For <script type="math/tex">\beta \in \pi(G,e)</script>, we have</p>
+<script type="math/tex; mode=display">
+\beta \cdot c_*(\beta) = \mu_*(i^x_* \beta \cdot i^y_* c_*\beta)</script><p>Now, we examine what this path inside <script type="math/tex">\mu_*</script> actually is.
+We have:</p>
+<script type="math/tex; mode=display">
+i^x_* \beta \cdot i^y_* c_*\beta = \left\{
+\begin{array}{lr}
+(\beta(2t), e) & 0 \leq t \leq 1/2 \\
+(e, c(\beta(2t-1))) & 1/2 \leq t \leq 1
+\end{array} \right.</script><p>This path in <script type="math/tex">G \times G</script> performs <script type="math/tex">\beta</script> in the first coordinate over the first half of time, and then performs <script type="math/tex">c(\beta)</script> in the second coordinate over the second half of time.
+This is homotopic to the map that performs <script type="math/tex">\beta</script> in the first coordinate and <script type="math/tex">c(\beta)</script> in the second, both over the whole time frame.
+That is, we have:</p>
+<script type="math/tex; mode=display">
+i^x_* \beta \cdot i^y_* c_*\beta \sim f(t) = (\beta(t), c(\beta(t))), 0 \leq t \leq 1</script><p>By the hypothesis, <script type="math/tex">f(t) = e</script> for all <script type="math/tex">t</script>, so this is actually the identity map.
+Then we have</p>
+<script type="math/tex; mode=display">
+\beta \cdot c_*(\beta) = \mu_*(i^x_* \beta \cdot i^y_* c_*\beta) = \mu_*(\epsilon_{(e,e)}) = \epsilon_e</script><p>Where the last equivalence comes from applying the first property of <script type="math/tex">\mu</script> in the special case of both arguments being <script type="math/tex">e</script>.
+A symmetric argument obtains <script type="math/tex">c_*(\beta) \cdot \beta = \epsilon_e</script>, so <script type="math/tex">c_*(\beta) = \beta^{-1}</script>.</p>
+ 
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <script type="text/javascript" src="/js/mathjax_config.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+</body>
+
+</html>

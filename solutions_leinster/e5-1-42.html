@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title> Exercise 5.1.42 |  Chase Meadors</title>
+<meta name="description" content=" A pullback of a monic map is monic ">
+  <link rel="stylesheet" href="/styles/main.css">
+  
+  
+</head>
+
+<body class="math-body">
+  <div class="container">
+    <div class="columns">
+      <div class="column">
+        <div class="math-container">
+          <h4 class="title is-3">Exercise 5.1.42</h4>
+          <div class="content">
+             <p>Let</p>
+<div class="math-figure"><img src="/assets/math_solutions/leinster/e5-1-42_1.svg" width="250px"/></div>
+
+<p>be a pullback square.</p>
+<p><strong>Theorem</strong>:
+If <script type="math/tex">m</script> is monic, so is <script type="math/tex">m'</script>.</p>
+<p><em>Proof</em>:
+Let <script type="math/tex">h, h' : Z \rightarrow X'</script> be maps with <script type="math/tex">m' \circ h = m' \circ h'</script>.
+Since the square above commutes, we have <script type="math/tex">m \circ f' = f \circ m'</script>, and thus <script type="math/tex">m \circ f' \circ h = f \circ m' \circ h</script>.
+Thus, <script type="math/tex">(Z, m' \circ h, f' \circ h)</script> is a cone over <script type="math/tex">A' \xrightarrow{f} A \xleftarrow{m} X</script>.
+Thus, we have a unique <script type="math/tex">\varphi : Z \rightarrow X'</script> with (1) <script type="math/tex">m' \circ \varphi = m' \circ h</script>, and (2) <script type="math/tex">f' \circ \varphi = f' \circ h</script>.
+Taking <script type="math/tex">\varphi = h</script> trivially makes both statements true.</p>
+<p><script type="math/tex">\varphi = h'</script> makes (1) true by supposition.
+To see that it satisfies (2) as well, consider the following:
+Since <script type="math/tex">m' \circ h = m' \circ h'</script>, it follows that <script type="math/tex">f \circ m' \circ h = f \circ m' \circ h'</script>.
+But <script type="math/tex">f \circ m' = m \circ f'</script>, and we have <script type="math/tex">m \circ f' \circ h = m \circ f' \circ h'</script>.
+Finally, since <script type="math/tex">m</script> is monic we have <script type="math/tex">f' \circ h = f' \circ h'</script>, so <script type="math/tex">\varphi = h'</script> indeed makes (2) true.
+Since <script type="math/tex">\varphi</script> is unique, we must have <script type="math/tex">\varphi = h = h'</script>, so <script type="math/tex">m'</script> is monic.</p>
+ 
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <script type="text/javascript" src="/js/mathjax_config.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+</body>
+
+</html>

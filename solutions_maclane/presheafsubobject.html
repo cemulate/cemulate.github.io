@@ -1,0 +1,1355 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title> Subobject classifer in presheaf category |  Chase Meadors</title>
+<meta name="description" content=" We construct the subobject classifer in the category of Set-valued presheaves ">
+  <link rel="stylesheet" href="/styles/main.css">
+   <link rel="stylesheet" type="text/css" href="/styles/tex4ht.css"/> 
+   <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script> 
+</head>
+
+<body class="math-body">
+  <div class="container">
+    <div class="columns">
+      <div class="column">
+        <div class="math-container">
+          <h4 class="title is-3">Subobject classifer in presheaf category</h4>
+          <div class="content">
+             
+<!--l. 13--><p class="noindent" >We wish to characterize the subobject classiﬁer in
+<!--l. 13--><math 
+xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mover 
+accent="false"><mrow 
+><mstyle mathvariant="bold"><mi 
+>A</mi></mstyle></mrow><mo accent="true">̂</mo></mover> <mo 
+class="MathClass-rel">=</mo> <mrow ><mo 
+class="MathClass-open">[</mo><mrow><msup><mrow 
+><mstyle mathvariant="bold"><mi 
+>A</mi></mstyle></mrow><mrow 
+><mstyle mathvariant="normal"><mi 
+>o</mi><mi 
+>p</mi></mstyle></mrow></msup 
+><mo 
+class="MathClass-punc">,</mo><mstyle mathvariant="bold"><mi 
+>S</mi><mi 
+>e</mi><mi 
+>t</mi></mstyle></mrow><mo 
+class="MathClass-close">]</mo></mrow></math>.
+</p>
+  <div class="newtheorem">
+<!--l. 15--><p class="noindent" ><span class="head">
+<span 
+class="cmbx-12">Deﬁnition.</span>  </span>A <span 
+class="cmti-12">sieve </span>on <!--l. 16--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>A</mi> <mo 
+class="MathClass-rel">∈</mo><mstyle mathvariant="bold"><mi 
+>A</mi></mstyle></math>
+is a set of arrows with codomain <!--l. 16--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>A</mi></math>
+such that <!--l. 16--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>f</mi> <mo 
+class="MathClass-rel">∈</mo> <mi 
+>S</mi></math>
+implies <!--l. 16--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>f</mi> <mo 
+class="MathClass-bin">∘</mo> <mi 
+>g</mi> <mo 
+class="MathClass-rel">∈</mo> <mi 
+>S</mi></math>
+for any <!--l. 16--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>g</mi></math>
+right-composable with <!--l. 16--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>f</mi></math>.
+</p>
+  </div>
+<!--l. 19--><p class="indent" >  We deﬁne <!--l. 19--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>Ω</mi> <mo 
+class="MathClass-rel">∈</mo><mover 
+accent="false"><mrow 
+><mstyle mathvariant="bold"><mi 
+>A</mi></mstyle></mrow><mo accent="true">̂</mo></mover></math> as
+follows. For <!--l. 20--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>A</mi> <mo 
+class="MathClass-rel">∈</mo><mstyle mathvariant="bold"><mi 
+>A</mi></mstyle></math>,
+<!--l. 20--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>Ω</mi><mrow ><mo 
+class="MathClass-open">(</mo><mrow><mi 
+>A</mi></mrow><mo 
+class="MathClass-close">)</mo></mrow></math> is the set of
+sieves on <!--l. 20--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mstyle mathvariant="bold"><mi 
+>A</mi></mstyle></math>.
+For a map <!--l. 21--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>f</mi> <mo 
+class="MathClass-punc">:</mo> <mi 
+>A</mi> <mo 
+class="MathClass-rel">→</mo> <msup><mrow 
+><mi 
+>A</mi></mrow><mrow 
+><mi 
+>′</mi></mrow></msup 
+></math>,
+<!--l. 21--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>Ω</mi><mrow ><mo 
+class="MathClass-open">(</mo><mrow><mi 
+>f</mi></mrow><mo 
+class="MathClass-close">)</mo></mrow> <mo 
+class="MathClass-punc">:</mo> <mi 
+>Ω</mi><mrow ><mo 
+class="MathClass-open">(</mo><mrow><msup><mrow 
+><mi 
+>A</mi></mrow><mrow 
+><mi 
+>′</mi></mrow></msup 
+></mrow><mo 
+class="MathClass-close">)</mo></mrow> <mo 
+class="MathClass-rel">→</mo> <mi 
+>Ω</mi><mrow ><mo 
+class="MathClass-open">(</mo><mrow><mi 
+>A</mi></mrow><mo 
+class="MathClass-close">)</mo></mrow></math> is the map
+sending <!--l. 21--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>S</mi></math>, a
+sieve on <!--l. 21--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><msup><mrow 
+><mi 
+>A</mi></mrow><mrow 
+><mi 
+>′</mi></mrow></msup 
+></math>,
+to <!--l. 21--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" > <mfenced separators="" 
+open="{"  close="}" ><mrow><mi 
+>g</mi> <mo 
+class="MathClass-punc">:</mo> <mi 
+>f</mi> <mo 
+class="MathClass-bin">∘</mo> <mi 
+>g</mi> <mo 
+class="MathClass-rel">∈</mo> <mi 
+>S</mi></mrow></mfenced></math>, a sieve
+on <!--l. 21--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>A</mi></math>.
+</p>
+  <div class="newtheorem">
+<!--l. 23--><p class="noindent" ><span class="head">
+<span 
+class="cmbx-12">Theorem.</span>  </span><!--l. 24--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>Ω</mi></math>
+<span 
+class="cmti-12">is the subobject classiﬁer in </span><!--l. 24--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mover 
+accent="false"><mrow 
+><mstyle mathvariant="bold"><mi 
+>A</mi></mstyle></mrow><mo accent="true">̂</mo></mover></math><span 
+class="cmti-12">.</span>
+</p>
+  </div>
+  <div class="proof">
+                                                                                         
+                                                                                         
+<!--l. 28--><p class="indent" >  <span class="head">
+<span 
+class="cmti-12">Proof.</span> </span>Denote by <!--l. 28--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>Δ</mi><mi 
+>T</mi></math>
+the constant presheaf with value <!--l. 28--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" > <mfenced separators="" 
+open="{"  close="}" ><mrow><mi 
+>T</mi></mrow></mfenced></math>
+(this is the terminal presheaf). Let <!--l. 29--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mstyle 
+class="text"><mtext  >true</mtext></mstyle> <mo 
+class="MathClass-punc">:</mo> <mi 
+>Δ</mi><mi 
+>T</mi> <mo 
+class="MathClass-rel">→</mo> <mi 
+>Ω</mi></math>
+be deﬁned with components <!--l. 29--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><msub><mrow 
+><mstyle 
+class="text"><mtext  >true</mtext></mstyle></mrow><mrow 
+><mi 
+>A</mi></mrow></msub 
+> <mo 
+class="MathClass-punc">:</mo> <mfenced separators="" 
+open="{"  close="}" ><mrow><mi 
+>T</mi></mrow></mfenced> <mo 
+class="MathClass-rel">→</mo> <mi 
+>Ω</mi><mrow ><mo 
+class="MathClass-open">(</mo><mrow><mi 
+>A</mi></mrow><mo 
+class="MathClass-close">)</mo></mrow></math>
+sending <!--l. 29--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>T</mi></math>
+to the maximal sieve on <!--l. 29--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>A</mi></math>
+(all arrows with codomain <!--l. 29--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>A</mi></math>).
+We deﬁne the characteristic function <!--l. 30--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>χ</mi></math>
+and show that every subobject (subfunctor) in <!--l. 30--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mover 
+accent="false"><mrow 
+><mstyle mathvariant="bold"><mi 
+>A</mi></mstyle></mrow><mo accent="true">̂</mo></mover></math>
+is the pullback of <!--l. 30--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mstyle 
+class="text"><mtext  >true</mtext></mstyle></math>
+along <!--l. 30--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>χ</mi></math>
+(and <!--l. 30--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>χ</mi></math>
+is unique with this property).
+</p><!--l. 32--><p class="indent" >  Take some monic <!--l. 32--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>Q</mi> <mo 
+class="MathClass-rel">→</mo> <mi 
+>P</mi></math>
+in <!--l. 32--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mover 
+accent="false"><mrow 
+><mstyle mathvariant="bold"><mi 
+>A</mi></mstyle></mrow><mo accent="true">̂</mo></mover></math>. Note that an
+arrow is monic in <!--l. 33--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mover 
+accent="false"><mrow 
+><mstyle mathvariant="bold"><mi 
+>A</mi></mstyle></mrow><mo accent="true">̂</mo></mover></math>
+if and only if its components are monic (thus injective) arrows in
+<!--l. 33--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mstyle mathvariant="bold"><mi 
+>S</mi><mi 
+>e</mi><mi 
+>t</mi></mstyle></math>. Deﬁne
+<!--l. 34--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>χ</mi> <mo 
+class="MathClass-punc">:</mo> <mi 
+>P</mi> <mo 
+class="MathClass-rel">→</mo> <mi 
+>Ω</mi></math> with components
+<!--l. 34--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><msub><mrow 
+><mi 
+>χ</mi></mrow><mrow 
+><mi 
+>A</mi></mrow></msub 
+> <mo 
+class="MathClass-punc">:</mo> <mi 
+>P</mi><mrow ><mo 
+class="MathClass-open">(</mo><mrow><mi 
+>A</mi></mrow><mo 
+class="MathClass-close">)</mo></mrow> <mo 
+class="MathClass-rel">→</mo> <mi 
+>Ω</mi><mrow ><mo 
+class="MathClass-open">(</mo><mrow><mi 
+>A</mi></mrow><mo 
+class="MathClass-close">)</mo></mrow></math> as follows: Let
+<!--l. 35--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><msub><mrow 
+><mi 
+>χ</mi></mrow><mrow 
+><mi 
+>A</mi></mrow></msub 
+><mrow ><mo 
+class="MathClass-open">(</mo><mrow><mi 
+>x</mi></mrow><mo 
+class="MathClass-close">)</mo></mrow></math> be the sieve
+consisting of arrows <!--l. 35--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>f</mi> <mo 
+class="MathClass-punc">:</mo> <mi 
+>Z</mi> <mo 
+class="MathClass-rel">→</mo> <mi 
+>A</mi></math>
+for some <!--l. 35--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>Z</mi></math>
+such that <!--l. 35--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>P</mi><mrow ><mo 
+class="MathClass-open">(</mo><mrow><mi 
+>f</mi></mrow><mo 
+class="MathClass-close">)</mo></mrow><mrow ><mo 
+class="MathClass-open">(</mo><mrow><mi 
+>x</mi></mrow><mo 
+class="MathClass-close">)</mo></mrow> <mo 
+class="MathClass-rel">∈</mo><mi class="qopname"> im</mi><mo> &ApplyFunction;<!--FUNCTION APPLICATION--> </mo><!--nolimits--> <msub><mrow 
+><mi 
+>i</mi></mrow><mrow 
+><mi 
+>Z</mi></mrow></msub 
+></math>.
+We now claim that: </p>
+<div class="center" 
+>
+<!--l. 37--><p class="noindent" >
+</p><!--l. 41--><p class="noindent" >       <img 
+src="/assets/math_solutions/maclane/presheafsubobject0x.svg" alt="  Q         ΔT
+
+
+itχruPe         Ω "  />
+</p></div>
+<!--l. 43--><p class="noindent" >commutes and is a pullback square. Take <!--l. 44--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>x</mi> <mo 
+class="MathClass-rel">∈</mo> <mi 
+>P</mi><mrow ><mo 
+class="MathClass-open">(</mo><mrow><mi 
+>A</mi></mrow><mo 
+class="MathClass-close">)</mo></mrow></math>
+                                                                                         
+                                                                                         
+and suppose <!--l. 44--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>x</mi> <mo 
+class="MathClass-rel">∈</mo><mi class="qopname"> im</mi><mo> &ApplyFunction;<!--FUNCTION APPLICATION--> </mo><!--nolimits--> <msub><mrow 
+><mi 
+>i</mi></mrow><mrow 
+><mi 
+>A</mi></mrow></msub 
+></math>,
+so that <!--l. 44--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>x</mi> <mo 
+class="MathClass-rel">=</mo> <msub><mrow 
+><mi 
+>i</mi></mrow><mrow 
+><mi 
+>A</mi></mrow></msub 
+><mrow ><mo 
+class="MathClass-open">(</mo><mrow><mi 
+>y</mi></mrow><mo 
+class="MathClass-close">)</mo></mrow></math>. Then
+<!--l. 45--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><msub><mrow 
+><mi 
+>χ</mi></mrow><mrow 
+><mi 
+>A</mi></mrow></msub 
+><mrow ><mo 
+class="MathClass-open">(</mo><mrow><mi 
+>x</mi></mrow><mo 
+class="MathClass-close">)</mo></mrow> <mo 
+class="MathClass-rel">=</mo> <msub><mrow 
+><mi 
+>χ</mi></mrow><mrow 
+><mi 
+>A</mi></mrow></msub 
+><mrow ><mo 
+class="MathClass-open">(</mo><mrow><msub><mrow 
+><mi 
+>i</mi></mrow><mrow 
+><mi 
+>A</mi></mrow></msub 
+><mrow ><mo 
+class="MathClass-open">(</mo><mrow><mi 
+>y</mi></mrow><mo 
+class="MathClass-close">)</mo></mrow></mrow><mo 
+class="MathClass-close">)</mo></mrow></math> is the sieve on
+<!--l. 45--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>A</mi></math> consisting of
+arrows <!--l. 45--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>f</mi> <mo 
+class="MathClass-punc">:</mo> <mi 
+>Z</mi> <mo 
+class="MathClass-rel">→</mo> <mi 
+>A</mi></math> such
+that <!--l. 45--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>P</mi><mrow ><mo 
+class="MathClass-open">(</mo><mrow><mi 
+>f</mi></mrow><mo 
+class="MathClass-close">)</mo></mrow><mrow ><mo 
+class="MathClass-open">(</mo><mrow><msub><mrow 
+><mi 
+>i</mi></mrow><mrow 
+><mi 
+>A</mi></mrow></msub 
+><mrow ><mo 
+class="MathClass-open">(</mo><mrow><mi 
+>y</mi></mrow><mo 
+class="MathClass-close">)</mo></mrow></mrow><mo 
+class="MathClass-close">)</mo></mrow> <mo 
+class="MathClass-rel">∈</mo><mi class="qopname"> im</mi><mo> &ApplyFunction;<!--FUNCTION APPLICATION--> </mo><!--nolimits--> <msub><mrow 
+><mi 
+>i</mi></mrow><mrow 
+><mi 
+>Z</mi></mrow></msub 
+></math>. But, as
+<!--l. 46--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>i</mi></math> is a natural transformation,
+<!--l. 46--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>P</mi><mrow ><mo 
+class="MathClass-open">(</mo><mrow><mi 
+>f</mi></mrow><mo 
+class="MathClass-close">)</mo></mrow><mrow ><mo 
+class="MathClass-open">(</mo><mrow><msub><mrow 
+><mi 
+>i</mi></mrow><mrow 
+><mi 
+>A</mi></mrow></msub 
+><mrow ><mo 
+class="MathClass-open">(</mo><mrow><mi 
+>y</mi></mrow><mo 
+class="MathClass-close">)</mo></mrow></mrow><mo 
+class="MathClass-close">)</mo></mrow> <mo 
+class="MathClass-rel">=</mo> <msub><mrow 
+><mi 
+>i</mi></mrow><mrow 
+><mi 
+>Z</mi></mrow></msub 
+><mrow ><mo 
+class="MathClass-open">(</mo><mrow><mi 
+>Q</mi><mrow ><mo 
+class="MathClass-open">(</mo><mrow><mi 
+>f</mi></mrow><mo 
+class="MathClass-close">)</mo></mrow><mrow ><mo 
+class="MathClass-open">(</mo><mrow><mi 
+>y</mi></mrow><mo 
+class="MathClass-close">)</mo></mrow></mrow><mo 
+class="MathClass-close">)</mo></mrow></math>, so this holds true for all
+arrows with codomain <!--l. 46--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>A</mi></math>,
+meaning that <!--l. 46--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><msub><mrow 
+><mi 
+>χ</mi></mrow><mrow 
+><mi 
+>A</mi></mrow></msub 
+><mrow ><mo 
+class="MathClass-open">(</mo><mrow><mi 
+>x</mi></mrow><mo 
+class="MathClass-close">)</mo></mrow></math> is the
+maximal sieve on <!--l. 46--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>A</mi></math>.
+So, for all <!--l. 47--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>A</mi></math>
+and <!--l. 47--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>x</mi> <mo 
+class="MathClass-rel">∈</mo> <mi 
+>P</mi><mrow ><mo 
+class="MathClass-open">(</mo><mrow><mi 
+>A</mi></mrow><mo 
+class="MathClass-close">)</mo></mrow></math>,
+<!--l. 47--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>x</mi> <mo 
+class="MathClass-rel">∈</mo><mi class="qopname"> im</mi><mo> &ApplyFunction;<!--FUNCTION APPLICATION--> </mo><!--nolimits--> <msub><mrow 
+><mi 
+>i</mi></mrow><mrow 
+><mi 
+>A</mi></mrow></msub 
+></math> implies
+<!--l. 47--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><msub><mrow 
+><mi 
+>χ</mi></mrow><mrow 
+><mi 
+>A</mi></mrow></msub 
+><mrow ><mo 
+class="MathClass-open">(</mo><mrow><mi 
+>x</mi></mrow><mo 
+class="MathClass-close">)</mo></mrow></math>
+is the maximal sieve – thus, the square actually does commute. Conversely, suppose
+<!--l. 48--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><msub><mrow 
+><mi 
+>χ</mi></mrow><mrow 
+><mi 
+>A</mi></mrow></msub 
+><mrow ><mo 
+class="MathClass-open">(</mo><mrow><mi 
+>x</mi></mrow><mo 
+class="MathClass-close">)</mo></mrow></math> is the maximal
+sieve. Then for all <!--l. 49--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>f</mi> <mo 
+class="MathClass-punc">:</mo> <mi 
+>Z</mi> <mo 
+class="MathClass-rel">→</mo> <mi 
+>A</mi></math>
+we have <!--l. 49--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>P</mi><mrow ><mo 
+class="MathClass-open">(</mo><mrow><mi 
+>f</mi></mrow><mo 
+class="MathClass-close">)</mo></mrow><mrow ><mo 
+class="MathClass-open">(</mo><mrow><mi 
+>x</mi></mrow><mo 
+class="MathClass-close">)</mo></mrow> <mo 
+class="MathClass-rel">∈</mo><mi class="qopname"> im</mi><mo> &ApplyFunction;<!--FUNCTION APPLICATION--> </mo><!--nolimits--> <msub><mrow 
+><mi 
+>i</mi></mrow><mrow 
+><mi 
+>Z</mi></mrow></msub 
+></math>. In
+particular, <!--l. 50--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>P</mi><mrow ><mo 
+class="MathClass-open">(</mo><mrow><msub><mrow 
+><mn>1</mn></mrow><mrow 
+><mi 
+>A</mi></mrow></msub 
+></mrow><mo 
+class="MathClass-close">)</mo></mrow><mrow ><mo 
+class="MathClass-open">(</mo><mrow><mi 
+>x</mi></mrow><mo 
+class="MathClass-close">)</mo></mrow> <mo 
+class="MathClass-rel">∈</mo><mi class="qopname"> im</mi><mo> &ApplyFunction;<!--FUNCTION APPLICATION--> </mo><!--nolimits--> <msub><mrow 
+><mi 
+>i</mi></mrow><mrow 
+><mi 
+>A</mi></mrow></msub 
+></math>,
+but since <!--l. 50--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>P</mi><mrow ><mo 
+class="MathClass-open">(</mo><mrow><msub><mrow 
+><mn>1</mn></mrow><mrow 
+><mi 
+>A</mi></mrow></msub 
+></mrow><mo 
+class="MathClass-close">)</mo></mrow> <mo 
+class="MathClass-rel">=</mo> <msub><mrow 
+><mn>1</mn></mrow><mrow 
+><mi 
+>P</mi><mrow ><mo 
+class="MathClass-open">(</mo><mrow><mi 
+>A</mi></mrow><mo 
+class="MathClass-close">)</mo></mrow></mrow></msub 
+></math>, this
+means <!--l. 50--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>x</mi> <mo 
+class="MathClass-rel">∈</mo><mi class="qopname"> im</mi><mo> &ApplyFunction;<!--FUNCTION APPLICATION--> </mo><!--nolimits--> <msub><mrow 
+><mi 
+>i</mi></mrow><mrow 
+><mi 
+>A</mi></mrow></msub 
+></math>. So,
+in fact, <!--l. 51--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>x</mi> <mo 
+class="MathClass-rel">∈</mo><mi class="qopname"> im</mi><mo> &ApplyFunction;<!--FUNCTION APPLICATION--> </mo><!--nolimits--> <msub><mrow 
+><mi 
+>i</mi></mrow><mrow 
+><mi 
+>A</mi></mrow></msub 
+></math> if
+and only if <!--l. 51--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><msub><mrow 
+><mi 
+>χ</mi></mrow><mrow 
+><mi 
+>A</mi></mrow></msub 
+><mrow ><mo 
+class="MathClass-open">(</mo><mrow><mi 
+>x</mi></mrow><mo 
+class="MathClass-close">)</mo></mrow></math>
+is the maximal sieve.
+</p><!--l. 53--><p class="indent" >  This tells us that the square is a pullback. To see why, suppose we had another commuting square
+with <!--l. 54--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>R</mi><munderover> <mo 
+class="MathClass-rel">→</mo><mrow 
+></mrow><mrow 
+><mi 
+>j</mi></mrow></munderover><mi 
+>P</mi></math>
+on the left. Then, by the preceding paragraph we would have
+<!--l. 55--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>x</mi> <mo 
+class="MathClass-rel">∈</mo><mi class="qopname"> im</mi><mo> &ApplyFunction;<!--FUNCTION APPLICATION--> </mo><!--nolimits--> <msub><mrow 
+><mi 
+>j</mi></mrow><mrow 
+><mi 
+>A</mi></mrow></msub 
+></math> if and only if
+<!--l. 55--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><msub><mrow 
+><mi 
+>χ</mi></mrow><mrow 
+><mi 
+>A</mi></mrow></msub 
+><mrow ><mo 
+class="MathClass-open">(</mo><mrow><mi 
+>x</mi></mrow><mo 
+class="MathClass-close">)</mo></mrow></math> is the maximal
+sieve if and only if <!--l. 55--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>x</mi> <mo 
+class="MathClass-rel">∈</mo><mi class="qopname"> im</mi><mo> &ApplyFunction;<!--FUNCTION APPLICATION--> </mo><!--nolimits--> <msub><mrow 
+><mi 
+>i</mi></mrow><mrow 
+><mi 
+>A</mi></mrow></msub 
+></math>.
+Since <!--l. 56--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><msub><mrow 
+><mi 
+>i</mi></mrow><mrow 
+><mi 
+>A</mi></mrow></msub 
+></math> and
+<!--l. 56--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><msub><mrow 
+><mi 
+>j</mi></mrow><mrow 
+><mi 
+>A</mi></mrow></msub 
+></math> are
+injective, <!--l. 56--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>x</mi></math>
+is the image of a unique element in each. Then, deﬁne a map
+<!--l. 57--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>φ</mi> <mo 
+class="MathClass-punc">:</mo> <mi 
+>R</mi> <mo 
+class="MathClass-rel">→</mo> <mi 
+>Q</mi></math> that pairs up these
+                                                                                         
+                                                                                         
+preimages, by <!--l. 57--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><msub><mrow 
+><mi 
+>φ</mi></mrow><mrow 
+><mi 
+>A</mi></mrow></msub 
+><mrow ><mo 
+class="MathClass-open">(</mo><mrow><mi 
+>w</mi></mrow><mo 
+class="MathClass-close">)</mo></mrow> <mo 
+class="MathClass-rel">=</mo> <msubsup><mrow 
+><mi 
+>i</mi></mrow><mrow 
+><mi 
+>A</mi></mrow><mrow 
+><mo 
+class="MathClass-bin">−</mo><mn>1</mn></mrow></msubsup 
+><mrow ><mo 
+class="MathClass-open">(</mo><mrow><msub><mrow 
+><mi 
+>j</mi></mrow><mrow 
+>
+<mi 
+>A</mi></mrow></msub 
+><mrow ><mo 
+class="MathClass-open">(</mo><mrow><mi 
+>w</mi></mrow><mo 
+class="MathClass-close">)</mo></mrow></mrow><mo 
+class="MathClass-close">)</mo></mrow></math>.
+It’s easy to see that this deﬁnes a natural transformation (isomorphism, in fact), and clearly
+<!--l. 58--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>i</mi> <mo 
+class="MathClass-bin">∘</mo> <mi 
+>φ</mi> <mo 
+class="MathClass-rel">=</mo> <mi 
+>j</mi></math> with
+<!--l. 58--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>φ</mi></math>
+unique. Thus, the square is a pullback.
+</p><!--l. 61--><p class="indent" >  We now show <!--l. 61--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>χ</mi></math> is unique
+with this property. Suppose <!--l. 62--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>𝜃</mi> <mo 
+class="MathClass-punc">:</mo> <mi 
+>P</mi> <mo 
+class="MathClass-rel">→</mo> <mi 
+>Ω</mi></math>
+was another map that made the square a pullback. We show that, for any
+<!--l. 63--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>A</mi></math> and
+<!--l. 63--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>x</mi></math>, that
+<!--l. 63--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><msub><mrow 
+><mi 
+>𝜃</mi></mrow><mrow 
+><mi 
+>A</mi></mrow></msub 
+><mrow ><mo 
+class="MathClass-open">(</mo><mrow><mi 
+>x</mi></mrow><mo 
+class="MathClass-close">)</mo></mrow> <mo 
+class="MathClass-rel">=</mo> <msub><mrow 
+><mi 
+>χ</mi></mrow><mrow 
+><mi 
+>A</mi></mrow></msub 
+><mrow ><mo 
+class="MathClass-open">(</mo><mrow><mi 
+>x</mi></mrow><mo 
+class="MathClass-close">)</mo></mrow></math>. Take an
+arrow <!--l. 64--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>f</mi> <mo 
+class="MathClass-punc">:</mo> <mi 
+>Z</mi> <mo 
+class="MathClass-rel">→</mo> <mi 
+>A</mi></math>
+in <!--l. 64--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><msub><mrow 
+><mi 
+>χ</mi></mrow><mrow 
+><mi 
+>A</mi></mrow></msub 
+><mrow ><mo 
+class="MathClass-open">(</mo><mrow><mi 
+>x</mi></mrow><mo 
+class="MathClass-close">)</mo></mrow></math>, so that
+<!--l. 64--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>P</mi><mrow ><mo 
+class="MathClass-open">(</mo><mrow><mi 
+>f</mi></mrow><mo 
+class="MathClass-close">)</mo></mrow><mrow ><mo 
+class="MathClass-open">(</mo><mrow><mi 
+>x</mi></mrow><mo 
+class="MathClass-close">)</mo></mrow> <mo 
+class="MathClass-rel">∈</mo><mi class="qopname"> im</mi><mo> &ApplyFunction;<!--FUNCTION APPLICATION--> </mo><!--nolimits--> <msub><mrow 
+><mi 
+>i</mi></mrow><mrow 
+><mi 
+>Z</mi></mrow></msub 
+></math>. This is the case if
+and only if <!--l. 65--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><msub><mrow 
+><mi 
+>𝜃</mi></mrow><mrow 
+><mi 
+>Z</mi></mrow></msub 
+><mrow ><mo 
+class="MathClass-open">(</mo><mrow><mi 
+>P</mi><mrow ><mo 
+class="MathClass-open">(</mo><mrow><mi 
+>f</mi></mrow><mo 
+class="MathClass-close">)</mo></mrow><mrow ><mo 
+class="MathClass-open">(</mo><mrow><mi 
+>x</mi></mrow><mo 
+class="MathClass-close">)</mo></mrow></mrow><mo 
+class="MathClass-close">)</mo></mrow></math> is the
+maximal sieve on <!--l. 65--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>Z</mi></math>.
+By naturality of <!--l. 66--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>𝜃</mi></math> this
+sieve is the same as <!--l. 66--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>Ω</mi><mrow ><mo 
+class="MathClass-open">(</mo><mrow><mi 
+>f</mi></mrow><mo 
+class="MathClass-close">)</mo></mrow><mrow ><mo 
+class="MathClass-open">(</mo><mrow><msub><mrow 
+><mi 
+>𝜃</mi></mrow><mrow 
+><mi 
+>A</mi></mrow></msub 
+><mrow ><mo 
+class="MathClass-open">(</mo><mrow><mi 
+>x</mi></mrow><mo 
+class="MathClass-close">)</mo></mrow></mrow><mo 
+class="MathClass-close">)</mo></mrow></math>,
+the set of arrows <!--l. 66--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>g</mi></math>
+with codomain <!--l. 66--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>Z</mi></math>
+such that <!--l. 66--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>f</mi> <mo 
+class="MathClass-bin">∘</mo> <mi 
+>g</mi> <mo 
+class="MathClass-rel">∈</mo> <msub><mrow 
+><mi 
+>𝜃</mi></mrow><mrow 
+><mi 
+>A</mi></mrow></msub 
+><mrow ><mo 
+class="MathClass-open">(</mo><mrow><mi 
+>x</mi></mrow><mo 
+class="MathClass-close">)</mo></mrow></math>.
+Thus the previous statement is true if and only if for <span 
+class="cmti-12">all </span>arrows
+<!--l. 67--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>g</mi></math> with
+codomain <!--l. 67--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>Z</mi></math>,
+<!--l. 67--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>f</mi> <mo 
+class="MathClass-bin">∘</mo> <mi 
+>g</mi> <mo 
+class="MathClass-rel">∈</mo> <msub><mrow 
+><mi 
+>𝜃</mi></mrow><mrow 
+><mi 
+>A</mi></mrow></msub 
+><mrow ><mo 
+class="MathClass-open">(</mo><mrow><mi 
+>x</mi></mrow><mo 
+class="MathClass-close">)</mo></mrow></math>. This is true if
+and only if <!--l. 68--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>f</mi> <mo 
+class="MathClass-rel">∈</mo> <msub><mrow 
+><mi 
+>𝜃</mi></mrow><mrow 
+><mi 
+>A</mi></mrow></msub 
+><mrow ><mo 
+class="MathClass-open">(</mo><mrow><mi 
+>x</mi></mrow><mo 
+class="MathClass-close">)</mo></mrow></math>,
+completing the proof of equality. To see how the ﬁnal iﬀ holds, consider that if
+<!--l. 69--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>f</mi> <mo 
+class="MathClass-bin">∘</mo> <mi 
+>g</mi> <mo 
+class="MathClass-rel">∈</mo> <msub><mrow 
+><mi 
+>𝜃</mi></mrow><mrow 
+><mi 
+>A</mi></mrow></msub 
+><mrow ><mo 
+class="MathClass-open">(</mo><mrow><mi 
+>x</mi></mrow><mo 
+class="MathClass-close">)</mo></mrow></math> for all
+<!--l. 69--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>g</mi></math>, then in
+particular <!--l. 69--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>f</mi> <mo 
+class="MathClass-bin">∘</mo> <msub><mrow 
+><mn>1</mn></mrow><mrow 
+><mi 
+>Z</mi></mrow></msub 
+> <mo 
+class="MathClass-rel">=</mo> <mi 
+>f</mi> <mo 
+class="MathClass-rel">∈</mo> <msub><mrow 
+><mi 
+>𝜃</mi></mrow><mrow 
+><mi 
+>A</mi></mrow></msub 
+><mrow ><mo 
+class="MathClass-open">(</mo><mrow><mi 
+>x</mi></mrow><mo 
+class="MathClass-close">)</mo></mrow></math>,
+and if <!--l. 69--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>f</mi> <mo 
+class="MathClass-rel">∈</mo> <msub><mrow 
+><mi 
+>𝜃</mi></mrow><mrow 
+><mi 
+>A</mi></mrow></msub 
+><mrow ><mo 
+class="MathClass-open">(</mo><mrow><mi 
+>x</mi></mrow><mo 
+class="MathClass-close">)</mo></mrow></math>,
+<!--l. 69--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>f</mi> <mo 
+class="MathClass-bin">∘</mo> <mi 
+>g</mi> <mo 
+class="MathClass-rel">∈</mo> <msub><mrow 
+><mi 
+>𝜃</mi></mrow><mrow 
+><mi 
+>A</mi></mrow></msub 
+><mrow ><mo 
+class="MathClass-open">(</mo><mrow><mi 
+>x</mi></mrow><mo 
+class="MathClass-close">)</mo></mrow></math> for all
+appropriate <!--l. 69--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>g</mi></math>,
+since <!--l. 69--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><msub><mrow 
+><mi 
+>𝜃</mi></mrow><mrow 
+><mi 
+>A</mi></mrow></msub 
+><mrow ><mo 
+class="MathClass-open">(</mo><mrow><mi 
+>x</mi></mrow><mo 
+class="MathClass-close">)</mo></mrow></math> is
+a sieve.
+</p><!--l. 71--><p class="indent" >  So, <!--l. 71--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>Ω</mi></math> is a subobject
+                                                                                         
+                                                                                         
+classiﬁer for <!--l. 71--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mover 
+accent="false"><mrow 
+><mstyle mathvariant="bold"><mi 
+>A</mi></mstyle></mrow><mo accent="true">̂</mo></mover></math> with
+characterstic function <!--l. 71--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>χ</mi> <mo 
+class="MathClass-punc">:</mo> <mi 
+>P</mi> <mo 
+class="MathClass-rel">→</mo> <mi 
+>Ω</mi></math>
+and universal subobject <!--l. 71--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mstyle 
+class="text"><mtext  >true</mtext></mstyle> <mo 
+class="MathClass-punc">:</mo> <mi 
+>Δ</mi><mi 
+>T</mi> <mo 
+class="MathClass-rel">→</mo> <mi 
+>Ω</mi></math>
+as deﬁned. <span class="qed"><span 
+class="msam-10x-x-120">□</span></span>
+</p>
+  </div>
+<!--l. 74--><p class="indent" >  Let’s see what this means in the case of <!--l. 74--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mrow ><mo 
+class="MathClass-open">[</mo><mrow><mi 
+>ℕ</mi><mo 
+class="MathClass-punc">,</mo><mstyle mathvariant="bold"><mi 
+>S</mi><mi 
+>e</mi><mi 
+>t</mi></mstyle></mrow><mo 
+class="MathClass-close">]</mo></mrow></math>.
+Treat this as <!--l. 75--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mrow ><mo 
+class="MathClass-open">[</mo><mrow><msup><mrow 
+><mrow ><mo 
+class="MathClass-open">(</mo><mrow><msup><mrow 
+><mi 
+>ℕ</mi></mrow><mrow 
+><mstyle 
+class="text"><mtext  >op</mtext></mstyle></mrow></msup 
+></mrow><mo 
+class="MathClass-close">)</mo></mrow></mrow><mrow 
+><mstyle mathvariant="normal"><mi 
+>o</mi><mi 
+>p</mi></mstyle></mrow></msup 
+><mo 
+class="MathClass-punc">,</mo><mstyle mathvariant="bold"><mi 
+>S</mi><mi 
+>e</mi><mi 
+>t</mi></mstyle></mrow><mo 
+class="MathClass-close">]</mo></mrow></math>
+to apply the deﬁnitions of the previous theorem. A presheaf here is just a “set through time”. A sieve
+on <!--l. 77--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>k</mi> <mo 
+class="MathClass-rel">∈</mo> <msup><mrow 
+><mi 
+>ℕ</mi></mrow><mrow 
+><mstyle 
+class="text"><mtext  >op</mtext></mstyle></mrow></msup 
+></math> is a set
+<!--l. 77--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" > <mfenced separators="" 
+open="{"  close="}" ><mrow><mi 
+>n</mi> <mo 
+class="MathClass-punc">:</mo> <mi 
+>n</mi> <mo 
+class="MathClass-rel">≥</mo> <mi 
+>s</mi></mrow></mfenced></math> for any
+<!--l. 77--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>s</mi> <mo 
+class="MathClass-rel">≥</mo> <mi 
+>k</mi></math>. The maximal
+sieve on <!--l. 78--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>k</mi></math> is
+<!--l. 78--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" > <mfenced separators="" 
+open="{"  close="}" ><mrow><mi 
+>n</mi> <mo 
+class="MathClass-punc">:</mo> <mi 
+>n</mi> <mo 
+class="MathClass-rel">≥</mo> <mi 
+>k</mi></mrow></mfenced></math>. Since
+a sieve is just a “run of integers”, we may choose to identify a sieve with its starting point
+<!--l. 79--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>s</mi></math>, so that a sieve on
+<!--l. 79--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>k</mi></math> is identiﬁed with some
+<!--l. 79--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>s</mi> <mo 
+class="MathClass-rel">≥</mo> <mi 
+>k</mi></math>, the set of sieves on
+<!--l. 79--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>k</mi></math> is the set of integers
+greater or equal to <!--l. 79--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>k</mi></math>,
+and <!--l. 79--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><msub><mrow 
+><mstyle 
+class="text"><mtext  >true</mtext></mstyle></mrow><mrow 
+><mi 
+>k</mi></mrow></msub 
+></math> picks out the
+maximal sieve <!--l. 79--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>k</mi></math>.
+All this is visualized as follows: </p>
+<div class="center" 
+>
+<!--l. 81--><p class="noindent" >
+</p><!--l. 87--><p class="noindent" >                                <img 
+src="/assets/math_solutions/maclane/presheafsubobject1x.svg" alt="Ω :       0        {0       1         2         3          ...}
+
+
+          1                 {1        2         3          ...}
+
+
+
+          2                           {2        3          ...}
+
+
+          3                                     {3         ...} "  />
+</p></div>
+<!--l. 89--><p class="noindent" >and the bolded elements are the ones selected by
+                                                                                         
+                                                                                         
+<!--l. 89--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><msub><mrow 
+><mstyle 
+class="text"><mtext  >true</mtext></mstyle></mrow><mrow 
+><mi 
+>k</mi></mrow></msub 
+></math>.
+</p><!--l. 91--><p class="indent" >  The characteristic function <!--l. 91--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>χ</mi></math>
+gives the “time of truth”, in the following sense. Take
+<!--l. 92--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>Q</mi><mo 
+class="MathClass-rel">↪</mo><mi 
+>P</mi></math> a subfunctor. Let
+<!--l. 93--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>σ</mi></math> denote the “transition
+function(s)” of <!--l. 93--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>P</mi></math>,
+of which <!--l. 93--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>Q</mi></math>’s are
+restrictions. <!--l. 94--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><msub><mrow 
+><mi 
+>χ</mi></mrow><mrow 
+><mi 
+>k</mi></mrow></msub 
+><mrow ><mo 
+class="MathClass-open">(</mo><mrow><mi 
+>x</mi></mrow><mo 
+class="MathClass-close">)</mo></mrow></math> is given
+by the integer <!--l. 94--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>n</mi></math>
+such that <!--l. 94--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><msup><mrow 
+><mi 
+>σ</mi></mrow><mrow 
+><mi 
+>n</mi><mo 
+class="MathClass-bin">+</mo><mi 
+>t</mi></mrow></msup 
+><mrow ><mo 
+class="MathClass-open">(</mo><mrow><mi 
+>x</mi></mrow><mo 
+class="MathClass-close">)</mo></mrow> <mo 
+class="MathClass-rel">∈</mo> <mi 
+>Q</mi><mrow ><mo 
+class="MathClass-open">(</mo><mrow><mi 
+>n</mi> <mo 
+class="MathClass-bin">+</mo> <mi 
+>t</mi></mrow><mo 
+class="MathClass-close">)</mo></mrow></math> for all
+<!--l. 94--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>t</mi> <mo 
+class="MathClass-rel">≥</mo> <mn>0</mn></math> (note then clearly
+this <!--l. 94--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>n</mi></math> must be at least
+<!--l. 94--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>k</mi></math>). In other words, the
+time <!--l. 95--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>n</mi></math> at which the
+transition function carries <!--l. 95--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>x</mi></math>
+into the subfunctor <!--l. 95--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>Q</mi></math>,
+after which it remains there for the rest of time – the time at which
+<!--l. 95--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>x</mi></math>’s membership in
+<!--l. 95--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>Q</mi></math> becomes true. We
+can see that if <!--l. 96--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>x</mi></math>
+is already in <!--l. 96--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>Q</mi><mrow ><mo 
+class="MathClass-open">(</mo><mrow><mi 
+>k</mi></mrow><mo 
+class="MathClass-close">)</mo></mrow></math>
+to begin with, <!--l. 96--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><msub><mrow 
+><mi 
+>χ</mi></mrow><mrow 
+><mi 
+>k</mi></mrow></msub 
+><mrow ><mo 
+class="MathClass-open">(</mo><mrow><mi 
+>x</mi></mrow><mo 
+class="MathClass-close">)</mo></mrow></math>
+will be <!--l. 96--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>k</mi></math>,
+agreeing with <!--l. 96--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><msub><mrow 
+><mstyle 
+class="text"><mtext  >true</mtext></mstyle></mrow><mrow 
+><mi 
+>k</mi></mrow></msub 
+></math>.
+</p><!--l. 98--><p class="indent" >  This discussion also reveals that <!--l. 98--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mrow ><mo 
+class="MathClass-open">[</mo><mrow><mi 
+>ℕ</mi><mo 
+class="MathClass-punc">,</mo><mstyle mathvariant="bold"><mi 
+>F</mi><mi 
+>i</mi><mi 
+>n</mi><mi 
+>S</mi><mi 
+>e</mi><mi 
+>t</mi></mstyle></mrow><mo 
+class="MathClass-close">]</mo></mrow></math>
+has no subobject classiﬁer – if it did, it would be given as above, but
+<!--l. 98--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>Ω</mi></math> is not
+a ﬁnite presheaf.
+</p>
+ 
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    
+</body>
+
+</html>

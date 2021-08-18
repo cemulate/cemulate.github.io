@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title> Sipser Exercise 1.41 |  Chase Meadors</title>
+<meta name="description" content=" The "prefect shuffle" of two regular languages is regular ">
+  <link rel="stylesheet" href="/styles/main.css">
+  
+  
+</head>
+
+<body class="math-body">
+  <div class="container">
+    <div class="columns">
+      <div class="column">
+        <div class="math-container">
+          <h4 class="title is-3">Sipser Exercise 1.41</h4>
+          <div class="content">
+             <p>For languages <script type="math/tex">A</script> and <script type="math/tex">B</script> over the same alphabet <script type="math/tex">\Sigma</script>, the perfect shuffle of <script type="math/tex">A</script> and <script type="math/tex">B</script> is:</p>
+<script type="math/tex; mode=display">
+S(A, B) = \setbuilder{x}{x = a_1 b_1 \dots a_k b_k \text{ with } a_i, b_i \in \Sigma, a_1 \dots a_k \in A, b_1 \dots b_k \in B}</script><p>We show that for regular languages <script type="math/tex">A</script> and <script type="math/tex">B</script>, <script type="math/tex">S(A, B)</script> is also regular.</p>
+<hr>
+<p>Let <script type="math/tex">M_A = (Q_A, \Sigma, \delta_A, q_{0A}, F_A)</script> and <script type="math/tex">M_B = (Q_B, \Sigma, \delta_B, q_{0B}, F_B)</script> be DFAs that accept <script type="math/tex">A</script> and <script type="math/tex">B</script>, respectively.
+We construct a machine <script type="math/tex">M_S = (Q_S, \Sigma, \delta_S, q_{0S}, F_S)</script> that accepts <script type="math/tex">S(A, B)</script>.</p>
+<p>Let <script type="math/tex">Q_S = \set{p_A, p_B} \times Q_A \times Q_B</script>.
+Take <script type="math/tex">q_{0S} = (p_A, q_{0A}, q_{0B})</script>.
+Take <script type="math/tex">F_S = \set{p_A, p_B} \times F_A \times F_B</script>.</p>
+<p>Finally, define:</p>
+<script type="math/tex; mode=display">
+\delta_S((p, q_1, q_2), x) = \left\{ \begin{array}{lr}
+(p_B, \delta_A(x), q_2) & p = p_A \\
+(p_A, q_1, \delta_B(x)) & p = p_B
+\end{array} \right.</script><p>So <script type="math/tex">M_S</script> alternates between advancing a copy of machine <script type="math/tex">M_A</script> and <script type="math/tex">M_B</script>, keeping track of which machine to advance with <script type="math/tex">p_A</script> and <script type="math/tex">p_B</script>.
+So <script type="math/tex">M_S</script> accepts <script type="math/tex">S(A, B)</script>, and <script type="math/tex">S(A, B)</script> is regular.</p>
+ 
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <script type="text/javascript" src="/js/mathjax_config.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+</body>
+
+</html>

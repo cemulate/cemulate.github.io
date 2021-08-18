@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title> Massey Exercise 3.4.4 |  Chase Meadors</title>
+<meta name="description" content=" Elements of finite order in a free product of groups are either "pure" elements of the components or conjugates of "pure" elements ">
+  <link rel="stylesheet" href="/styles/main.css">
+  
+  
+</head>
+
+<body class="math-body">
+  <div class="container">
+    <div class="columns">
+      <div class="column">
+        <div class="math-container">
+          <h4 class="title is-3">Massey Exercise 3.4.4</h4>
+          <div class="content">
+             <p><strong>Theorem</strong>:
+Let <script type="math/tex">G</script> and <script type="math/tex">H</script> be groups.
+If an element of <script type="math/tex">G * H</script> has finite order, then it is either an element of <script type="math/tex">G</script> or <script type="math/tex">H</script>, or conjugate to an element of <script type="math/tex">G</script> or <script type="math/tex">H</script>.</p>
+<hr>
+<p><em>Proof</em>:
+Let <script type="math/tex">x \in G * H</script>.
+We induct on the length of <script type="math/tex">x</script>.</p>
+<p>If <script type="math/tex">\abs{x} = 1</script>, then clearly, <script type="math/tex">x</script> must be an element of <script type="math/tex">G</script> or an element of <script type="math/tex">H</script>, so the property holds trivially.</p>
+<p>Suppose the property holds for all <script type="math/tex">\abs{x} < k</script> for some <script type="math/tex">k \geq 1</script>.
+Let <script type="math/tex">x \in G * H</script> be of length <script type="math/tex">k</script>, so we have <script type="math/tex">x = x_1 \dots x_k</script>,
+and suppose <script type="math/tex">x</script> has finite order -- that is, <script type="math/tex">x^r = 1</script> for some <script type="math/tex">r</script>.
+Observe the powers of <script type="math/tex">x</script>:</p>
+<script type="math/tex; mode=display">
+x^a = x_1 \dots x_k x_1 \dots x_k \dots  \text{ (a times)}</script><p>It&#39;s clear that if <script type="math/tex">x_1</script> and <script type="math/tex">x_k</script> are from different groups, <script type="math/tex">x</script> has infinite order, because no simplification can occur in any power of <script type="math/tex">x</script>.
+So it must be the case that <script type="math/tex">x_1</script> and <script type="math/tex">x_k</script> are in the same group.
+Then, let the product <script type="math/tex">x_k x_1 = a</script> and note that:</p>
+<script type="math/tex; mode=display">
+(x_k) (x) (x_k^{-1}) = a x_2 \dots x_{k-1}</script><p>Which is of length <script type="math/tex">k-1</script>.
+So, by the inductive hypothesis, its conjugate to an element of <script type="math/tex">G</script> or <script type="math/tex">H</script>:</p>
+<script type="math/tex; mode=display">
+a x_2 \dots x_{k-1} = b g b^{-1}</script><p>For some <script type="math/tex">g \in G \tor H</script> and <script type="math/tex">b \in G * H</script>.
+Putting it together, we have:</p>
+<script type="math/tex; mode=display">
+x = (x_k^{-1} b) (g) (b^{-1} x_k)</script><p>So <script type="math/tex">x</script> is conjugate to an element of <script type="math/tex">G</script> or <script type="math/tex">H</script> (and this is true for any arbitrary word of length <script type="math/tex">k</script>).</p>
+<p>It follows by induction that any word with finite order is conjugate to an element of <script type="math/tex">G</script> or <script type="math/tex">H</script>.</p>
+ 
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <script type="text/javascript" src="/js/mathjax_config.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+</body>
+
+</html>

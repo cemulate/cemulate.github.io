@@ -1,0 +1,111 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title> Compiling LaTeX for the Web |  Chase Meadors</title>
+<meta name="description" content=" Compiling LaTeX for the web, tex4ht, pandoc ">
+  <link rel="stylesheet" href="/styles/main.css">
+  
+  
+</head>
+
+<body class="math-body">
+  <div class="container">
+    <div class="columns">
+      <div class="column">
+        <div class="math-container">
+          <h4 class="title is-3">Compiling LaTeX for the Web</h4>
+          <div class="content">
+             <p>LaTeX is the go-to markup language used by mathematicians and scientists to product technical content. Of course, LaTeX has first-class support for compiling to a PDF, which is great when the result is a a paper to be submitted to the arXiv, notes to distribute to a class, or even tests and homework assignments. But what if you want to share the content that you create on the internet? The ideal solution is to retain one single source document (the LaTeX files) and simply have a different compilation workflow that produces a webpage instead of a PDF. Though it sounds simple, a solution is not obvious, and the best results are hidden behind some obscure tools and non-default configurations. The purpose of this post is to outline the pitfalls when trying a few standard solutions, and present my current workflow that (so far) seems adequate.</p>
+<p>If you&#39;d like less exposition, jump right to <a href="#a-mostly-good-enough-workflow">the final workflow</a>.</p>
+<h3 id="option-1-mdash-pandoc-jack-of-all-trades-master-of-none">Option #1 &mdash; Pandoc: Jack of all trades, master of none</h3>
+<p><a href="https://pandoc.org/">pandoc</a> is a self-described &quot;swiss army knife&quot; for converting between markup formats. 
+Converting LaTeX source to HTML is among its many capabilities. The process is quick and easy, and getting the resulting page to include and render the math with mathjax is simple. </p>
+<p>Unfortunately, there is a fundamental problem with LaTeX to HTML conversion baked into Pandoc&#39;s design that will cause problems for anything but the most trivial LaTeX documents. Pandoc works by converting a source document to an internal agnostic AST representation, and then re-writing this representation into the output document format. As such, the only concepts capable of being represented in Pandoc are those acknowledged in its internal representation. For example, an <code>enumerate</code> environment in LaTeX is parsed into an &quot;Ordered List&quot; object in the internal representation, which is then converted to an <code>&lt;ol&gt;</code> tag when writing the output HTML. What this means is that Pandoc only understands a very limited subset of LaTeX envrionments that make sense in the other document types that Pandoc handles, and it simply ignores advanced or LaTeX-specific document structure. In particular theorem and other environments from <code>amsthm</code> are disregarded entirely. Even if Pandoc doesn&#39;t  <em>handle</em> these environments, one might hope that their metadata would somehow be recorded and preserved so that it could be manually handled or styled in the output, but this is not the case. There is a <a href="[https://github.com/jgm/pandoc/issues/1608](https://github.com/jgm/pandoc/issues/1608">very long Github issue thread</a>) about this issue, but all the solutions offered in the thread are for converting Markdown <em>to</em> LaTeX.</p>
+<p>Overall, the Pandoc community is (understandably) more focused on converting Markdown to more structured formats like LaTeX than the other way around, and as such it simply doesn&#39;t provide adequate support for our purposes.</p>
+<h3 id="option-2-mdash-tex4ht">Option #2 &mdash; tex4ht</h3>
+<p><a href="https://tug.org/tex4ht/">tex4ht</a> is a dedicated tool for compiling LaTeX to HTML. Installation is easy, since the suite of tools is already included in the <a href="https://www.tug.org/texlive/">TeX Live</a> distribution, the standard way to work with TeX on linux systems; this means that the commands mentioned in this section will &quot;just work&quot; on a system with TeX Live installed. In theory, one simply runs</p>
+<pre><code>htlatex main.tex
+</code></pre><p>in the source directory, exactly like <code>pdflatex</code>, and the output will be a file named <code>main.html</code>.
+Like pandoc, <code>tex4ht</code> is capable of using MathJax to render the math on the resulting page. An immediate problem, however, is that macros are not expanded during compilation, so MathJax will attempt (and fail) to render your custom commands. This is technically solvable by including a Javascript file on the resulting page that informs MathJax of all of your macros, but this is certainly not preferable. Luckily, <a href="https://www.homepages.ucl.ac.uk/~ucahmto/elearning/latex/2019/06/06/tex4ht.html">this blog post</a> provides a solution: Have <code>tex4ht</code> render MathML, and then have MathJax render the MathML. This way, all mathematics in the document is &quot;fully expanded&quot; and compiled to MathML that is then faithfully rendered by MathJax. </p>
+<p>The second problem that rears its head is that of figures and images. On paper, <code>tex4ht</code> is fully capable of detecting <code>tikz</code> images, converting them to an <code>svg</code> file, and including the image file in the resulting HTML document -- a perfect solution! At least it would be, if it worked! Unfortunately, it&#39;s quite trivial to break this feature almost immediately. For example, the trivial <code>tikzcd</code> diagram:</p>
+<pre><code>\begin{tikzcd}
+A \arrow[r] &amp; B
+\end{tikzcd}
+</code></pre><p>produces a disfigured <code>svg</code> image. Worse yet, examples of similar complexity can produce completely broken <code>svg</code> files (that is, not even valid SVG code!). The solution is to use <a href="https://github.com/michal-h21/dvisvgm4ht">alternative TikZ drivers</a> for <code>tex4ht</code>, which tells <code>tex4ht</code> to use a different tool to create the SVG graphics. These drivers aim to fix &quot;some issues with the default driver distributed with TikZ&quot; (a bit of an understatement), and in fact they do. The different tool employed is <a href="https://dvisvgm.de/">dvisvgm</a>, which is also included in TeX Live, so the only thing needed to enable this feature is to &quot;flip an optional switch&quot; before including TikZ in your LaTeX document or preamble:</p>
+<pre><code>\ifdefined\HCode
+  \def\pgfsysdriver{pgfsys-dvisvgm4ht.def}
+\fi
+</code></pre><p>Like magic, the SVG images produced by <code>tex4ht</code> now look perfect!</p>
+<h3 id="a-mostly-good-enough-workflow">A mostly good enough workflow</h3>
+<p>The two tweaks in the last section leave us with something that mostly works!
+My final configuration for using <code>tex4ht</code> is as follows:</p>
+<p>First create the following configuration file linked to in the <a href="https://www.homepages.ucl.ac.uk/~ucahmto/elearning/latex/2019/06/06/tex4ht.html">previously mentioned blog post</a>:</p>
+<pre><code>\Preamble{xhtml,mathml}
+\Configure{VERSION}{}
+\Configure{DOCTYPE}{\HCode{&lt;!DOCTYPE html&gt;\Hnewline}}
+\Configure{HTML}{\HCode{&lt;html&gt;\Hnewline}}{\HCode{\Hnewline&lt;/html&gt;}}
+\Configure{@HEAD}{}
+\Configure{@HEAD}{\HCode{&lt;meta charset=&quot;UTF-8&quot; /&gt;\Hnewline}}
+\Configure{@HEAD}{\HCode{&lt;meta name=&quot;generator&quot;  content=&quot;TeX4ht (http://www.cse.ohio-state.edu/\string~gurari/TeX4ht/)&quot; /&gt;\Hnewline}}
+\Configure{@HEAD}{\HCode{&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;\expandafter\csname aa:CssFile\endcsname&quot; /&gt;\Hnewline}}
+\Configure{@HEAD}{\HCode{&lt;script type=&quot;text/javascript&quot; id=&quot;MathJax-script&quot; src=&quot;https://cdn.jsdelivr.net/npm/mathjax@3/es5/mml-svg.js&quot;&gt;&lt;/script&gt;\Hnewline}}
+\Configure{@HEAD}{\HCode{&lt;style type=&quot;text/css&quot;&gt; .MathJax_MathML {text-indent: 0;} &lt;/style&gt;\Hnewline}}
+\begin{document}
+\EndPreamble
+</code></pre><p>Note that I&#39;ve made a minor change to the script tag to use the modern/supported way to load MathJax from a CDN.
+In your LaTeX document or preamble, include the following before loading <code>tikz</code>:</p>
+<pre><code>\ifdefined\HCode
+    \def\pgfsysdriver{pgfsys-dvisvgm4ht.def}
+\fi
+</code></pre><p>Finally, compile using <code>htlatex</code> with the following options:</p>
+<pre><code>htlatex main.tex &quot;config.cfg, charset=utf-8&quot; &quot; -cunihtf -utf8&quot;
+</code></pre><p>Where <code>config.cfg</code> is the config file previously created. The result is a full &quot;batteries-included&quot; HTML file along with a CSS file and a collection of SVG files suitable for dumping into a folder behind a web server. But it can also be tweaked to play nicely as a source file for static site generators, such as Jekyll; for example, one can strip off all content except for that inside the <code>body</code> tag, shuffle the generated assets (a CSS file and SVG images) to an appropriate place and include the generated page inside a template that includes surrounding content and styling. Here is <a href="https://cemulate.github.io/solutions_maclane/presheafsubobject.html">a page</a> on my site created with the workflow just described.</p>
+<h3 id="lingering-issues-and-strategies-to-fix-them">Lingering issues and strategies to fix them</h3>
+<p>The excited reader, after trying the process outlined above on any substantial LaTeX document, will probably be disappointed.
+Sometimes the output will look &quot;mostly right&quot; with minor aesthetic issues cropping up, but other times you may run into malformed or invalid MathML that MathJax will refuse to render entirely.
+The following is just a sampling of minor problems that I encountered while trying to compile some routine LaTeX documents:</p>
+<ul>
+<li>Sometimes, <code>^</code> doesn&#39;t parse correctly in macro definitions, and is omitted in the output (<a href="https://tex.stackexchange.com/questions/306567/tex4ht-superscript-symbol-problem">discussion</a>). Workaround: Use <code>\sp{}</code> or <code>\sb{}</code>  for superscript and subscript in macro definitions.</li>
+<li>Some advanced constructs like <code>\xhookrightarrow{}</code> from the <code>mathtools</code> package don&#39;t compile correctly or produce broken output. No known workaround, but simpler things like <code>\xrightarrow</code> or <code>\hookrightarrow</code> by themselves work.</li>
+<li>Using <code>\text{}</code> or <code>\textnormal{}</code> in macro definitions sometimes compiles incorrectly and produces invalid MathML. Workaround: Use <code>\mathrm</code> for &quot;normal&quot; text during math mode</li>
+</ul>
+<p>Given the vast scope of situations that tools like <code>tex4ht</code> have to handle, these issues are relatively minor, but nonetheless, one cannot expect a document that compiles into a perfect PDF to be the flawless when put through <code>tex4ht</code>; this list is assuredly far from complete and this process will probably always require manual inspection and tweaking.</p>
+<p>Most issues like the ones above are fixable by tweaking the source TeX (and, most of the time, this is harmless to the existing PDF presentation).
+Some issues, however, take a bit more work.
+For example, <code>align</code> environments from <code>amsmath</code> typically have display style math by default (that is, things like <code>\frac{}{}</code> will appear in display style inside an <code>align</code> environment).
+This is not the case with the output from <code>tex4ht</code> when rendering to MathML: even though explicit display math environments like <code>$$ ... $$</code> and <code>\( ... \)</code> have display style math by default, <code>align</code> environments do not.
+The problem is that the MathML tags containing the contents of the <code>align</code> do not have the <code>displaystyle</code> attribute set.
+Luckily, the HTML output from <code>tex4ht</code> is rich with metadata, so we can fix issues like this with a bit of postprocessing.
+As an example, the <code>align</code> issue can be fixed by running following Python (3) script using <a href="https://lxml.de/">lxss</a> and the <a href="https://lxml.de/cssselect.html">cssselect</a> extension (both easily installable through Pip):</p>
+<pre><code class="lang-python">from lxml import etree
+
+tree = etree.parse(&#39;./main.html&#39;)
+html = tree.getroot()
+
+for element in html.cssselect(&#39;.align, .align-star&#39;):
+    element.set(&#39;displaystyle&#39;, &#39;true&#39;)
+
+output = etree.tostring(html, pretty_print=True, method=&#39;html&#39;)
+with open(&#39;./final.html&#39;, &#39;wb&#39;) as output_file:
+    output_file.write(output)
+</code></pre>
+<p>which says to simply parse <code>main.html</code>, set the attribute <code>displaystyle=&quot;true&quot;</code> on all MathML tags with class <code>.align</code> or <code>.align-star</code> (coming from <code>align</code> and <code>align*</code> environments), and write the modified document back to <code>final.html</code>.
+It&#39;s easy to imagine that this sort of simple postprocessing could be extended to fix other issues of this flavor.</p>
+ 
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+</body>
+
+</html>

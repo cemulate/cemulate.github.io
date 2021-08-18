@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title> Massey Exercise 2.4.3 |  Chase Meadors</title>
+<meta name="description" content=" Given a retract $$r$$ and the inclusion $$i$$, and their induced homomorphisms $$r_*$$ and $$i_*$$, the fundamental group of the space is the direct product of $$\im(i_*)$$ and $$\ker(r_*)$$ ">
+  <link rel="stylesheet" href="/styles/main.css">
+  
+  
+</head>
+
+<body class="math-body">
+  <div class="container">
+    <div class="columns">
+      <div class="column">
+        <div class="math-container">
+          <h4 class="title is-3">Massey Exercise 2.4.3</h4>
+          <div class="content">
+             <p><strong>Theorem</strong>: Suppose <script type="math/tex">A</script> is a retract of <script type="math/tex">X</script>, <script type="math/tex">r: X \rightarrow A</script> is the retraction, and <script type="math/tex">i : A \rightarrow X</script> is the inclusion.
+As usual, let <script type="math/tex">i_*</script> and <script type="math/tex">r_*</script> be the induced homomorphisms that operate on paths.
+If <script type="math/tex">i_*\pi(A) = \im(i_*)</script> is a normal subgroup of <script type="math/tex">\pi(X)</script>, then <script type="math/tex">\pi(X)</script> is the direct product of <script type="math/tex">\im(i_*)</script> and <script type="math/tex">\ker(r_*)</script>.</p>
+<hr>
+<p><em>Proof</em>:
+First, note that <script type="math/tex">\ker(r_*)</script> is necessarily a normal subgroup of <script type="math/tex">\pi(X)</script> (<script type="math/tex">r_*</script> is a homomorphism so its kernel is a normal subgroup).
+The fact that <script type="math/tex">\im(i_*)</script> is normal is a hypothesis.</p>
+<p>Second, note that <script type="math/tex">\ker(r_*) \cap \im(i_*) = 1</script>.
+This is apparent from noting that any non-trivial element in <script type="math/tex">\im(i_*)</script> would necessarily <em>not</em> be in <script type="math/tex">\ker(r_*)</script>.</p>
+<p>Now, we claim that <script type="math/tex">(\ker(r_*))(\im(i_*)) = \pi(X)</script>.
+Clearly, <script type="math/tex">\subseteq</script> is trivial, so we show <script type="math/tex">\supseteq</script>.
+Consider an arbitrary <script type="math/tex">\alpha \in \pi(X)</script>.
+Let</p>
+<script type="math/tex; mode=display">
+\beta = i_* r_* (\alpha) \qquad \gamma = i_* r_* (\alpha)^{-1} \alpha</script><p>Note that <script type="math/tex">\beta \in \im(i_*)</script>, trivially.
+To show that <script type="math/tex">\gamma \in \ker(r_*)</script>, we instead show that <script type="math/tex">\gamma^{-1} \in \ker(r_*)</script>.
+Note that:</p>
+<script type="math/tex; mode=display">
+\begin{align*}
+r_* (\gamma^{-1}) &= r_* (\alpha^{-1} i_* r_* (\alpha)) \\
+&= r_* (\alpha^{-1}) r_* (i_* r_* (\alpha)) \\
+&= r_* (\alpha)^{-1} r_* i_* r_* (\alpha) \\
+&= r_*(\alpha)^{-1} r_* (\alpha)  \\
+&= 1
+\end{align*}</script><p>And so, <script type="math/tex">\gamma^{-1} \in \ker(r_*)</script> and <script type="math/tex">\gamma</script> is as well.
+Then, simply observe that <script type="math/tex">\beta \gamma = \alpha</script>.
+So, any element of <script type="math/tex">\pi(X)</script> can be written as a product from <script type="math/tex">\ker(r_*)</script> and <script type="math/tex">\im(i_*)</script>, and we&#39;ve shown the claim.</p>
+<p>So, we have two normal subgroups whose intersection is trivial, and whose product is all of <script type="math/tex">\pi(X)</script>.
+Therefore, we have <script type="math/tex">\pi(X) = \ker(r_*) \times \im(i_*)</script>.</p>
+ 
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <script type="text/javascript" src="/js/mathjax_config.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+</body>
+
+</html>

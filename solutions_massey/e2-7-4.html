@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title> Massey Exercise 2.7.4 |  Chase Meadors</title>
+<meta name="description" content=" Based inclusions into a product space give rise to an isomorphism between the product of the fundamental groups and the fundamental group of the product ">
+  <link rel="stylesheet" href="/styles/main.css">
+  
+  
+</head>
+
+<body class="math-body">
+  <div class="container">
+    <div class="columns">
+      <div class="column">
+        <div class="math-container">
+          <h4 class="title is-3">Massey Exercise 2.7.4</h4>
+          <div class="content">
+             <p><strong>Theorem</strong>:
+Let <script type="math/tex">i^x: X \rightarrow X \times Y</script> and <script type="math/tex">i^y: Y \rightarrow X \times Y</script> be the maps <script type="math/tex">x \mapsto (x, y_0)</script> and <script type="math/tex">y \mapsto (x_0, y)</script> for some fixed <script type="math/tex">x_0, y_0</script>.
+The mapping <script type="math/tex">\varphi: \pi(X,x_0) \times \pi(Y,y_0) \rightarrow \pi(X \times Y, (x_0, y_0))</script> by <script type="math/tex">\varphi: (\beta, \gamma) \mapsto (i^x_* \beta) \cdot (i^y_* \gamma)</script> is an isomorphism.</p>
+<hr>
+<p><em>Proof</em>:
+Consider the map defined in Theorem 7.1 -- that is, <script type="math/tex">\phi : \pi(X \times Y, (x_0, y_0)) \rightarrow \pi(X, x_0) \times \pi(Y, y_0)</script> by <script type="math/tex">\alpha \mapsto (p^x_* \alpha, p^y_* \alpha)</script>, where <script type="math/tex">p^x</script> and <script type="math/tex">p^y</script> are the projection maps.
+This map is an isomorphism.
+We will show that <script type="math/tex">\phi \varphi</script> is the identity, so that <script type="math/tex">\varphi = \phi^{-1}</script>.
+Let <script type="math/tex">\beta \in \pi(X,x_0)</script> and <script type="math/tex">\gamma \in \pi(Y,y_0)</script>.
+Then,</p>
+<script type="math/tex; mode=display">
+\phi(\varphi(\beta, \gamma)) = \phi(i^x_* \beta \cdot i^y_* \gamma)
+= \Big( p^x_* \big( i^x_* \beta \cdot i^y_* \gamma \big), p^y_* \big( i^x_* \beta \cdot i^y_* \gamma \big) \Big)</script><p>Now, note that <script type="math/tex">(i^x_* \beta)(t) = (\beta(t), y_0)</script>, and similarly for <script type="math/tex">i^y_* \gamma</script>, so that the product path is:</p>
+<script type="math/tex; mode=display">
+i^x_* \beta \cdot i^y_* \gamma = \left\{
+\begin{array}{lr}
+(\beta(2t), y_0) & 0 \leq t \leq 1/2 \\
+(x_0, \gamma(2t-1)) & 1/2 \leq t \leq 1
+\end{array} \right.</script><p>If we apply <script type="math/tex">p^x_*</script>, the second half of the path will effectively be nullified -- that is:</p>
+<script type="math/tex; mode=display">
+p^x_* \big( i^x_* \beta \cdot i^y_* \gamma \big) = \left\{
+\begin{array}{lr}
+\beta(2t) & 0 \leq t \leq 1/2 \\
+x_0 & 1/2 \leq t \leq 1
+\end{array} \right.</script><p>Clearly, this is a path in <script type="math/tex">\pi(X,x_0)</script> that traverses <script type="math/tex">\beta</script> twice as fast, and as such, it&#39;s clearly homotopic to <script type="math/tex">\beta</script>.
+An explicit homotopy is:</p>
+<script type="math/tex; mode=display">
+F(t,s) = \left\{
+\begin{array}{lr}
+\beta((2-s)t) & 0 \leq t \leq \frac{1}{2} (1+s) \\
+x_0 & \frac{1}{2} (1+s) \leq t \leq 1
+\end{array} \right.</script><p>A very similar argument proceeds for the other path in the ordered pair, with the first half of the path being nullified and using the &#39;reverse&#39; homotopy.
+We then obtain</p>
+<script type="math/tex; mode=display">
+p^x_* \big( i^x_* \beta \cdot i^y_* \gamma \big) \sim \beta \qquad
+p^y_* \big( i^x_* \beta \cdot i^y_* \gamma \big) \sim \gamma</script><p>So, the components of <script type="math/tex">(\phi \varphi)(\beta, \gamma)</script> are in the equivalence class of <script type="math/tex">\beta</script> and <script type="math/tex">\gamma</script>, respectively, so <script type="math/tex">\phi \varphi</script> is the identity on <script type="math/tex">\pi(X, x_0) \times \pi(Y, y_0)</script>.
+Then, it must be that <script type="math/tex">\varphi = \phi^{-1}</script>, and is itself an isomorphism.</p>
+<script type="math/tex; mode=display">\mjqed</script><hr>
+<p>It follows that the elements <script type="math/tex">i^x_* \beta</script> and <script type="math/tex">i^y_* \gamma</script> commute.
+It&#39;s easy to see that <script type="math/tex">\phi(i^x_* \beta \cdot i^y_* \gamma) = (\beta, \gamma)</script>, and also <script type="math/tex">\phi(i^y_* \gamma \cdot i^x_* \beta) = (\beta, \gamma)</script>.
+So it must be that <script type="math/tex">i^x_* \beta \cdot i^y_* \gamma = i^y_* \gamma \cdot i^x_* \beta</script>.</p>
+ 
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <script type="text/javascript" src="/js/mathjax_config.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+</body>
+
+</html>

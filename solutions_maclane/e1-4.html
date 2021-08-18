@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title> Exercise 4 |  Chase Meadors</title>
+<meta name="description" content=" An equivalence of categories preserves a subobject classifier ">
+  <link rel="stylesheet" href="/styles/main.css">
+  
+  
+</head>
+
+<body class="math-body">
+  <div class="container">
+    <div class="columns">
+      <div class="column">
+        <div class="math-container">
+          <h4 class="title is-3">Exercise 4</h4>
+          <div class="content">
+             <p><strong>Theorem</strong>:
+An equivalence of categories preserves a subobject classifier</p>
+<p>Let <script type="math/tex">\mathbf{C}</script> and <script type="math/tex">\mathbf{D}</script> be equivalent, with <script type="math/tex">\Omega_{\mathbf{C}}</script> a subobject classifier in <script type="math/tex">\mathbf{C}</script>.
+Let <script type="math/tex">F : \mathbf{C} \rightarrow \mathbf{D}</script> and <script type="math/tex">G : \mathbf{D} \rightarrow \mathbf{C}</script> be the equivalence.
+We may choose <script type="math/tex">F</script> and <script type="math/tex">G</script> to be an <em>adjoint</em> equivalence, so that <script type="math/tex">F \dashv G</script>, and <script type="math/tex">\eta : 1 \rightarrow GF</script> and <script type="math/tex">\varepsilon : FG \rightarrow 1</script> are natural isomorphisms.</p>
+<p>What we wish to show is that <script type="math/tex">\text{Sub}_{\mathbf{D}}(\dash) \cong \Hom(\dash, F(\Omega_{\mathbf{C}}))</script> -- this means precisely that <script type="math/tex">F(\Omega_{\mathbf{C}})</script> is a subobject classifier in <script type="math/tex">\mathbf{D}</script> (<script type="math/tex">F(\Omega_{\mathbf{D}})</script> is a representing object for the subobject functor).
+But since <script type="math/tex">F</script> and <script type="math/tex">G</script> are adjoint, the right-hand functor is isomorphic to <script type="math/tex">\Hom(G(\dash), \Omega_{\mathbf{C}}) = \text{Sub}_{\mathbf{C}}(G(\dash))</script>.
+So, it is sufficient to show that <script type="math/tex">\text{Sub}_{\mathbf{C}}(G(\dash)) \cong \text{Sub}_{\mathbf{D}}(\dash)</script>.</p>
+<p>Indeed, we will define a natural transformation <script type="math/tex">\alpha : \text{Sub}_{\mathbf{C}}(G(\dash)) \rightarrow \text{Sub}_{\mathbf{D}}(\dash)</script> as <script type="math/tex">\alpha_X = \varepsilon_X \circ F(\dash)</script>.
+Notice that this assigns to an arrow <script type="math/tex">i : S \rightarrow G(X)</script> precisely its transpose <script type="math/tex">\overline{i}</script> under the adjunction <script type="math/tex">F \dashv G</script>.
+This shows that each <script type="math/tex">\alpha_X</script> is an isomorphism (it is precisely the homset bijection of the adjunction), so we need only show that the transformation is natural.
+Keeping in mind that <script type="math/tex">\text{Sub}</script> operates on arrows &quot;by pullback&quot;, we have the naturality diagram for <script type="math/tex">f : X \rightarrow Y</script>:</p>
+<div class="math-figure"><img src="/assets/math_solutions/maclane/e1-4_1.svg" width="400"/></div>
+
+<p>Take a subobject <script type="math/tex">i : S \xrightarrow{} G(Y)</script> at the top-right.
+Following the top left path, we pullback along <script type="math/tex">G(f)</script> to obtain <script type="math/tex">P \xrightarrow{} G(X)</script>, and then take the transpose to get <script type="math/tex">F(P) \xrightarrow{} FG(X) \xrightarrow{\sim} X</script>.
+Following the other direction, we take the transpose to obtain <script type="math/tex">F(S) \xrightarrow{} FG(Y) \xrightarrow{\sim} Y</script>, and then we must pull this back along <script type="math/tex">f</script>.
+To say that that these are the same amounts to saying that the outer rectangle of this combined diagram is a pullback:</p>
+<div class="math-figure"><img src="/assets/math_solutions/maclane/e1-4_2.svg" width="350"/></div>
+
+<p>Indeed, the top square is a pullback because it is the image under <script type="math/tex">F</script> of a pullback, and viewing <script type="math/tex">F</script> as a right adjoint (after inverting the unit and counit) means it preserves limits.
+The bottom square can be shown a pullback directly by considering another cone <script type="math/tex">X \xleftarrow{p_2} P \xrightarrow{p_1} FG(Y)</script>.
+Simply define <script type="math/tex">\phi = \varepsilon_X^{-1} \circ p_2</script>.
+We have <script type="math/tex">p_2 = \varepsilon_X \circ \phi</script> immediately.
+For the top:</p>
+<script type="math/tex; mode=display">
+\begin{align*}
+& \varepsilon_Y \circ p_1 = f \circ p_2 && \text{From the new cone} \\
+\Rightarrow \enspace & \varepsilon_Y \circ p_1 = f \circ \varepsilon_X \circ \phi && \text{Substitute for } p_2 \\
+\Rightarrow \enspace & \varepsilon_Y \circ p_1 = \varepsilon_Y \circ FG(f) \circ \phi && \text{From the original cone} \\
+\Rightarrow \enspace & p_1 = FG(f) \circ \phi
+\end{align*}</script><p>Uniqueness of <script type="math/tex">\phi</script> is immediate from the definition.</p>
+<p>The pasting lemma then confirms that the outer rectangle is a pullback, and thus we have shown that the <script type="math/tex">\alpha</script> is natural and thus a natural isomorphism, completing the proof.</p>
+ 
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <script type="text/javascript" src="/js/mathjax_config.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+</body>
+
+</html>

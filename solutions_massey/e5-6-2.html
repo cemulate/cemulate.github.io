@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title> Massey Exercise 5.6.2 |  Chase Meadors</title>
+<meta name="description" content=" Covering space computations for several spaces ">
+  <link rel="stylesheet" href="/styles/main.css">
+  
+  
+</head>
+
+<body class="math-body">
+  <div class="container">
+    <div class="columns">
+      <div class="column">
+        <div class="math-container">
+          <h4 class="title is-3">Massey Exercise 5.6.2</h4>
+          <div class="content">
+             <p><strong>(a)</strong> First, we determine all the covering spaces of <script type="math/tex">S^1</script>.
+Note that <script type="math/tex">\pi_1(S^1) = \mathbb{Z}</script>.
+Since this is an abelian group, every subgroup belongs to its own trivial conjugacy class.
+That is, each subgroup corresponds to a unique covering space.
+The subgroups of <script type="math/tex">\mathbb{Z}</script> are precisely <script type="math/tex">n\mathbb{Z}</script> for <script type="math/tex">n \geq 0</script>, with <script type="math/tex">n=0</script> corresponding to the trivial subgroup.
+For <script type="math/tex">n > 0</script>, the subgroup <script type="math/tex">n\mathbb{Z}</script> is isomorphic to <script type="math/tex">\mathbb{Z}</script>.
+For describing covering maps, let <script type="math/tex">S^1</script> be the unit circle in <script type="math/tex">\mathbb{C}</script>.</p>
+<p>Corresponding to the trivial group, we have the covering space <script type="math/tex">(\mathbb{R}, p)</script> where <script type="math/tex">p(x) = \exp(2 \pi i x)</script>.</p>
+<p>For each <script type="math/tex">n > 0</script>, the covering space associated with <script type="math/tex">n\mathbb{Z}</script> is <script type="math/tex">(S^1, p_n)</script> where <script type="math/tex">p_n(z) = z^n</script>.</p>
+<hr>
+<p><strong>(b)</strong> Now we determine all the covering spaces of <script type="math/tex">P^2</script>.
+Note <script type="math/tex">\pi_1(P_2) = \mathbb{Z}_2</script>.
+Of course, there are exactly two (non-conjugate) subgroups -- the trivial one, and the whole group.
+Let <script type="math/tex">P^2</script> be quotient of <script type="math/tex">[0,1] \times [0,1]</script> under the identification <script type="math/tex">\varphi</script> corresponding to identifying the edges in pairs.
+Corresponding to the trivial group we have the covering space <script type="math/tex">(\mathbb{R}^2_+, p)</script>, where <script type="math/tex">\mathbb{R}^2_+</script> denotes the first quadrant of <script type="math/tex">\mathbb{R}^2</script>, and the map is <script type="math/tex">p(x, y) = \varphi(x - \lfloor x \rfloor, y - \lfloor y \rfloor)</script>.
+Corresponding to the whole group we have the trivial covering space <script type="math/tex">(P^2, \text{id})</script>.</p>
+<hr>
+<p><strong>(c)</strong> We now determine all the covering spaces of the annalus <script type="math/tex">X = \setbuilder{x,y \in \mathbb{R}^2}{1 \leq x^2 + y^2 \leq 4}</script>.
+However, note that this space is homeomorphic to <script type="math/tex">S^1 \times [1,4]</script>.
+The fundamental group is still <script type="math/tex">\mathbb{Z}</script>, since this deformation retracts to <script type="math/tex">S^1</script>.</p>
+<p>Corresponding to the trivial group, we have the covering space <script type="math/tex">(\mathbb{R} \times [1,4], p)</script>, where the covering map is <script type="math/tex">p(x, t) = (\exp(2\pi i x), t)</script>.</p>
+<p>Corresponding to <script type="math/tex">n\mathbb{Z}</script>, we have the covering space <script type="math/tex">(S^1 \times [1,4], p_n)</script> where <script type="math/tex">p_n(z, t) = (z^n, t)</script>.</p>
+ 
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <script type="text/javascript" src="/js/mathjax_config.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+</body>
+
+</html>

@@ -1,0 +1,73 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title> Massey Exercise 3.4.3 |  Chase Meadors</title>
+<meta name="description" content=" A commutative diagram dealing with free products of groups ">
+  <link rel="stylesheet" href="/styles/main.css">
+  
+  
+</head>
+
+<body class="math-body">
+  <div class="container">
+    <div class="columns">
+      <div class="column">
+        <div class="math-container">
+          <h4 class="title is-3">Massey Exercise 3.4.3</h4>
+          <div class="content">
+             <p><strong>Theorem</strong>:
+Let <script type="math/tex">\setbuilder{G_i}{i \in I}</script> and <script type="math/tex">\setbuilder{G'_i}{i \in I}</script> be two different families of groups indexed by the same set.
+Let <script type="math/tex">G</script> and <script type="math/tex">G'</script> be their free products.
+Suppose that for each <script type="math/tex">i \in I</script> there is a homomorphism <script type="math/tex">f_i : G_i \rightarrow G_i'</script>.
+Then there is a unique homomorphism <script type="math/tex">f : G \rightarrow G'</script> such that the diagram commutes (where the <script type="math/tex">\varphi</script>&#39;s are the canonical injections):</p>
+<div class="math-figure"><img src="/assets/math_solutions/massey/e3-4-3_1.svg" width="150"/></div>
+
+<p>Furthermore, if each <script type="math/tex">f_i</script> is injective, <script type="math/tex">f</script> is injective, and if each <script type="math/tex">f_i</script> is surjective, <script type="math/tex">f</script> is surjective.</p>
+<hr>
+<p><em>Proof</em>:</p>
+<p>Notice that <script type="math/tex">\varphi_i' \circ f_i</script> is a homomorphism from <script type="math/tex">G_i</script> to <script type="math/tex">G'</script>.
+That is, we have:</p>
+<div class="math-figure"><img src="/assets/math_solutions/massey/e3-4-3_2.svg" width="150"/></div>
+
+<p>And since <script type="math/tex">G</script> is a free group, the definition tells us that there is a unique homomorphism <script type="math/tex">f</script> that makes this diagram commute.
+Since this really is the same diagram, this <script type="math/tex">f</script> also makes the diagram in the original statement commute.</p>
+<p>Let <script type="math/tex">x_{i_j} \in G_{i_j}</script> for some <script type="math/tex">\set{i_1, \dots, i_k} \subset I</script>.
+Then</p>
+<script type="math/tex; mode=display">
+w = \varphi_{i_1}(x_{i_1}) \dots \varphi_{i_k}(x_{i_k}) = x_{i_1} \dots x_{i_k} \in G</script><p>is an arbitrary element of <script type="math/tex">G</script>.
+Since <script type="math/tex">f</script> is a homomorphism and the diagram commutes, we can write:</p>
+<script type="math/tex; mode=display">
+\begin{align*}
+f(w) &= f( \varphi_{i_1}(x_{i_1})) \dots f(\varphi_{i_k}(x_{i_k})) \\
+&= \varphi'_{i_1}(f_{i_1}(x_{i_1})) \dots \varphi'_{i_k}(f_{i_k}(x_{i_k})) \\
+&= f_{i_1}(x_{i_1}) \dots f_{i_k}(x_{i_k})
+\end{align*}</script><p>Suppose that the <script type="math/tex">f_i</script> are injective.
+Observe that the only way <script type="math/tex">f(w)</script> could be the identity is if each <script type="math/tex">f_{i_j}(x_{i_j})</script> is the identity (otherwise, it would be some definite irreducible word in <script type="math/tex">G'</script>).
+But, this is true only if each <script type="math/tex">x_{i_j}</script> is the identity.
+But then <script type="math/tex">w</script> is the identity.
+So, <script type="math/tex">\ker f</script> is trivial and <script type="math/tex">f</script> is injective.</p>
+<p>Suppose the <script type="math/tex">f_i</script> are surjective.
+Let <script type="math/tex">w = g_{i_1} \dots g_{i_k} \in G'</script>.
+Then there is an <script type="math/tex">x_{i_j}</script> such that <script type="math/tex">f_{i_j}(x_{i_j}) = g_{i_j}</script> for all <script type="math/tex">j</script>.
+Then, <script type="math/tex">g_{i_1} \dots g_{i_k} = f_{i_1}(x_{i_1}) \dots f_{i_k}(x_{i_k}) = f(x_{i_1} \dots x_{i_k})</script>.
+So there is an element in <script type="math/tex">G</script> that maps to <script type="math/tex">w</script>, and <script type="math/tex">f</script> is surjective.</p>
+ 
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <script type="text/javascript" src="/js/mathjax_config.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+</body>
+
+</html>

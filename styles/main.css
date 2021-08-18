@@ -1,0 +1,44 @@
+@import "https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css";
+.github-link {
+    fill: currentColor;
+}
+@media (max-width: 769px) {
+    h1.is-4-touch-3-desktop {
+    font-size: 1.5rem;
+    }
+}
+@media (min-width: 770px) {
+    h1.is-4-touch-3-desktop {
+    font-size: 2rem;
+    }
+}
+
+body.math-body {
+    background-color: #d9d9d9;
+}
+
+div.math-container {
+    background-color: white;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    font-family: "Merriweather", Helvetica, sans-serif;
+}
+
+div.math-figure {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+@media screen and (min-width: 64em) {
+    div.math-container {
+        border: 4px solid black;
+    }
+}
+
+div.math-container.hr {
+    border: 1px solid gray;
+}

@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title> Sipser Exercise 1.49 |  Chase Meadors</title>
+<meta name="description" content=" A pair of similar languages on a binary alphabet, one regular and one not ">
+  <link rel="stylesheet" href="/styles/main.css">
+  
+  
+</head>
+
+<body class="math-body">
+  <div class="container">
+    <div class="columns">
+      <div class="column">
+        <div class="math-container">
+          <h4 class="title is-3">Sipser Exercise 1.49</h4>
+          <div class="content">
+             <p><strong>(a)</strong> <strong>Theorem</strong>: The language <script type="math/tex">B = \setbuilder{1^k y}{y \in \set{0, 1}^* \tand \#_1(y) \geq k \text{ for some } k \geq 1}</script> is a regular language.</p>
+<hr>
+<p><em>Proof</em>:
+Notice that strings in <script type="math/tex">B</script> must start with <script type="math/tex">1</script>, since <script type="math/tex">k \geq 1</script>.
+Also, any string of the form <script type="math/tex">1x</script> will certainly be in <script type="math/tex">B</script> as long as <script type="math/tex">x</script> contains at least one 1.
+In other words, we have <script type="math/tex">B = \setbuilder{1x}{\#_1(x) \geq 1}</script>.
+So, the following DFA accepts <script type="math/tex">B</script>:</p>
+<div class="math-figure"><img src="/assets/math_solutions/sipser/e1-49_1.svg" width="550"/></div>
+
+
+
+<p><strong>(b)</strong> <strong>Theorem</strong>: The language <script type="math/tex">C = \setbuilder{1^k y}{y \in \set{0, 1}^* \tand \#_1(y) \leq k \text{ for some } k \geq 1}</script> is not a regular language.</p>
+<hr>
+<p><em>Proof</em>:
+Suppose <script type="math/tex">C</script> were regular and let <script type="math/tex">p</script> be the pumping length.
+Take <script type="math/tex">z = 1^p 0 1^p</script>, noting that <script type="math/tex">z \in C</script> and <script type="math/tex">|z| \geq p</script>.
+Then let <script type="math/tex">z = uvw</script> with <script type="math/tex">|uv| \leq p</script> and <script type="math/tex">|v| \geq 1</script>.</p>
+<p>Because <script type="math/tex">|uv| \leq p</script>, and <script type="math/tex">uv</script> is a prefix of <script type="math/tex">z</script>, it must be the case that <script type="math/tex">u</script> and <script type="math/tex">v</script> consist entirely of <script type="math/tex">1</script>&#39;s.
+In particular, <script type="math/tex">v = 1^k</script> for some <script type="math/tex">k \geq 1</script>.
+But then <script type="math/tex">u v^0 w = 1^{(p-k)} 0 1^p</script>, which is not in <script type="math/tex">C</script>, contradicting the pumping lemma, so <script type="math/tex">C</script> is not regular.</p>
+ 
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <script type="text/javascript" src="/js/mathjax_config.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+</body>
+
+</html>

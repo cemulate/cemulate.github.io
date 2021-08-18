@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title> Sipser Exercise 2.41 |  Chase Meadors</title>
+<meta name="description" content=" Context free languages are not closed under making them "prefix-free" or "extension-free" ">
+  <link rel="stylesheet" href="/styles/main.css">
+  
+  
+</head>
+
+<body class="math-body">
+  <div class="container">
+    <div class="columns">
+      <div class="column">
+        <div class="math-container">
+          <h4 class="title is-3">Sipser Exercise 2.41</h4>
+          <div class="content">
+             <p>Define operations on languages:</p>
+<script type="math/tex; mode=display">
+
+\begin{align*}
+& NE(A) = \setbuilder{x}{x \text{ is not the proper prefix of any string in } A} \\
+& NP(A) = \setbuilder{x}{x \text{ does not have a proper prefix in } A}
+\end{align*}</script><p><strong>(a)</strong> <strong>Theorem</strong>: Context-free languages are not closed under <script type="math/tex">NE</script> or <script type="math/tex">NP</script>.</p>
+<hr>
+<p><em>Proof</em>:
+To construct a counterexample, we must start with some CFL whose whose complement fails to be context-free.
+So let <script type="math/tex">L = \overline{\setbuilder{a^n b^n c^n}{n \geq 0}}</script>.
+We showed <script type="math/tex">L</script> was context-free in the past, and of course its complement is not.</p>
+<p>Now, introduce a new unique alphabet symbol <script type="math/tex">\$ </script> and construct the following new languages:</p>
+<script type="math/tex; mode=display">
+A = L \$\$ \cup \Sigma^* \$ \qquad B = L \$ \cup \Sigma^* \$ \$</script><p>So <script type="math/tex">A</script> includes everything in <script type="math/tex">\Sigma^*</script> appended with a <script type="math/tex">\$ </script>, but also includes copies of the members of <script type="math/tex">L</script> decorated with an extra <script type="math/tex">\$ </script>.
+Similarly, <script type="math/tex">B</script> includes every string in <script type="math/tex">\Sigma^*</script> appended with two <script type="math/tex">\$ </script>&#39;s, but also includes copies of the members of <script type="math/tex">L</script> with one less <script type="math/tex">\$ </script>.</p>
+<p>These languages are context-free.
+We can see this by machine construction.
+Start with a PDA <script type="math/tex">M</script> for <script type="math/tex">L</script> (that accepts by final state).
+To construct a machine for <script type="math/tex">A</script>, add an <script type="math/tex">\epsilon</script> transition from <em>every</em> state of <script type="math/tex">M</script> to a state that waits for 1 <script type="math/tex">\$ </script> before accepting, and add an <script type="math/tex">\epsilon</script> transition from the <em>final</em> states of <script type="math/tex">M</script> to a state that waits for 2 <script type="math/tex">\$ </script>&#39;s before accepting.
+Similarly, do the opposite to construct a machine for <script type="math/tex">B</script>.</p>
+<p>Now consider <script type="math/tex">NE(A)</script>.
+A string <script type="math/tex">x \$ </script> in <script type="math/tex">A</script> has no extensions in <script type="math/tex">A</script> if and only if <script type="math/tex">x</script> is <em>not</em> in <script type="math/tex">L</script> (otherwise, we could add another <script type="math/tex">\$ </script> to get another string in <script type="math/tex">A</script>).
+That is, we have <script type="math/tex">NE(A) = \overline{L} \$ </script>.
+It follows from the fact that <script type="math/tex">\overline{L}</script> is not context-free that this <script type="math/tex">NE(A)</script> is not context-free, so <script type="math/tex">A</script> is a counterexample for <script type="math/tex">NE</script>.</p>
+<p>Now, consider <script type="math/tex">NP(B)</script>.
+A string <script type="math/tex">x \$\$ </script> in <script type="math/tex">B</script> has no prefix in <script type="math/tex">A</script> if and only if <script type="math/tex">x</script> is <em>not</em> in <script type="math/tex">L</script> (otherwise, we could remove the last <script type="math/tex">\$ </script> to get another string in <script type="math/tex">B</script>).
+That is, we have <script type="math/tex">NP(B) = \overline{L} \$\$ </script>, and similarly it follows that this is not context-free, so <script type="math/tex">B</script> is a counterexample for <script type="math/tex">NP</script>.</p>
+ 
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <script type="text/javascript" src="/js/mathjax_config.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+</body>
+
+</html>

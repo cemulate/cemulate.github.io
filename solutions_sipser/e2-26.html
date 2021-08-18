@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title> Sipser Exercise 2.26 |  Chase Meadors</title>
+<meta name="description" content=" If a grammar $$G$$ is in Chomsky normal form, for any string $$w \in L(G)$$ of length $$n$$ with $$n \geq 1$$, any derivation of $$w$$ has $$2n-1$$ steps ">
+  <link rel="stylesheet" href="/styles/main.css">
+  
+  
+</head>
+
+<body class="math-body">
+  <div class="container">
+    <div class="columns">
+      <div class="column">
+        <div class="math-container">
+          <h4 class="title is-3">Sipser Exercise 2.26</h4>
+          <div class="content">
+             <p><strong>Theorem</strong>: If a grammar <script type="math/tex">G</script> is in Chomsky normal form, for any string <script type="math/tex">w \in L(G)</script> of length <script type="math/tex">n</script> with <script type="math/tex">n \geq 1</script>, any derivation of <script type="math/tex">w</script> has <script type="math/tex">2n-1</script> steps.</p>
+<hr>
+<p><em>Proof</em>:
+Let <script type="math/tex">w \in L(G)</script> with <script type="math/tex">|w| = n</script>.
+To generate <script type="math/tex">w</script>, we must first generate a string with exactly <script type="math/tex">n</script> variables, since terminals are only introduced as the replacement of exactly one variable.
+A string with <script type="math/tex">n</script> variables must be generated through a derivation of <script type="math/tex">n-1</script> steps.
+To see this, note that the start variable is a string containing one variable, and one derivation step always replaces one variable with exactly two variables, that is, increases the amount of variables by 1.
+So After <script type="math/tex">n-1</script> derivations, we will have a string with <script type="math/tex">1 + (n-1) = n</script> variables.
+After generating the string of <script type="math/tex">n</script> variables, we must replace each variable with a terminal, which requires <script type="math/tex">n</script> more derivations.
+So a derivation of <script type="math/tex">w</script> requires <script type="math/tex">(n-1) + n = 2n -1</script> steps.</p>
+ 
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <script type="text/javascript" src="/js/mathjax_config.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+</body>
+
+</html>

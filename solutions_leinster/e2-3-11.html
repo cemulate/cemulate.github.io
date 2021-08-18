@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title> Exercise 2.3.11 |  Chase Meadors</title>
+<meta name="description" content=" If a functor $$\mathbf{A} \rightarrow \mathbf{Set}$$ has a left adjoint, and there is at least one set $$A$$ with $$U(A)$$ having more than one element, then every component of the counit is an injective map of sets ">
+  <link rel="stylesheet" href="/styles/main.css">
+  
+  
+</head>
+
+<body class="math-body">
+  <div class="container">
+    <div class="columns">
+      <div class="column">
+        <div class="math-container">
+          <h4 class="title is-3">Exercise 2.3.11</h4>
+          <div class="content">
+             <p><strong>Theorem</strong>:
+Let <script type="math/tex">U : \mathbf{A} \rightarrow \mathbf{Set}</script> have a left-adjoint <script type="math/tex">F \dashv U</script>.
+Suppose that for at least one <script type="math/tex">A \in \mathbf{A}</script>, <script type="math/tex">U(A)</script> has more than one element.
+Then for each <script type="math/tex">S</script>, the unit <script type="math/tex">\eta_S : S \rightarrow UF(S)</script> is an injective map of sets.</p>
+<p><em>Proof</em>:
+We will first establish that, under the given hypothesis, <script type="math/tex">F</script> must be faithful.
+To see this, suppose we have <script type="math/tex">g, h: S \rightarrow T</script> such that <script type="math/tex">g \neq h</script>.
+The goal is to show that <script type="math/tex">F(g) \neq F(h)</script>.
+Indeed, if <script type="math/tex">g \neq h</script>, there exists some <script type="math/tex">x \in S</script> such that <script type="math/tex">g(x) \neq h(x)</script>.
+Now, let <script type="math/tex">A \in \mathbf{A}</script> be such that <script type="math/tex">\abs{U(A)} > 1</script>, and let <script type="math/tex">a, b \in U(A)</script> be elements.
+Define <script type="math/tex">f : T \rightarrow U(A)</script> with the property <script type="math/tex">f(g(x)) = a</script> and <script type="math/tex">f(h(x)) = b</script>.
+Then, clearly, <script type="math/tex">f \circ g \neq f \circ h</script>.
+But, <script type="math/tex">f \circ g, f \circ h : S \rightarrow U(A)</script> each have a transpose <script type="math/tex">F(S) \rightarrow A</script>.
+In particular, that transpose can be given explicitly as:</p>
+<script type="math/tex; mode=display">
+\overline{f \circ g} = \varepsilon_A \circ F(f \circ g) = \varepsilon_A \circ F(f) \circ F(g) = \overline{f} \circ F(g)</script><p>and similarly <script type="math/tex">\overline{f \circ h} = \overline{f} \circ F(h)</script>.
+Since <script type="math/tex">f \circ g \neq f \circ h</script>, their transposes are not equal either, and <script type="math/tex">\overline{f} \circ F(g) \neq \overline{f} \circ F(h)</script>, which means <script type="math/tex">F(g) \neq F(h)</script>.
+So <script type="math/tex">F</script> is faithful.</p>
+<p>We now show that faithfulness of <script type="math/tex">F</script> implies the desired property of the unit.
+Fix an <script type="math/tex">S \in \mathbf{Set}</script>.
+Saying that <script type="math/tex">\eta_S</script> is injective amounts to saying that, for any <script type="math/tex">g, h: S' \rightarrow S</script>, <script type="math/tex">\eta_S \circ g = \eta_S \circ h</script> implies <script type="math/tex">g = h</script>.
+So, lets assume we have such a <script type="math/tex">g</script> and <script type="math/tex">h</script> with <script type="math/tex">\eta_S \circ g = \eta_S \circ h</script>.
+Note that <script type="math/tex">\eta_S \circ g</script> is an arrow <script type="math/tex">S' \rightarrow U(F(S))</script> in <script type="math/tex">\mathbf{Set}</script>, and as such it has a transpose <script type="math/tex">\overline{\eta_S \circ g} : F(S') \rightarrow F(S)</script>.
+Furthermore, this transpose can be calculated explicitly as:</p>
+<script type="math/tex; mode=display">
+\overline{\eta_S \circ g} = \varepsilon_{F(S)} \circ F(\eta_S \circ g) = \varepsilon_{F(S)} \circ F(\eta_S) \circ F(g) = F(g)</script><p>where the last equality follows precisely due to the triangle identity, which says that <script type="math/tex">\varepsilon_{F(S)} \circ F(\eta_S) = 1_{F(S)}</script>.
+Similarly we obtain <script type="math/tex">\overline{\eta_S \circ h} = F(h)</script>.
+Then, since <script type="math/tex">\eta_S \circ g = \eta_S \circ h</script>, their transposes are equal, and we have <script type="math/tex">F(g) = F(h)</script>.
+Since <script type="math/tex">F</script> is faithful, we have <script type="math/tex">g = h</script>.
+So, <script type="math/tex">\eta_S</script> is injective.</p>
+ 
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <script type="text/javascript" src="/js/mathjax_config.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+</body>
+
+</html>

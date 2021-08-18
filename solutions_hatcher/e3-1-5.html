@@ -1,0 +1,104 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title> Hatcher Exercise 3.1.5 |  Chase Meadors</title>
+<meta name="description" content=" Basic proprties of co-chains ">
+  <link rel="stylesheet" href="/styles/main.css">
+  
+  
+</head>
+
+<body class="math-body">
+  <div class="container">
+    <div class="columns">
+      <div class="column">
+        <div class="math-container">
+          <h4 class="title is-3">Hatcher Exercise 3.1.5</h4>
+          <div class="content">
+             <p><p>Let <script type="math/tex">\varphi</script> be a 1-cochain in <script type="math/tex">X</script> with coefficients in <script type="math/tex">G</script> -- i.e. <script type="math/tex">\varphi \in C^1(X,G) = \Hom(C_1(X), G)</script>.</p></p>
+<script type="math/tex; mode=display">\varphi$$ is a function from 1-chains in $$X$$ to $$G$$.
+Since, in general, singular 1-chains are precisely paths in $$X$$, we will consider $$\varphi$$ as a function from paths in $$X$$ to $$G$$.
+For paths $$f$$ and $$g$$, we will use $$f \cdot g$$ to refer to path concatenation (not to be confused with the group operation in $$C_1(X)$$).
+
+For all of the following, assume $$\varphi$$ is a co-cycle -- i.e. $$\varphi \in \ker \delta_1$$, where $$\delta_1 : C^1(X,G) \rightarrow C^2(X,G)$$ is the coboundary map.
+
+**Theorem**:
+$$\varphi(f \cdot g) = \varphi(f) + \varphi(g)$$.
+
+---
+
+*Proof*:
+Consider a singular two chain $$F$$ -- that is, a map from the 2-simplex $$[abc]$$ to $$X$$ -- such that $$F \vert_{[a b]} = f$$ and $$F \vert_{[b c]} = g$$.
+We then have that $$F \vert_{[ac]}$$ is homotopic to $$f \cdot g$$.
+To see this, just consider that there is a deformation retraction of the simplex $$[abc]$$ to the edge $$[ac]$$ (by simply crushing it) -- compose this deformation retraction with $$F$$ to get a homotopy from the image of $$F \vert_{[ab] \cdot [bc]}$$ which is $$f \cdot g$$ to the image of $$F \vert_{[ac]}$$.
+Now, since $$\varphi$$ is a cocycle, $$\delta_1 \varphi$$ is the zero map and $$(\delta_1 \varphi)(F) = 0$$.
+Then,</script><p>\begin{align<em>}
+&amp; (\delta<em>1 \varphi)(F) = \varphi(F \vert</em>{[bc]}) - \varphi(F \vert<em>{[ac]}) + \varphi(F</em>{[ab]}) = 0 \
+\Rightarrow \enspace &amp; \varphi(g) - \varphi(f \cdot g) + \varphi(f) = 0 \
+\Rightarrow \enspace &amp; \varphi(f \cdot g) = \varphi(f) + \varphi(g)
+\end{align</em>}</p>
+<script type="math/tex; mode=display">
+
+$$\mjqed</script><p><strong>Corollary</strong>:</p>
+<script type="math/tex; mode=display">\varphi$$ is zero on constant paths.
+
+---
+
+*Proof*:
+If $$f$$ is a constant path, then $$f \cdot f = f$$.
+By the last theorem, $$\varphi(f \cdot f) = \varphi(f) = \varphi(f) + \varphi(f)$$, which could only be true in the group $$G$$ if $$\varphi(f) = 0$$.
+
+$$\mjqed</script><hr>
+<p><strong>Theorem</strong>:
+If <script type="math/tex">f</script> is homotopic to <script type="math/tex">g</script> (fixing endpoints), then <script type="math/tex">\varphi(f) = \varphi(g)</script></p>
+<hr>
+<p><em>Proof</em>:
+Let <script type="math/tex">a = (0, 0), b = (0, 1), c= (1,1)</script> in <script type="math/tex">\mathbb{R}^2</script> explicitly describe the vertices of a 2-simplex.
+We will explicitly describe two singular 2-chains <script type="math/tex">F, G : [abc] \rightarrow X</script>.
+Let <script type="math/tex">H : I \times I \rightarrow X</script> be the homotopy from <script type="math/tex">f</script> to <script type="math/tex">g</script>, so that <script type="math/tex">H(0, \cdot) = f</script> and <script type="math/tex">H(1, \cdot) = g</script>.</p>
+<p>Let <script type="math/tex">F(x,y) = H(y,x)</script>.
+Observe that <script type="math/tex">F\vert_{[ab]} = f</script> and <script type="math/tex">F\vert_{[bc]} = f(1) = g(1)</script> (the constant path).
+Then <script type="math/tex">F\vert_{[ac]} = z</script>, where <script type="math/tex">z</script> is the path <script type="math/tex">t \mapsto H(t,t)</script>.
+Let <script type="math/tex">G(x,y) = H(x,y)</script>.
+Then, <script type="math/tex">G\vert_{[ab]} = f(0) = g(0)</script> (the constant path) and <script type="math/tex">G\vert_{[bc]} = g</script>.
+In particular, <script type="math/tex">G\vert_{[ac]} = z</script> again.
+Then, we have:</p>
+<script type="math/tex; mode=display">
+(\delta_1 \varphi)(F) = \varphi(f) - \varphi(z) + \varphi(f(1)) = 0</script><p>But since <script type="math/tex">\varphi</script> is zero on constant paths, the last term is zero and we have <script type="math/tex">\varphi(f) = \varphi(z)</script>.
+Applying the same argument to <script type="math/tex">G</script> gives <script type="math/tex">\varphi(g) = \varphi(z)</script>, and we have <script type="math/tex">\varphi(f) = \varphi(g)</script> by transitivity.</p>
+<script type="math/tex; mode=display">\mjqed</script><hr>
+<p><strong>Theorem</strong>:</p>
+<script type="math/tex; mode=display">\varphi$$ is a coboundary if and only if $$\varphi(f)$$ depends only on the endpoints of $$f</script><hr>
+<p><em>Proof</em>:
+Let <script type="math/tex">f : [ab] \rightarrow X</script> be an arbitrary singular 1-chain.
+If <script type="math/tex">\varphi</script> is a coboundary, then <script type="math/tex">\varphi = \delta_0 \gamma</script> for a 0-cochain <script type="math/tex">\gamma</script>.
+But then <script type="math/tex">\varphi(f) = \gamma(f\vert_{[b]}) - \gamma(f\vert_{[a]})</script>, so <script type="math/tex">\varphi</script> only depends on the endpoints.</p>
+<p>Suppose that <script type="math/tex">\varphi(f)</script> depends only on the endpoints of <script type="math/tex">f</script> for any <script type="math/tex">f</script>.
+Pick a basepoint <script type="math/tex">x_0 \in X</script> and define a 0-cochain <script type="math/tex">\gamma</script> by <script type="math/tex">\gamma(x) = \varphi(f_x)</script> where <script type="math/tex">f_x</script> is any path from <script type="math/tex">x_0</script> to <script type="math/tex">x</script>.
+This is well-defined due to the supposition about <script type="math/tex">\varphi</script>.
+Then, for any path <script type="math/tex">g</script> from <script type="math/tex">a</script> to <script type="math/tex">b</script>,
+pick some path <script type="math/tex">f_a</script> from <script type="math/tex">x_0</script> to <script type="math/tex">a</script>, and notice that <script type="math/tex">f_a \cdot g</script> is some path from <script type="math/tex">x_0</script> to <script type="math/tex">b</script>.
+Then, we have:</p>
+<script type="math/tex; mode=display">
+(\delta_0 \gamma)(g) = \gamma(b) - \gamma(a) = \varphi(f_a \cdot g) - \varphi(f_a) = \varphi(f_a) + \varphi(g) - \varphi(f_a) = \varphi(g)</script><p>using the first theorem.
+Thus, <script type="math/tex">\delta_0 \gamma = \varphi</script>.</p>
+<script type="math/tex; mode=display">\mjqed</script> 
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <script type="text/javascript" src="/js/mathjax_config.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+</body>
+
+</html>

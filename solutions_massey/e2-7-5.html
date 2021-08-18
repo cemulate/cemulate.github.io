@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title> Massey Exercise 2.7.5 |  Chase Meadors</title>
+<meta name="description" content=" A theorem about paths in a topological group ">
+  <link rel="stylesheet" href="/styles/main.css">
+  
+  
+</head>
+
+<body class="math-body">
+  <div class="container">
+    <div class="columns">
+      <div class="column">
+        <div class="math-container">
+          <h4 class="title is-3">Massey Exercise 2.7.5</h4>
+          <div class="content">
+             <p><strong>Theorem</strong>:
+Let <script type="math/tex">G</script> be a topological space, and <script type="math/tex">\mu : G \times G \rightarrow G</script> a continuous map.
+Let <script type="math/tex">e \in G</script> be such that:</p>
+<ul>
+<li>For any <script type="math/tex">a \in G</script>, <script type="math/tex">\mu(a,e) = \mu(e, a) = a</script></li>
+<li><script type="math/tex; mode=display">i^x(a) = (a,e)$$ and $$i^y(a) = (e,a)$$ for any $$a \in G</script></li>
+</ul>
+<p>Where <script type="math/tex">i^x</script> and <script type="math/tex">i^y</script> are defined as in 7.4.
+Then, for any <script type="math/tex">\beta,\gamma \in \pi(G,e)</script>, <script type="math/tex">\mu_* ( i^x_* \beta \cdot i^y_* \gamma) = \beta \cdot \gamma</script>.</p>
+<hr>
+<p><em>Proof</em>:
+Because <script type="math/tex">\mu</script> is continuous, we have <script type="math/tex">\mu_* (i^x_* \beta \cdot i^y_* \gamma) = \mu_*(i^x_* \beta) \cdot \mu_*(i^y_* \gamma)</script>.
+Now, consider that <script type="math/tex">(i^x_* \beta)(t) = (e, \beta(t))</script>, by the second property.
+Then, <script type="math/tex">(\mu_* i^x_* \beta)(t) = \beta(t)</script>, by the first property.
+That is, <script type="math/tex">\mu_* i^x_* \beta = \beta</script>, and a symmetric argument obtains <script type="math/tex">\mu_* i^y_* \gamma = \gamma</script>.
+Then, <script type="math/tex">\mu_* (i^x_* \beta \cdot i^y_* \gamma) = \beta \cdot \gamma</script>.</p>
+<p>By the last exercise (7.4), <script type="math/tex">i^x_* \beta \cdot i^y_* \gamma</script> and <script type="math/tex">i^y_* \gamma \cdot i^x_* \beta</script> commute, so for any <script type="math/tex">\beta, \gamma \in \pi(G,e)</script>, we have</p>
+<script type="math/tex; mode=display">
+\beta \cdot \gamma = \mu_*(i^x_* \beta \cdot i^y_* \gamma)
+= \mu_*(i^y_* \gamma \cdot i^x_* \beta) = \gamma \cdot \beta</script><p>So, <script type="math/tex">\pi(G,e)</script> is an abelian group.</p>
+ 
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <script type="text/javascript" src="/js/mathjax_config.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+</body>
+
+</html>

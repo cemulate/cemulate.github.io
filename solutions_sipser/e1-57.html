@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title> Sipser Exercise 1.57 |  Chase Meadors</title>
+<meta name="description" content=" If $$A$$ is regular, the language of left-halves of strings in $$A$$ is regular ">
+  <link rel="stylesheet" href="/styles/main.css">
+  
+  
+</head>
+
+<body class="math-body">
+  <div class="container">
+    <div class="columns">
+      <div class="column">
+        <div class="math-container">
+          <h4 class="title is-3">Sipser Exercise 1.57</h4>
+          <div class="content">
+             <p><strong>Theorem</strong>: If <script type="math/tex">A</script> is regular, then the language of left-halves of strings in A:</p>
+<script type="math/tex; mode=display">
+A_h = \setbuilder{x}{\exists y \tst |x| = |y| \tand xy \in A}</script><p>is also regular.</p>
+<hr>
+<p><em>Proof</em>:
+Since <script type="math/tex">A</script> is regular, there is a DFA <script type="math/tex">M = (Q, \Sigma, \delta, q_0, F)</script> accepting <script type="math/tex">A</script>.
+Write the states as <script type="math/tex">Q = \set{q_0, q_1, \dots, q_{n-1}}</script>.
+We construct an NFA <script type="math/tex">M_h = (Q_h, \Sigma, \delta_h, q_{0h}, F_h)</script> as follows.</p>
+<p>Take <script type="math/tex">Q_h = Q^{n+1}</script>, and <script type="math/tex">q_{0h} = (q_0, q_0, q_1, \dots, q_{n-1})</script>.
+We maintain a &#39;prime&#39; copy of the DFA <script type="math/tex">M</script>, which will start at <script type="math/tex">q_0</script>.
+We then run <script type="math/tex">n</script> other machines simultaneously.
+Each of these machines starts at a different state from <script type="math/tex">Q</script>, and takes all possible transitions at each step.
+Then an input string is accepted if and only if the &#39;prime&#39; copy is in a state <script type="math/tex">x</script> at the same time as the copy started from <script type="math/tex">x</script> is in a final state.</p>
+<p>So, we further define:</p>
+<script type="math/tex; mode=display">
+\delta_h(q, x) = \set{\delta(q, x)} \times \underbrace{\bigcup_{y \in \Sigma} \set{\delta(q, y)} \times \dots \times \bigcup_{y \in \Sigma} \set{\delta(q, y)}}_{n \text{ times}}</script><p>And finally,</p>
+<script type="math/tex; mode=display">
+F_h = \setbuilder{(q_k, x_0, \dots, x_{n-1})}{x_k \in F}</script><p>So this machine accepts <script type="math/tex">A_h</script>, and <script type="math/tex">A_h</script> is regular.</p>
+ 
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <script type="text/javascript" src="/js/mathjax_config.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+</body>
+
+</html>

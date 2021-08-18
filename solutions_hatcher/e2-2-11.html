@@ -1,0 +1,81 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title> Hatcher Exercise 2.2.11 |  Chase Meadors</title>
+<meta name="description" content=" Homology computation for a certain space obtained from a 3-cube under "twisted" face identifications ">
+  <link rel="stylesheet" href="/styles/main.css">
+  
+  
+</head>
+
+<body class="math-body">
+  <div class="container">
+    <div class="columns">
+      <div class="column">
+        <div class="math-container">
+          <h4 class="title is-3">Hatcher Exercise 2.2.11</h4>
+          <div class="content">
+             <p><p>Let <script type="math/tex">X</script> be the space obtained from the cube <script type="math/tex">I^3</script> by identifying each face with its opposite face via a right-handed one-quarter twist.
+This is a cell-complex structure on the resulting space:</p></p>
+<div class="math-figure"><img src="/assets/math_solutions/hatcher/e2-2-11_1.svg" width="300"/></div>
+
+<p><p>This is a structure with two 0-cells (the marked vertices represent one equivalence class <script type="math/tex">p</script> and the rest represent an equivalence class <script type="math/tex">q</script>), four 1-cells (the labeled edges), three 2-cells (which is clear since we identify the faces in pairs) -- call the front/back <script type="math/tex">f</script>, left/right <script type="math/tex">g</script>, and bottom/top <script type="math/tex">h</script> -- and one 3-cell <script type="math/tex">T</script>.
+The cellular homology is:</p></p>
+<script type="math/tex; mode=display">
+0 \rightarrow \la T \ra \xrightarrow{d_3} \la f,g,h \ra \xrightarrow{d_2} \la a,b,c,d \ra \xrightarrow{d_1} \la p, q \ra \rightarrow 0</script><p>The maps are:</p>
+<script type="math/tex; mode=display">
+d_1 = \left[ \begin{array}{c|cccc}
+& a & b & c & d \\ \hline
+p & -1 & 1  & -1 & 1 \\
+q & 1  & -1 & 1  & -1
+\end{array} \right]
+\qquad
+d_2 = \left[ \begin{array}{c|ccc}
+& f & g & h \\ \hline
+a & 1 & 1  & 1 \\
+b & 1 & 1  & -1 \\
+c & 1 & -1 & -1 \\
+d & 1 & -1 & 1
+\end{array} \right]</script><p>To determine <script type="math/tex">d_3</script>, we compute the degrees of each map in the cellular boundary formula by counting local degrees.
+First, consider how <script type="math/tex">T</script> is mapped onto the face <script type="math/tex">f</script>.
+The image of the center point of <script type="math/tex">f</script> has a preimage consisting of two points -- the center of the front and back face, respectively.
+Neighborhoods of these points are mapped homeomorphically onto a neighborhood of the image, so the local degree at each is <script type="math/tex">\pm 1</script>.
+They must have opposite sign, because one neighborhood differs from the other by a reflection and a rotation, and this would multiply the degree by <script type="math/tex">-1</script> and <script type="math/tex">1</script> respectively, yielding an opposite sign.
+Then, the degree of the map is <script type="math/tex">1 - 1 = 0</script>.
+We get the same thing for the other faces, so each coefficient in the sum in the cellular boundary formula is zero, and <script type="math/tex">d_3 = 0</script>.</p>
+<p>Let&#39;s compute homology.
+We have:</p>
+<script type="math/tex; mode=display">
+d_1 \xrightarrow{SNF} \left[ \begin{array}{cccc}
+1 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0
+\end{array} \right]
+\qquad
+d_2 \xrightarrow{SNF} \left[ \begin{array}{ccc}
+1 & 0 & 0 \\
+0 & 2 & 0 \\
+0 & 0 & 2 \\
+0 & 0 & 0
+\end{array} \right]</script><p>Now that we have the maps explicitly and their Smith forms, the homology is just a matter of tabulation:</p>
+<script type="math/tex; mode=display">
+H_0(X) \cong \mathbb{Z} \qquad H_1(X) = \mathbb{Z}_2 \oplus \mathbb{Z}_2 \qquad H_2(X) = 0
+\qquad H_3(X) = \mathbb{Z}</script> 
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <script type="text/javascript" src="/js/mathjax_config.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+</body>
+
+</html>

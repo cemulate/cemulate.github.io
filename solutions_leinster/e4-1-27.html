@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title> Exercise 4.1.27 |  Chase Meadors</title>
+<meta name="description" content=" $$\Hom(\dash, A) \cong \Hom(\dash, A')$$ implies $$A \cong A'$$ (The Yoneda embedding is injective on isomorphism classes of objects) ">
+  <link rel="stylesheet" href="/styles/main.css">
+  
+  
+</head>
+
+<body class="math-body">
+  <div class="container">
+    <div class="columns">
+      <div class="column">
+        <div class="math-container">
+          <h4 class="title is-3">Exercise 4.1.27</h4>
+          <div class="content">
+             <p><strong>Theorem</strong>:
+Let <script type="math/tex">\mathbf{A}</script> be a locally small category and suppose <script type="math/tex">A, A' \in \mathbf{A}</script>.
+If <script type="math/tex">H_A \cong H_{A'}</script> then <script type="math/tex">A \cong A'</script>.
+In other words, the Yoneda embedding <script type="math/tex">H_{\bullet}</script> is injective on isomorphism classes of objects.</p>
+<p><em>Proof</em>:</p>
+<p><script type="math/tex">H_A \cong H_{A'}</script> means we have a natural isomorphism <script type="math/tex">\alpha : H_A \rightarrow H_{A'}</script>.
+It has components <script type="math/tex">\alpha_X : H_A(X) \rightarrow H_{A'}(X) : \Hom(X, A) \rightarrow \Hom(X, A')</script>, which are also isomorphisms (in particular, the hom-sets are in bijection).
+Consider <script type="math/tex">\alpha_A : \Hom(A, A) \rightarrow \Hom(A, A')</script> and denote <script type="math/tex">\ell = \alpha_A(1_A) : A \rightarrow A'</script>.
+We claim that this is the isomorphism desired.
+Indeed, first look at the naturality square of <script type="math/tex">\alpha</script> with respect to the arrow <script type="math/tex">\ell</script>:</p>
+<div class="math-figure"><img src="/assets/math_solutions/leinster/e4-1-27_1.svg" width="350px"/></div>
+
+<p>(the horizontal arrows in the opposite direction because <script type="math/tex">H_A</script> is contravariant).
+Keep in mind the vertical arrows are bijections.
+The horizontal maps on both top and bottom are given by definition as right-composition by <script type="math/tex">\ell</script>, i.e. <script type="math/tex">p \mapsto p \circ \ell</script>.
+Since the vertical maps are bijections, we have an <script type="math/tex">r \in \Hom(A', A)</script> mapping onto <script type="math/tex">1_{A'}</script> via <script type="math/tex">\alpha_{A'}</script>.
+Evaluating the diagram at <script type="math/tex">r</script> then gives:</p>
+<div class="math-figure"><img src="/assets/math_solutions/leinster/e4-1-27_2.svg" width="300px"/></div>
+
+<p>Then commutativity says <script type="math/tex">\alpha_A(r \circ \ell) = \ell</script>.
+But <script type="math/tex">\ell</script> was <em>defined</em> to be the image of <script type="math/tex">1_A</script> under the bijection <script type="math/tex">\alpha_A</script>, so <script type="math/tex">r \circ \ell = 1_A</script>.</p>
+<p>Let&#39;s look now at the naturality diagram with respect to this map <script type="math/tex">r</script>:</p>
+<div class="math-figure"><img src="/assets/math_solutions/leinster/e4-1-27_3.svg" width="350px"/></div>
+
+<p>where we&#39;ve swapped the vertical arrows with their inverses, for convenience.
+If we evaluate <em>this</em> diagram at <script type="math/tex">\ell</script>:</p>
+<div class="math-figure"><img src="/assets/math_solutions/leinster/e4-1-27_4.svg" width="300px"/></div>
+
+<p>we get <script type="math/tex">\alpha_{A'}^{-1}(\ell \circ r) = r</script>.
+But <script type="math/tex">r</script> was defined to be the preimage of <script type="math/tex">1_{A'}</script> under <script type="math/tex">\alpha_{A'}</script>, so we have <script type="math/tex">\ell \circ r = 1_{A'}</script>.</p>
+<p>Then, <script type="math/tex">\ell</script> (or <script type="math/tex">r</script>) is the desired isomorphism between <script type="math/tex">A</script> and <script type="math/tex">A'</script>.</p>
+ 
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <script type="text/javascript" src="/js/mathjax_config.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+</body>
+
+</html>

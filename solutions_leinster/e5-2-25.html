@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title> Exercise 5.2.25 |  Chase Meadors</title>
+<meta name="description" content=" Split monics are regular monics are monics ">
+  <link rel="stylesheet" href="/styles/main.css">
+  
+  
+</head>
+
+<body class="math-body">
+  <div class="container">
+    <div class="columns">
+      <div class="column">
+        <div class="math-container">
+          <h4 class="title is-3">Exercise 5.2.25</h4>
+          <div class="content">
+             <p>A map <script type="math/tex">m : A \rightarrow B</script> is <em>regular monic</em> if <script type="math/tex">(A, m)</script> is an equalizer of some parallel pair <script type="math/tex">B \rightrightarrows C</script>.</p>
+<p><script type="math/tex">m</script> is <em>split monic</em> if it admits a left inverse, i.e. a map <script type="math/tex">f</script> with <script type="math/tex">fm = 1_A</script>.</p>
+<p><strong>Theorem</strong>:
+Split monic <script type="math/tex">\Rightarrow</script> regular monic <script type="math/tex">\Rightarrow</script> monic</p>
+<p><em>Proof</em>:
+Assume <script type="math/tex">m</script> is split monic, and let <script type="math/tex">n</script> be its left inverse.
+Then, take the parallel pair <script type="math/tex">(\id, m \circ n) : B \rightarrow B</script>.
+We claim <script type="math/tex">m</script> is the equalizer of this parallel pair.
+Note that it is certainly a cone, since <script type="math/tex">m \circ n \circ m = m \circ \id = m</script>.
+Suppose that <script type="math/tex">(A', m')</script> were another cone such that <script type="math/tex">m' = m \circ n \circ m'</script>.
+Define <script type="math/tex">\varphi : A' \rightarrow A</script> as <script type="math/tex">\varphi = n \circ m'</script>.
+Then certainly the appropriate triangle commutes: <script type="math/tex">m \circ \varphi = m \circ n \circ m' = m'</script>.
+Suppose <script type="math/tex">\phi</script> were another such map, so that <script type="math/tex">m \circ \phi = m'</script>.
+But composing on the left by <script type="math/tex">n</script> implies that <script type="math/tex">n \circ m \circ \phi = n \circ m'</script> and then <script type="math/tex">\phi = n \circ m' = \varphi</script>.
+So, <script type="math/tex">\varphi</script> is unique and <script type="math/tex">(A, m)</script> is the equalizer of the parallel pair, making <script type="math/tex">m</script> regular monic.</p>
+<p>Suppose <script type="math/tex">m</script> is regular monic, and that it is the equalizer of <script type="math/tex">B \xrightarrow{f,g} C</script>.
+Take arbitrary maps <script type="math/tex">s, t: A' \rightarrow A</script> with <script type="math/tex">m \circ s = m \circ t</script>.
+Then, of course, since <script type="math/tex">(A', m \circ s)</script> and <script type="math/tex">(A', m \circ t)</script> are (the same) cone over <script type="math/tex">B \xrightarrow{f,g} C</script>, we have a unique map <script type="math/tex">\varphi : A' \rightarrow A</script> with <script type="math/tex">m \circ \varphi = m \circ s = m \circ t</script>.
+Taking <script type="math/tex">\varphi = s</script> and <script type="math/tex">\varphi = t</script> make this true, so we must have <script type="math/tex">\varphi = s = t</script>.
+So <script type="math/tex">m</script> is monic.</p>
+<p>An example of a monic which is not split occurs in <script type="math/tex">\mathbf{Ab}</script>.
+Consider the inclusion <script type="math/tex">i : \mathbb{Z} \rightarrow \mathbb{Q}</script>.
+Being inclusion, it&#39;s clearly monic.
+However, its a simple exercise in group theory to show there are no group homomorphisms from <script type="math/tex">\mathbb{Q} \rightarrow \mathbb{Z}</script> in general, so there can certainly be no left inverse, so <script type="math/tex">i</script> is not split monic.</p>
+ 
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <script type="text/javascript" src="/js/mathjax_config.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+</body>
+
+</html>

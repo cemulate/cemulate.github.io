@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title> Hatcher Exercise 2.2.28 |  Chase Meadors</title>
+<meta name="description" content=" Homology computations with Meyer-Vietoris ">
+  <link rel="stylesheet" href="/styles/main.css">
+  
+  
+</head>
+
+<body class="math-body">
+  <div class="container">
+    <div class="columns">
+      <div class="column">
+        <div class="math-container">
+          <h4 class="title is-3">Hatcher Exercise 2.2.28</h4>
+          <div class="content">
+             <p><strong>(a)</strong>
+Let <script type="math/tex">X</script> be the space obtained from the torus <script type="math/tex">T^2 = S^1 \times S^1</script> with a Mobius band <script type="math/tex">M</script> attached by gluing the its single boundary component to <script type="math/tex">S^1 \times \set{x_0}</script>.
+We compute the homology using Meyer-Vietoris.
+As usual, let <script type="math/tex">A</script> be <script type="math/tex">T^2</script> with a small neighborhood inside <script type="math/tex">M</script>, and <script type="math/tex">B</script> the Mobius band with a small neighborhood inside <script type="math/tex">T^2</script>.</p>
+<script type="math/tex; mode=display">A$$ deformation retracts to $$T^2$$.
+We have $$H_1(A) = \mathbb{Z}^2$$ -- let $$a$$ and $$b$$ be the generators, with $$a$$ the edge attached to the boundary of $$M$$.
+$$B$$ deformation retracts onto $$M$$.
+We have $$H_1(M) = \mathbb{Z}$$, let $$c$$ represent the single generator (the core circle of the strip).
+Finally, $$A \cap B$$ deformation retracts onto a circle, so $$H_1(A \cap B) = \mathbb{Z}$$ and $$a$$ is the generator.
+The second homology is $$\mathbb{Z}$$ for $$A$$ and zero for the others, so we have $$H_2(A) \oplus H_2(B) \cong \mathbb{Z}$$.</script><p>0 \rightarrow \wt{H}_2(A) \oplus \wt{H}_2(B) \rightarrow \wt{H}_2(X) \rightarrow \wt{H}_1(A \cap B) \rightarrow \wt{H}_1(A) \oplus \wt{H}_1(B) \rightarrow \wt{H}_1(X) \rightarrow 0 \dots</p>
+<script type="math/tex; mode=display">
+
+since $$\wt{H}_0$$ is clearly zero for everything as well.
+In terms of generators, then:</script><p>0 \rightarrow \mathbb{Z} \rightarrow \wt{H}_2(X) \xrightarrow{\delta} \la a \ra \xrightarrow{\Phi} \la a,b,c \ra \xrightarrow{\Psi} \wt{H}_1(X) \xrightarrow{\delta} 0</p>
+<script type="math/tex; mode=display">
+
+First, note that $$\Phi(a) = a - 2c$$, since the boundary of $$M$$ traverses the core circle of $$M$$ twice.
+So, we have that $$\Phi$$ is injective, and by exactness $$\im \delta = 0$$ so we must have $$\wt{H}_2(X) \cong \mathbb{Z}$$.
+Again by exactness we must have</script><p>\wt{H}_1(X) \cong \dfrac{\la a,b,c \ra}{\im \Phi} = \dfrac{\la a,b,c \ra}{\la a-2c \ra}
+= \dfrac{\la a-2c,b-2c,c \ra}{\la a-2c \ra} \cong \mathbb{Z}^2</p>
+<script type="math/tex; mode=display">
+
+
+**(b)**
+Now $$X$$ is the space obtained by attaching a Mobius strip $$M$$ to $$\mathbb{R}P^2$$ by attaching its boundary to the copy of $$S^1 = \mathbb{R}P^1 \subset \mathbb{R}P^2$$.
+Let $$A, B$$ be defined as above, so that $$A$$ deformation retracts onto $$\mathbb{R}P^2$$ and $$B$$ deformation retracts onto $$M$$.
+We have $$\wt{H}_1(A) = \mathbb{Z}_2$$ -- let $$a$$ be the generator (which is attached to the boundary of $$M$$).
+Again $$H_1(M) = \mathbb{Z}$$ and let $$b$$ be its generator (the core circle of $$M$$).
+Finally $$A \cap B$$ deformation retracts onto a circle and so $$\wt{H}_1(X) \cong \mathbb{Z}$$ with generator $$a$$.
+This time the second homology is zero for all parts.
+So, we have:</script><p>0 \rightarrow \wt{H}_2(X) \rightarrow \la a \ra \xrightarrow{\Phi} \dfrac{\la a,b \ra}{\la 2a \ra} \xrightarrow{\Psi} \wt{H}_1(X) \rightarrow 0</p>
+<script type="math/tex; mode=display">
+
+First note that $$\Phi(a) = [a-2b]$$.
+First by exactness we must have $$\wt{H}_2(X) \cong \ker \Phi$$.
+$$\Phi$$ is injective $$\wt{H}_2(X) \cong 0$$.
+Secondly, we must have $$\wt{H}_1(X) = \la a,b \ra / \la 2a \ra / \im \Phi$$.
+The image of $$\Phi$$ in the free module $$\la a,b \ra$$ is $$\la a-2b \ra$$.
+So we have</script><p>\wt{H}_1(X) \cong \dfrac{\la a,b \ra}{\la 2a, a-2b \ra}
+= \dfrac{\la a+2b, b \ra}{\la a+2b, -4b \ra} \cong \mathbb{Z}_4</p>
+<p>$$</p>
+ 
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <script type="text/javascript" src="/js/mathjax_config.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+</body>
+
+</html>

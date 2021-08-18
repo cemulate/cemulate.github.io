@@ -1,0 +1,105 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title> Exercise 5 |  Chase Meadors</title>
+<meta name="description" content=" Defining the exponential in monoids and groups (considered as one object categories) ">
+  <link rel="stylesheet" href="/styles/main.css">
+  
+  
+</head>
+
+<body class="math-body">
+  <div class="container">
+    <div class="columns">
+      <div class="column">
+        <div class="math-container">
+          <h4 class="title is-3">Exercise 5</h4>
+          <div class="content">
+             <p>Let <script type="math/tex">M</script> be a monoid considered as a category and consider <script type="math/tex">\mathbf{B}M = \presheaves{M}</script>.
+Objects in this category are sets equipped with a <em>right</em> action by <script type="math/tex">M</script>.
+Maps <script type="math/tex">f : X \rightarrow Y</script> are the <em>equivariant maps</em> <script type="math/tex">X \rightarrow Y</script> with <script type="math/tex">f(xm) = f(x)m</script>.
+When we refer to <script type="math/tex">M</script> as an object in <script type="math/tex">\mathbf{B}M</script>, we mean the set <script type="math/tex">M</script> equipped with the trivial right action by <script type="math/tex">M</script> from the monoid structure.</p>
+<p>We wish to determine the exponent in this category.</p>
+<p><strong>Theorem</strong>:
+(a) The exponent <script type="math/tex">Y^X</script> in <script type="math/tex">\mathbf{B}M</script> is the set <script type="math/tex">\Hom(M \times X, Y)</script> itself equipped with the right action <script type="math/tex">(km)(n, x) = k(mn, x)</script> for each equivariant map <script type="math/tex">k : M \times X \rightarrow Y</script> and <script type="math/tex">m \in M</script>.</p>
+<p><em>Proof</em>:
+We define <script type="math/tex">(\dash)^X = \Hom(M \times X, \dash)</script> and show that it is right adjoint to <script type="math/tex">\dash \times X</script>.
+We will define the unit and co-unit and show that they satisfy the triangle identities.</p>
+<p>First consider the unit <script type="math/tex">\eta : 1_{\mathbf{B}M} \rightarrow (\dash \times X)^X</script>, having components <script type="math/tex">\eta_Y : Y \rightarrow (Y \times X)^X</script>.
+Let <script type="math/tex">\eta_Y</script> assign to each <script type="math/tex">y \in Y</script> a map <script type="math/tex">M \times X \rightarrow Y \times X</script> by <script type="math/tex">\eta_Y(y)(m, x) = (ym, x)</script>.
+To check that it is natural, consider an arrow <script type="math/tex">f : Y \rightarrow Z</script>.
+The naturality square is:</p>
+<div class="math-figure"><img src="/assets/math_solutions/maclane/e1-5_1.svg" width="500"/></div>
+
+<p>Take an element <script type="math/tex">y</script> in the upper left.
+Following it down and right we obtain first the map <script type="math/tex">(m, x) \mapsto (ym, x)</script> and then the map <script type="math/tex">(m, x) \mapsto (f(ym), x)</script>.
+Following it right and down, we obtain <script type="math/tex">f(y)</script> and then <script type="math/tex">(m, x) \mapsto (f(y)m, x)</script>.
+But of course these two expressions are the same precisely because <script type="math/tex">f</script> is equivariant.</p>
+<p>Now consider the counit <script type="math/tex">\varepsilon : (\dash)^X \times X \rightarrow 1_{\mathbf{B}M}</script> (the evaluation map).
+It has components <script type="math/tex">\varepsilon_Y : Y^X \times X \rightarrow Y</script>.
+For each pair <script type="math/tex">k : M \times X \rightarrow Y, x \in X</script> let <script type="math/tex">\varepsilon_Y(k, x) = k(1_M, x)</script>.
+The naturality square is:</p>
+<div class="math-figure"><img src="/assets/math_solutions/maclane/e1-5_1.svg" width="500"/></div>
+
+<p>Starting with a pair <script type="math/tex">(k, x)</script> in the upper left, we follow it down and right to obtain first <script type="math/tex">k(1_M, x)</script> and then <script type="math/tex">f(k(1_M, x))</script>.
+Following it right and down we obtain first the pair <script type="math/tex">(f \circ k, x)</script> and then <script type="math/tex">(f \circ k)(1_M, x) = f(k(1_M, x))</script>.</p>
+<p>Finally, we verify the triangle identities.
+First, we want to show the following is the identity:</p>
+<script type="math/tex; mode=display">
+Y \times X \xrightarrow{\eta_Y \times 1_X} (Y \times X)^X \times X \xrightarrow{\varepsilon_{Y \times X}} Y \times X</script><p>Indeed, we have:</p>
+<script type="math/tex; mode=display">
+(y, x) \mapsto ((m, x) \mapsto (ym, x), x) \mapsto (y 1_M, x) = (y, x)</script><p>Next, we need to show that this is the identity:</p>
+<script type="math/tex; mode=display">
+Y^X \xrightarrow{\eta_{\left(Y^X\right)}} (Y^X \times X)^X \xrightarrow{\varepsilon_Y \circ \dash} Y^X</script><p>Starting with a map <script type="math/tex">k : M \times X \rightarrow X</script>, the first step obtains the map <script type="math/tex">(m, x) \mapsto (km, x)</script>.
+The next step obtains the map <script type="math/tex">(m, x) \mapsto (km)(1_M, x)</script>.
+But by the right action on <script type="math/tex">\Hom(M \times X, Y)</script>, we have <script type="math/tex">(km)(1_M, x) = k(m1_M, x) = k(m, x)</script>.
+So the final map is just <script type="math/tex">k</script>.</p>
+<p>So the defined unit and counit are natural transformations satisfying the triangle identities, exhibiting an adjunction between <script type="math/tex">\dash \times X</script> and <script type="math/tex">(\dash)^X</script>.</p>
+<hr>
+<p>If the monoid is a group, the exponent is a bit &quot;nicer&quot;, in that it can be realized as the underlying exponent in <script type="math/tex">\mathbf{Set}</script> with an appropriate group action.</p>
+<p><strong>Theorem</strong>:
+(b) In the category <script type="math/tex">\mathbf{B}G</script> of right <script type="math/tex">G</script>-sets, the exponent <script type="math/tex">Y^X</script> is the set <script type="math/tex">\Hom(X, Y)</script> equipped with the action <script type="math/tex">(fp)(x) = f(xp^{-1}) p</script> for each equivariant map <script type="math/tex">f : X \rightarrow Y</script> and <script type="math/tex">p \in G</script>.</p>
+<p><em>Proof</em>:
+Groups are, of course, monoids, and so we know that <script type="math/tex">Y^X = \Hom(G \times X, Y)</script> with the right-action <script type="math/tex">(kp)(q, x) = k(pq, x)</script>.
+We exhibit an isomorphism between this <script type="math/tex">G</script>-set and the one in the theorem.
+Simply define <script type="math/tex">\varphi : \Hom(G \times X, Y) \rightarrow \Hom(X, Y)</script> by <script type="math/tex">\varphi(k)(x) = k(1_G, x)</script>.
+Define <script type="math/tex">\phi : \Hom(X, Y) \rightarrow \Hom(G \times X, Y)</script> by <script type="math/tex">\phi(f)(q, x) = f(xq^{-1})q</script>.
+We verify that these are indeed equivariant maps that compose to the identity.</p>
+<p>For <script type="math/tex">\varphi</script>, we need to verify that <script type="math/tex">\varphi(kp) = \varphi(k)p</script>.
+On the left, we have:</p>
+<script type="math/tex; mode=display">
+\varphi(kp)(x) = (kp)(1_G, x) = k(p 1_G, x) = k(p, x)</script><p>On the other side,</p>
+<script type="math/tex; mode=display">
+\left[ \varphi(k) p \right](x) = \left[ \varphi(k)(xp^{-1}) \right] p = k(1_G, xp^{-1})p = k(1_G p, x p^{-1} p) = k(p, x)</script><p>where the penultimate step uses the fact that <script type="math/tex">k</script> is an equivariant map.</p>
+<p>For <script type="math/tex">\phi</script>, we must again verify <script type="math/tex">\phi(fp) = \phi(f)p</script>.
+On the left, we have</p>
+<script type="math/tex; mode=display">
+\phi(fp)(q, x) = \left[ (fp)(xq^{-1}) \right]q = f(xq^{-1}p^{-1})p q = f(xq^{-1}p^{-1}pq) = f(x)</script><p>using the fact that <script type="math/tex">f</script> is equivariant.
+On the right, we have</p>
+<script type="math/tex; mode=display">
+\left[ \phi(f)p \right](q, x) = \phi(f)(pq, x) = f(x(pq)^{-1})pq = f(x(pq)^{-1}pq) = f(x)</script><p>again using equivariance of <script type="math/tex">f</script>.</p>
+<p>Finally, observe that:</p>
+<script type="math/tex; mode=display">
+\varphi(\phi(f))(x) = \phi(f)(1_G, x) = f(x1_G)1_G^{-1} = f(x)</script><p>and</p>
+<script type="math/tex; mode=display">
+\phi(\varphi(k))(q, x) = \left[ \varphi(k)(xq^{-1}) \right]q = k(1_G, xq^{-1})q = k(1_G q, xq^{-1}q) = k(q, x)</script><p>So <script type="math/tex">\varphi \circ \phi = \phi \circ \varphi = 1</script>, and we have exhibited an isomorphism between the two <script type="math/tex">G</script>-sets.</p>
+ 
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <script type="text/javascript" src="/js/mathjax_config.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+</body>
+
+</html>

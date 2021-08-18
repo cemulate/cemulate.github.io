@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title> Hatcher Exercise 0.16 |  Chase Meadors</title>
+<meta name="description" content=" The infinite sphere is contractible ">
+  <link rel="stylesheet" href="/styles/main.css">
+  
+  
+</head>
+
+<body class="math-body">
+  <div class="container">
+    <div class="columns">
+      <div class="column">
+        <div class="math-container">
+          <h4 class="title is-3">Hatcher Exercise 0.16</h4>
+          <div class="content">
+             <p><strong>Theorem</strong>: <script type="math/tex">S^{\infty}</script> is contractible.</p>
+<hr>
+<p><em>Proof</em>: Give <script type="math/tex">S^{\infty}</script> the cell-complex structure described in Hatcher where the spheres and hemispheres of each dimension are subcomplexes -- that is, regarding each <script type="math/tex">S^k</script> as obtained from <script type="math/tex">S^{k-1}</script> by adding two <script type="math/tex">k</script>-cells which are the components of <script type="math/tex">S^k - S^{k-1}</script>.</p>
+<p>For an arbitrary <script type="math/tex">x</script> in <script type="math/tex">S^{\infty}</script>, it must be the case that <script type="math/tex">x \in S^n</script> for some <script type="math/tex">n</script>.
+Furthermore, <script type="math/tex">S^n</script> is precisely the boundary of <script type="math/tex">D^{n+1}</script>, which is another sub-complex of <script type="math/tex">S^{\infty}</script>.
+So each <script type="math/tex">x</script> lies inside a closed disc.</p>
+<p>For each <script type="math/tex">n</script>, let <script type="math/tex">F_n</script> be the deformation retract of <script type="math/tex">D^n</script> to the <script type="math/tex">D^{n-1}</script> represented by half of its boundary, where we take <script type="math/tex">D^0</script> to be a point.
+Of course, each <script type="math/tex">F_n</script> could retract onto one of two copies of <script type="math/tex">D^{n-1}</script>.
+Distinguish a basepoint <script type="math/tex">d_0</script> (one of the two <script type="math/tex">D^0</script> subcomplexes), and simply define each <script type="math/tex">F_n</script> to retract onto the <script type="math/tex">D^{n-1}</script> containing <script type="math/tex">d_0</script>.</p>
+<p>Let <script type="math/tex">H : S^{\infty} \times I \rightarrow S^{\infty}</script> be a homotopy defined as follows:
+For a point <script type="math/tex">x \in S^{\infty}</script> such that we have <script type="math/tex">x \in D^n</script> in particular for some <script type="math/tex">n</script>, let:</p>
+<script type="math/tex; mode=display">
+H(x,t) = \left\{
+\begin{array}{lr}
+x & 0 \leq t < 1/2^{n+1} \\
+F_n(x,t) & 1/2^{n+1} \leq t \leq 1/2^n \\
+F_{n-1}(x,t) & 1/2^n \leq t \leq 1/2^{n-1} \\
+\vdots & \vdots \\
+F_1(x,t) & 1/2 \leq t \leq 1
+\end{array} \right.</script><p>The continuity of <script type="math/tex">H</script> is worth discussing, as it is not immediately obvious:
+A map on a CW-complex is continuous if and only if its restriction to every <script type="math/tex">n</script>-skeleton is continuous (appendix of Hatcher).
+For any <script type="math/tex">n</script>, note that <script type="math/tex">H</script> is &#39;motionless&#39; for the interval <script type="math/tex">[0, 1/2^{n+1})</script>, after which it merely performs a finite sequence of continuous homotopies.
+So the restriction to any skeleton is continuous and <script type="math/tex">H</script> is continuous.</p>
+<p>It&#39;s clear that <script type="math/tex">H(x, 0) = x</script>, and <script type="math/tex">H(x, 1) = d_0</script>.
+Then, by construction, <script type="math/tex">H</script> is a homotopy from the identity map on <script type="math/tex">S^{\infty}</script> and the constant map to <script type="math/tex">d_0</script> and thus, <script type="math/tex">S^{\infty}</script> is contractible.</p>
+ 
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <script type="text/javascript" src="/js/mathjax_config.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+</body>
+
+</html>

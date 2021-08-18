@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title> Hatcher Exercise 2.1.12 |  Chase Meadors</title>
+<meta name="description" content=" Chain homotopy of chain maps is an equivalence relation ">
+  <link rel="stylesheet" href="/styles/main.css">
+  
+  
+</head>
+
+<body class="math-body">
+  <div class="container">
+    <div class="columns">
+      <div class="column">
+        <div class="math-container">
+          <h4 class="title is-3">Hatcher Exercise 2.1.12</h4>
+          <div class="content">
+             <p><strong>Theorem</strong>: Chain homotopy of chain maps is an equivalence relation.</p>
+<hr>
+<p><em>Proof</em>:
+Suppose we have chain maps <script type="math/tex">f_\sharp, g_\sharp, h_\sharp : C_n(X) \rightarrow C_n(Y)</script>.
+For <script type="math/tex">f_\sharp</script> and <script type="math/tex">g_\sharp</script> to be <em>chain-homotopic</em>, which we will denote for the duration of this proof by <script type="math/tex">f_\sharp \sim g_\sharp</script>, means that there exists a map <script type="math/tex">P : C_n(X) \rightarrow C_{n+1}(Y)</script> such that <script type="math/tex">\delta_{n+2} P_{n+1} + P_n \delta_{n+1} = g_\sharp - f_\sharp</script> (for all <script type="math/tex">n</script>).
+We will abuse notation and and just write the left side as <script type="math/tex">\delta P + P \delta</script>, leaving the particular instance (subscripts) of <script type="math/tex">\delta</script> and <script type="math/tex">P</script> to be inferred from the context.</p>
+<p>Clearly, <script type="math/tex">\sim</script> is reflexive.
+Simply take <script type="math/tex">P_0</script> to be the zero map, and we have <script type="math/tex">\delta P_0 + P_0 \delta = 0 = f_\sharp - f_\sharp</script>.
+So, <script type="math/tex">f_\sharp \sim f_\sharp</script>.</p>
+<p>It&#39;s also easy to see that <script type="math/tex">\sim</script> is symmetric.
+Suppose <script type="math/tex">f_\sharp \sim g_\sharp</script> so that <script type="math/tex">\delta P + P \delta = f_\sharp - g_\sharp</script> for some <script type="math/tex">P</script>.
+Then, we have <script type="math/tex">g_\sharp - f_\sharp = - (\delta P + P \delta) = \delta (-P) + (-P) \delta</script>.
+So <script type="math/tex">g_\sharp \sim f_\sharp</script> via the map <script type="math/tex">-P</script>.</p>
+<p>Finally, suppose <script type="math/tex">f_\sharp \sim g_\sharp</script> and <script type="math/tex">g_\sharp \sim h_\sharp</script>.
+Then, we have <script type="math/tex">\delta Q + Q \delta = f_\sharp - g_\sharp</script> and <script type="math/tex">\delta R + R \delta = g_\sharp - h_\sharp</script> for maps <script type="math/tex">Q</script> and <script type="math/tex">R</script>.
+Then,</p>
+<script type="math/tex; mode=display">
+f_\sharp - h_\sharp = (f_\sharp - g_\sharp) + (g_\sharp - h_\sharp) = \delta Q + Q \delta + \delta R + R \delta = \delta (Q + R) + (Q + R) \delta</script><p>This last line perhaps merits a bit of explanation -- since these are all maps between abelian groups, addition of maps (defined in the obvious way) is clearly commutative, and the fact that <script type="math/tex">\delta</script> can factor out of sums follows from the fact that <script type="math/tex">\delta</script> is a homomorphism.
+So, <script type="math/tex">f_\sharp \sim h_\sharp</script> via the map <script type="math/tex">Q+R</script>.</p>
+<p>So, chain-homotopy is an equivalence relation.</p>
+ 
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <script type="text/javascript" src="/js/mathjax_config.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+</body>
+
+</html>

@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title> Sipser Exercise 1.40 |  Chase Meadors</title>
+<meta name="description" content=" If $$A$$ is regular, then the language of words that are not proper prefixes of words in $$A$$ is also regular ">
+  <link rel="stylesheet" href="/styles/main.css">
+  
+  
+</head>
+
+<body class="math-body">
+  <div class="container">
+    <div class="columns">
+      <div class="column">
+        <div class="math-container">
+          <h4 class="title is-3">Sipser Exercise 1.40</h4>
+          <div class="content">
+             <p>Let <script type="math/tex">A</script> be a language over <script type="math/tex">\Sigma</script> and let:</p>
+<script type="math/tex; mode=display">
+NE(A) = \setbuilder{w \in A}{w \text{ is not the proper prefix of any string in } A}</script><p>We show that if <script type="math/tex">A</script> is regular, <script type="math/tex">NE(A)</script> is also regular.</p>
+<hr>
+<p>Let <script type="math/tex">M_A = (Q_A, \Sigma, \delta_A, q_{0A}, F_A)</script> be a DFA that accepts <script type="math/tex">A</script>.
+We construct a machine <script type="math/tex">M_N</script> that accepts <script type="math/tex">NE(A)</script>.</p>
+<script type="math/tex; mode=display">M_N$$ will be identical to $$M_A$$ except for the final states, so let $$M_N = (Q_A, \Sigma, \delta_A, q_{0A}, F_N)$$.
+Define the final states of $$M_N$$:</script><p>F_N = \setbuilder{q \in F_A}{\hat{\delta}_A(q, x) \not\in F_A \text{ for any } x}</p>
+<p>$$</p>
+<p>So, <script type="math/tex">M_N</script> is simply a machine that accepts strings that end up in a final state for which there is no additional path to any other final state.
+Then <script type="math/tex">M_N</script> accepts <script type="math/tex">NE(A)</script>, and <script type="math/tex">NE(A)</script> is regular.</p>
+ 
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <script type="text/javascript" src="/js/mathjax_config.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+</body>
+
+</html>

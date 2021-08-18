@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title> Sipser Exercise 2.22 |  Chase Meadors</title>
+<meta name="description" content=" The language $$C = \setbuilder{x\#y}{x, y \in \set{0,1}^* \tand x \neq y}$$ is context free ">
+  <link rel="stylesheet" href="/styles/main.css">
+  
+  
+</head>
+
+<body class="math-body">
+  <div class="container">
+    <div class="columns">
+      <div class="column">
+        <div class="math-container">
+          <h4 class="title is-3">Sipser Exercise 2.22</h4>
+          <div class="content">
+             <p><strong>Theorem</strong>: The language <script type="math/tex">C = \setbuilder{x\#y}{x, y \in \set{0,1}^* \tand x \neq y}</script> is context free.</p>
+<hr>
+<p><em>Proof</em>:
+Note that <script type="math/tex">z \in C</script> if and only if <script type="math/tex">z</script> is of the form <script type="math/tex">x \# y</script> and one of the following is true:
+(1) <script type="math/tex">|x| < |y|</script>, (2) <script type="math/tex">|y| < |x|</script>, or (3) <script type="math/tex">|x| = |y|</script> and there is some <script type="math/tex">n</script> such that <script type="math/tex">x_n \neq y_n</script>.</p>
+<p>Let the stack alphabet be <script type="math/tex">\set{k, Z}</script> with bottom stack symbol <script type="math/tex">Z</script>, and let <script type="math/tex">x</script> represent an arbitrary member of <script type="math/tex">\set{0, 1}</script>.
+We design a PDA as follows:</p>
+<div class="math-figure"><img src="/assets/math_solutions/sipser/e2-22_1.svg" width="700"/></div>
+
+<p>First, the machine progresses through the substring <script type="math/tex">x</script>, pushing a <script type="math/tex">k</script> onto the stack each time it reads a character.
+Note that, after reading <script type="math/tex">n</script> characters, the machine is in <script type="math/tex">q_0</script> or <script type="math/tex">q_1</script> if the <script type="math/tex">n</script>&#39;th character was <script type="math/tex">0</script> or <script type="math/tex">1</script> respectively, and has <script type="math/tex">n</script> instances of <script type="math/tex">k</script> on the stack.</p>
+<p>The bottom path <script type="math/tex">q_{u1} \rightarrow q_e \rightarrow q_{u2}</script> (for &#39;unequal&#39;, &#39;equal&#39;, and &#39;unequal&#39;, respectively) handles length comparison.
+After the <script type="math/tex">\#</script> is read, it immediately accepts until the stack is emptied, at which point the strings are equal length, at which case the machine is in <script type="math/tex">q_e</script>.
+Here, we do not accept on length comparison, and instead rely on the machine to be in <script type="math/tex">q_a</script> to accept (explained below).
+If any more input is received, the machine goes to <script type="math/tex">q_{u2}</script> and is permanently accepting again.
+In addition, if a <script type="math/tex">\#</script> is read as the first character, the two strings are equal length because they are both empty, so the start state transitions to <script type="math/tex">q_e</script>.</p>
+<p>The other path handles comparison on equal-length strings.
+Every time a character is read, the machine &#39;spawns a thread&#39; that immediately progresses to <script type="math/tex">q_{0i}</script> or <script type="math/tex">q_{1i}</script>.
+The &#39;spawned thread&#39; has knowledge of what the <script type="math/tex">n</script>&#39;th character of <script type="math/tex">x</script> was, along with <script type="math/tex">n</script> instances of <script type="math/tex">k</script> on the stack.
+This thread then ignores the rest of <script type="math/tex">x</script>, and waits for a <script type="math/tex">\#</script> symbol.
+Finally, each version of the machine that makes it to <script type="math/tex">q_{0c}</script> or <script type="math/tex">q_{1c}</script> progresses to the <script type="math/tex">n</script>&#39;th character of <script type="math/tex">y</script> (by popping the <script type="math/tex">n</script> instances of <script type="math/tex">k</script> off the stack) and tests if the <script type="math/tex">n</script>&#39;th character of <script type="math/tex">y</script> is different than what it knew was the <script type="math/tex">n</script>&#39;th character of <script type="math/tex">x</script>.
+If this test ever passes, a version of the machine enters <script type="math/tex">q_a</script> and stays there forever, ensuring that the string is accepted.</p>
+<p>This machine accepts <script type="math/tex">C</script>, so <script type="math/tex">C</script> is context-free.</p>
+ 
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <script type="text/javascript" src="/js/mathjax_config.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+</body>
+
+</html>

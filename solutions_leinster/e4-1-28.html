@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title> Exercise 4.1.28 |  Chase Meadors</title>
+<meta name="description" content=" Finding a representation of a certain functor $$\mathbf{Grp} \rightarrow \mathbf{Set}$$ ">
+  <link rel="stylesheet" href="/styles/main.css">
+  
+  
+</head>
+
+<body class="math-body">
+  <div class="container">
+    <div class="columns">
+      <div class="column">
+        <div class="math-container">
+          <h4 class="title is-3">Exercise 4.1.28</h4>
+          <div class="content">
+             <p><script type="math/tex; mode=display">
+\newcommand{\zphom}{\mathbf{Grp}(\mathbb{Z}_p, \dash)}
+\newcommand{\zphoma}[1]{\mathbf{Grp}(\mathbb{Z}_p, #1)}</script><p>For <script type="math/tex">p</script> prime, let <script type="math/tex">U_p : \mathbf{Grp} \rightarrow \mathbf{Set}</script> be a functor sending a a group <script type="math/tex">G</script> to its set of elements having order <script type="math/tex">1</script> or <script type="math/tex">p</script>.
+For a group homomorphism <script type="math/tex">f : G \rightarrow H</script>, simply let <script type="math/tex">U_p(f)</script> be the restriction of <script type="math/tex">f</script> to <script type="math/tex">U_p(G)</script> -- this is well defined since <script type="math/tex">p</script> is prime, and thus <script type="math/tex">f</script> necessarily sends an element of order <script type="math/tex">p</script> to an element of order <script type="math/tex">1</script> or <script type="math/tex">p</script>.</p></p>
+<p><strong>Theorem</strong>:</p>
+<p><script type="math/tex">U_p</script> is representable.
+In particular, <script type="math/tex">U_p</script> is isomorophic to <script type="math/tex">\mathbf{Grp}(\mathbb{Z}_p, \dash)</script>.</p>
+<p><em>Proof</em>:
+Define a natural transformation <script type="math/tex">\alpha : U_p \rightarrow \zphom</script> as follows.
+For a group <script type="math/tex">G</script>, let <script type="math/tex">\alpha_G : U_p(G) \rightarrow \zphoma{G}</script> send an element <script type="math/tex">g</script> of order <script type="math/tex">1</script> or <script type="math/tex">p</script> to the unique homomorphism <script type="math/tex">\varphi : \mathbb{Z}_p \rightarrow G</script> such that <script type="math/tex">\varphi(1) = g</script>.
+In other words, <script type="math/tex">\varphi</script> is the map <script type="math/tex">n \mapsto g^n</script>.
+We now check naturality.
+Suppose <script type="math/tex">f : G \rightarrow H</script> is a homomorphism.
+We must have <script type="math/tex">\alpha_H \circ U_p(f) = \zphoma{f} \circ \alpha_G : U_p(G) \rightarrow \zphoma{H}</script>.
+Recall that <script type="math/tex">\zphoma{f}</script> is just left-composition by <script type="math/tex">f</script>.
+Take a <script type="math/tex">g</script> in <script type="math/tex">U_p(G)</script>.
+On the right side, we have <script type="math/tex">\alpha_G(g) = n \mapsto g^n</script>, then left-composing with <script type="math/tex">f</script> yields <script type="math/tex">f \circ (n \mapsto g^n) = n \mapsto f(g^n) = n \mapsto f(g)^n</script>.
+On the left, we have <script type="math/tex">U_p(f)(g) = f(g)</script>.
+Then, <script type="math/tex">\alpha_H(f(g)) = n \mapsto f(g)^n</script>.
+So both sides yield the same map <script type="math/tex">\mathbb{Z}_p \rightarrow H</script>, verifying that <script type="math/tex">\alpha</script> is natural.
+So <script type="math/tex">U_p \cong \zphoma{\dash}</script>.</p>
+ 
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <script type="text/javascript" src="/js/mathjax_config.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+</body>
+
+</html>

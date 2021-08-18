@@ -1,0 +1,127 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title> Hatcher Exercise 2.1.17 |  Chase Meadors</title>
+<meta name="description" content=" A relative homology calculation for several spaces ">
+  <link rel="stylesheet" href="/styles/main.css">
+  
+  
+</head>
+
+<body class="math-body">
+  <div class="container">
+    <div class="columns">
+      <div class="column">
+        <div class="math-container">
+          <h4 class="title is-3">Hatcher Exercise 2.1.17</h4>
+          <div class="content">
+             <p>We compute <script type="math/tex">H_n(X,A)</script> in each of the following scenarios:
+Throughout, we will reference the long exact sequence:</p>
+<script type="math/tex; mode=display">
+\dots \rightarrow H_n(A) \xrightarrow{i_*} H_n(X) \xrightarrow{j_*} H_n(X,A) \xrightarrow{\delta} H_{n-1}(A) \rightarrow \dots \rightarrow H_0(X,A) \rightarrow 0</script><hr>
+<p><strong>(a)</strong>: <script type="math/tex">X = S^2</script>, <script type="math/tex">A</script> is a finite set of <script type="math/tex">k</script> points.
+Clearly, for <script type="math/tex">n > 2</script>, we have <script type="math/tex">H_n(X) = H_{n-1}(A) = 0</script>, so it must be the case that <script type="math/tex">H_n(X,A) = 0</script>.
+Consider the LES in low dimensions:</p>
+<script type="math/tex; mode=display">
+\begin{align*}
+& H_2(A) \rightarrow H_2(X) \rightarrow H_2(X,A) \\
+\rightarrow \; & H_1(A) \rightarrow H_1(X) \rightarrow H_1(X,A)  \\
+\rightarrow \; & H_0(A) \rightarrow H_0(X) \rightarrow H_0(X,A) \rightarrow 0
+\end{align*}</script><p>Filling this in with known values, we have:</p>
+<script type="math/tex; mode=display">
+0 \rightarrow \mathbb{Z} \rightarrow H_2(X,A) \rightarrow 0 \rightarrow 0 \rightarrow H_1(X,A) \rightarrow \mathbb{Z}^k \xrightarrow{\varphi} \mathbb{Z} \rightarrow H_0(X,A) \rightarrow 0</script><p>First, we must have <script type="math/tex">H_2(X,A) \cong \mathbb{Z}</script>.</p>
+<script type="math/tex; mode=display">\varphi$$ is actually the inclusion $$H_0(A) \xrightarrow{i_*} H_0(X)$$.
+Then it must be the map sending every generator of $$\mathbb{Z}^k$$ to $$1$$ since every generator of $$H_0(A)$$ (one of the points in $$A$$) is homologous to the single generator of $$H_0(X)$$ when considered in the (connected) space $$X$$.
+This map is clearly surjective.
+[Since it's a map between free modules over a PID](https://math.stackexchange.com/questions/999806/rank-nullity-theorem-for-free-mathbb-z-modules), and $$\im \varphi$$ is rank 1, we can conclude that $$\ker \varphi$$ is free of rank $$k-1$$, i.e. $$\ker \varphi \cong \mathbb{Z}^{k-1}$$.
+
+Knowing the details of $$\varphi$$, we can find the rest of the unknown groups from repated applications of exactness and the first isomorphism theorem.
+$$H_0(X,A) \cong \mathbb{Z} / \im \varphi = \mathbb{Z} / \mathbb{Z} = 0$$.
+Likewise we find $$H_1(X,A) \cong \ker \varphi \cong \mathbb{Z}^{k-1}$$.
+
+---
+
+**(b)**:
+$$X = S^1 \times S^1$$ and $$A$$ is a finite set of $$k$$ points.
+This is very similar to the last problem.
+The first part proceeds identically so that we have $$H_n(X,A) = 0$$ for $$n > 2$$.
+Now, the LES is low dimensions (starting at $$H_2(A)$$) is:</script><p>0 \rightarrow \mathbb{Z} \rightarrow H_2(X,A) \rightarrow 0 \rightarrow \mathbb{Z}^2 \rightarrow H_1(X,A) \xrightarrow{\psi} \mathbb{Z}^k \xrightarrow{\varphi} \mathbb{Z} \rightarrow H_0(X,A) \rightarrow 0</p>
+<script type="math/tex; mode=display">
+
+Again, we must have $$H_2(X,A) \cong \mathbb{Z}$$.
+The map $$\varphi$$ is the same one from the previous part.
+As such, $$H_0(X,A) = 0$$ follows by the same argument.
+
+Since $$H_1(X, A)$$ is surrounded by free groups in the exact sequence, it must be free (citation needed).
+Thus, by the same sort of reasoning as before, we conclude that its rank must be the sum of that of $$\im \psi = \ker \varphi$$ and $$\ker \psi$$, which is isomorphic to $$\mathbb{Z}^2$$ since the map to the left of $$H_1(X, A)$$ is injective.
+That is, must be free of rank $$(k-1) + 2$$ and we get $$H_1(X, A) \cong \mathbb{Z}^{k+1}$$.
+
+---
+
+**Note**:
+We can do part (a) and (b) in an easier way -- though arguably against the spirit of the problem.
+Since $$X$$ is a manifold and $$A$$ is just a finite set of points, they certainly form a good pair (appropriately small open neighborhoods around each point deformation retract onto the point).
+Then we have $$H_n(X,A) = \wt{H}_n(X/A)$$.
+In either case, $$X/A$$ is homotopy equivalent to the wedge sum of $$X$$ with $$k-1$$ copies of $$S^1$$.
+The best way to see this is inductively.
+Take $$X$$, and identify two of the points $$a_1, a_2 \in A$$.
+This is homotopy equivalent to attaching an external arc outside of $$X$$ connected to $$a_1$$ and $$a_2$$.
+Then, take some path in $$X$$ connecting $$a_1$$ and $$a_2$$, and contract it -- we're left with a wedge sum of $$X$$ and $$S^1$$.
+For each remaining point $$a$$, add another arc and contract along the path from the wedge base point to $$a$$ to add another copy of $$S^1$$ to the wedge sum.
+Continuing in this way, we end up with $$X \vee \bigvee_{k-1} S^1$$.
+Then, since this is a wedge sum of manifolds, each pair, consisting of each summand with the wedge base point, is a good pair and we can apply Corollary 2.25 in Hatcher to directly compute the homology based on the homology of the summands.
+When $$X = S^2$$, we get:</script><p>H_0(X,A) = 0 \qquad H_1(X,A) = 0 \oplus \bigoplus_1^{k-1} \mathbb{Z} = \mathbb{Z}^{k-1}
+\qquad H_2(X,A) = \mathbb{Z} \oplus \bigoplus_1^{k-1} 0 = \mathbb{Z}</p>
+<script type="math/tex; mode=display">
+
+And when $$X = T^2$$:</script><p>H_0(X,A) = 0 \qquad H_1(X,A) = \mathbb{Z}^2 \oplus \bigoplus_1^{k-1} \mathbb{Z} = \mathbb{Z}^{k+1} \qquad H_2(X,A) = \mathbb{Z} \oplus \bigoplus_1^{k-1} 0 = \mathbb{Z}</p>
+<script type="math/tex; mode=display">
+
+Which agrees with what we get from considering the long exact sequence.
+
+---
+
+**(c)** $$X = T^2 \# T^2$$ and $$A$$ is the copy of $$S^1$$ used in performing the connect sum (the loop dividing $$X$$ into two connected components).
+
+
+
+Again $$A$$ is a deformation of a small annalus around $$A$$, so $$(X,A)$$ is a good pair.
+Then, it's easy to see that $$X/A$$ is homotopy equivalent to $$T^2 \vee T^2$$.
+Then, $$H_n(X,A) = \wt{H}_n(X/A)$$, which is easy to compute again using Corollary 2.25.
+We have:</script><p>H_0(X,A) = 0 \qquad H_1(X,A) = \mathbb{Z}^2 \oplus \mathbb{Z}^2 = \mathbb{Z}^4 \qquad H_2(X,A) = \mathbb{Z} \oplus \mathbb{Z} = \mathbb{Z}^2</p>
+<script type="math/tex; mode=display">
+
+With $$H_n(X,A) = 0$$ for $$n > 2$$.
+
+---
+
+**(d)** $$X$$ is $$T^2 \# T^2$$, and $$A$$ is a copy of $$S^1$$ subdividing *one* of the individual tori into two connected components.
+
+
+
+The same conditions apply, so we have $$H_n(X,A) = \wt{H}_n(X/A)$$.
+Considering $$T^2 / A$$ for one of the tori, observe that *this* space is homotopy equivalent to the sphere with two points identified (contract $$A$$ to a point, and then split that point into two), which is homotopy equivalent to $$S^2 \vee S^1$$.
+So then the space $$X$$ is homotopy equivalent to $$T^2 \# (S^2 \vee S^1)$$, but $$T^2 \# S^2 = T^2$$, so we have $$X \cong T^2 \vee S^1$$.
+So, we have:</script><p>H_0(X,A) = 0 \qquad H_1(X,A) = \mathbb{Z}^2 \oplus \mathbb{Z} = \mathbb{Z}^3 \qquad H_2(X,A) = \mathbb{Z} \oplus 0 = \mathbb{Z}</p>
+<p>$$</p>
+<p>And <script type="math/tex">H_n(X,A) = 0</script> for <script type="math/tex">n > 2</script>.</p>
+ 
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <script type="text/javascript" src="/js/mathjax_config.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+</body>
+
+</html>

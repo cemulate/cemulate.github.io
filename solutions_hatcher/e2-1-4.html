@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title> Hatcher Exercise 2.1.4 |  Chase Meadors</title>
+<meta name="description" content=" Homology of the triangular parachute ">
+  <link rel="stylesheet" href="/styles/main.css">
+  
+  
+</head>
+
+<body class="math-body">
+  <div class="container">
+    <div class="columns">
+      <div class="column">
+        <div class="math-container">
+          <h4 class="title is-3">Hatcher Exercise 2.1.4</h4>
+          <div class="content">
+             <p>Form the triangular parachute <script type="math/tex">P</script> from a regular <script type="math/tex">2</script>-simplex with all vertices identified to a single vertex.
+Label the vertex <script type="math/tex">v</script>, the edges <script type="math/tex">a,b,c</script>, and the face <script type="math/tex">f</script>.
+We wish to determine the simplicial homology groups.
+We have <script type="math/tex">\Delta_0 = \la v \ra, \Delta_1 = \la a,b,c \ra</script> and <script type="math/tex">\Delta_2 = \la f \ra</script> (of course, all brackets in this context mean the free <em>abelian</em> group on the enclosed generators).</p>
+<p>For <script type="math/tex">\delta_0</script>, we have <script type="math/tex">\im \delta_0 = \set{0}</script> and <script type="math/tex">\ker \delta_0 = \Delta_0</script>.
+For <script type="math/tex">\delta_1</script>, we have <script type="math/tex">\delta_1(a) = \delta_1(b) = \delta_1(c) = v-v=0</script>.
+Thus, <script type="math/tex">\im \delta_1 = \set{0}</script> and <script type="math/tex">\ker \delta_1 = \Delta_1</script>.</p>
+<p>For <script type="math/tex">\delta_2</script>, we have <script type="math/tex">\delta_2(f) = a-b+c</script>.
+Then, <script type="math/tex">\ker \delta_2 = \set{0}</script>, and <script type="math/tex">\im \delta_2</script> is precisely <script type="math/tex">I_2 = \setbuilder{ka - kb + kc}{k \in \mathbb{Z}}</script>.</p>
+<p><script type="math/tex">\delta_3</script> and higher are all the zero map.</p>
+<p>It&#39;s clear that we have <script type="math/tex">H_0(P) = \la v \ra / \set{0} = \la v \ra \cong \mathbb{Z}</script>.</p>
+<p>Next, <script type="math/tex">H_1(P) = \la a,b,c \ra / I_2</script>.
+Consider the homomorphism <script type="math/tex">\varphi : \la a,b,c \ra \rightarrow \mathbb{Z}^2</script> given by <script type="math/tex">\varphi(ra + sb + tc) = (r-t, s+t)</script>.
+Observe that <script type="math/tex">\ker \varphi</script> is precisely <script type="math/tex">\setbuilder{ra + sb + tc}{s=-r, t=r}</script>, which is exactly an equivalent description of <script type="math/tex">I_2</script>.
+We conclude <script type="math/tex">H_1(P) \cong \im \varphi = \mathbb{Z}^2</script>.</p>
+<p><script type="math/tex">H_2(P)</script> is <script type="math/tex">\set{0}</script> because <script type="math/tex">\delta_2</script> is injective, and all higher homology groups are zero as well.</p>
+ 
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <script type="text/javascript" src="/js/mathjax_config.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+</body>
+
+</html>

@@ -1,0 +1,97 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title> Exercise 6.2.24 |  Chase Meadors</title>
+<meta name="description" content=" The slice of a presheaf category is equivalent to presheaves on the category of elements ">
+  <link rel="stylesheet" href="/styles/main.css">
+  
+  
+</head>
+
+<body class="math-body">
+  <div class="container">
+    <div class="columns">
+      <div class="column">
+        <div class="math-container">
+          <h4 class="title is-3">Exercise 6.2.24</h4>
+          <div class="content">
+             <p><strong>Theorem</strong>:
+Every slice of a presheaf category is equivalent to another presheaf category.
+In particular, if <script type="math/tex">X \in \presheaves{\mathbf{A}}</script>, then</p>
+<script type="math/tex; mode=display">
+\presheaves{\mathbf{A}} / X \equiv \presheaves{\mathbf{E}(X)}</script><p>where <script type="math/tex">\mathbf{E}(X)</script> is the category of elements of <script type="math/tex">X</script>.</p>
+<p><em>Proof</em>:
+We will define a functor <script type="math/tex">F : \presheaves{\mathbf{A}} / X \rightarrow \presheaves{\mathbf{E}(X)}</script>.
+Take a pair <script type="math/tex">(R, \eta : R \rightarrow X) \in \presheaves{\mathbf{A}} / X</script>.</p>
+<p><script type="math/tex">F(R, \eta)</script> is a contravariant functor <script type="math/tex">\mathbf{E}(X) \rightarrow \mathbf{Set}</script>.
+Given an <script type="math/tex">(A, a) \in \mathbf{E}(X)</script>, we let <script type="math/tex">F(R, \eta)(A, a) = \eta_A^*(a)</script> -- that is, the inverse image of <script type="math/tex">\set{a}</script> under <script type="math/tex">\eta_A</script>.
+On a map <script type="math/tex">f : (A, a) \rightarrow (A', a')</script> let <script type="math/tex">F(R, \eta)(f) : \eta_{A'}^*(a') \rightarrow \eta_A^*(a)</script> simply be the restriction <script type="math/tex">R(f) \upharpoonright \eta_{A'}^*(a')</script>.
+Consider a map <script type="math/tex">\alpha : (R, \eta) \rightarrow (S, \varepsilon)</script> in <script type="math/tex">\presheaves{\mathbf{A}} / X</script>; that is <script type="math/tex">\alpha : R \rightarrow S</script> with <script type="math/tex">\varepsilon \circ \alpha = \eta</script>.</p>
+<p><script type="math/tex">F(\alpha)</script> is a natural transformation <script type="math/tex">F(R, \eta) \rightarrow F(S, \varepsilon)</script> with components <script type="math/tex">F(\alpha)_{(A, a)} : \eta_A^*(a) \rightarrow \varepsilon_A^*(a)</script>.
+Simply let <script type="math/tex">F(\alpha)_{(A, a)} = \alpha_A \upharpoonright \eta_A^*(a)</script>, again the restriction.
+This is well defined -- notice that if <script type="math/tex">k \in \eta_A^*(a)</script>, then <script type="math/tex">\eta_A(k) = a</script>, thus <script type="math/tex">(\varepsilon_A \circ \alpha_A)(k) = a</script>, and thus <script type="math/tex">k \in \varepsilon_A^*(a)</script>.
+Naturality is also easy to verify -- since components of <script type="math/tex">F(\alpha)</script> are just restrictions of components of <script type="math/tex">\alpha</script>, the appropriate squares still commute.</p>
+<p>We claim that <script type="math/tex">F</script> is full, faithful, and essentially surjective, making it an equivalence.
+Let <script type="math/tex">(R, \eta), (S, \varepsilon) \in \presheaves{\mathbf{A}}/X</script>.
+Suppose we have maps <script type="math/tex">\alpha, \beta : (R, \eta) \rightarrow (S, \varepsilon)</script> such that <script type="math/tex">F(\alpha) = F(\beta)</script>.
+This means that <script type="math/tex">F(\alpha)_{(A, a)} = F(\beta)_{(A, a)}</script> for all <script type="math/tex">(A, a) \in \mathbf{E}(X)</script>.
+Then <script type="math/tex">\alpha_A</script> and <script type="math/tex">\beta_A</script> are equal when restricted to <script type="math/tex">\eta_A^*(a)</script>, for all <script type="math/tex">a</script>.
+But for every <script type="math/tex">A</script>, <script type="math/tex">R(A) = \bigsqcup_{a \in X(A)} \eta_A^*(a)</script>, so we must have that <script type="math/tex">\alpha_A</script> and <script type="math/tex">\beta_A</script> are equal on all of <script type="math/tex">R(A)</script> -- thus <script type="math/tex">\alpha_A = \beta_A</script> for all <script type="math/tex">A</script> and <script type="math/tex">\alpha = \beta</script>.
+Thus <script type="math/tex">F</script> is faithful.</p>
+<p>Suppose that <script type="math/tex">\gamma</script> is some natural transformation <script type="math/tex">F(R, \eta) \rightarrow F(S, \varepsilon)</script>, having components <script type="math/tex">\gamma_{(A, a)} : \eta_A^*(a) \rightarrow \varepsilon_A^*(a)</script>.
+Consider each <script type="math/tex">\gamma_{(A, a)}</script> as a map <script type="math/tex">\eta_A^*(a) \rightarrow S(A)</script>.
+Again since <script type="math/tex">R(A) = \bigsqcup_{a \in X(A)} \eta_A^*(a)</script>, we have the unique map <script type="math/tex">\alpha_A = \bigsqcup_{a \in X(A)} \gamma_{(A, a)} : R(A) \rightarrow S(A)</script>.
+Indeed, these <script type="math/tex">\alpha_A</script>&#39;s form the components of a natural transformation <script type="math/tex">\alpha : R \rightarrow S</script>.
+To verify naturality, let <script type="math/tex">f : A \rightarrow A'</script> be an arrow.
+We want the following to commute:</p>
+<div class="math-figure"><img src="/assets/math_solutions/leinster/e6-2-24_1.svg" width="250"/></div>
+
+<p>Indeed, for every <script type="math/tex">a' \in X(A')</script>, we can form the diagram given by restricting each side of the above diagram:</p>
+<div class="math-figure"><img src="/assets/math_solutions/leinster/e6-2-24_2.svg" width="450"/></div>
+
+<p>which is actually equivalent to</p>
+<div class="math-figure"><img src="/assets/math_solutions/leinster/e6-2-24_3.svg" width="400"/></div>
+
+<p>which commutes precisely because <script type="math/tex">\gamma</script> is natural.
+Since every such restriction diagram commutes, the previous diagram does as well.
+Finally, it&#39;s clear that <script type="math/tex">F(\alpha)_{(A, a)} = \gamma_{(A, a)}</script> and <script type="math/tex">F(\alpha) = \gamma</script>.
+So, <script type="math/tex">F</script> is full.</p>
+<p>Finally, let&#39;s show <script type="math/tex">F</script> is essentially surjective.
+Let <script type="math/tex">Z \in \presheaves{\mathbf{E}(X)}</script> be a presheaf.
+We first define a presheaf <script type="math/tex">G \in \presheaves{\mathbf{A}}</script>.
+Let <script type="math/tex">G(A) = \bigsqcup_{a \in X(A)} Z(A, a)</script>.
+For a map <script type="math/tex">f: A \rightarrow A'</script>, let <script type="math/tex">G(f) = \bigsqcup_{a' \in X(A')} Z(f)</script>, where <script type="math/tex">f</script> is being considered as a map <script type="math/tex">(A, X(f)(a')) \rightarrow (A', a')</script>.
+We now need a natural transformation <script type="math/tex">\tau : G \rightarrow X</script>.
+Let <script type="math/tex">\tau_A : G(A) \rightarrow X(A)</script> be the natural projection sending a member of <script type="math/tex">G(A)</script> to its index in the sum.
+To check naturality, we need the following to commute for an <script type="math/tex">f : A \rightarrow A'</script>:</p>
+<div class="math-figure"><img src="/assets/math_solutions/leinster/e6-2-24_4.svg" width="250"/></div>
+
+<p>but if we restrict to a single <script type="math/tex">a' \in X(A')</script> the constituent part of the diagram becomes:</p>
+<div class="math-figure"><img src="/assets/math_solutions/leinster/e6-2-24_5.svg" width="400"/></div>
+
+<p>which trivially commutes (since <script type="math/tex">\tau_A</script> and <script type="math/tex">\tau_{A'}</script> are the natural projections).
+Since the objects and arrows in the whole diagrams are all disjoint unions of these parts, the whole diagram commutes.
+Finally, we calculate <script type="math/tex">F(G, \tau)</script>.
+Recall that <script type="math/tex">F(G, \tau)(A, a) = \tau_A^*(a)</script>, which is precisely (a subset canonically isomorphic to) <script type="math/tex">Z(A, a)</script>.
+So <script type="math/tex">F(G, \tau)(A, a) \cong Z(A, a)</script>, and its easily checked that this isomorphism is natural (essentially because it is canonical).</p>
+<p>Finally then, <script type="math/tex">F</script> is full, faithful, and essentially surjective on objects making it an equivalence.</p>
+ 
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <script type="text/javascript" src="/js/mathjax_config.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+</body>
+
+</html>

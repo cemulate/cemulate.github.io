@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title> Exercise 1.3.34 |  Chase Meadors</title>
+<meta name="description" content=" Equivalence of categories is an equivalence relation ">
+  <link rel="stylesheet" href="/styles/main.css">
+  
+  
+</head>
+
+<body class="math-body">
+  <div class="container">
+    <div class="columns">
+      <div class="column">
+        <div class="math-container">
+          <h4 class="title is-3">Exercise 1.3.34</h4>
+          <div class="content">
+             <p><strong>Theorem</strong>:
+Equivalence of categories is an equivalence relation</p>
+<p><em>Proof</em>:
+Let <script type="math/tex">\mathbf{A}, \mathbf{B}</script>, and <script type="math/tex">\mathbf{C}</script> be categories.</p>
+<p>Clearly, the identity functor <script type="math/tex">\mathbf{A} \rightarrow \mathbf{A}</script> is an equivalence of categories, so equivalence is reflexive.</p>
+<p>Suppose <script type="math/tex">F : \mathbf{A} \rightarrow \mathbf{B}</script> is an equivalence.
+Then we have <script type="math/tex">G : \mathbf{B} \rightarrow \mathbf{A}</script> and natural isomorphisms <script type="math/tex">\eta : 1_{\mathbf{A}} \rightarrow G \circ F</script> and <script type="math/tex">\varepsilon : F \circ G \rightarrow 1_{\mathbf{B}}</script>.</p>
+<script type="math/tex; mode=display">G$$ along with the natural isomorphisms $$\varepsilon^{-1} : 1_{\mathbf{B}} \rightarrow F \circ G$$ and $$\eta^{-1} : G \circ F \rightarrow 1_{\mathbf{A}}$$ is an equivalence from $$\mathbf{B}$$ to $$\mathbf{A}$$, so equivalence is symmetric.
+
+Finally, suppose $$F : \mathbf{A} \rightarrow \mathbf{B}$$ and $$X : \mathbf{B} \rightarrow \mathbf{C}$$ are equivalences.
+We have $$G : \mathbf{B} \rightarrow \mathbf{A}$$ and $$Y : \mathbf{C} \rightarrow \mathbf{B}$$ along with all of the following natural isomorphisms:</script><p>\eta^1 : 1<em>{\mathbf{A}} \rightarrow GF \qquad \varepsilon^1 : FG \rightarrow 1</em>{\mathbf{B}} \qquad \eta^2 : 1<em>{\mathbf{B}} \rightarrow YX \qquad \varepsilon^2 : XY \rightarrow 1</em>{\mathbf{C}}</p>
+<p>$$</p>
+<p>Consider <script type="math/tex">X \circ F : \mathbf{A} \rightarrow \mathbf{C}</script>, and <script type="math/tex">G \circ Y : \mathbf{C} \rightarrow \mathbf{A}</script>.
+We need to show that <script type="math/tex">GYXF : \mathbf{A} \rightarrow \mathbf{A}</script> is naturally isomorphic to <script type="math/tex">1_{\mathbf{A}}</script>.
+We need to define <script type="math/tex">\eta^3 : 1_{\mathbf{A}} \rightarrow GYXF</script>.
+In fact, we will write it as the vertical composition of <script type="math/tex">\eta^1 : 1_{\mathbf{A}} \rightarrow GF</script> and a new natural transformation <script type="math/tex">\gamma : GF \rightarrow GYXF</script>.
+To find an expression for <script type="math/tex">\gamma</script>, consider the following diagram:</p>
+<div class="math-figure"><img src="/assets/math_solutions/leinster/e1-3-34_1.svg" width="400"/></div>
+
+<p>We can then <em>horizontally</em> compose the natural transformations here (the identity natural transformation on the left and right), to yield a natural transformation <script type="math/tex">\gamma = G \eta^2 F : GF \rightarrow GYXF</script> -- abusing notation a bit.
+To be clear, we define <script type="math/tex">\gamma_A = G(\eta^2_{F(A)})</script>.</p>
+<p>Then, <script type="math/tex">\eta^3 = \gamma \circ \eta^1</script> is a natural isomorphism from <script type="math/tex">1_{\mathbf{A}}</script> to <script type="math/tex">GYXF</script>.
+We proceed similarly to find <script type="math/tex">\varepsilon^3 : XFGY \rightarrow 1_{\mathbf{C}}</script>.
+Consider:</p>
+<div class="math-figure"><img src="/assets/math_solutions/leinster/e1-3-34_2.svg" width="400"/></div>
+
+<p>so define the natural transformation <script type="math/tex">\varphi = X \varepsilon^1 Y : XFGY \rightarrow XY</script>.
+Then, let <script type="math/tex">\varepsilon^3 = \varepsilon^2 \circ \varphi</script>.</p>
+<p>Finally, then, we have a pair of functors <script type="math/tex">\mathbf{A} \rightarrow \mathbf{C}</script> and <script type="math/tex">\mathbf{C} \rightarrow \mathbf{A}</script> along with <script type="math/tex">\eta^3</script> and <script type="math/tex">\varepsilon^3</script> that make the functors into an equivalence of categories, and such an equivalence is transitive.</p>
+ 
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <script type="text/javascript" src="/js/mathjax_config.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+</body>
+
+</html>

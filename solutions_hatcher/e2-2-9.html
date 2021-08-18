@@ -1,0 +1,107 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title> Hatcher Exercise 2.2.9 |  Chase Meadors</title>
+<meta name="description" content=" Homology computations for several two-dimensional CW-complxes ">
+  <link rel="stylesheet" href="/styles/main.css">
+  
+  
+</head>
+
+<body class="math-body">
+  <div class="container">
+    <div class="columns">
+      <div class="column">
+        <div class="math-container">
+          <h4 class="title is-3">Hatcher Exercise 2.2.9</h4>
+          <div class="content">
+             <p>We compute homology for a few two-dimensional CW-complexes:</p>
+<p><strong>(a)</strong>
+Let <script type="math/tex">X = S^2</script> with the north and south poles identified.
+We&#39;ve previously seen that this space is homotopy equivalent to <script type="math/tex">S^2 \vee S^1</script>, and so the homology should be:</p>
+<script type="math/tex; mode=display">
+H_0(X) = \mathbb{Z} \qquad H_1(X) = \mathbb{Z} \quad H_2(X) = \mathbb{Z}</script><p>But, let&#39;s do it using cellular homology.
+To understand the CW-complex structure, first consider the CW-complex structure for <script type="math/tex">S^2</script> (without identification) consisting of two 0-cells <script type="math/tex">p,q</script> (the poles), a 1-cell <script type="math/tex">e</script> between them, and a 2-cell attached by mapping one half-interval of the boundary along <script type="math/tex">e</script> from <script type="math/tex">p</script> to <script type="math/tex">q</script>, and the consecutive half-interval along <script type="math/tex">e</script> with opposite orientation -- that is, from <script type="math/tex">q</script> to <script type="math/tex">p</script> (imagine the 2-cell in a Pacman shape -- the attaching map is zipping the mouth shut by sending both halves of the mouth to the single line <script type="math/tex">e</script>).</p>
+<p>Then, we can get a CW-complex on <script type="math/tex">X</script> by modifying the this structure -- just start with one 0-cell <script type="math/tex">p</script> and have the attaching map of the 1-cell map both endpoints to <script type="math/tex">p</script> -- keep the attaching map the same as described above.
+Then, the cellular chain complex is:</p>
+<script type="math/tex; mode=display">
+0 \rightarrow \mathbb{Z} \xrightarrow{d_2} \mathbb{Z} \xrightarrow{d_1} \mathbb{Z} \rightarrow 0</script><p>Clearly <script type="math/tex">d_1</script> is zero since there is only one zero-cell.</p>
+<script type="math/tex; mode=display">d_2$$ is also zero because it maps the 2-cell along $$e$$ twice in opposite orientation.
+So, the boundary maps are zero and the homology groups are just the groups in the chain complex, which are the same as what we stated at the beginning.
+
+---
+
+**(b)**
+Let $$X = S^1 \times (S^1 \vee S^1)$$.
+This is two concentric tori meeting at their outer and inner edge, respectively.
+We can get a CW-complex structure as follows:
+
+<div class="math-figure"><img src="/assets/math_solutions/hatcher/e2-2-9_1.svg" width="300"/></div>
+
+Where all vertices represent the single vertex $$p$$, and the 2-cells are attached according to the word around their boundary.
+Then, the cellular chain complex is:</script><p>0 \rightarrow \mathbb{Z}^2 \xrightarrow{d_2} \mathbb{Z}^3 \xrightarrow{d_1} \mathbb{Z} \rightarrow 0</p>
+<script type="math/tex; mode=display">
+
+Again, $$d_1$$ is zero because there is only one 0-cell.
+Examining how $$d_2$$ maps the 2-cells onto each 1-cell, notice that every 1-cell appears around the boundary of both $$F$$ and $$G$$ exactly twice in opposite orientation (or no times).
+So, according to the cellular boundary formula $$d_2$$ sends both $$F$$ and $$G$$ to zero, so $$d_2 = 0$$.
+Then, the homology is:</script><p>H_0(X) = \mathbb{Z} \qquad H_1(X) = \mathbb{Z}^3 \qquad H_2(X) = \mathbb{Z}^2</p>
+<script type="math/tex; mode=display">
+
+---
+
+**(c)**
+Let $$X$$ be the space obtained from $$D^2$$ by deleting the interiors of two distinct subdiscs in the interior and then identifying all three resulting boundary circles together in an orientation preserving way.
+We can put a CW-complex structure on $$X$$ by making 'cuts' up to the two removed holes, so that the space can be described by a polygon with edges identified according to $$aba^{-1} b^{-1} c a^{-1} c^{-1}$$.
+Then, we have a CW-complex structure with one 0-cell, three 1-cells, and a 2-cell $$F$$ attached according to the boundary word.
+Then, the cellular chain complex is:</script><p>0 \rightarrow \la F \ra \xrightarrow{d_2} \la a,b,c \ra \xrightarrow{d_1} \la p \ra \rightarrow 0</p>
+<script type="math/tex; mode=display">
+
+As with previous problems, $$d_1$$ is zero because there is only one 0-cell.
+By the cellular boundary formula, $$d_2(F) = -a$$ ($$b$$ and $$c$$ appear exactly in opposite-orientation pairs).
+Then, $$\im d_2 = \la -a \ra$$, and $$\ker d_2 = 0$$.
+Then, we have $$H_1(X) = \la a,b,c \ra / \la a \ra \cong \mathbb{Z}^2$$.
+So,</script><p>H_0(X) = \mathbb{Z} \qquad H_1(X) = \mathbb{Z}^2 \qquad H_2(X) = 0</p>
+<script type="math/tex; mode=display">
+
+
+**(d)**
+Let $$X$$ be the space obtained from $$S^1 \times S^1$$ by identifying the points differing by $$2\pi/m$$ on one copy of $$S^1$$, and the points differing by $$2 \pi / n$$ on the other copy of $$S^1$$.
+
+When we look at this identification on one circle, its clear that we get a wedge of $$n$$ (respectively $$m$$) circles.
+If we view $$S^1 \times S^1$$ as a square with boundary identified, this can be interpreted as dividing up each edge into $$n$$ unique new edges.
+Then, we can put a CW-complex structure on $$X$$ like this (for $$n=3$$ and $$m=2$$):
+
+<div class="math-figure"><img src="/assets/math_solutions/hatcher/e2-2-9_2.svg" width="450"/></div>
+
+Where all the points are identified to a single vertex, and as such the internal edges are identified in the obvious way (to the ones they are parallel with).
+This gives a CW-complex structure with one 0-cell, $$n+m$$ 1-cells, and $$nm$$ 2-cells, each attached in a miniature torus patch according to $$a_i b_j a_i^{-1} b_j^{-1}$$.
+The cellular chain complex is:</script><p>0 \rightarrow \la F_{ij} \; : \; i \in [n], j \in [m] \ra \xrightarrow{d_2} \la a_i, b_j \; : \; i \in [n], j \in [m] \ra \xrightarrow{d_1} \la p \ra \rightarrow 0</p>
+<script type="math/tex; mode=display">
+
+Again, $$d_1$$ is zero.
+As it turns out, $$d_2$$ is zero as well since every edge appears exactly in an opposite-orientation pair in the boundary word(s) for each face.
+Then, we have:</script><p>H_0(X) = \mathbb{Z} \qquad H_1(X) = \mathbb{Z}^{n+m} \qquad H_2(X) = \mathbb{Z}^{nm}</p>
+<p>$$</p>
+<p>Indeed, notice that this coincides with the homology of the torus when <script type="math/tex">n=1,m=1</script>.
+Furthermore, the space from part (b) is precisely this construction when <script type="math/tex">n=2</script> and <script type="math/tex">m=1</script>, and the homology coincides there as well.</p>
+ 
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <script type="text/javascript" src="/js/mathjax_config.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+</body>
+
+</html>

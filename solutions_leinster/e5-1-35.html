@@ -1,0 +1,102 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title> Exercise 5.1.35 |  Chase Meadors</title>
+<meta name="description" content=" The pullback pasting lemma ">
+  <link rel="stylesheet" href="/styles/main.css">
+  
+  
+</head>
+
+<body class="math-body">
+  <div class="container">
+    <div class="columns">
+      <div class="column">
+        <div class="math-container">
+          <h4 class="title is-3">Exercise 5.1.35</h4>
+          <div class="content">
+             <p>Take a commutative diagram in some category:</p>
+<div class="math-figure"><img src="/assets/math_solutions/leinster/e5-1-35_1.svg" width="300px"/></div>
+
+<p>such that the right square is a pullback.</p>
+<p><strong>Theorem</strong>:
+The left square is a pullback if and only if the outer square is a pullback.</p>
+<p><em>Proof</em>:
+First, assume the outer square is a pullback.
+Let&#39;s label things:</p>
+<div class="math-figure"><img src="/assets/math_solutions/leinster/e5-1-35_2.svg" width="300px"/></div>
+
+<p>So we have that <script type="math/tex">(Q, q_1, q_2)</script> is a pullback over <script type="math/tex">B \xrightarrow{f} Z \xleftarrow{g} A</script>, and <script type="math/tex">(P, q_1 \circ p_1, p_2)</script> is a pullback over <script type="math/tex">C \xrightarrow{f \circ h} Z \xleftarrow{g} A</script>.
+Take an arbitrary cone <script type="math/tex">(R, j, k)</script> over <script type="math/tex">C \xrightarrow{h} B \xleftarrow{q_2} Q</script>.
+We need to produce a unique map (dotted) so that</p>
+<div class="math-figure"><img src="/assets/math_solutions/leinster/e5-1-35_3.svg" width="300px"/></div>
+
+<p>commutes.
+Notice that <script type="math/tex">(R, q_1 \circ k, j)</script> is a cone over <script type="math/tex">C \xrightarrow{f \circ h} Z \xleftarrow{g} A</script>.
+So we have a unique <script type="math/tex">\varphi_1 : R \rightarrow P</script> making:</p>
+<div class="math-figure"><img src="/assets/math_solutions/leinster/e5-1-35_4.svg" width="300px"/></div>
+
+<p>commute.
+We claim that <script type="math/tex">\varphi_1</script> is exactly the unique map that makes (2) commute.
+The left triangle would commute by (3), so we need only show the top triangle of (2) -- that is <script type="math/tex">p_1 \circ \varphi_1 = k</script>.</p>
+<p>To get more information, consider that <script type="math/tex">(R, q_1 \circ k, h \circ j)</script> is a cone over <script type="math/tex">B \xrightarrow{f} Z \xleftarrow{g} A</script>.
+So we have a unique <script type="math/tex">\varphi_2 : R \rightarrow Q</script> making:</p>
+<div class="math-figure"><img src="/assets/math_solutions/leinster/e5-1-35_5.svg" width="300px"/></div>
+
+<p>commute.</p>
+<p>Note that <script type="math/tex">p_1 \circ \varphi_1</script> is another map from <script type="math/tex">R \rightarrow Q</script>.
+We claim that if we replace <script type="math/tex">\varphi_2</script> by this map in (4), the diagram still commutes.
+To see this, note that the top triangle becomes that of (3) written slightly differently.
+For the left triangle, we need to verify <script type="math/tex">q_2 \circ p_1 \circ \varphi_1 = h \circ j</script>.
+Note that <script type="math/tex">q_2 \circ p_1 = h \circ p_2</script> by (1), and <script type="math/tex">p_2 \circ \varphi_1 = j</script> by (3), so <script type="math/tex">q_2 \circ p_1 \circ \varphi_1 = h \circ p_2 \circ \varphi_1 = h \circ j</script>.</p>
+<p>Similarly, we can replace <script type="math/tex">\varphi_2</script> with <script type="math/tex">k : R \rightarrow Q</script> in (4) and the diagram still commutes.
+The top triangle commutes trivially.
+The left triangle commutes because it is really the square:</p>
+<div class="math-figure"><img src="/assets/math_solutions/leinster/e5-1-35_6.svg" width="150px"/></div>
+
+<p>which commutes precisely because <script type="math/tex">(R, j, k)</script> is a cone over <script type="math/tex">C \xrightarrow{h} B \xleftarrow{q_2} Q</script>.</p>
+<p>Finally then, since <script type="math/tex">\varphi_2</script> is unique we have <script type="math/tex">p_1 \circ \varphi_1 = \varphi_2 = k</script>.
+So the top of (2) commutes.
+So, (2) commutes if <script type="math/tex">\varphi_1</script> is the dotted map, and <script type="math/tex">\varphi_1</script> is unique, so the left square is a pullback.</p>
+<hr>
+<p>Now, suppose that both the left and right square are pullbacks.
+With the same labeling, we are now assuming that <script type="math/tex">(Q, q_1, q_2)</script> is a pullback over <script type="math/tex">B \xrightarrow{f} Z \xleftarrow{g} A</script>, and <script type="math/tex">(P, p_1, p_2)</script> is a pullback over <script type="math/tex">C \xrightarrow{h} B  \xleftarrow{q_2} Q</script>.
+We wish to show the outer square is a pullback, so let <script type="math/tex">(R, j, k)</script> be an arbitrary cone over <script type="math/tex">C \xrightarrow{f \circ h} Z \xleftarrow{g} A</script>.
+We need to produce a unique map (dotted) so that:</p>
+<div class="math-figure"><img src="/assets/math_solutions/leinster/e5-1-35_7.svg" width="300px"/></div>
+
+<p>commutes.
+Since <script type="math/tex">(R, k, h \circ j)</script> is a cone over <script type="math/tex">B \xrightarrow{f} Z \xleftarrow{g} A</script>, we have a unique <script type="math/tex">\varphi_1 : R \rightarrow A</script> making:</p>
+<div class="math-figure"><img src="/assets/math_solutions/leinster/e5-1-35_8.svg" width="300px"/></div>
+
+<p>commute.
+Now, we have that <script type="math/tex">(R, \varphi_1, j)</script> is a cone over <script type="math/tex">C \xrightarrow{h} B \xleftarrow{q_2} Q</script>.
+So we have a unique <script type="math/tex">\varphi_2</script> making:</p>
+<div class="math-figure"><img src="/assets/math_solutions/leinster/e5-1-35_9.svg" width="300px"/></div>
+
+<p>commute.
+But then the whole diagram:</p>
+<div class="math-figure"><img src="/assets/math_solutions/leinster/e5-1-35_10.svg" width="300px"/></div>
+
+<p>commutes.
+Of course, (5) is just a subdiagram of this, so taking the (unique) map <script type="math/tex">\varphi_2</script> makes (5) commute, and the outer rectangle is a pullback.</p>
+ 
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <script type="text/javascript" src="/js/mathjax_config.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+</body>
+
+</html>

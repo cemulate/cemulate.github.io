@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title> Exercise 5.1.40 |  Chase Meadors</title>
+<meta name="description" content=" Subobjects (monics) in $$\mathbf{Set}$$ are isomorphic when they have the same image ">
+  <link rel="stylesheet" href="/styles/main.css">
+  
+  
+</head>
+
+<body class="math-body">
+  <div class="container">
+    <div class="columns">
+      <div class="column">
+        <div class="math-container">
+          <h4 class="title is-3">Exercise 5.1.40</h4>
+          <div class="content">
+             <p>For a category <script type="math/tex">\mathbf{A}</script> and object <script type="math/tex">A</script>, let <script type="math/tex">\mathbf{Monic}(A)</script> denote the full subcategory of <script type="math/tex">\mathbf{A} / A</script> whose objects are the monic morphisms.
+A <em>subobject</em> of <script type="math/tex">A</script> is an isomorphism class of objects in <script type="math/tex">\mathbf{Monic}(A)</script>.</p>
+<p><strong>Theorem</strong>:
+Let <script type="math/tex">X \xrightarrow{m} A</script> and <script type="math/tex">Y \xrightarrow{n} A</script> be monics in <script type="math/tex">\mathbf{Set}</script>.</p>
+<script type="math/tex; mode=display">(X, m)$$ and $$(Y, n)$$ are isomorphic in $$\mathbf{Monic}(A)$$ if and only if $$m$$ and $$n$$ have the same image.
+
+
+*Proof*:
+Suppose $$m$$ and $$n$$ have the same image.
+Denote $$S = m(X) = n(Y)$$.
+Then in fact $$m$$ and $$n$$ are bijections, considered as $$m : X \rightarrow S$$ and $$n : Y \rightarrow S$$.
+Take $$f = n^{-1} \circ m : X \rightarrow Y$$ and $$g = m^{-1} \circ n : Y \rightarrow X$$.
+Clearly $$(X, f)$$ is a morphism in $$\mathbf{Monic}(A)$$: $$n \circ f = n \circ n^{-1} \circ m = m$$ and similarly for $$(Y, g)$$.
+It's tirival then that $$f \circ g = g \circ f = \id$$, so $$(X, f)$$ and $$(Y, n)$$ are isomorphic.
+
+Suppose $$(X, m)$$ and $$(Y, n)$$ are isomorphic.
+Then, we have $$f : X \rightarrow Y$$ and $$g : Y \rightarrow X$$ that are morphisms in $$\mathbf{Monic}(A)$$ (meaning $$n \circ f = m$$ and $$m \circ g = n$$), and furthermore $$f$$ and $$g$$ are (mutually inverse) isomorphisms.
+The latter fact is actually not needed for this direction.
+Observe that that the first equality guarantees that anything in the image of $$m$$ is in the image of $$n$$, and the second guarantees that anything in the image of $$n$$ in the in the image of $$m$$.
+So, $$m(X) = n(Y)$$.
+
+$$\mjqed</script><p>So, we have that subobjects of a set <script type="math/tex">A</script> are in canonical correspondence with the subsets of <script type="math/tex">A</script>.</p>
+<p>In <script type="math/tex">\mathbf{Top}</script>, the situation calls for a bit more subtlety.
+There exist monics in <script type="math/tex">\mathbf{Top}</script> that that have the same subspace as an image, but are not isomorphic.
+Consider the space <script type="math/tex">A = [0, 2\pi)</script> and <script type="math/tex">B = [0, 2\pi]</script>.
+In both cases, consider the map <script type="math/tex">f : t \mapsto (\cos t, \sin t)</script>.
+So we have <script type="math/tex">A \xrightarrow{f} \mathbb{R}^2</script> and <script type="math/tex">B \xrightarrow{f} \mathbb{R}^2</script> that are monics with the same image (<script type="math/tex">S^1</script>), but <script type="math/tex">A</script> and <script type="math/tex">B</script> are not homeomorphic, and hence these are two <em>different</em> subobjects.
+However, isomorphism classes of <em>embeddings</em> (a continuous injective function that is homeomorphic onto its image) do correspond one-to-one with subspaces.</p>
+ 
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <script type="text/javascript" src="/js/mathjax_config.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+</body>
+
+</html>

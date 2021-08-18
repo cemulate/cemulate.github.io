@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title> Exercise 5.1.38 |  Chase Meadors</title>
+<meta name="description" content=" A category with products and equalizers has all limits ">
+  <link rel="stylesheet" href="/styles/main.css">
+  
+  
+</head>
+
+<body class="math-body">
+  <div class="container">
+    <div class="columns">
+      <div class="column">
+        <div class="math-container">
+          <h4 class="title is-3">Exercise 5.1.38</h4>
+          <div class="content">
+             <p><strong>Theorem</strong>:
+Let <script type="math/tex">\mathbf{A}</script> be category having all products and equalizers.
+Then <script type="math/tex">\mathbf{A}</script> has all limits.</p>
+<p><em>Proof</em>:
+Let <script type="math/tex">D : \mathbf{I} \rightarrow \mathbf{A}</script> be a diagram.
+We can define the following objects in <script type="math/tex">\mathbf{A}</script>:</p>
+<script type="math/tex; mode=display">
+O = \prod_{I \in \text{Ob}(\mathbf{I})} D(I) \qquad M = \prod_{u : J \rightarrow K \in \text{Mor}(\mathbf{I})} D(K)</script><p>Now we define maps <script type="math/tex">s, t : O \rightarrow M</script>.</p>
+<p><script type="math/tex">O</script> is a product, and as such it comes with its projection maps <script type="math/tex">(\pi_I : O \rightarrow D(I))_{I \in \mathbf{I}}</script>.
+Likewise <script type="math/tex">M</script> comes equipped with projections <script type="math/tex">\pi_u : M \rightarrow D(K)</script> for each map <script type="math/tex">u : J \rightarrow K</script>.
+For any given <script type="math/tex">u : J \rightarrow K</script>, define a map <script type="math/tex">s_u: O \rightarrow D(K)</script> by <script type="math/tex">s_u = Du \circ \pi_J</script>.
+Define <script type="math/tex">t_u : O \rightarrow D(K)</script> by <script type="math/tex">t_u = \pi_K</script>.
+Finally, let <script type="math/tex">s</script> be the unique morphism <script type="math/tex">O \rightarrow M</script> such that <script type="math/tex">\pi_u \circ s = s_u</script> for all morphisms <script type="math/tex">u</script>, and similarly for <script type="math/tex">t</script>.</p>
+<p>Now, let <script type="math/tex">L \xrightarrow{p} O</script> be the equalizer of <script type="math/tex">s</script> and <script type="math/tex">t</script>.
+Write <script type="math/tex">p_I = \pi_I \circ p</script>.
+We claim that <script type="math/tex">\left( L \xrightarrow{p_I} D(I) \right)_{I \in \mathbf{I}}</script> is precisely a limit cone over the whole diagram <script type="math/tex">D</script>.</p>
+<p>First, let&#39;s verify that it is in fact a cone over <script type="math/tex">D</script>.
+Given <script type="math/tex">u : J \rightarrow K</script> we require <script type="math/tex">D(u) \circ p_J = p_K</script>, or <script type="math/tex">D(u) \circ \pi_J \circ p = p_K</script>.
+Indeed, observe that <script type="math/tex">D(u) \circ \pi_J = s_u = \pi_u \circ s</script>, and then <script type="math/tex">\pi_u \circ s \circ p = \pi_u \circ t \circ p</script> since <script type="math/tex">p</script> is an equalizer.
+Finally, <script type="math/tex">\pi_u \circ t = t_u = \pi_K</script>, and <script type="math/tex">\pi_K \circ p = p_K</script>, giving the desired equality.</p>
+<p>To show it unique, let <script type="math/tex">\left( A \xrightarrow{f_I} D(I) \right)_{I \in \mathbf{I}}</script> be an arbitrary cone over <script type="math/tex">D</script>.
+There is a unique map <script type="math/tex">\varphi : A \rightarrow O</script> such that <script type="math/tex">\pi_I \circ \varphi = f_I</script>.
+We claim that <script type="math/tex">s \circ \varphi = t \circ \varphi</script>.
+Indeed, consider that for some <script type="math/tex">u : J \rightarrow K</script>, we have <script type="math/tex">\pi_u \circ s \circ \varphi = s_u \circ \varphi = D(u) \circ \pi_J \circ \varphi = D(u) \circ f_J = f_K</script>.
+Meanwhile, <script type="math/tex">\pi_u \circ t \circ \varphi = t_u \circ \varphi = \pi_K \circ \varphi = f_K</script>.
+Since <script type="math/tex">\pi_u \circ (s \circ \varphi) = \pi_u \circ (t \circ \varphi)</script> for all <script type="math/tex">u</script>, we have <script type="math/tex">s \circ \varphi = t \circ \varphi</script>.
+Then since <script type="math/tex">A</script> equalizes <script type="math/tex">s</script> and <script type="math/tex">t</script>, we have a unique map <script type="math/tex">\phi : A \rightarrow L</script> with <script type="math/tex">p_I \circ \phi = f_I</script>.
+This is the desired unique map, making <script type="math/tex">L</script> the limit of the diagram <script type="math/tex">D</script>.</p>
+ 
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <script type="text/javascript" src="/js/mathjax_config.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+</body>
+
+</html>

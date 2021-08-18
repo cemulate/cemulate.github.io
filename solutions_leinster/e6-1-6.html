@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title> Exercise 6.1.6 |  Chase Meadors</title>
+<meta name="description" content=" Interpreting a chapter theorem about a right adjoint to the limit functor ">
+  <link rel="stylesheet" href="/styles/main.css">
+  
+  
+</head>
+
+<body class="math-body">
+  <div class="container">
+    <div class="columns">
+      <div class="column">
+        <div class="math-container">
+          <h4 class="title is-3">Exercise 6.1.6</h4>
+          <div class="content">
+             <p>Consider the theorem at the end of chapter six:</p>
+<p><strong>Theorem</strong>:
+Let <script type="math/tex">\mathbf{I}</script> be a small category and <script type="math/tex">\mathbf{A}</script> a category with all limits of shape <script type="math/tex">\mathbf{I}</script>.
+Then <script type="math/tex">\lim_{\mathbf{I}}</script> defines a functor <script type="math/tex">[\mathbf{I}, \mathbf{A}] \rightarrow \mathbf{A}</script> which is right-adjoint to the diagonal functor <script type="math/tex">\Delta : \mathbf{A} \rightarrow [\mathbf{I}, \mathbf{A}]</script>.</p>
+<p>We wish interpret this theorem in the special case that <script type="math/tex">\mathbf{A} = \mathbf{Set}</script> and <script type="math/tex">\mathbf{I}</script> is a group.</p>
+<p>First note that <script type="math/tex">[G, \mathbf{Set}]</script> is the category of <script type="math/tex">G</script>-sets -- that is, groups equipped with a <script type="math/tex">G</script>-action <script type="math/tex">G \times S \rightarrow S</script>.
+In this scenario, the diagonal functor <script type="math/tex">\Delta : \mathbf{Set} \rightarrow [G, \mathbf{Set}]</script> takes a set <script type="math/tex">S</script> to <script type="math/tex">(S, \cdot)</script>, where <script type="math/tex">S</script> is now equipped with the trivial <script type="math/tex">G</script>-action where <script type="math/tex">g \cdot s = s</script> for all <script type="math/tex">g</script> and <script type="math/tex">s</script> (alternatively, <script type="math/tex">g \cdot \dash = \id_S</script> for all <script type="math/tex">g</script>).</p>
+<p>To find out what <script type="math/tex">\lim_{\mathbf{I}}</script> does, we first need to consider what constitutes a cone over a <script type="math/tex">G</script>-set.
+Given a <script type="math/tex">G</script>-set <script type="math/tex">(S, \cdot)</script>, a cone consists of a set <script type="math/tex">A</script> and a single map <script type="math/tex">f : A \rightarrow S</script> such that <script type="math/tex">(g \cdot \dash) \circ f = f</script> for all <script type="math/tex">g</script>.
+To rephrase, that means that <script type="math/tex">g \cdot f(a) = f(a)</script> for all <script type="math/tex">a \in A</script> and <script type="math/tex">g \in G</script>.
+This means that every <script type="math/tex">f(a)</script> is stabilized by the whole group <script type="math/tex">G</script>.
+So a cone is a pair <script type="math/tex">(A, f)</script> where <script type="math/tex">f</script> must take each element to a <script type="math/tex">G</script>-invariant element.
+So a <em>universal</em> cone (limit cone) can be computed by the usual construction giving arbitrary limits in <script type="math/tex">\mathbf{Set}</script>.
+We find that the limit is precisely the subset of <script type="math/tex">S</script> consisting of <script type="math/tex">G</script>-invariant elements.</p>
+<p>We are finally ready to interpret the adjunction.
+The adjunction means that <script type="math/tex">[G, \mathbf{Set}](\Delta S, T) \cong \mathbf{Set}(S, \lim_{\mathbf{I}} T)</script> for any set <script type="math/tex">S</script> and <script type="math/tex">G</script>-set <script type="math/tex">(T, \cdot)</script>.
+Indeed, one can observe that a <script type="math/tex">G</script>-equivariant map from <script type="math/tex">\Delta S</script> to <script type="math/tex">T</script> can only map onto <script type="math/tex">G</script>-invariant elements of <script type="math/tex">T</script>, so of course such a map is determined completely by a map <script type="math/tex">S \rightarrow \lim_{\mathbf{I}} T</script>, which is precisely the subset of <script type="math/tex">G</script>-invariant elements.</p>
+<p>The dual of the preceding theorem says that colimits are <em>left</em>-adjoint to the diagonal functor.
+In the present context, let&#39;s interpet the <script type="math/tex">\colim_{\mathbf{I}}</script> functor.
+Consider some <script type="math/tex">G</script>-set <script type="math/tex">(S, \cdot)</script>.
+We can use the general construction for colimits in set and find that the colimit is <script type="math/tex">S / {\sim}</script>, where <script type="math/tex">\sim</script> is the precisely the equivalence relation induced by the <script type="math/tex">G</script>-action (orbits correspond to equivalence classes).
+So, the adjunction says that <script type="math/tex">\mathbf{Set}(S / {\sim}, T) \cong [G, \mathbf{Set}](S, \Delta T)</script>.
+Indeed, its easy to see that for a <script type="math/tex">G</script>-equivariant map <script type="math/tex">S \rightarrow \Delta T</script>, all members of an orbit must map on to the same element, so of course such a map is determined by a mapping from the orbits of <script type="math/tex">S</script> to <script type="math/tex">T</script>.</p>
+ 
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <script type="text/javascript" src="/js/mathjax_config.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+</body>
+
+</html>

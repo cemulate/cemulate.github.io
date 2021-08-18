@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title> Exercise 2.1.16 |  Chase Meadors</title>
+<meta name="description" content=" An exploration of "interesting" functors between $$\mathbf{Set}$$ and the category of left $$G$$-sets ">
+  <link rel="stylesheet" href="/styles/main.css">
+  
+  
+</head>
+
+<body class="math-body">
+  <div class="container">
+    <div class="columns">
+      <div class="column">
+        <div class="math-container">
+          <h4 class="title is-3">Exercise 2.1.16</h4>
+          <div class="content">
+             <p>Fix a group <script type="math/tex">G</script>.
+We are asked to find interesting functors between <script type="math/tex">\mathbf{Set}</script> and <script type="math/tex">[G, \mathbf{Set}]</script> (the category of left <script type="math/tex">G</script>-sets).
+Here, instead of considering the objects of <script type="math/tex">[G, \mathbf{Set}]</script> to be functors <script type="math/tex">G \rightarrow \mathbf{Set}</script>, simply consider them to be pairs <script type="math/tex">(S, \cdot)</script> where <script type="math/tex">(\cdot) : G \times S \rightarrow S</script> satisfies <script type="math/tex">g_1 \cdot (g_2 \cdot s) = g_1 g_2 \cdot s</script>.</p>
+<p>An obvious start would be the forgetful functor <script type="math/tex">U : [G, \mathbf{Set}] \rightarrow \mathbf{Set}</script> that takes a <script type="math/tex">G</script>-set to its underlying set.
+We ask if this functor has an adjoint.
+Indeed, let <script type="math/tex">F : \mathbf{Set} \rightarrow [G, \mathbf{Set}]</script> be defined as follows:
+for a set <script type="math/tex">S</script>, <script type="math/tex">F(S) = (G \times S, \cdot)</script> where <script type="math/tex">g' \cdot (g, s) = (g'g, s)</script>.
+For a map of sets <script type="math/tex">f : S \rightarrow T</script>, <script type="math/tex">F(f) : (G \times S) \rightarrow (G \times T)</script> is the map <script type="math/tex">(g, s) \mapsto (g, f(s))</script>, which is easily verified to be <script type="math/tex">G</script>-equivariant.
+Notice this is essentially a &#39;free&#39; functor, taking <em>any</em> set <script type="math/tex">S</script> to a <script type="math/tex">G</script>-set in the most general arbitrary way.</p>
+<p>Let&#39;s make this functor <script type="math/tex">F</script> more precise for the sake of pedantry.
+Let <script type="math/tex">A</script> be a <script type="math/tex">G</script>-set and <script type="math/tex">B</script> a set.
+If <script type="math/tex">t : U(A) \rightarrow B</script> is a map of sets, we define <script type="math/tex">\overline{t} : A \rightarrow F(B)</script> as <script type="math/tex">\overline{t}(a) = (1, t(a))</script>.
+In the other direction, if <script type="math/tex">r : A \rightarrow F(B)</script> is a <script type="math/tex">G</script>-equivariant map, define <script type="math/tex">\overline{r} : U(A) \rightarrow B</script> where <script type="math/tex">\overline{r}(a) = b</script> iff <script type="math/tex">r(a) = (\dash, b)</script>.</p>
+<p>This idea also works for the categories <script type="math/tex">\mathbf{Vect}_k</script> of vector fields over <script type="math/tex">k</script> and <script type="math/tex">[G, \mathbf{Vect}_k]</script> of <script type="math/tex">k</script>-linear representations of <script type="math/tex">G</script>.
+Again let <script type="math/tex">U : [G, \mathbf{Vect}_k] \rightarrow \mathbf{Vect}_k</script> be the forgetful functor.
+This has a left adjoint <script type="math/tex">F</script> where, for a <script type="math/tex">k</script>-vector space <script type="math/tex">V</script> with basis <script type="math/tex">\set{v_1, \dots, v_r}</script> and assuming <script type="math/tex">G = \set{g_1, \dots, g_s}</script>, we have <script type="math/tex">F(V) = kG \otimes V</script> which has basis <script type="math/tex">\setbuilder{g_i \otimes v_j}{1 \leq i \leq s, 1 \leq j \leq r}</script>, equipped with the representation <script type="math/tex">g \cdot \sum_{i,j} \lambda (g_i \otimes v_j) = \sum_{i,j} \lambda (g g_i \otimes v_j)</script>.
+This is the so-called &#39;induced representation&#39; from representation theory in the special case that the sub-representation is the trivial representation of the trivial subgroup.
+Again, the &#39;induced&#39; representation captures the idea of the &#39;most general&#39; representation that extends another.</p>
+ 
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <script type="text/javascript" src="/js/mathjax_config.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+</body>
+
+</html>

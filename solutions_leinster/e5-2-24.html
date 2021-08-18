@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title> Exercise 5.2.24 |  Chase Meadors</title>
+<meta name="description" content=" Two epics are isomorphic in $$\mathbf{Set}$$ when they induce the same equivalence relation ">
+  <link rel="stylesheet" href="/styles/main.css">
+  
+  
+</head>
+
+<body class="math-body">
+  <div class="container">
+    <div class="columns">
+      <div class="column">
+        <div class="math-container">
+          <h4 class="title is-3">Exercise 5.2.24</h4>
+          <div class="content">
+             <p>Denote by <script type="math/tex">\mathbf{Epic}(A)</script> the full subcategory of <script type="math/tex">\mathbf{A}/A</script> whose objects are the epic morphisms.
+Call a &quot;quotient object&quot; of <script type="math/tex">A</script> an isomorphism class of objects in <script type="math/tex">\mathbf{Epic}(A)</script>.</p>
+<p><strong>Theorem</strong>:
+Let <script type="math/tex">A \xrightarrow{e} X</script> and <script type="math/tex">A \xrightarrow{e'} X'</script> be epics in <script type="math/tex">\mathbf{Set}</script>.</p>
+<p><script type="math/tex">e</script> and <script type="math/tex">e'</script> are isomorphic in <script type="math/tex">\mathbf{Epic}(A)</script> if and only if they induce the same equivalence relation on <script type="math/tex">A</script>.</p>
+<p><em>Proof</em>:
+Suppose <script type="math/tex">e</script> and <script type="math/tex">e'</script> are isomorphic in <script type="math/tex">\mathbf{Epic}(A)</script>.
+This means there is an isomorphism <script type="math/tex">f : X \rightarrow X'</script> such that <script type="math/tex">f \circ e = e'</script>.
+Let <script type="math/tex">R \subset A \times A</script> be the equivalence relation induced by <script type="math/tex">e</script>, similarly for <script type="math/tex">R'</script>.
+Suppose that <script type="math/tex">(s, t) \in R'</script>.
+In particular <script type="math/tex">e'(s) = e'(t)</script>.
+Then, <script type="math/tex">(f \circ e)(s) = (f \circ e)(t)</script>.
+Since <script type="math/tex">f</script> is in particular injective, we have <script type="math/tex">e(s) = e(t)</script>.
+So <script type="math/tex">R' \subseteq R</script>.
+The converse follows similarly by noting that we have an isomorphism <script type="math/tex">f^{-1}</script> and <script type="math/tex">e = f^{-1} \circ e'</script>.
+So <script type="math/tex">R = R'</script>.</p>
+<p>Suppose that <script type="math/tex">R = R'</script>.
+Define a map <script type="math/tex">f : X \rightarrow X'</script> as follows.
+Given an <script type="math/tex">x \in X</script>, choose an <script type="math/tex">a \in A</script> such that <script type="math/tex">e(a) = x</script> (which must exist, since epics in <script type="math/tex">\mathbf{Set}</script> are surjective), and let <script type="math/tex">f(x) = e'(a)</script>.
+This is well defined because, if we were to choose a different element <script type="math/tex">b</script> with <script type="math/tex">f(b) = x</script>, we have <script type="math/tex">(a, b) \in R</script> so <script type="math/tex">(a, b) \in R'</script> and <script type="math/tex">e'(b) = e'(a)</script>.
+To see <script type="math/tex">f</script> is injective, take <script type="math/tex">x \neq x'</script>.
+Then we must have an <script type="math/tex">a, b</script> with <script type="math/tex">e(a) = x</script> and <script type="math/tex">e(b) = x'</script> but <script type="math/tex">(a, b) \not\in R</script> (if it were, <script type="math/tex">e</script> would be identical on <script type="math/tex">a</script> and <script type="math/tex">b</script>) -- it follows that <script type="math/tex">(a,b) \not\in R'</script> so <script type="math/tex">e'(a) \neq e'(b)</script>, so <script type="math/tex">f</script> takes distinct values.
+It&#39;s easy to see that <script type="math/tex">f</script> is surjective -- given an <script type="math/tex">x' \in X'</script>, take an <script type="math/tex">a</script> with <script type="math/tex">e'(a) = x'</script>, and note that the element <script type="math/tex">e(a)</script> maps onto <script type="math/tex">x'</script>.
+So <script type="math/tex">f</script> is a bijection and thus an isomorphism.
+To check that it is an isomorphism in <script type="math/tex">\mathbf{Epic}(A)</script>, we must ensure that <script type="math/tex">f \circ e = e'</script>.
+Indeed, given <script type="math/tex">a \in A</script>, <script type="math/tex">(f \circ e)(a)</script> is equal to <script type="math/tex">e'(b)</script> for some element <script type="math/tex">b \in A</script> with <script type="math/tex">(a, b) \in R</script>.
+But of course <script type="math/tex">e'(b) = e'(a)</script> because <script type="math/tex">(a, b) \in R'</script>.
+So, <script type="math/tex">f</script> is indeed an isomorphism of epics.</p>
+<p>So we have the dual result to that of 5.1.40 -- the &quot;quotient objects&quot; of <script type="math/tex">A</script> are in correspondence with the equivalence relations on <script type="math/tex">A</script>.</p>
+ 
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <script type="text/javascript" src="/js/mathjax_config.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+</body>
+
+</html>

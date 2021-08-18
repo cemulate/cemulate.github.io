@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title> Sipser Exercise 2.44 |  Chase Meadors</title>
+<meta name="description" content=" If $$A$$ and $$B$$ are regular, then $$A \diamond B = \setbuilder{xy}{x \in A, y \in B \tand \abs{x} = \abs{y}}$$ is context-free ">
+  <link rel="stylesheet" href="/styles/main.css">
+  
+  
+</head>
+
+<body class="math-body">
+  <div class="container">
+    <div class="columns">
+      <div class="column">
+        <div class="math-container">
+          <h4 class="title is-3">Sipser Exercise 2.44</h4>
+          <div class="content">
+             <p><strong>Theorem</strong>: If <script type="math/tex">A</script> and <script type="math/tex">B</script> are regular, then <script type="math/tex">A \diamond B = \setbuilder{xy}{x \in A, y \in B \tand \abs{x} = \abs{y}}</script> is context-free.</p>
+<hr>
+<p><em>Proof</em>:
+There are finite automatons <script type="math/tex">M_A</script> and <script type="math/tex">M_B</script> that recognize <script type="math/tex">A</script> and <script type="math/tex">B</script>, respectively.
+Let the be deterministic, and write <script type="math/tex">P_A = (Q_A, \Sigma, \delta_A, q_{0A}, F_A)</script> and <script type="math/tex">P_B = (Q_B, \Sigma, \delta_B, q_{0B}, F_B)</script>.</p>
+<p>So, we construct a PDA for <script type="math/tex">A \diamond B</script>.
+The machine will work by progressing through <script type="math/tex">A</script>&#39;s machine, pushing a counter on to the stack.
+Each time it hits one of <script type="math/tex">M_A</script>&#39;s accepting states, it will make a non-deterministic guess that its passed the mid-point of the string, and spawn a thread transitioning to the starting state of <script type="math/tex">M_B</script>.
+It will then progress through <script type="math/tex">B</script>&#39;s machine, popping the counters off the stack.
+If the machine is in a final state of <script type="math/tex">M_B</script> when the stack is empty, it transitions to an accept state (of course, if there is more input, the thread that wound up in the accept state will terminate).</p>
+<p>Let <script type="math/tex">P = (Q, \Sigma, \Gamma, \delta, q_0, F, Z_0)</script>, accepting by final state.
+Let <script type="math/tex">Q = Q_A \cup Q_B \cup \set{q_f}</script> and <script type="math/tex">q_0 = q_{0A}</script>.
+Let <script type="math/tex">F = \set{q_f}</script>.
+Finally, let <script type="math/tex">\Gamma = \set{k, Z_0}</script>.</p>
+<p>Now, we define <script type="math/tex">\delta</script> as follows.</p>
+<script type="math/tex; mode=display">
+\delta(q, x, T) = \left\{ \begin{array}{lr}
+\set{(\delta_A(q, x), kT)} & x \neq \epsilon \tand q \in Q_A \\
+\set{(\delta_A(q, x), kT), (q_{0B}, T)} & x = \epsilon \tand q \in F_A \\
+\set{(\delta_B(q, x), \epsilon)} & x \neq \epsilon \tand q \in Q_B \\
+\set{(\delta_B(q, x), \epsilon), (q_f, T)} & x = \epsilon \tand T = Z_0 \tand q \in F_B
+\end{array} \right.</script><p>Where conditions not written result in <script type="math/tex">\varnothing</script>.
+This machine accepts <script type="math/tex">A \diamond B</script>, so <script type="math/tex">A \diamond B</script> is context free.</p>
+ 
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <script type="text/javascript" src="/js/mathjax_config.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+</body>
+
+</html>

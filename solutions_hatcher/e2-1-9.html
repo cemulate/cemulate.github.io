@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title> Hatcher Exercise 2.1.9 |  Chase Meadors</title>
+<meta name="description" content=" Computing the homology of $$\Delta^k$$ when all faces of the same dimension are identified ">
+  <link rel="stylesheet" href="/styles/main.css">
+  
+  
+</head>
+
+<body class="math-body">
+  <div class="container">
+    <div class="columns">
+      <div class="column">
+        <div class="math-container">
+          <h4 class="title is-3">Hatcher Exercise 2.1.9</h4>
+          <div class="content">
+             <p><p>Consider the space <script type="math/tex">X</script> obtained as the quotient space of <script type="math/tex">\Delta^k</script> when all faces of the same dimension are identified.
+Fix an ordering on the vertices of <script type="math/tex">\Delta^k</script>, say <script type="math/tex">v_0, \dots, v_k</script>.
+We compute the homology groups:</p></p>
+<p><p>We have, for each <script type="math/tex">n</script>, <script type="math/tex">\Delta_n = \la e_n \ra \cong \mathbb{Z}</script> where <script type="math/tex">e_n</script> is the equivalence class containing all <script type="math/tex">n</script>-dimensional faces.
+WLOG, we can use <script type="math/tex">[v_0 \dots v_n]</script> as a representative for <script type="math/tex">e_n</script>.</p></p>
+<p><p>First, consider <script type="math/tex">n < k</script>.
+We have:</p></p>
+<script type="math/tex; mode=display">
+\delta_n(e_n) = \delta_n([v_0 \dots v_n]) = \sum_{i=0}^{n} (-1)^i [v_0 \dots \widehat{v_i} \dots v_n] = \sum_{i=0}^n (-1)^i e_{n-1} = \left\{ \begin{array}{lr}
+e_{n-1} & n \text{ is even} \\
+0 & n \text{ is odd}
+\end{array} \right.</script><p>And (note, <script type="math/tex">\delta_{n+1}</script> is not the zero map, because <script type="math/tex">n < k</script>):</p>
+<script type="math/tex; mode=display">
+\delta_{n+1}(e_{n+1}) = \delta_{n+1}([v_0 \dots v_{n+1}]) = \sum_{i=0}^{n+1} (-1)^n [v_0 \dots \widehat{v_i} \dots v_{n+1}] = \sum_{i=0}^{n+1} (-1)^n e_n = \left\{
+\begin{array}{lr}
+0 & n \text{ is even} \\
+e_n & n \text{ is odd}
+\end{array} \right.</script><p>So, when <script type="math/tex">n</script> is even, we have <script type="math/tex">\ker \delta_n = \set{0}</script> and <script type="math/tex">\im \delta_{n+1} = \set{0}</script>.
+When <script type="math/tex">n</script> is odd, we have <script type="math/tex">\ker \delta_n = \la e_n \ra</script>, and <script type="math/tex">\im \delta_{n+1} = \la e_n \ra</script>.
+Then, in both cases, <script type="math/tex">H_n(X) \cong \set{0}</script>.</p>
+<p>Now consider <script type="math/tex">n=k</script>.
+If <script type="math/tex">k</script> is even, then <script type="math/tex">\ker \delta_k = \set{0}</script>, by the same argument as above.
+Since <script type="math/tex">\delta_{k+1}</script> is the zero map, <script type="math/tex">\im \delta_{k+1} = \set{0}</script> and we have <script type="math/tex">H_k(X) = \set{0} / \set{0} \cong \set{0}</script>.
+However, if <script type="math/tex">k</script> is odd, we have <script type="math/tex">\ker \delta_n = \la e_k \ra</script>, by the same argument as above.
+But, since <script type="math/tex">\delta_{k+1}</script> is still the zero map, we have <script type="math/tex">\im \delta_{k+1} = \set{0}</script> and <script type="math/tex">H_n(X) = \la e_n \ra / \set{0} \cong \mathbb{Z}</script>.
+To summarize,</p>
+<script type="math/tex; mode=display">
+H_n(X) = \set{0}, n < k \qquad H_k(X) = \left\{
+\begin{array}{lr}
+\set{0} & k \text{ is even} \\
+\mathbb{Z} & k \text{ is odd}
+\end{array} \right.</script> 
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <script type="text/javascript" src="/js/mathjax_config.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+</body>
+
+</html>

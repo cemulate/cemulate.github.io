@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title> Sipser Exercise 1.61 |  Chase Meadors</title>
+<meta name="description" content=" We define a family of languages $$C_k$$ such that a DFA recognizing $$C_k$$ must have at least $$2^k$$ states ">
+  <link rel="stylesheet" href="/styles/main.css">
+  
+  
+</head>
+
+<body class="math-body">
+  <div class="container">
+    <div class="columns">
+      <div class="column">
+        <div class="math-container">
+          <h4 class="title is-3">Sipser Exercise 1.61</h4>
+          <div class="content">
+             <p>let <script type="math/tex">\Sigma = \set{a, b}</script> and define the family of languages:</p>
+<script type="math/tex; mode=display">
+C_k = \setbuilder{x}{x \text{ has an } a \text{ in the } k \text{th position from the right end}}</script><p><strong>Theorem</strong>: Any DFA recognizing <script type="math/tex">C_k</script> must have at least <script type="math/tex">2^k</script> states.</p>
+<hr>
+<p><em>Proof</em>:
+Consider the set of words <script type="math/tex">\Sigma^k</script> and note that there are <script type="math/tex">2^k</script> unique words in <script type="math/tex">\Sigma^k</script>.
+We will show that any DFA <script type="math/tex">M</script> must take <em>different</em> strings in <script type="math/tex">\Sigma^k</script> to <em>different</em> states.</p>
+<p>Let <script type="math/tex">x, y \in \Sigma^k</script> such that <script type="math/tex">x \neq y</script>.
+Write <script type="math/tex">x = x_1 x_2 \dots x_k</script> and <script type="math/tex">y = y_1 y_2 \dots y_k</script>.
+Since they are unequal, let <script type="math/tex">d</script> be the first index at which <script type="math/tex">x</script> and <script type="math/tex">y</script> differ.
+Then, between <script type="math/tex">x_d</script> and <script type="math/tex">y_d</script>, one must be an <script type="math/tex">a</script> and one must be a <script type="math/tex">b</script>.
+WLOG, suppose that <script type="math/tex">x_d = a</script> and <script type="math/tex">y_d = b</script> (otherwise, relabel <script type="math/tex">x</script> and <script type="math/tex">y</script>).</p>
+<p>Now, we want to construct <em>new</em> strings <script type="math/tex">x'</script> and <script type="math/tex">y'</script>, adding characters at the end until <script type="math/tex">x'</script> has its <script type="math/tex">a</script> in the <script type="math/tex">k</script>th spot from the end, and <script type="math/tex">y'</script> has its <script type="math/tex">b</script> in the <script type="math/tex">k</script>th spot from the end.
+So let <script type="math/tex">x' = x \cdot a^{d-1}</script> and <script type="math/tex">y' = y \cdot a^{d-1}</script>.
+Of course, we could have added <script type="math/tex">b</script>s to the end as well, the choice doesn&#39;t matter.
+Then <script type="math/tex">|x'| = |y'| = k + d - 1</script>, and the <script type="math/tex">kth</script> index from the end is <script type="math/tex">(k + d - 1) - (k - 1) = d</script>.
+So, since <script type="math/tex">x_d = a</script> and <script type="math/tex">y_d = b</script>, <script type="math/tex">x' \in C_k</script> and <script type="math/tex">y' \not\in C_k</script>.</p>
+<p>Now, notice that <script type="math/tex">\hat{\delta}(q_0, x') = \hat{\delta}(\hat{\delta}(q_0, x), a^{d-1}) \in F</script>, because <script type="math/tex">x'</script> is accepted.</p>
+<p>At the same time, <script type="math/tex">\hat{\delta}(q_0, y') = \hat{\delta}(\hat{\delta}(q_0, y), a^{d-1}) \not\in F</script> because <script type="math/tex">y'</script> is rejected.</p>
+<p>If it <em>were</em> the case that <script type="math/tex">\hat{\delta}(q_0, x) = \hat{\delta}(q_0, y)</script>, then the same starting point and the same string <script type="math/tex">a^{d-1}</script> would drive the machine to <em>different</em> states, which is a contradiction.
+So it must be the case that <script type="math/tex">\hat{\delta}(q_0, x) \neq \hat{\delta}(q_0, y)</script>.</p>
+<p>So since each of the <script type="math/tex">2^k</script> strings in <script type="math/tex">\Sigma^k</script> must drive the machine to a unique state, <script type="math/tex">M</script> must have at least <script type="math/tex">2^k</script> states.</p>
+ 
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <script type="text/javascript" src="/js/mathjax_config.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+</body>
+
+</html>

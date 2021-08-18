@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title> Exercise 9 |  Chase Meadors</title>
+<meta name="description" content=" The category of modules over a ring has no subobject classifier ">
+  <link rel="stylesheet" href="/styles/main.css">
+  
+  
+</head>
+
+<body class="math-body">
+  <div class="container">
+    <div class="columns">
+      <div class="column">
+        <div class="math-container">
+          <h4 class="title is-3">Exercise 9</h4>
+          <div class="content">
+             <p><strong>Theorem</strong>:
+For any ring <script type="math/tex">R</script>, <script type="math/tex">\modcat{R}</script> has no subobject classifier.</p>
+<p><em>Proof</em>:
+Assume it did have a subobject classifier <script type="math/tex">\Omega</script>.
+Note that the terminal object in <script type="math/tex">\modcat{R}</script> is the zero module, which is also initial, so we have <script type="math/tex">1 = 0 = \set{0}</script>, and so there is exactly one choice for the map <script type="math/tex">\set{0} \xrightarrow{\true} \Omega</script>.
+Since <script type="math/tex">\set{0} \xrightarrow{\true} \Omega</script> is a sub-object classifier, we have for any monic <script type="math/tex">M \xrightarrow{i} N</script>, a unique classifying map <script type="math/tex">N \xrightarrow{\phi} \Omega</script> such that <script type="math/tex">i</script> is the pullback of <script type="math/tex">\true</script> along <script type="math/tex">\phi</script>.
+But, considering <script type="math/tex">\true</script> as the unique map from the initial object, this is precisely the statement that <script type="math/tex">M</script> is the kernel of <script type="math/tex">\phi</script>.
+More compactly, this means for <em>any</em> submodule <script type="math/tex">M</script> of <script type="math/tex">N</script>, <script type="math/tex">M</script> must be the kernel of its classifying map <script type="math/tex">\phi</script>.
+Now consider that the zero module is a subobject of <em>any</em> module -- thus, for <em>any</em> module <script type="math/tex">N</script> there must be a map <script type="math/tex">N \rightarrow \Omega</script> that has trivial kernel -- i.e., an injection from <script type="math/tex">N</script> into <script type="math/tex">\Omega</script>.
+Then, in particular, this is true for the <script type="math/tex">R</script>-module <script type="math/tex">\prod_{\Omega} \Omega</script> (<script type="math/tex">\modcat{R}</script> has all small limits).
+But, the underlying set of this module has cardinality <script type="math/tex">2^{\abs{\Omega}}</script>, a contradiction.</p>
+ 
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <script type="text/javascript" src="/js/mathjax_config.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+</body>
+
+</html>

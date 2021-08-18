@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title> Massey Exercise 2.3.1 |  Chase Meadors</title>
+<meta name="description" content=" Determining when two classes of paths from $$x$$ to $$y$$ give rise to the sime isomorphism between fundamental groups $$\pi(X, x)$$ and $$\pi(X, y)$$ ">
+  <link rel="stylesheet" href="/styles/main.css">
+  
+  
+</head>
+
+<body class="math-body">
+  <div class="container">
+    <div class="columns">
+      <div class="column">
+        <div class="math-container">
+          <h4 class="title is-3">Massey Exercise 2.3.1</h4>
+          <div class="content">
+             <p>Let <script type="math/tex">x,y \in X</script> and let <script type="math/tex">\gamma_1</script> and <script type="math/tex">\gamma_2</script> be two path classes from <script type="math/tex">x</script> to <script type="math/tex">y</script>.
+We can characterize the conditions under which <script type="math/tex">\gamma_1</script> and <script type="math/tex">\gamma_2</script> give rise to the same isomorphism <script type="math/tex">\pi(X,x) \rightarrow \pi(X,y)</script> by observing the following.</p>
+<p>Suppose <script type="math/tex">\varphi_1 : \alpha \mapsto \gamma_1^{-1} \alpha \gamma_1</script> and <script type="math/tex">\varphi_2 : \alpha \mapsto \gamma_2^{-1} \alpha \gamma_2</script> are the same.
+Then we have, for all <script type="math/tex">\alpha</script>:</p>
+<script type="math/tex; mode=display">
+\begin{align*}
+& \gamma_1^{-1} \alpha \gamma = \gamma_2^{-1} \alpha \gamma_2 \\
+\Rightarrow \enspace & \gamma_2 \gamma_1^{-1} \alpha \gamma_1 \gamma_2^{-1} = \alpha
+\end{align*}</script><p>Denote <script type="math/tex">\beta = \gamma_2 \gamma_1^{-1}</script>, and notice that <script type="math/tex">\beta \in \pi(X,x)</script> and <script type="math/tex">\gamma_1 \gamma_2^{-1} = \beta^{-1}</script>.
+Then we have <script type="math/tex">\beta \alpha \beta^{-1} = \alpha</script>.
+Since this holds for all <script type="math/tex">\alpha</script>, we have that <script type="math/tex">\beta \in Z(\pi(X,x))</script>.</p>
+<p>By assuming that <script type="math/tex">\gamma_2 \gamma_1^{-1} \in Z(\pi(X,x))</script>, we can reverse the argument above to conclude that <script type="math/tex">\varphi_1(\alpha) = \varphi_2(\alpha)</script>.</p>
+<p>So we have that the isomorphisms induced by <script type="math/tex">\gamma_1</script> and <script type="math/tex">\gamma_2</script> are identical if and only if <script type="math/tex">\gamma_2 \gamma_1^{-1} \in Z(\pi(X,x))</script>.</p>
+ 
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <script type="text/javascript" src="/js/mathjax_config.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+</body>
+
+</html>

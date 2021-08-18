@@ -1,0 +1,112 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title> Exercise 1.3.32 |  Chase Meadors</title>
+<meta name="description" content=" functor is an equivalence of cateogories if and only if it is full, faithful and essentially surjective on objects ">
+  <link rel="stylesheet" href="/styles/main.css">
+  
+  
+</head>
+
+<body class="math-body">
+  <div class="container">
+    <div class="columns">
+      <div class="column">
+        <div class="math-container">
+          <h4 class="title is-3">Exercise 1.3.32</h4>
+          <div class="content">
+             <p><strong>Theorem</strong>:
+Let <script type="math/tex">F : \mathbf{A} \rightarrow \mathbf{B}</script> be a functor.</p>
+<script type="math/tex; mode=display">F$$ is an equivalence of categories if and only if $$F$$ is full, faithful, and essentially surjective on objects.
+
+
+*Proof*:
+Assume that $$F$$ is an equivalence.
+Then, we have a functor $$G : \mathbf{B} \rightarrow \mathbf{A}$$, and two natural isomorphisms $$\eta : 1_{\mathbf{A}} \rightarrow G \circ F$$ and $$\varepsilon : F \circ G \rightarrow 1_{\mathbf{B}}$$.
+
+We first show that $$F$$ is faithful.
+Let $$s : A \rightarrow A'$$ be an arrow in $$\mathbf{A}$$.
+We have a component $$\eta_A : 1_{\mathbf{A}}(A) \rightarrow (G \circ F)(A)$$.
+The naturality condition says that $$\eta_{A'} \circ 1_{\mathbf{A}}(s) = (G \circ F)(s) \circ \eta_A$$.
+Of course $$1_{\mathbf{A}}(A) = A$$ and $$1_{\mathbf{A}}(s) = s$$.
+So simplifying a bit, we have $$\eta_{A'} \circ s = (G \circ F)(s) \circ \eta_A$$.
+If there were another arrow $$t : A \rightarrow A'$$ with $$F(s) = F(t)$$, it would follow that $$(G \circ F)(s) = (G \circ F)(t)$$.
+But then, we obtain by combining this with the respective naturality conditions:</script><p>\eta<em>{A&#39;} \circ s= (G \circ F)(s) \circ \eta_A = (G \circ F)(t) \circ \eta_A = \eta</em>{A&#39;} \circ t</p>
+<script type="math/tex; mode=display">
+
+Since $$\eta$$ is a natural isomorphism, $$\eta_{A'}$$ is an isomorphism, thus the outer-most inequality implies $$s = t$$.
+
+Now we show that $$F$$ is full.
+Consider $$g : F(A) \rightarrow F(A')$$ an arrow in $$\mathbf{B}$$.
+Take $$f = \eta_{A'}^{-1} \circ G(g) \circ \eta_A$$.
+This is well-defined since $$\eta$$ is a natural isomorphism and thus $$\eta_{A'}$$ is an isomorphism.
+By naturality we have $$\eta_{A'} \circ f = (G \circ F)(f) \circ \eta_A$$.
+Then $$f = \eta_{A'}^{-1} \circ (G \circ F)(f) \circ \eta_A$$.
+Equating this with the previous expression for $$f$$:</script><p>\eta<em>{A&#39;}^{-1} \circ G(g) \circ \eta_A = \eta</em>{A&#39;}^{-1} \circ (G \circ F)(f) \circ \eta_A</p>
+<script type="math/tex; mode=display">
+
+and since $$\eta_{A'}$$ and $$\eta_A$$ are both isomorphisms we can conclude that  $$(G \circ F)(f) = G(g)$$.
+This really means that $$G(F(f)) = G(g)$$.
+But, $$G$$ is an equivalence -- we showed that equivalences are faithful in the preceding paragraph.
+Thus, we can conclude that $$F(f) = g$$.
+
+Finally, we show that $$F$$ is essentially surjective on objects.
+Let $$B \in \mathbf{B}$$.
+We claim that $$G(B)$$ is the desired element so that $$F(G(B)) \cong B$$.
+In fact, $$\varepsilon_B : (F \circ G)(B) \rightarrow 1_{\mathbf{B}}(B)$$ is an isomorphism between $$F(G(B))$$ and $$B$$.
+
+Now assume that $$F$$ is full, faithful, and essentially surjective on objects.
+We will define the functor $$G$$.
+For a $$B \in \mathbf{B}$$, define $$G(B)$$ as any particular object in $$\mathbf{A}$$ whose image under $$F$$ is isomorphic to $$B$$, say via a particular isomorphism $$\varepsilon_B$$ (there is at least one since $$F$$ is essentially surjective on objects).
+That is, we have $$\varepsilon_B : F(G(B)) \rightarrow B$$.
+We now need to define $$G$$ on arrows.
+For an arrow $$s : B \rightarrow B'$$ in $$\mathbf{B}$$, note that
+$$F$$ gives a bijection $$\Hom(G(B), G(B')) \leftrightarrow \Hom(F(G(B)), F(G(B'))$$, since it is full and faithful.
+Then let $$G(s) = F^{-1}(\varepsilon_{B'}^{-1} \circ s \circ \varepsilon_B)$$ -- the inner term is a map $$F(G(B)) \rightarrow F(G(B'))$$ and we take the inverse image under the bijection given by $$F$$.
+
+We now claim that we have a natural isomorphism $$\varepsilon : F \circ G \rightarrow 1_{\mathbf{B}}$$, with components $$\varepsilon_B$$ as chosen above.
+Note that since every $$\varepsilon_B$$ is an isomorphism, $$\varepsilon$$ will be a natural isomorphism as long as it is a natural transformation -- so we need only show the latter, which amounts to checking the naturality condition, which is straightforward:
+For a map $$s : B \rightarrow B'$$ in $$\mathbf{B}$$, we have:</script><p>\varepsilon<em>{B&#39;} \circ (F \circ G)(s) = \varepsilon</em>{B&#39;} \circ (\varepsilon<em>{B&#39;}^{-1} \circ s \circ \varepsilon_B) = s \circ \varepsilon_B = 1</em>{\mathbf{B}}(s) \circ \varepsilon_B</p>
+<script type="math/tex; mode=display">
+
+and $$\varepsilon$$ is a natural isomorphism.
+
+Finally, we define $$\eta : 1_{\mathbf{A}} \rightarrow G \circ F$$.
+For $$A \in \mathbf{A}$$, we need to define $$\eta_A : A \rightarrow G(F(A))$$.
+Note that $$\varepsilon_{F(A)}^{-1}$$ is a map $$F(A) \rightarrow FGF(A)$$.
+Since $$F$$ is full and faithful, it gives an bijection $$\Hom(A, GF(A)) \leftrightarrow \Hom(F(A), FGF(A))$$.
+So, let $$\eta_A = F^{-1}(\varepsilon_{F(A)}^{-1})$$.
+It is straightforward to check that since $$\varepsilon_{F(A)}^{-1}$$ is an isomorphism, its preimage under the bijection given by $$F$$ will be as well.
+So each $$\eta_A$$ is an isomorphism and we need only check naturality.
+So, consider a $$t : A \rightarrow A'$$ in $$\mathbf{A}$$.
+Considering $$F(t) : F(A) \rightarrow F(A')$$ an arrow in $$\mathbf{B}$$, we know the following is true:</script><p>FGF(t) \circ \varepsilon<em>{F(A)}^{-1} = \varepsilon</em>{F(A&#39;)}^{-1} \circ F(t)</p>
+<script type="math/tex; mode=display">
+
+(since the inverse of $$\varepsilon$$ is also a natural isomorphism $$1_{\mathbf{B}} \rightarrow F \circ G$$).
+But, both sides can be rewritten to yield:</script><p>F(GF(t) \circ \eta<em>A) = F(\eta</em>{A&#39;} \circ t)</p>
+<script type="math/tex; mode=display">
+
+and since $$F$$ is faithful, we can conclude that</script><p>GF(t) \circ \eta<em>A = \eta</em>{A&#39;} \circ t</p>
+<p>$$</p>
+<p>which is precisely the naturality condition for <script type="math/tex">\eta</script>.
+Thus, <script type="math/tex">\eta</script> is a natural isomorphism, completing the proof.</p>
+ 
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <script type="text/javascript" src="/js/mathjax_config.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+</body>
+
+</html>

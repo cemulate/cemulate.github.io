@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title> Hatcher Exercise 2.2.2 |  Chase Meadors</title>
+<meta name="description" content=" Continuous maps $$S^{2n} \rightarrow S^{2n}$$ have a point which is either fixed, or sent to its antipode ">
+  <link rel="stylesheet" href="/styles/main.css">
+  
+  
+</head>
+
+<body class="math-body">
+  <div class="container">
+    <div class="columns">
+      <div class="column">
+        <div class="math-container">
+          <h4 class="title is-3">Hatcher Exercise 2.2.2</h4>
+          <div class="content">
+             <p><strong>Theorem</strong>:
+If <script type="math/tex">f : S^{2n} \rightarrow S^{2n}</script> is a continuous map, then there is an <script type="math/tex">x \in S^{2n}</script> with <script type="math/tex">f(x) = x</script> or <script type="math/tex">f(x) = -x</script>.</p>
+<hr>
+<p><em>Proof</em>:
+It suffices to show that at least one of <script type="math/tex">f</script> and <script type="math/tex">-f</script> must have a fixed point.
+If <script type="math/tex">f</script> has a fixed point, then clearly it satisifes <script type="math/tex">f(x) = x</script>.
+If <script type="math/tex">-f</script> has a fixed point, then it satisfies <script type="math/tex">-f(x) = x \Rightarrow f(x) = -x</script>.</p>
+<p>To that end, suppose towards contradiction that <script type="math/tex">f</script> and <script type="math/tex">-f</script> both have no fixed points.
+Since <script type="math/tex">f</script> has no fixed points, we have <script type="math/tex">\deg f = (-1)^{2n+1} = -1</script>.
+At the same time, since <script type="math/tex">-f</script> has no fixed points, we have <script type="math/tex">\deg(-f) = -1</script> as well, but:</p>
+<script type="math/tex; mode=display">
+\deg(-f) = \deg (-\id \circ f) = \deg(-\id) \deg(f) = (-1)(-1) = 1</script><p>and we have a contradiction.
+So at least one of <script type="math/tex">f</script> and <script type="math/tex">-f</script> must have a fixed point.</p>
+<p><strong>Corollary</strong>:
+Every map <script type="math/tex">f : \mathbb{R}P^{2n} \rightarrow \mathbb{R}P^{2n}</script> has a fixed point.</p>
+<hr>
+<p><em>Proof</em>:</p>
+<script type="math/tex; mode=display">S^{2n}$$ is a cover of $$\mathbb{R}P^{2n}$$, and by the lifting lemma $$f$$ lifts to a map $$\wt{f} : \mathbb{R}P^{2n} \rightarrow S^{2n}$$.
+If $$\rho : S^{2n} \rightarrow \mathbb{R}P^{2n}$$ is the canonical cover, then we can lift the whole map $$f$$ to a map $$g = \wt{f} \rho : S^{2n} \rightarrow S^{2n}$$, as in the diagram:
+
+<div class="math-figure"><img src="/assets/math_solutions/hatcher/e2-2-2_1.svg" width="270"/></div>
+
+Then, there is an $$x$$ with $$g(x) = x$$ or $$g(x) = -x$$.
+Then, $$f(\rho(x)) = f([x]) = \rho(g(x)) = [x]$$, since $$\rho(x) = \rho(-x) = [x]$$.
+Thus, $$f$$ has a fixed point $$[x]$$.
+
+
+We end by demonstrating a map from $$\mathbb{R}P^{2n-1} \rightarrow \mathbb{R}P^{2n-1}$$ that does *not* have a fixed point.
+First consider a linear transformation $$g : \mathbb{R}^{2n} \rightarrow \mathbb{R}^{2n}$$ without eigenvectors in $$\mathbb{R}^{2n}$$.
+A perfectly good example is the map $$g$$ defined by the $$2n \times 2n$$ matrix:</script><p>g = \tmat{0}{-I_n}{I_n}{0}</p>
+<p>$$</p>
+<p>This map has eigenvalues <script type="math/tex">\pm i</script>.</p>
+<p>We identify <script type="math/tex">\mathbb{R}P^{2n-1}</script> with the set of lines through the origin in <script type="math/tex">\mathbb{R}^{2n}</script> (i.e. one dimensional subspaces), and show that <script type="math/tex">g</script> induces a well-defined map.
+Indeed, <script type="math/tex">g</script> has full rank so it certainly sends one-dimensional subspaces to other one-dimensional subspaces, so this is a well defined map <script type="math/tex">\mathbb{R}P^2 \rightarrow \mathbb{R}P^2</script>.
+Since it has no real eigenvalues, none of these one-dimensional subspaces are mapped onto themselves, so this map has no fixed points.</p>
+ 
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <script type="text/javascript" src="/js/mathjax_config.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+</body>
+
+</html>

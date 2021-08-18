@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title> Exercise 2.2.11 |  Chase Meadors</title>
+<meta name="description" content=" Every adjunction restrictions to an equivalence between (full) subcategories ">
+  <link rel="stylesheet" href="/styles/main.css">
+  
+  
+</head>
+
+<body class="math-body">
+  <div class="container">
+    <div class="columns">
+      <div class="column">
+        <div class="math-container">
+          <h4 class="title is-3">Exercise 2.2.11</h4>
+          <div class="content">
+             <p><strong>Theorem</strong>:
+Every adjunction restrictions to an <em>equivalence</em> between (full) subcategories</p>
+<p><em>Proof</em>:
+Let <script type="math/tex">F : \mathbf{A} \rightarrow \mathbf{B}</script> and <script type="math/tex">G: \mathbf{B} \rightarrow \mathbf{A}</script> be an adjunction with <script type="math/tex">F \dashv G</script>.
+Let <script type="math/tex">\eta</script> be the unit and <script type="math/tex">\varepsilon</script> the counit.
+Let <script type="math/tex">\mathbf{Fix}(GF)</script> be the subcategory of <script type="math/tex">\mathbf{A}</script> where the objects are <script type="math/tex">\setbuilder{A \in \mathbf{A}}{\eta_A \text{ is an isomorphism}}</script>.
+For morphisms, let <script type="math/tex">\mathbf{Fix}(GF)(A, A') = \mathbf{A}(A, A')</script>, so that <script type="math/tex">\mathbf{Fix}(GF)</script> is a full subcategory.
+Define dually <script type="math/tex">\mathbf{Fix}(FG)</script>, a full subcategory of <script type="math/tex">\mathbf{B}</script>.
+If <script type="math/tex">A \in \mathbf{Fix}(GF)</script>, we claim that <script type="math/tex">F(A) \in \mathbf{Fix}(FG)</script>.
+Indeed, by the triangle identity we have <script type="math/tex">\varepsilon_{F(A)} \circ F(\eta_A) = 1_{F(A)}</script>.
+Since <script type="math/tex">\eta_A</script> is an isomorphism, so is <script type="math/tex">F(\eta_A)</script>, which means that <script type="math/tex">\varepsilon_{F(A)}</script> is its inverse, an isomorphism as well.
+Thus, since <script type="math/tex">\varepsilon_{F(A)}</script> is an isomorphism, <script type="math/tex">F(A) \in \mathbf{Fix}(FG)</script>.
+A dual argument using the other triangle identity shows that <script type="math/tex">B \in \mathbf{Fix}(FG)</script> implies <script type="math/tex">G(B) \in \mathbf{Fix}(GF)</script>.
+Thus, <script type="math/tex">F</script> and <script type="math/tex">G</script> restrict to functors <script type="math/tex">F' : \mathbf{Fix}(GF) \rightarrow \mathbf{Fix}(FG)</script> and <script type="math/tex">G' : \mathbf{Fix}(FG) \rightarrow \mathbf{Fix}(GF)</script>.</p>
+<p><script type="math/tex">\eta'</script> and <script type="math/tex">\varepsilon'</script>, the restrictions of <script type="math/tex">\eta</script> and <script type="math/tex">\varepsilon</script>, are trivially natural isomorphisms because each of their components are isomorphisms, by construction.
+Then, <script type="math/tex">(F', G', \eta', \varepsilon')</script> is an equivalence of categories between <script type="math/tex">\mathbf{Fix}(GF)</script> and <script type="math/tex">\mathbf{Fix}(FG)</script>.</p>
+ 
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <script type="text/javascript" src="/js/mathjax_config.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+</body>
+
+</html>

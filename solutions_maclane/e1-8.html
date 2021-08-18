@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title> Exercise 8 |  Chase Meadors</title>
+<meta name="description" content=" Rigorous derivation of the exopnential in a presheaf category (completing the proof the presheaf categories are Cartesian closed) ">
+  <link rel="stylesheet" href="/styles/main.css">
+  
+  
+</head>
+
+<body class="math-body">
+  <div class="container">
+    <div class="columns">
+      <div class="column">
+        <div class="math-container">
+          <h4 class="title is-3">Exercise 8</h4>
+          <div class="content">
+             <p>We determine the exponent in a presheaf category.
+This is a slightly different formulation than the exponent defined in Proposition 1 of the text, but the proof contains exactly the same concepts and ideas that are key to the original.
+In the course of this proof, however, we provide a &quot;few&quot; more details than the authors&#39; proof of Proposition 1.</p>
+<p>To set the stage, consider a small category <script type="math/tex">\mathbf{C}</script> and <script type="math/tex">X \in \mathbf{C}</script> let <script type="math/tex">\mathbf{C}/X</script> denote the slice category of pairs <script type="math/tex">(A, k : A \rightarrow X)</script>, and <script type="math/tex">D_X : \mathbf{C} / X \rightarrow \mathbf{C}</script> the forgetful functor.
+For a presheaf <script type="math/tex">U \in \presheaves{\mathbf{C}}</script>, we may form a presheaf <script type="math/tex">U_X \in \presheaves{(\mathbf{C}/X)}</script> by <script type="math/tex">U_X = U \circ D_X^{\text{op}}</script>.
+Notice that if we have a map <script type="math/tex">f : X \rightarrow Y</script> and a natural transformation <script type="math/tex">\alpha : U_Y \rightarrow V_Y</script> having components <script type="math/tex">\alpha_{A, k}</script>, we can form a &quot;pullback along <script type="math/tex">f</script>&quot; denoted by <script type="math/tex">f_* \alpha : U_X \rightarrow V_X</script> and having components <script type="math/tex">(f_* \alpha)_{A, k} = \alpha_{A, f \circ k}</script>.</p>
+<p><strong>Theorem</strong>:
+For <script type="math/tex">S, T \in \presheaves{\mathbf{C}}</script>, <script type="math/tex">T^S</script> is the presheaf defined on objects by <script type="math/tex">T^S(X) = \Hom (S_X, T_X)</script> and on maps <script type="math/tex">f : X \rightarrow Y</script> by <script type="math/tex">T^S(f)(\alpha) = f_* \alpha</script>.</p>
+<p><em>Proof</em>:
+We define an evaluation <script type="math/tex">e : T^S \times S \rightarrow T</script> with components <script type="math/tex">e_X : T^S(X) \times S(X) \rightarrow T(X)</script> by <script type="math/tex">e_X(\alpha, x) = \alpha_{X, \id}(x)</script>.
+We&#39;ll show that this evaluation is universal from <script type="math/tex">\dash \times S</script> to <script type="math/tex">T</script>.
+That is, given a <script type="math/tex">\gamma : U \times S \rightarrow T</script>, we must find a <em>unique</em> map <script type="math/tex">\delta : U \rightarrow T^S</script> factoring through the evaluation:</p>
+<div class="math-figure"><img src="/assets/math_solutions/maclane/e1-8_1.svg" width="200"/></div>
+
+<p>Define <script type="math/tex">\delta</script>, having components <script type="math/tex">\delta_X : U(X) \rightarrow T^S(X)</script>, by <script type="math/tex">\delta_X(x)_{A, k} = t \mapsto \gamma_A(\overline{x}_A(k), t)</script>, where <script type="math/tex">\overline{x}</script> denotes the associated natural transformation <script type="math/tex">\Hom(\dash, X) \rightarrow U</script> under the Yoneda correspondence.
+After staring at this expression for a very long time, one can be convinced that it does indeed &quot;type-check&quot;.</p>
+<p>It&#39;s straightfoward if a bit messy to verify that <script type="math/tex">\delta</script> is actually natural, that is for <script type="math/tex">f : X \rightarrow Y</script>, <script type="math/tex">\delta_X \circ U(f) = T^S(f) \circ \delta_Y</script>.
+Applying the left side to <script type="math/tex">y \in U(Y)</script>, we first get <script type="math/tex">U(f)(y)</script> and then the natural transformation <script type="math/tex">\alpha</script> with <script type="math/tex">\alpha_{A,k} = t \mapsto  \gamma_A(\overline{U(f)(y)}_A(k), t)</script>.
+Applying the other side to <script type="math/tex">y</script>, we first get the natural transformation <script type="math/tex">\beta</script> with <script type="math/tex">\beta_{A,k} = t \mapsto \gamma_A(\overline{y}_A(k), t)</script>.
+We then form <script type="math/tex">f_*\beta</script> with <script type="math/tex">(f_* \beta)_{A,k} = t \mapsto \alpha'_{A, f \circ k}(t) = \gamma_A(\overline{y}_A(f \circ k), t)</script>.
+So naturality comes down to showing that <script type="math/tex">\overline{U(f)(y)}_A(k) = \overline{y}_A(f \circ k)</script>.
+In fact, by the definition of the Yoneda correspondence, we have <script type="math/tex">\overline{y}_A(f \circ k) = U(f \circ k)(y)</script>, while <script type="math/tex">\overline{U(f)(y)}_A(k) = U(k)(U(f)(y))</script> -- these expressions are equal precisely because <script type="math/tex">U</script> is a contravariant functor.</p>
+<p>Next, we verify that <script type="math/tex">\delta</script> does actually make the triangle commute, that is for any <script type="math/tex">X</script> we have <script type="math/tex">e_X \circ (\delta_X \times \id) = \gamma_X</script>.
+Applying the left side to <script type="math/tex">(x, x') \in U(X) \times S(X)</script>, we first obtain the pair <script type="math/tex">(\alpha, x')</script> with <script type="math/tex">\alpha_{A,k} = t \mapsto \gamma_A(\overline{x}_A(k), t)</script>.
+Then we have <script type="math/tex">e_X(\alpha, x') = \alpha_{X,\id}(x') = \gamma_X(\overline{x}_X(\id), x') = \gamma_X(x, x')</script>.</p>
+<p>Finally, we show uniqueness, which is probably the trickiest part of this proof and also the only part kindly glossed over completely by the authors of the book.
+Let <script type="math/tex">\delta'</script> be another map making the triangle commute.
+From the triangle then, the only requirement imposed on <script type="math/tex">\delta'</script> is that for any <script type="math/tex">X</script>, <script type="math/tex">x \in U(X)</script>, <script type="math/tex">\delta'_X(x)_{X,\id} = t \mapsto \gamma_X(x, t)</script>.
+Essentially, the evaluation forces <script type="math/tex">\delta'_X(x)</script> to be identical to <script type="math/tex">\delta_X(x)</script> at the <script type="math/tex">(X, \id)</script> component.
+We will evaluate <script type="math/tex">\delta'_X(x)</script> at the <script type="math/tex">(A, k)</script> component, and show that it too is identical to that of <script type="math/tex">\delta_X(x)</script>.
+To find the component at <script type="math/tex">(A, k)</script> we use the fact that <script type="math/tex">\delta'</script> is natural.
+For a map <script type="math/tex">f: X \rightarrow Y</script>, we have the following naturality square, followed by its evaluation at some <script type="math/tex">x \in U(X)</script>:</p>
+<div class="math-figure"><img src="/assets/math_solutions/maclane/e1-8_2.svg" width="700"/></div>
+
+<p>And the two final expressions are of course equal.
+Expanding the bottom, then, we have <script type="math/tex">(f_*\delta'_Y(x))_{A, k} = \delta'_Y(x)_{A, f \circ k} = \delta'_X(U(f)(x))_{A, k}</script>.
+Then, a particular application of this final equality says that <script type="math/tex">\delta'_X(x)_{A, k \circ id} = \delta'_A(U(k)(x))_{A, \id}</script>.
+The former expression is exactly <script type="math/tex">\delta'_X(x)_{A, k}</script>, and the latter&#39;s value is fixed from the preceding discussion -- it is required to be precisely <script type="math/tex">t \mapsto \gamma_A(U(k)(x), t)</script>.
+Finally, this is just the expanded form of <script type="math/tex">t \mapsto \gamma_A(\overline{x}_A(k), t)</script>, exactly the value of <script type="math/tex">\delta_X(x)_{A, k}</script>.
+So, <script type="math/tex">\delta'_X(x)</script> has identical components to <script type="math/tex">\delta_X(x)</script> and thus <script type="math/tex">\delta'_X(x) = \delta_X(x)</script> for every <script type="math/tex">X</script> and <script type="math/tex">x \in U(X)</script>, so ultimately <script type="math/tex">\delta' = \delta</script>, completing the proof of uniqueness.</p>
+<p>Finally, we have defined <script type="math/tex">T^S</script> and provided a universal evaluation map, exhibiting <script type="math/tex">T^S</script> as the exponent in <script type="math/tex">\presheaves{\mathbf{C}}</script>.</p>
+ 
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <script type="text/javascript" src="/js/mathjax_config.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+</body>
+
+</html>

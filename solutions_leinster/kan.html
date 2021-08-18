@@ -1,0 +1,172 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title> Construction of Kan Extensions |  Chase Meadors</title>
+<meta name="description" content=" We define Kan extensions, then give an explicit construction of the Kan extension through colimits and prove that our construction is actually the Kan extension. ">
+  <link rel="stylesheet" href="/styles/main.css">
+  
+  
+</head>
+
+<body class="math-body">
+  <div class="container">
+    <div class="columns">
+      <div class="column">
+        <div class="math-container">
+          <h4 class="title is-3">Construction of Kan Extensions</h4>
+          <div class="content">
+             <p>Here, we will introduce Kan extensions, and give an explicit construction thereof.
+The data we will work with consists of two small categories, <script type="math/tex">\mathbf{A}</script> and <script type="math/tex">\mathbf{B}</script>, along with an arbitrary category <script type="math/tex">\mathscr{S}</script> that has small colimits.
+We will fix a functor <script type="math/tex">F : \mathbf{A} \rightarrow \mathbf{B}</script>.
+Note first that we have a functor <script type="math/tex">\dash \circ F : [\mathbf{B}, \mathscr{S}] \rightarrow [\mathbf{A}, \mathscr{S}]</script>.
+This functor has a left adjoint, called the <strong>(left) Kan extension along <script type="math/tex">F</script></strong>, denoted <script type="math/tex">\Lan_F : [\mathbf{A}, \mathscr{S}] \rightarrow [\mathbf{B}, \mathscr{S}]</script>.
+We will explicitly define <script type="math/tex">\Lan_F</script> and show that it has the desired property.</p>
+<p>For that, we will need a few additional notations -- for <script type="math/tex">B \in \mathbf{B}</script>, let <script type="math/tex">(F \Rightarrow B)</script> denote the comma category consisting of pairs <script type="math/tex">(A, f : F(A) \rightarrow B)</script> and denote by <script type="math/tex">P_B</script> the forgetful projection functor <script type="math/tex">(F \Rightarrow B) \rightarrow \mathbf{A}</script>.</p>
+<p>So, for a functor <script type="math/tex">X \in [\mathbf{A}, \mathscr{S}]</script>, define <script type="math/tex">\Lan_F X</script> on objects <script type="math/tex">B \in \mathbf{B}</script> as follows:</p>
+<script type="math/tex; mode=display">
+(\Lan_F X)(B) = \colim \bigg( (F \Rightarrow B) \xrightarrow{P_B} \mathbf{A} \xrightarrow{X} \mathscr{S} \bigg)</script><p><strong>Theorem</strong>:
+This assignment rule on objects actually extends to a functor.</p>
+<p><em>Proof</em>:
+We need to give a <script type="math/tex">\Lan_F X</script> a well-defined behavior on maps.
+For maps, take a map <script type="math/tex">s : B \rightarrow B'</script> in <script type="math/tex">\mathbf{B}</script>.
+We need to assign a canonical map <script type="math/tex">(\Lan_F X)(B) \rightarrow (\Lan_F X)(B')</script>.
+Note that we have a limit cone that comes with a family of maps <script type="math/tex">p_{A,f}</script></p>
+<script type="math/tex; mode=display">
+\bigg( (F(A) \xrightarrow{f} B) \xrightarrow{P_B} A \xrightarrow{X} X(A) \bigg) \xrightarrow{p_{A,f}} (\Lan_F X)(B) \qquad \qquad (1)</script><p>for every <script type="math/tex">(A, f) \in (F \Rightarrow B)</script>.
+At the same time, we have a limit cone and family of maps <script type="math/tex">p'_{A,g}</script></p>
+<script type="math/tex; mode=display">
+\bigg( (F(A) \xrightarrow{g} B') \xrightarrow{P_{B'}} A \xrightarrow{X} X(A) \bigg) \xrightarrow{p'_{A,g}} (\Lan_F X)(B') \qquad \qquad (2)</script><p>for every <script type="math/tex">(A, g) \in (F \Rightarrow B')</script>.
+But observe that, given an <script type="math/tex">(A, f) \in (F \Rightarrow B)</script>, we can produce <script type="math/tex">(A, s \circ f) \in (F \Rightarrow B')</script>.
+Then we can form the co-cone:</p>
+<script type="math/tex; mode=display">
+\bigg( (F(A) \xrightarrow{f} B) \xrightarrow{P_B} A \xrightarrow{X} X(A) \bigg) \xrightarrow{p'_{A,s \circ f}} (\Lan_F X)(B') \qquad \qquad (3)</script><p>If this is an honest co-cone, then we are guaranteed a unique map <script type="math/tex">(\Lan_F X)(B) \rightarrow (\Lan_F X)(B')</script>, the desired value for <script type="math/tex">(\Lan_F X)(s)</script>.
+Let&#39;s verify that the above is actually a co-cone.
+Take a map <script type="math/tex">u : (A, f) \rightarrow (A', f')</script> in <script type="math/tex">(F \Rightarrow B)</script>, which is actually a map <script type="math/tex">u : A \rightarrow A'</script> such that <script type="math/tex">f' \circ F(u) = f</script>.
+Note that <script type="math/tex">(X \circ P_B)(A, f) = X(A)</script> (similarly for <script type="math/tex">(A', f')</script>) and <script type="math/tex">(X \circ P_B)(u) = X(u)</script>.
+So we just the following triangle to commute:</p>
+<div class="math-figure"><img src="/assets/math_solutions/leinster/kan_1.svg" width="450"/></div>
+
+<p>But notice that since <script type="math/tex">f' \circ F(u) = f</script>, its also true that <script type="math/tex">s \circ f' \circ F(u) = s \circ f</script>, thus <script type="math/tex">u</script> is also permissible as a map <script type="math/tex">(A, s \circ f) \rightarrow (A', s \circ f')</script> in <script type="math/tex">(F \Rightarrow B')</script>.
+Then applying the fact that (2) is a cone to this map produces exactly the commuting triangle (4).
+So, (3) really is a co-cone, which makes <script type="math/tex">(\Lan_F X)(s)</script> well-defined.</p>
+<script type="math/tex; mode=display">\mjqed</script><p>It&#39;s fairly straightforward to see that <script type="math/tex">\Lan_F</script> is itself a functor <script type="math/tex">[\mathbf{A}, \mathscr{S}] \rightarrow [\mathbf{B}, \mathscr{S}]</script>.
+To see how it behaves on a map (natural transformation) <script type="math/tex">\alpha : X \rightarrow X'</script>, observe that for each <script type="math/tex">B</script>, <script type="math/tex">\alpha</script> induces a natural transformation between diagrams <script type="math/tex">\alpha P_B</script>.
+Such a natural transformation induces a map between the limits <script type="math/tex">\colim (\alpha P_B) : \colim(X \circ P_B) \rightarrow \colim(X' \circ P_B)</script>, so let <script type="math/tex">\Lan_F(\alpha)</script> have components <script type="math/tex">\Lan_F(\alpha)_B = \colim (\alpha P_B)</script>.</p>
+<p>Now, let&#39;s show the functor <script type="math/tex">\Lan_F</script> is actually the left adjoint.</p>
+<p><strong>Theorem</strong>:</p>
+<script type="math/tex; mode=display">\Lan_F$$ is left-adjoint to $$\dash \circ F$$.
+
+
+*Proof*:
+We will show that $$[\mathbf{B}, \mathscr{S}](\Lan_F X, Y)$$ is in natural bijection with $$[\mathbf{A}, \mathscr{S}](X, Y \circ F)$$.
+First, let's define the bijection itself by defining two operations $$\overline{(\cdot)}$$ and $$\what{(\cdot)}$$ that are mutually inverse.
+
+Take a natural transformation $$\eta : \Lan_F X \rightarrow Y$$.
+It comes with components $$\eta_B : (\Lan_F X)(B) \rightarrow Y(B)$$.
+We wish to define $$\overline{\eta} : X \rightarrow Y \circ F$$ with components $$\overline{\eta}_A: X(A) \rightarrow Y(F(A))$$.
+For each $$A$$, consider $$\eta_{FA} : (\Lan_F X)(F(A)) \rightarrow Y(F(A))$$.
+Also note that $$(A, 1_{FA}) \in (F \Rightarrow F(A))$$.
+Thus, since $$(X \circ P_B)(A, 1_{FA}) = X(A)$$, we have a projection map $$p_{A, 1_{FA}} : X(A) \rightarrow (\Lan_F X)(F(A))$$.
+Then we can form $$\eta_{FA} \circ p_{A, 1_{FA}} : X(A) \rightarrow Y(F(A))$$.
+We let this be the map $$\overline{\eta}_A = \eta_{FA} \circ p_{A,1_{FA}}$$.
+To verify that it is natural, we need that this outer rectangle commutes for any $$f : A \rightarrow A'$$.
+
+<div class="math-figure"><img src="/assets/math_solutions/leinster/kan_2.svg" width="450"/></div>
+
+The bottom square commutes since $$\eta$$ is natural.
+For the top square, notice that it can be split into two triangles by the map shown.
+The lower-left of these triangles is precisely an expression of the universal property of $$(\Lan_F X)(F(f))$$.
+For the upper right, note that $$f$$ is permissible as a map $$(A, 1_{FA}) \rightarrow (A', 1_{FA'})$$ in $$(F \Rightarrow F(A))$$.
+As such, the upper right triangle is simply an expression of the (co)cone condition with respect to this map.
+
+Take a natural transformation $$\varepsilon : X \rightarrow Y \circ F$$, with components $$\varepsilon_A : X(A) \rightarrow Y(F(A))$$.
+We wish to define $$\what{\varepsilon} : \Lan_F X \rightarrow Y$$, with components $$\what{\varepsilon}_B : (\Lan_F X)(B) \rightarrow Y(B)$$.
+For some $$B$$, we can form a co-cone with vertex $$Y(B)$$ as follows -- for each $$(A, f) \in (F \Rightarrow B)$$:</script><p>\bigg( (F(A) \xrightarrow{f} B) \xrightarrow{P_B} A \xrightarrow{X} X(A) \bigg) \xrightarrow{\varepsilon_A} Y(F(A)) \xrightarrow{Y(f)} Y(B)</p>
+<script type="math/tex; mode=display">
+
+let's quickly verify that this is indeed a co-cone.
+Take a map $$u : (A,f) \rightarrow (A', f')$$ in $$(F \Rightarrow B)$$, which is really a map $$u: A \rightarrow A'$$ with $$f' \circ F(u) = f$$.
+We need this outer pentagon to commute:
+
+<div class="math-figure"><img src="/assets/math_solutions/leinster/kan_3.svg" width="450"/></div>
+
+It does, because it can be split into a square and a triangle as shown.
+The left square is a naturality square of $$\varepsilon$$, while the right triangle is just $$Y$$ applied to the commuting triangle $$f' \circ F(u) = f$$, which $$u$$ satisfies.
+So finally, let $$\what{\varepsilon}_B$$ be the guaranteed unique map $$(\Lan_F X)(B) \rightarrow Y(B)$$ resulting from this co-cone.
+
+Let's show that $$\overline{(\cdot)}$$ and $$\what{(\cdot)}$$ are mutually inverse.
+Take $$\what{\overline{\eta}}$$.
+$$\what{\overline{\eta}}_B$$ is the unique map $$(\Lan_F X)(B) \rightarrow Y(B)$$ induced by the following cone</script><p>\bigg( (F(A) \xrightarrow{f} B) \xrightarrow{P<em>B} A \xrightarrow{X} X(A) \bigg) \xrightarrow{p</em>{A,1<em>{FA}}} (\Lan_F X)(F(A)) \xrightarrow{\eta</em>{F(A)}} Y(F(A)) \xrightarrow{Y(f)} Y(B)</p>
+<script type="math/tex; mode=display">
+
+Simply observe that the following diagram commutes:
+
+<div class="math-figure"><img src="/assets/math_solutions/leinster/kan_4.svg" width="700"/></div>
+
+The left triangle is again the universal property of $$(\Lan_F X)(f)$$.
+The right triangle is actually a naturality *square* of $$\eta$$ disguised as a triangle.
+So, since $$\eta_B$$ makes this diagram commute it must be the unique such map mentioned.
+So $$\what{\overline{\eta}}_B = \eta_B$$, and $$\what{\overline{\eta}} = \eta$$.
+
+Consider $$\overline{\what{\varepsilon}}$$.
+We have $$\overline{\what{\varepsilon}}_A = \what{\varepsilon}_{F(A)} \circ p_{A, 1_{FA}}$$.
+$$\what{\varepsilon}_{F(A)}$$ is the unique map $$(\Lan_F X)(F(A)) \rightarrow Y(F(A))$$ induced by the cone:</script><p>\bigg( (F(A) \xrightarrow{f} B) \xrightarrow{P_B} A \xrightarrow{X} X(A) \bigg) \xrightarrow{\varepsilon_A} Y(F(A)) \xrightarrow{Y(f)} Y(F(A))</p>
+<script type="math/tex; mode=display">
+
+that is to say, the unique map making this commute:
+
+<div class="math-figure"><img src="/assets/math_solutions/leinster/kan_5.svg" width="700"/></div>
+
+for all $$(A, f) \in (F \Rightarrow F(A))$$.
+Then, in particular, for $$(A, 1_{FA})$$, the diagram becomes:
+
+<div class="math-figure"><img src="/assets/math_solutions/leinster/kan_6.svg" width="700"/></div>
+
+And since $$Y(1_{FA}) = 1_{YFA}$$, we have $$\overline{\what{\varepsilon}}_A = \what{\varepsilon}_{F(A)} \circ p_{A, 1_{FA}} = \varepsilon_A$$, and finally $$\overline{\what{\varepsilon}} = \varepsilon$$.
+
+The *only* thing left to show is that this bijection is *natural*!
+Fix a $$Y \in [\mathbf{B}, \mathscr{S}]$$ and let's show naturality in $$X$$.
+This amounts to showing that $$[\mathbf{B}, \mathscr{S}](\Lan_F (\dash), Y) = H_Y \circ \Lan_F$$ is naturally isomorphic to $$[\mathbf{A}, \mathscr{S}](\dash, Y \circ F) = H_{Y \circ F}$$ (here $$H_{\bullet}$$ denotes the Yoneda embedding), i.e. that this commutes for any $$\alpha : X \rightarrow X'</script><div class="math-figure"><img src="/assets/math_solutions/leinster/kan_7.svg" width="450"/></div>
+
+<p>(note the contravariance due to the Yoneda embedding).
+Evaluating at a single <script type="math/tex">\eta' : \Lan_F(X') \rightarrow Y \in H_Y(\Lan_F(X'))</script>, we have:</p>
+<div class="math-figure"><img src="/assets/math_solutions/leinster/kan_8.svg" width="325"/></div>
+
+<p>Without further ado, we have:</p>
+<script type="math/tex; mode=display">
+\left( \overline{\eta' \circ \Lan_F(\alpha)} \right)_A = \left( \eta' \circ \Lan_F(\alpha) \right)_{FA} \circ p_{A, 1_{FA}} = \eta'_{FA} \circ \Lan_F(\alpha)_{FA} \circ p_{A,1_{FA}} = \dots</script><p>Using the commuting square from the universal property of <script type="math/tex">\Lan_F(\alpha)_{FA} = \colim(\alpha P_{FA})</script>, we can rewrite <script type="math/tex">\Lan_F(\alpha)_{FA} \circ p_{A,1_{FA}} = p'_{A,1_{FA}} \circ (\alpha P_{FA})_{A,1_{FA}} = p'_{A,1_{FA}} \circ \alpha_A</script>, and we continue:</p>
+<script type="math/tex; mode=display">
+\dots = \eta'_{FA} \circ p'_{A,1_{FA}} \circ \alpha_A = \overline{\eta'}_{A} \circ \alpha_A = (\overline{\eta'} \circ \alpha)_A</script><p>So <script type="math/tex">\overline{\eta' \circ \Lan_F(\alpha)} = \overline{\eta'} \circ \alpha</script> and the diagram commutes.</p>
+<p>Our final task is to show naturality in <script type="math/tex">Y</script>.
+Fix an <script type="math/tex">X \in [\mathbf{A}, \mathscr{S}]</script>.
+We must show <script type="math/tex">[\mathbf{B}, \mathscr{S}](\Lan_F(X), \dash) = H^{\Lan_F X}</script> is naturally isomorphic to <script type="math/tex">[\mathbf{A}, \mathscr{S}](X, \dash \circ F) = H^X \circ (\dash \circ F)</script>, which is to say this commutes:</p>
+<div class="math-figure"><img src="/assets/math_solutions/leinster/kan_9.svg" width="400"/></div>
+
+<p>Evaluating at an <script type="math/tex">\eta : \Lan_F X \rightarrow Y \in H^{\Lan_F X}(Y)</script>, we have:</p>
+<div class="math-figure"><img src="/assets/math_solutions/leinster/kan_10.svg" width="300"/></div>
+
+<p>And we proceed:</p>
+<script type="math/tex; mode=display">
+\left( \overline{\beta \circ \eta} \right)_A = (\beta \circ \eta)_{FA} \circ p_{A,1_{FA}}
+= \beta_{FA} \circ \eta_{FA} \circ p_{A,1_{FA}} = \beta_{FA} \circ \overline{\eta}_A = (\beta F)_A \circ \overline{\eta}_A = (\beta F \circ \overline{\eta})_A</script><p>So <script type="math/tex">\overline{\beta \circ \eta} = \beta F \circ \overline{\eta}</script> and the diagram commutes.</p>
+<script type="math/tex; mode=display">\mjqed</script><p>So, <script type="math/tex">\Lan_F</script> is well-defined and left-adjoint to <script type="math/tex">\dash \circ F</script>, making it the left Kan extension along <script type="math/tex">F</script>.</p>
+ 
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <script type="text/javascript" src="/js/mathjax_config.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+</body>
+
+</html>

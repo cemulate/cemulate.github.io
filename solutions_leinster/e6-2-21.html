@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title> Exercise 6.1.21 |  Chase Meadors</title>
+<meta name="description" content=" If $$X, Y$$ are presheaves with $$\Hom(\dash, A) \cong X + Y$$, then either $$X$$ or $$Y$$ is trivial ">
+  <link rel="stylesheet" href="/styles/main.css">
+  
+  
+</head>
+
+<body class="math-body">
+  <div class="container">
+    <div class="columns">
+      <div class="column">
+        <div class="math-container">
+          <h4 class="title is-3">Exercise 6.1.21</h4>
+          <div class="content">
+             <p><strong>Theorem</strong>:
+For a locally small category <script type="math/tex">\mathscr{A}</script> and <script type="math/tex">A \in \mathscr{A}</script>, if <script type="math/tex">X, Y</script> are presheaves with <script type="math/tex">H_A \cong X + Y</script>, then either <script type="math/tex">X</script> or <script type="math/tex">Y</script> is the trivial presheaf <script type="math/tex">\Delta \varnothing</script>.</p>
+<p><em>Proof</em>:
+A natural isomorphism <script type="math/tex">H_A \cong X + Y</script> amounts to a universal element <script type="math/tex">u \in (X+Y)(A) \cong X(A) + Y(A)</script>.
+Take an arbitrary <script type="math/tex">B \in \mathscr{A}</script> and <script type="math/tex">b \in (X+Y)(B) \cong X(B) + Y(B)</script>.
+Universality says we have a unique map <script type="math/tex">\varphi: B \rightarrow A</script> with <script type="math/tex">(X+Y)(\varphi)(u) = b</script>.</p>
+<p>Now either <script type="math/tex">u \in X(A)</script> or <script type="math/tex">u \in Y(A)</script>.
+Suppose that it is in <script type="math/tex">X(A)</script>.
+Then for <em>any</em> map <script type="math/tex">f : B \rightarrow A</script> we have:</p>
+<script type="math/tex; mode=display">
+(X+Y)(f)(u) = (X(f) + Y(f))(u) = X(f)(u)</script><p>from the behavior of sums of maps in <script type="math/tex">\mathbf{Set}</script>.
+But, this means that <script type="math/tex">(X+Y)(f)(u)</script> is always in <script type="math/tex">X(B)</script>.
+Thus, if we picked a <script type="math/tex">b \in Y(B)</script>, there would be <em>no</em> map whose image under <script type="math/tex">X+Y</script> carried <script type="math/tex">u</script> to <script type="math/tex">b</script>, violating universality -- thus, there must be no elements in <script type="math/tex">Y(B)</script>.
+Since <script type="math/tex">B</script> was arbitrary, we have <script type="math/tex">Y(B) = \varnothing</script> for all <script type="math/tex">B</script> -- i.e., <script type="math/tex">Y</script> is the constant presheaf <script type="math/tex">\Delta \varnothing</script>.</p>
+<p>Supposing <script type="math/tex">u \in Y(A)</script> and using a symmetric argument shows that <script type="math/tex">X = \Delta \varnothing</script>.
+Thus, one of <script type="math/tex">X</script> or <script type="math/tex">Y</script> must be the trivial presheaf.</p>
+ 
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <script type="text/javascript" src="/js/mathjax_config.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+</body>
+
+</html>

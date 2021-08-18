@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title> Exercise 4.1.31 |  Chase Meadors</title>
+<meta name="description" content=" Finding a representation of the functor sending a category to its set of morphisms ">
+  <link rel="stylesheet" href="/styles/main.css">
+  
+  
+</head>
+
+<body class="math-body">
+  <div class="container">
+    <div class="columns">
+      <div class="column">
+        <div class="math-container">
+          <h4 class="title is-3">Exercise 4.1.31</h4>
+          <div class="content">
+             <p><script type="math/tex; mode=display">
+\newcommand{\twohom}[1]{\mathbf{Cat}(\mathbf{2}, #1)}</script><p><strong>Theorem</strong>:
+Let <script type="math/tex">M : \mathbf{Cat} \rightarrow \mathbf{Set}</script> be the functor sending a small category to the set of all its maps.</p></p>
+<p><script type="math/tex; mode=display">M$$ is representable.</p>
+<p><em>Proof</em>:
+Denote by <script type="math/tex">\mathbf{2}</script> the category with two objects and one non-identity arrow between them.
+We will denote the objects by <script type="math/tex">\circ</script> and <script type="math/tex">*</script> and the map by <script type="math/tex">m : \circ \rightarrow *</script>.
+We claim <script type="math/tex">M \cong \twohom{\dash}</script>.
+Indeed, we define a natural transformation <script type="math/tex">\alpha : M \rightarrow \twohom{\dash}</script>.
+For a category <script type="math/tex">\mathbf{A}</script>, define <script type="math/tex">\alpha_{\mathbf{A}} : M(\mathbf{A}) \rightarrow \twohom{\mathbf{A}}</script> as follows.
+For a map <script type="math/tex">f : A \rightarrow A'</script> in <script type="math/tex">\mathbf{A}</script>, let <script type="math/tex">\alpha_{\mathbf{A}}(f)</script> be the obvious functor sending <script type="math/tex">\circ</script> to <script type="math/tex">A</script>, <script type="math/tex">*</script> to <script type="math/tex">A'</script>, and the <script type="math/tex">m</script> to <script type="math/tex">f</script>.
+To check naturality, suppose we have a functor <script type="math/tex">F : \mathbf{A} \rightarrow \mathbf{B}</script>.
+We must have <script type="math/tex">\alpha_{\mathbf{B}} \circ M(F) = \twohom{F} \circ \alpha_{\mathbf{A}}</script>.
+Note that <script type="math/tex">M(F)</script> is essentially <script type="math/tex">F</script> (the restriction of <script type="math/tex">F</script> to the maps of the category), and <script type="math/tex">\twohom{F}</script> is left-composition by <script type="math/tex">F</script>.
+Start with a map <script type="math/tex">f : A \rightarrow A'</script> in <script type="math/tex">\mathbf{A}</script>.
+It&#39;s straightforward to see that applying the left and right side result in the same functor <script type="math/tex">\mathbf{2} \rightarrow \mathbf{B}</script>.
+Applying the right side to <script type="math/tex">f</script> yields:&lt;/script&gt;<p>f \enspace \mapsto \enspace
+\left{ \begin{array}{l}
+\circ \mapsto A \</p></p>
+<p><ul></p>
+<p><li>\mapsto A&#39; \
+m \mapsto f
+\end{array} \right.
+\enspace \mapsto \enspace
+\left{ \begin{array}{l}
+\circ \mapsto F(A) \</li></p>
+<p><li>\mapsto F(A&#39;) \
+m \mapsto F(f)
+\end{array} \right.</p>
+<p>$$&lt;/li&gt;
+&lt;/ul&gt;</p>
+<p>while applying the left side to <script type="math/tex">f</script> yields:</p>
+<script type="math/tex; mode=display">
+f \enspace \mapsto \enspace  F(f) : F(A) \rightarrow F(A') \enspace \mapsto \enspace
+\left\{ \begin{array}{l}
+\circ \mapsto F(A) \\
+* \mapsto F(A') \\
+m \mapsto F(f)
+\end{array} \right.</script><p>so <script type="math/tex">\alpha</script> is natural and <script type="math/tex">M \cong \twohom{\dash}</script>.</p>
+ 
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <script type="text/javascript" src="/js/mathjax_config.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+</body>
+
+</html>

@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title> Exercise 4.1.29 |  Chase Meadors</title>
+<meta name="description" content=" Finding a representation of the forgetful functor from the category of commutative rings ">
+  <link rel="stylesheet" href="/styles/main.css">
+  
+  
+</head>
+
+<body class="math-body">
+  <div class="container">
+    <div class="columns">
+      <div class="column">
+        <div class="math-container">
+          <h4 class="title is-3">Exercise 4.1.29</h4>
+          <div class="content">
+             <p><script type="math/tex; mode=display">
+\newcommand{\crhom}[1]{\mathbf{CRing}(\mathbb{Z}[X], #1)}</script><p><strong>Theorem</strong>:
+The forgetful functor <script type="math/tex">U : \mathbf{CRing} \rightarrow \mathbf{Set}</script> is representable.
+In particular <script type="math/tex">U \cong \crhom{\dash}</script>.</p></p>
+<p><em>Proof</em>:
+First, we establish the following fact.
+For a commutative ring <script type="math/tex">R</script> and element <script type="math/tex">r \in R</script>, define the <em>evaluation map</em> <script type="math/tex">e_r : \mathbb{Z}[X] \rightarrow R</script> by <script type="math/tex">e(p(X)) = p(r)</script>, the map that evaluates the given polynomial at <script type="math/tex">r</script> inside <script type="math/tex">R</script>.
+Note that <script type="math/tex">e_r(X) = r</script>.
+This is indeed the <em>unique</em> homomorphism <script type="math/tex">\mathbb{Z}[X] \rightarrow R</script> that sends <script type="math/tex">X \mapsto r</script>.
+This is straightforward to see:
+Suppose <script type="math/tex">f : \mathbb{Z}[X] \rightarrow R</script> were a homomorphism with <script type="math/tex">f(X) = r</script>.
+Let <script type="math/tex">p(X) = \sum_0^kp_n X^n</script>.
+Then,</p>
+<script type="math/tex; mode=display">
+f(p(X)) = f\left( \sum_0^k p_n X^n \right) = \sum_0^k p_n f(X)^n = \sum_0^k p_n r^n = e_r(p(X))</script><p>and thus <script type="math/tex">f = e_r</script>.</p>
+<p>The preceding fact is most of the content of the proof.
+Indeed, define the natural transformation <script type="math/tex">\alpha : U \rightarrow \crhom{\dash}</script> with components <script type="math/tex">\alpha_R : U(R) \rightarrow \crhom{R}</script> taking an element <script type="math/tex">r</script> to the map <script type="math/tex">e_r</script>.
+We verify naturality:
+Let <script type="math/tex">f : R \rightarrow S</script> be a ring homomorphism.
+We must have <script type="math/tex">\alpha_S \circ U(f) = \crhom{f} \circ \alpha_R</script>.
+Again <script type="math/tex">\crhom{f}</script> is just left-composition by <script type="math/tex">f</script>, and <script type="math/tex">U(f)</script> is just <script type="math/tex">f</script>.
+So, let <script type="math/tex">r \in U(r)</script>.
+Applying the right side to <script type="math/tex">r</script> yields <script type="math/tex">f \circ e_r</script>.
+Applying the left side to <script type="math/tex">r</script> yields <script type="math/tex">e_{f(r)}</script>.
+But of course,</p>
+<script type="math/tex; mode=display">
+e_{f(r)}\left( \sum_0^k p_n X^n \right) = \sum_0^k p_n f(r)^n = f \left( \sum_0^k p_n r^n \right) = f \left( e_r \left( \sum_0^k p_n X^n \right) \right)</script><p>and <script type="math/tex">e_{f(r)} = f \circ e_r</script>.
+So <script type="math/tex">\alpha</script> is natural and <script type="math/tex">U \cong \crhom{\dash}</script>.</p>
+ 
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <script type="text/javascript" src="/js/mathjax_config.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+</body>
+
+</html>

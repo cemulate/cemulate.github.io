@@ -1,0 +1,135 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title> Massey Exercise 5.7.2 |  Chase Meadors</title>
+<meta name="description" content=" Determining the automorphism groups of several covering spaces ">
+  <link rel="stylesheet" href="/styles/main.css">
+  
+  
+</head>
+
+<body class="math-body">
+  <div class="container">
+    <div class="columns">
+      <div class="column">
+        <div class="math-container">
+          <h4 class="title is-3">Massey Exercise 5.7.2</h4>
+          <div class="content">
+             <p>Let <script type="math/tex">X</script> be a space, <script type="math/tex">x \in X</script>, and <script type="math/tex">(\wt{X}, p)</script> a covering space.
+We determine the group of automorphisms of each of the following particular covering spaces.</p>
+<p><strong>(a)</strong> Consider <script type="math/tex">X = S^1</script>, <script type="math/tex">\wt{X} = S^1</script>, and <script type="math/tex">p : z \mapsto z^n</script>.</p>
+<hr>
+<p>Note <script type="math/tex">\pi_1(X) \cong \mathbb{Z}</script>.
+We have that <script type="math/tex">p_* \pi(\wt{X})</script> is isomorphic to <script type="math/tex">n\mathbb{Z}</script>.
+Since <script type="math/tex">\mathbb{Z}</script> is abelian, the normalizer of this subgroup is the whole group <script type="math/tex">\mathbb{Z}</script>.
+So we have:</p>
+<script type="math/tex; mode=display">
+A(\wt{X}) = \mathbb{Z}/n\mathbb{Z} = \mathbb{Z}_n</script><p>Each element <script type="math/tex">k \in \mathbb{Z}_n</script> corresponds to the homeomorphism of the circle given by a rotation of <script type="math/tex">2\pi k /n</script>. Denote it <script type="math/tex">h_k</script> -- then we have <script type="math/tex">h_k(z) = z \zeta_n^k</script> where <script type="math/tex">\zeta_n</script> is a primitive <script type="math/tex">n</script>&#39;th root of unity.
+Note it is indeed a covering space automorphism because:</p>
+<script type="math/tex; mode=display">
+(p \circ h_k)(z) = (z\zeta_n^k)^n = z^n \zeta_n^{kn} = z^n = p(z)</script><hr>
+<p><strong>(a.2)</strong>
+Consider <script type="math/tex">X = S^1</script>, <script type="math/tex">\wt{X} = \mathbb{R}</script> and <script type="math/tex">p: x \mapsto \exp(2\pi i x)</script>.</p>
+<hr>
+<p>We discuss this here before doing part (b).
+It&#39;s relatively easy to show (and shown in Massey) that <script type="math/tex">A(\wt{X}) \cong \mathbb{Z}</script>, and in fact <script type="math/tex">A(\wt{X}) = \setbuilder{t_n : x \mapsto x+2\pi n}{n \in \mathbb{Z}}</script>, the group of integer translations of the line.</p>
+<hr>
+<p><strong>(b)</strong> Consider <script type="math/tex">X = T^2 = S^1 \times S^1</script>.</p>
+<hr>
+<p>Since this is just a product, each possible covering space corresponds to a product of covering spaces of <script type="math/tex">S^1</script>.
+Furthermore, then the automorphism group for each is the product of the automorphism groups of each factor.
+Since we&#39;ve determined the possible covering spaces of the circle and their automorphism groups in the last two sections, the problem is also completely solved for the torus.</p>
+<hr>
+<p><strong>(c.1)</strong>
+Consider <script type="math/tex">X</script> as the figure 8 curve, and <script type="math/tex">\wt{X} = \setbuilder{(x,y) \in \mathbb{R}^2}{x \in \mathbb{Z} \tor y \in \mathbb{Z}}</script> (the union of all the vertical and horizontal integer lines).
+The map <script type="math/tex">p</script> is the map that wraps each horizontal line around the right circle and each vertical line around the left circle (<script type="math/tex">X</script> and <script type="math/tex">p</script> are specifically described in <script type="math/tex">\mathbb{R}^2</script> in Massey).</p>
+<hr>
+<p>We have <script type="math/tex">\pi_1(X) = \la a, b \ra</script>.
+To determine <script type="math/tex">\pi_1(\wt{X})</script>, consider the following:</p>
+<script type="math/tex; mode=display">\wt{X}$$ has the same homotopy type as $$\mathbb{R}^2 - \mathbb{Z}^2$$, the plane with integer points removed (the latter deformation retracts to the former).
+Since this group is the plane with countably many points removed, the fundamental group is the free group with countably many generators, each corresponding to the traversal of one square cell in $$\wt{X}$$.
+In fact, call it $$\la \gamma_{m,n} \ra$$, where $$\gamma_{m,n}$$ is the path that starts at $$(0,0)$$, goes $$n$$ units vertically, $$m$$ units horizontally, traverses the square cell with lower left corner $$(m,n)$$, and then retraces its steps back to $$(0,0)$$.
+
+
+
+Let $$K$$ be the commutator subgroup of $$\pi_1(X)$$.
+We claim that $$\im(p_*) = K$$.
+Consider what $$p_*$$ does to a generator of $$\pi_1(\wt{X})$$:</script><p>p<em>*(\gamma</em>{m,n}) = a^n b^m (ab a^{-1} b^{-1}) b^{-m} a^{-n}</p>
+<script type="math/tex; mode=display">
+
+$$p_*$$ sends $$\gamma_{m,n}$$ to the conjugate of a commutator $$aba^{-1}b^{-1} \in K$$.
+Since the commutator subgroup is normal, its stable under conjugation, so $$p_*(\gamma_{m,n}) \in K$$.
+Since this happens for all the generators, we conclude that $$\im(p_*) \subseteq K$$.
+
+
+
+Next, let $$x = (a^{n_1} b^{m_1} a^{-n_1} b^{-m_1}) \dots (a^{n_r} b^{m_r} a^{-n_r} b^{-m_r}) \in K$$ be an arbitrary element in the commutator subgroup.
+Then, let $$\alpha_{m,n}$$ be the path that starts at the origin, travels $$n$$ units up, $$m$$ units right, $$n$$ units down, and $$m$$ units left to trace out a rectangle -- note this returns to the basepoint so it is indeed a loop.
+Then we have $$p_*(\alpha_{n_1,m_1} \dots \alpha_{n_r,m_r}) = x</script><p>Since <script type="math/tex">x</script> was arbitrary, we have <script type="math/tex">K \subseteq \im(p_*)</script> and thus <script type="math/tex">\im(p_*) = K</script>.</p>
+<p>Since <script type="math/tex">K</script> is certainly normal, its normalizer is the whole group <script type="math/tex">\pi_1(X)</script> and we can finally conclude:</p>
+<script type="math/tex; mode=display">
+A(\wt{X}) \cong \la a, b \ra / K \cong \mathbb{Z}^2</script><p>In fact, each <script type="math/tex">(j, k) \in \mathbb{Z}^2</script> corresponds to the integer translation of the grid <script type="math/tex">t_{j,k} : (x,y) \mapsto (x+j, y+k)</script>.
+Using the explicit description of the map in Massey its easy to show that <script type="math/tex">(p \circ t_{j,k}) = p</script> (the trig functions are periodic with period 1), so these homeomorphisms are actually covering space automorphisms.</p>
+<hr>
+<p><strong>(c.2)</strong>
+Take <script type="math/tex">X</script> to be the figure eight curve, and <script type="math/tex">\wt{X}</script> to be the union of a vertical line and a countable collection of disjoint circles tangent to the line.
+The map <script type="math/tex">p</script> is the map that maps each circle homeomorphically onto the right circle, and wraps the line periodically around the left circle (again, maps and spaces are explicitly described in Massey).</p>
+<hr>
+<p>Again, <script type="math/tex">\pi_1(X) = \la a, b \ra</script>.
+This time, <script type="math/tex">\wt{X}</script> is homotopy equivalent to the wedge product of countably many circles, so <script type="math/tex">\pi_1(\wt{X})</script> is the free group on countably many generators.
+Let it be <script type="math/tex">\la \gamma_n \ra</script> where <script type="math/tex">\gamma_n</script> is the path that travels up the line, traverses the <script type="math/tex">n</script>&#39;th circle, and returns.</p>
+<p>Let <script type="math/tex">K</script> be the normal closure of <script type="math/tex">\la b \ra</script> in <script type="math/tex">\la a, b \ra</script>.
+We claim that <script type="math/tex">\im(p_*) = K</script>.
+We have <script type="math/tex">p_*(\gamma_n) = a^n b a^{-n}</script>, so clearly <script type="math/tex">\im(p_*) \subseteq K</script>.</p>
+<p>Next, let <script type="math/tex">x = x_1 \dots x_r</script> where <script type="math/tex">x_i = (g_i b^{s_i} g_i^{-1})</script>, so <script type="math/tex">x</script> is an arbitrary element of <script type="math/tex">K</script>.
+We can construct a path that will map to this element in the naive way.
+Start a the basepoint, and simply read off the word <script type="math/tex">x</script>.
+When encountering <script type="math/tex">a^n</script>, traverse the line <script type="math/tex">n</script> units.
+When encountering <script type="math/tex">b^m</script>, loop the circle in the current location <script type="math/tex">m</script> times.
+For each <script type="math/tex">x_i</script>, every power of <script type="math/tex">a</script> in <script type="math/tex">g_i</script> will be eventually undone by the opposite power of <script type="math/tex">a</script> in <script type="math/tex">g_i^{-1}</script> , and since the only other element in each <script type="math/tex">x_i</script> is a pure power of <script type="math/tex">b</script>, the sum of powers of <script type="math/tex">a</script> in all of <script type="math/tex">x</script> is zero -- this means that <script type="math/tex">\alpha</script> will eventually end on its basepoint, <em>guaranteeing that <script type="math/tex">\alpha</script> is actually a loop</em>.
+So <script type="math/tex">\alpha</script> is indeed an element in <script type="math/tex">\pi_1(\wt{X})</script> that maps to <script type="math/tex">x</script>.
+Then, <script type="math/tex">K \subseteq \im(p_*)</script> and <script type="math/tex">\im(p_*) = K</script>.</p>
+<p>Note that <script type="math/tex">K</script> is a normal subgroup of <script type="math/tex">\pi_1(X)</script>.
+Let <script type="math/tex">x</script> be the same arbitrary element as above:</p>
+<script type="math/tex; mode=display">
+\begin{align*}
+gxg^{-1} &= g(g_1 b^{s_1} g_1^{-1})(g_2 b^{s_2} g_2^{-1}) \dots (g_r b^{s_r} g_r^{-1}) g^{-1} \\
+&= (g g_1 b^{s_1} g_1^{-1} g^{-1}) (g g_2 b^{s_2} g_2^{-1} g^{-1}) \dots (g g_r b^{s_r} g_r^{-1} g^{-1}) \in K
+\end{align*}</script><p>So, its normalizer is the whole group and we have <script type="math/tex">A(\wt{X}) \cong \la a, b \ra / K</script>.
+Since modding out by <script type="math/tex">K</script>, the normal closure of <script type="math/tex">\la b \ra</script> is the same as adding <script type="math/tex">b</script> as a relation, we get:</p>
+<script type="math/tex; mode=display">
+A(\wt{X}) \cong \la a, b \ra / K = \la a, b \mid b \ra = \la a \ra \cong \mathbb{Z}</script><p>In fact, each <script type="math/tex">k \in \mathbb{Z}</script> corresponds to the homeomorphism shifting the space vertically <script type="math/tex">k</script> units.
+Indeed, it can be checked that each of these homeomorphisms is a covering space automorphism.</p>
+<hr>
+<p><strong>(d)</strong>:
+Consider <script type="math/tex">X = \mathbb{C}^{\times}</script> (<script type="math/tex">\mathbb{C}</script> without the origin) and <script type="math/tex">\wt{X} = \mathbb{C}</script>.
+The covering map is <script type="math/tex">p : z \mapsto \exp(z)</script>.</p>
+<hr>
+<p><script type="math/tex">\wt{X}</script> is contractible, so this is a universal cover and <script type="math/tex">A(\wt{X}) \cong \pi_1(X)</script>, which is isomorphic to <script type="math/tex">\mathbb{Z}</script> (deformation retract onto the circle).
+Each <script type="math/tex">k \in \mathbb{Z}</script> corresponds to the homeomorphism that shifts <script type="math/tex">\mathbb{C}</script> <em>along the imaginary axis</em> by <script type="math/tex">2\pi k</script> units.</p>
+<hr>
+<p><strong>(e)</strong>:
+Consider <script type="math/tex">X = \mathbb{C}^{\times}</script>, <script type="math/tex">\wt{X} = \mathbb{C}^{\times}</script>, and <script type="math/tex">p : z \mapsto z^n</script>.</p>
+<hr>
+<p>This is entirely analogous to part (a).
+We have <script type="math/tex">A(\wt{X}) \cong \mathbb{Z}_n</script> and for each <script type="math/tex">k \in \mathbb{Z}_n</script>, the homeomorphism is the rotation of <script type="math/tex">\mathbb{C}^{\times}</script> by <script type="math/tex">2 \pi k / n</script>.</p>
+ 
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <script type="text/javascript" src="/js/mathjax_config.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+</body>
+
+</html>

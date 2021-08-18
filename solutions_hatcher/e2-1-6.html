@@ -1,0 +1,107 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title> Hatcher Exercise 2.1.6 |  Chase Meadors</title>
+<meta name="description" content=" Another simplicial homology computation ">
+  <link rel="stylesheet" href="/styles/main.css">
+  
+  
+</head>
+
+<body class="math-body">
+  <div class="container">
+    <div class="columns">
+      <div class="column">
+        <div class="math-container">
+          <h4 class="title is-3">Hatcher Exercise 2.1.6</h4>
+          <div class="content">
+             <p>We compute the simplicial homology of the complex described in the text.</p>
+<p>First, we fix notation to refer to all the faces of the complex:</p>
+<script type="math/tex; mode=display">v^i_j$$ refers to the $$j$$'th vertex of the $$i$$'th $$2$$-simplex.
+Next, we perform the indicated identifications in order to form equivalence classes of faces.
+We have $$n+1$$ two-simplices:</script><p>t_0 = \set{[v^0_0 v^0_1 v^0_2]}, \dots, t_n = \set{[v^n_0 v^n_1 v^n_2]}</p>
+<script type="math/tex; mode=display">
+
+We have $$n+1$$ edges:</script><p>\begin{align<em>}
+&amp; e_0 = \set{[v^0_0 v^0_2], [v^0_0 v^0_1], [v^0_1, v^0_2], [v^1_0 v^1_2]} \
+&amp; e_1 = \set{[v^1_0 v^1_1], [v^1_1 v^1_2], [v^2_0 v^2_2]} \
+&amp; \vdots \
+&amp; e_i = \set{[v^i_0 v^i_1], [v^i_1 v^i_2], [v^{i+1}_0 v^{i+1}_2]} \
+&amp; \vdots \
+&amp; e_n = \set{[v^n_0 v^n_1], [v^n_1 v^n_2]}
+\end{align</em>}</p>
+<script type="math/tex; mode=display">
+
+And finally, all the vertices end up identified to a single vertex:</script><p>v = \setbuilder{[v^i_j]}{0 \leq j \leq n, 0 \leq i \leq 2}</p>
+<script type="math/tex; mode=display">
+
+Now, we compute homology groups.
+We have $$\Delta_0 = \la v \ra \cong \mathbb{Z}$$, $$\Delta_1 = \la e_0, \dots, e_n \ra$$, $$\Delta_2 = \la t_0, \dots, t_n \ra$$, the latter two isomorphic to $$\mathbb{Z}^{n+1}$$.
+
+
+
+For $$\delta_0$$, we have $$\im \delta_0 = \set{0}$$ and $$\ker \delta_0 = \Delta_0$$.
+
+
+
+For $$\delta_1$$, we have $$\delta_1(e_i) = v - v = 0$$, for all $$i$$ (since there is only one vertex).
+As such, $$\im \delta_1 = \set{0}$$ and $$\ker \delta_1 = \Delta_1$$.
+
+
+
+For $$\delta_2$$, we have:</script><p>\begin{align<em>}
+&amp; \delta<em>2(t_0) = \delta_2([v^0_0 v^0_1 v^0_2]) = [v^0_1 v^0_2] - [v^0_0 v^0_2] + [v^0_0 v^0_1] = (e_0) - (e_0) + (e_0) = e_0 \
+&amp; \delta_2(t_i) = \delta_2([v^i_0 v^i_1 v^i_2]) = [v^i_1 v^i_2] - [v^i_0 v^i_2] + [v^i_0 v^i_1] = (e_i) - (e</em>{i-1}) + (e<em>i) = 2e_i - e</em>{i-1} \
+&amp; \delta<em>2(t_n) = \delta_2([v^n_0 v^n_1 v^n_2]) = [v^n_1 v^n_2] - [v^n_0 v^n_2] + [v^n_0 v^n_1] = (e_n) - (e</em>{n-1}) + (e<em>n) = 2e_n - e</em>{n-1}
+\end{align</em>}</p>
+<script type="math/tex; mode=display">
+
+So, $$\delta_2 : \mathbb{Z}^{n+1} \rightarrow \mathbb{Z}^{n+1}$$ can be described by:</script><p>\delta<em>2 = \left[\begin{array}{c|cccccc}
+&amp; t_0 &amp; t_1 &amp; t_2 &amp; t_3 &amp; \dots &amp; t_n \ \hline
+e_0 &amp; 1 &amp; -1 &amp; 0 &amp; 0 &amp; \dots &amp; 0 \
+e_1 &amp; 0 &amp; 2 &amp; -1 &amp; 0 &amp; \dots &amp; 0 \
+e_2 &amp; 0 &amp; 0 &amp; 2 &amp; -1 &amp; \dots &amp; 0 \
+e_3 &amp; 0 &amp; 0 &amp; 0 &amp; 2 &amp; \dots &amp; 0 \
+\vdots &amp; \vdots &amp; \vdots &amp; \vdots &amp; \vdots &amp; &amp; \vdots \
+e</em>{n-1} &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; \dots &amp; -1 \
+e<em>n &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; \dots &amp; 2
+\end{array} \right]
+\xrightarrow{SNF}
+\left[\begin{array}{c|cccccc}
+&amp; t_0 &amp; t_1 &amp; t_2 &amp; t_3 &amp; \dots &amp; t_n \ \hline
+e_0 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; \dots &amp; 0 \
+e_1 &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp; \dots &amp; 0 \
+e_2 &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; \dots &amp; 0 \
+e_3 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; \dots &amp; 0 \
+\vdots &amp; \vdots &amp; \vdots &amp; \vdots &amp; \vdots &amp; &amp; \vdots \
+e</em>{n-1} &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; \dots &amp; 0 \
+e_n &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; \dots &amp; 2^n
+\end{array} \right]</p>
+<p>$$</p>
+<p>Where the matrix on the right is the Smith Normal Form of <script type="math/tex">\delta_2</script>.</p>
+<p><script type="math/tex">\delta_3</script> and higher are the zero map.</p>
+<p>We have <script type="math/tex">H_0 = \la v \ra / \set{0} \cong \mathbb{Z}</script>.</p>
+<p>To find <script type="math/tex">H_1</script>, we first conclude that <script type="math/tex">\beta_1 = (n+1) - (n+1) = 0</script>, so <script type="math/tex">H_1</script> is a torsion group.
+The torsion coefficients are given by the non-trivial entries of <script type="math/tex">\mathsf{SNF}(\delta_2)</script>.
+We conclude that <script type="math/tex">H_1 \cong \mathbb{Z}_{2^n}</script>.</p>
+<p>It&#39;s clear that <script type="math/tex">\delta_2</script> is injective, so <script type="math/tex">H_2 \cong 0</script>.</p>
+ 
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <script type="text/javascript" src="/js/mathjax_config.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+</body>
+
+</html>

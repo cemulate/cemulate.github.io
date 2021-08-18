@@ -1,0 +1,84 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title> Exercise 2.1.17 |  Chase Meadors</title>
+<meta name="description" content=" Exhibiting a chain of five adjoint functors between $$\mathbf{Set}$$ and the category of presheaves on a topological space ">
+  <link rel="stylesheet" href="/styles/main.css">
+  
+  
+</head>
+
+<body class="math-body">
+  <div class="container">
+    <div class="columns">
+      <div class="column">
+        <div class="math-container">
+          <h4 class="title is-3">Exercise 2.1.17</h4>
+          <div class="content">
+             <p><script type="math/tex; mode=display">\newcommand\ox{\mathscr{O}(X)}</script><script type="math/tex; mode=display">\newcommand\presheaves{[\ox^{op}, \mathbf{Set}]}</script><p>Fix a topological space <script type="math/tex">X</script>.
+Write <script type="math/tex">\ox</script> for the poset of open subsets of <script type="math/tex">X</script> under inclusion.
+Let <script type="math/tex">\Delta : \mathbf{Set} \rightarrow \presheaves</script> be a functor from <script type="math/tex">\mathbf{Set}</script> to the (functor) category of presheaves on <script type="math/tex">X</script>.
+For <script type="math/tex">A \in \mathbf{Set}</script>, we define <script type="math/tex">\Delta A</script> to be the functor with <script type="math/tex">(\Delta A)(U) = A</script> and <script type="math/tex">(\Delta A)(f) = 1_{A}</script>.
+We wish to intuit a whole chain of adjoint functors as follows:</p></p>
+<div class="math-figure"><img src="/assets/math_solutions/leinster/e2-1-17_1.svg" width="300px"/></div>
+
+<p>with <script type="math/tex">\Lambda \dashv \Pi \dashv \Delta \dashv \Gamma \dashv \nabla</script>.</p>
+<p>Let&#39;s tackle <script type="math/tex">\Gamma</script> first.</p>
+<p><script type="math/tex">\Gamma</script> will be a &#39;evaluation on the whole space&#39; functor.
+Given an <script type="math/tex">R \in \presheaves</script>, let <script type="math/tex">\Gamma(R) = R(X)</script> -- the set that <script type="math/tex">R</script> sends the entire space to.
+Given a natural transformation <script type="math/tex">\varepsilon : R \rightarrow S</script>, we let <script type="math/tex">\Gamma(\varepsilon) = \varepsilon_X</script>, the component of <script type="math/tex">\varepsilon</script> at <script type="math/tex">X</script>.</p>
+<p>The claim is that <script type="math/tex">\Gamma</script> is right-adjoint to <script type="math/tex">\Delta</script>.
+So, for <script type="math/tex">R \in \presheaves</script> and <script type="math/tex">A \in \mathbf{Set}</script>, we need <script type="math/tex">\Hom(A, \Gamma R) \cong \Hom(\Delta A, R)</script>.
+So, we demonstrate the rule.
+Given <script type="math/tex">f : A \rightarrow \Gamma R</script> -- that is, <script type="math/tex">f : A \rightarrow R(X)</script>, we need to define a natural transformation <script type="math/tex">\overline{f} : \Delta A \rightarrow R</script>.</p>
+<p><script type="math/tex">\overline{f}</script> has components <script type="math/tex">\overline{f}_U : (\Delta A)(U) \rightarrow R(U)</script>.
+Since <script type="math/tex">(\Delta A)(U) = A</script>, we have <script type="math/tex">\overline{f}_U : A \rightarrow R(U)</script>.
+Since <script type="math/tex">U \subseteq X</script>, there is an associated map <script type="math/tex">\varphi : R(X) \rightarrow R(U)</script> via the (contravariant) functor <script type="math/tex">R</script>.
+So, define <script type="math/tex">\overline{f}_U = \varphi \circ f</script>.
+For the other way, let <script type="math/tex">g : \Delta A \rightarrow R</script> be a natural transformation.
+It has components <script type="math/tex">g_U : (\Delta A)(U) \rightarrow R(U)</script>, or <script type="math/tex">g_U : A \rightarrow R(U)</script>.
+We want to define <script type="math/tex">\overline{g} : A \rightarrow \Gamma R</script>, or <script type="math/tex">\overline{g} : A \rightarrow R(X)</script>.
+This time, simply let <script type="math/tex">\overline{g} = g_X</script>.</p>
+<p><script type="math/tex">\Pi</script> will be the &#39;evaluation at the empty set&#39; functor, and the construction proceeds exactly dual to that of <script type="math/tex">\Gamma</script>.</p>
+<p><script type="math/tex">\Lambda</script> will be a functor takes a set to the &#39;least interesting&#39; presheaf with that set in its image.
+Particularly, given an <script type="math/tex">A \in \mathbf{Set}</script>, let <script type="math/tex">(\Lambda A)(\varnothing) = A</script> and <script type="math/tex">(\Lambda A)(U) = \varnothing</script> for all other open sets <script type="math/tex">U</script>, and for arrows <script type="math/tex">(\Lambda A)(\varnothing \hookrightarrow U)</script> is the unique empty function <script type="math/tex">\varnothing \rightarrow A</script>, and all other arrows are taken to <script type="math/tex">1_{\varnothing}</script>.</p>
+<p>This will be left-adjoint to <script type="math/tex">\Pi</script>.
+So, for <script type="math/tex">A \in \mathbf{Set}</script> and <script type="math/tex">R \in \presheaves</script>, we have <script type="math/tex">\Hom(\Lambda A, R) \cong \Hom(A, \Pi R)</script>.
+Given a natural transformation <script type="math/tex">f : \Lambda A \rightarrow R</script>, we need to define a map <script type="math/tex">\overline{f} : A \rightarrow \Pi R</script> i.e. <script type="math/tex">\overline{f} : A \rightarrow R(\varnothing)</script>.</p>
+<p><script type="math/tex">f</script> has components <script type="math/tex">f_U : (\Lambda A)(U) \rightarrow R(U)</script>.
+When <script type="math/tex">U = \varnothing</script> we have <script type="math/tex">f_{\varnothing} : A \rightarrow R(\varnothing)</script>, so define <script type="math/tex">\overline{f} = f_{\varnothing}</script>.
+Given a map <script type="math/tex">g : A \rightarrow \Pi R</script>, or <script type="math/tex">g : A \rightarrow R(\varnothing)</script>, we need to define  a natural transformation <script type="math/tex">\overline{g} : \Lambda A \rightarrow R</script>.
+It will have components <script type="math/tex">\overline{g}_U : (\Lambda A)(U) \rightarrow R(U)</script>.
+So, define <script type="math/tex">\overline{g}_{\varnothing} = g</script>, and <script type="math/tex">\overline{g}_U</script> as the unique empty function <script type="math/tex">\varnothing \rightarrow R(U)</script> for all other open sets <script type="math/tex">U</script>.</p>
+<p><script type="math/tex">\nabla</script> will be dual to <script type="math/tex">\Lambda</script> in a certain sense.
+For <script type="math/tex">\Lambda</script>, we made a presheaf that assigns <script type="math/tex">A</script> on the terminal object of <script type="math/tex">\mathscr{O}(X)^{op}</script> (<script type="math/tex">\varnothing</script>), and for everything assigns the initial object of <script type="math/tex">\mathbf{Set}</script>.
+So for <script type="math/tex">\nabla</script>, we will assign <script type="math/tex">A</script> on the <em>initial</em> object of <script type="math/tex">\mathscr{O}(X)^{op}</script> (<script type="math/tex">X</script>) and a <em>terminal</em> object of <script type="math/tex">\mathbf{Set}</script> on all other open sets.
+To be precise, given <script type="math/tex">A \in \mathbf{Set}</script>, let <script type="math/tex">(\nabla A)(X) = A</script> and <script type="math/tex">(\nabla A)(U) = \set{*}</script> for all other open sets <script type="math/tex">U</script>.
+For arrows <script type="math/tex">(\nabla A)(U \hookrightarrow X)</script> is the unique map <script type="math/tex">A \rightarrow \set{*}</script>, and all other arrows are sent to <script type="math/tex">1_{\set{*}}</script>.</p>
+<p>This is right-adjoint to <script type="math/tex">\Gamma</script>.
+That is, for <script type="math/tex">A \in \mathbf{Set}</script> and <script type="math/tex">R \in \presheaves</script>, we need <script type="math/tex">\Hom(R, \nabla A) \cong \Hom(\Gamma R, A)</script>.
+Given a natural transformation <script type="math/tex">f : R \rightarrow \nabla A</script>, we need to define a map <script type="math/tex">\overline{f} : \Gamma R \rightarrow A</script>, that is <script type="math/tex">\overline{f} : R(X) \rightarrow A</script>.</p>
+<p><script type="math/tex">f</script> has components <script type="math/tex">f_U : R(U) \rightarrow (\nabla A)(U)</script>.
+So let <script type="math/tex">\overline{f} = f_X</script>.
+Given a map <script type="math/tex">g : \Gamma R \rightarrow A</script>, or <script type="math/tex">g: R(X) \rightarrow A</script>, we need to define a natural transformation <script type="math/tex">\overline{g} : R \rightarrow \nabla A</script>.
+Simply let <script type="math/tex">\overline{g}_X = g</script>, and let <script type="math/tex">\overline{g}_U</script> be the unique function <script type="math/tex">R(U) \rightarrow \set{*}</script> for all other open sets <script type="math/tex">U</script>.</p>
+ 
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <script type="text/javascript" src="/js/mathjax_config.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+</body>
+
+</html>

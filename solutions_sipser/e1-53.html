@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title> Sipser Exercise 1.53 |  Chase Meadors</title>
+<meta name="description" content=" The language of "correct binary addition statements" is not regular ">
+  <link rel="stylesheet" href="/styles/main.css">
+  
+  
+</head>
+
+<body class="math-body">
+  <div class="container">
+    <div class="columns">
+      <div class="column">
+        <div class="math-container">
+          <h4 class="title is-3">Sipser Exercise 1.53</h4>
+          <div class="content">
+             <p>Let <script type="math/tex">\Sigma = \set{0, 1, +, =}</script> and</p>
+<script type="math/tex; mode=display">
+
+ADD = \setbuilder{x=y+z}{x,y,z \in \set{0, 1}^* \text{ and the equation is 'correct' w.r.t. binary arithmetic}}</script><p>This language is not regular.</p>
+<hr>
+<p><em>Proof</em>:
+Suppose <script type="math/tex">ADD</script> were regular and let <script type="math/tex">p</script> be the pumping length.
+Take <script type="math/tex">z</script> to be the string <script type="math/tex">1^{2p} = 1^p 0^p + 1^p</script>, noting that <script type="math/tex">z \in ADD</script> and <script type="math/tex">|z| \geq p</script>.
+Then let <script type="math/tex">z = uvw</script> such that <script type="math/tex">|uv| \leq p</script> and <script type="math/tex">|v| \geq 1</script>.</p>
+<p>We see that <script type="math/tex">u</script> and <script type="math/tex">v</script> consist entirely of <script type="math/tex">1</script>&#39;s, that is, <script type="math/tex">v = 1^k</script> for some <script type="math/tex">k \geq 1</script>.
+But <script type="math/tex">u v^0 w</script> is <script type="math/tex">1^{(2p - k)} = 1^p 0^p + 1^p</script>.
+Looking at the right-hand side, the sum must have <script type="math/tex">1</script> in the <script type="math/tex">2p</script>&#39;th spot, so this equation cannot be correct, and this string is not in <script type="math/tex">ADD</script>, contradicting the pumping lemma.
+So <script type="math/tex">ADD</script> is not regular.</p>
+ 
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <script type="text/javascript" src="/js/mathjax_config.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+</body>
+
+</html>

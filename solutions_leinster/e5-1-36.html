@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title> Exercise 5.1.36 |  Chase Meadors</title>
+<meta name="description" content=" Limit cones over a diagram are in correspondence with maps into the limit object ">
+  <link rel="stylesheet" href="/styles/main.css">
+  
+  
+</head>
+
+<body class="math-body">
+  <div class="container">
+    <div class="columns">
+      <div class="column">
+        <div class="math-container">
+          <h4 class="title is-3">Exercise 5.1.36</h4>
+          <div class="content">
+             <p>Let <script type="math/tex">D : \mathbf{I} \rightarrow \mathbf{A}</script> be a diagram and <script type="math/tex">\left( L \xrightarrow{p_I} D(I) \right)_{I \in \mathbf{I}}</script> a limit cone over <script type="math/tex">D</script>.</p>
+<p><strong>Theorem</strong>:
+If <script type="math/tex">A \xrightarrow{h,h'} L</script> are maps such that <script type="math/tex">p_I \circ h = p_I \circ h'</script> for all <script type="math/tex">I \in \mathbf{I}</script>, then <script type="math/tex">h = h'</script>.</p>
+<p><em>Proof</em>:
+Consider that <script type="math/tex">\left( A \xrightarrow{p_I \circ h} D(I) \right)_{I \in \mathbf{I}}</script> is a cone over <script type="math/tex">D</script>.
+Then, there is a unique map <script type="math/tex">f : A \rightarrow L</script> such that <script type="math/tex">p_I \circ f = p_I \circ h</script>.
+Taking <script type="math/tex">f = h</script> and <script type="math/tex">f = h'</script> both make this equality true (the former trivially and the latter by supposition), so we must have <script type="math/tex">f = h = h'</script> since <script type="math/tex">f</script> is unique.</p>
+<script type="math/tex; mode=display">\mjqed</script><p>Consider the case where <script type="math/tex">\mathbf{I}</script> is the two-object discrete category, <script type="math/tex">\mathbf{A} = \mathbf{Set}</script>, and <script type="math/tex">A = \set{*}</script>.
+Interpreting the theorem above in this setting amounts to choosing a pair of sets <script type="math/tex">S, T</script>, and two elements of their product <script type="math/tex">L = S \times T</script>.
+The theorem then says that if two elements of <script type="math/tex">S \times T</script> have the same left entry and right entry, then the two elements are equal as tuples -- in other words, equality of tuples is equivalent to component-wise equality.</p>
+ 
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <script type="text/javascript" src="/js/mathjax_config.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+</body>
+
+</html>

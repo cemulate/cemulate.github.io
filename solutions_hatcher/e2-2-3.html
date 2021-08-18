@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title> Hatcher Exercise 2.2.3 |  Chase Meadors</title>
+<meta name="description" content=" A non-vanishing vector field on the solid ball has a point where it point radially outward, and another where it points radially inward ">
+  <link rel="stylesheet" href="/styles/main.css">
+  
+  
+</head>
+
+<body class="math-body">
+  <div class="container">
+    <div class="columns">
+      <div class="column">
+        <div class="math-container">
+          <h4 class="title is-3">Hatcher Exercise 2.2.3</h4>
+          <div class="content">
+             <p><strong>Theorem</strong>:
+If <script type="math/tex">f : S^n \rightarrow S^n</script> is of degree zero, then there are points <script type="math/tex">x,y</script> with <script type="math/tex">f(x) = x</script> and <script type="math/tex">f(y) = -y</script>.</p>
+<hr>
+<p><em>Proof</em>:
+If <script type="math/tex">f</script> does <em>not</em> have a fixed point, then it is of degree <script type="math/tex">\pm 1 \neq 0</script>.
+Conversely, if <script type="math/tex">f</script> is of degree zero it must have a fixed point.</p>
+<p>Since <script type="math/tex">f</script> is of degree zero, we have <script type="math/tex">\deg (-f) = 0</script> as well since degree is multiplicative with respect to composition.
+Then, by the same argument as before, we conclude that <script type="math/tex">-f</script> must have a fixed point <script type="math/tex">y</script>, so that <script type="math/tex">-f(y) = y</script> and thus <script type="math/tex">f(y) = -y</script>.</p>
+<p><strong>Corollary</strong>:
+A continuous non-vanishing vector field <script type="math/tex">F</script> on <script type="math/tex">D^n \subset \mathbb{R}^n</script> has a point on the boundary where <script type="math/tex">F</script> points radially inward, and another where it points radially outward.</p>
+<hr>
+<p><em>Proof</em>:
+Since <script type="math/tex">F</script> is non-vanishing, we can normalize it, letting <script type="math/tex">\what{F} = F / \norm{F}</script>.
+Then, <script type="math/tex">\im \what{F} \subseteq S^{n-1}</script>.
+Now, we have a map <script type="math/tex">G: S^{n-1} \xrightarrow{i} D^n \xrightarrow{\what{F}} S^{n-1}</script>.
+Since the map factors through a contractible space, <script type="math/tex">G_* = 0</script>, and <script type="math/tex">G</script> is of degree zero.
+Then, applying the theorem we have <script type="math/tex">x</script> and <script type="math/tex">y</script> with <script type="math/tex">G(x) = x</script> and <script type="math/tex">G(y) = -y</script>.
+Then, since the first map in <script type="math/tex">G</script> is just the inclusion, we have <script type="math/tex">\what{F} = x</script> and <script type="math/tex">\what{F}(y) = -y</script>.
+Then, for the original map <script type="math/tex">F</script>, we conclude <script type="math/tex">F(x)</script> is parallel to <script type="math/tex">x</script> and <script type="math/tex">F(y)</script> is opposite in direction to <script type="math/tex">y</script>.
+Since <script type="math/tex">x</script> and <script type="math/tex">y</script> point in the radial direction, this means that <script type="math/tex">F(x)</script> &quot;points outward&quot; and <script type="math/tex">F(y)</script> &quot;points inward&quot;.</p>
+ 
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <script type="text/javascript" src="/js/mathjax_config.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+</body>
+
+</html>

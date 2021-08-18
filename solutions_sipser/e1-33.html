@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title> Sipser Exercise 1.33 |  Chase Meadors</title>
+<meta name="description" content=" Building a DFA for a language dealing with binary arithmetic ">
+  <link rel="stylesheet" href="/styles/main.css">
+  
+  
+</head>
+
+<body class="math-body">
+  <div class="container">
+    <div class="columns">
+      <div class="column">
+        <div class="math-container">
+          <h4 class="title is-3">Sipser Exercise 1.33</h4>
+          <div class="content">
+             <p>Take <script type="math/tex">\Sigma = \set{(0, 0), (0, 1), (1, 0), (1, 1)}</script>.</p>
+<p>Write the function <script type="math/tex">V(x)</script> to denote the value of a string <script type="math/tex">x \in \set{0,1}^*</script> when taken as a binary number with most significant digit first.</p>
+<p>If <script type="math/tex">x = (a_1, b_1) (a_2, b_2) \dots (a_n, b_n)</script> let</p>
+<script type="math/tex; mode=display">
+t(x) = V(a_1 a_2 \dots a_n) \quad b(x) = V(b_1 b_2 \dots b_n)</script><p>Then consider the language <script type="math/tex">L = \setbuilder{x \in \Sigma^*}{b(x) = 3 \cdot t(x)}</script>, that is, the binary value of the concatenation of the right-hand numbers is three times that of the left hand numbers.</p>
+<p>We build a DFA that accepts <script type="math/tex">L^R</script>, that is, strings satisfying the same numerical properties as above, but starting with the least significant digit.</p>
+<p>First, suppose <script type="math/tex">k = k_n k_{n-1} \dots k_1 k_0</script>, i.e., a binary string with MSB first. Then,</p>
+<script type="math/tex; mode=display">
+\begin{align*}
+3V(k) &= 3(k_n 2^n + k_{n-1} 2^{n-1} + \dots + k_1 2^1 + k_0) \\
+&= (2+1)(k_n 2^n + k_{n-1} 2^{n-1} + \dots + k_1 2^1 + k_0) \\
+&= (k_n 2^{n+1} + k_{n-1} 2^{n} + \dots + k_0 2^1 + 0) + (k_n 2^n + k_{n-1} 2^{n-1} + \dots + k_1 2^1 + k_0)
+\end{align*}</script><p>So <script type="math/tex">3V(k)</script> is <script type="math/tex">k</script> added with a shifted copy of itself.
+So, a naive way to express the condition that <script type="math/tex">V(b) = 3V(a)</script> is:</p>
+<script type="math/tex; mode=display">
+a_0 = b_0 \tand a_i + a_{i-1} = b_i \text{ for all } i</script><p>Which is almost correct, but we need to account for carry.</p>
+<p>Let <script type="math/tex">x = (a_1, b_1) (a_2, b_2) \dots</script> be an input to our DFA.
+Our machine will emulate a full adder.
+That is, upon reading <script type="math/tex">(a_i, b_i)</script>, it will check that <script type="math/tex">a_{i-1} + a_i = b_i</script> (mod 2), accounting for carry bit, and remember if a carry bit was introduced or used up in that addition.
+This means we need to remember value of <script type="math/tex">a_{i-1}</script> and whether or not there is currently a carry bit, which will require four states.
+If ever <script type="math/tex">a_{i-1} + a_i \neq b_i</script>, the machine goes into a dead state.</p>
+<p>Obviously, states with carry bits cannot be accepting, because the presence of a carry bit means that the addition is not &#39;complete&#39; without writing down another 1.
+In addition, if <script type="math/tex">a_{i-1} = 1</script>, the current value of <script type="math/tex">3V(a)</script> would certainly require one more digit, so this state cannot be accepting either.
+The only accepting state is <script type="math/tex">a_{i-1} = 0</script> with no carry bit.</p>
+<p>So let <script type="math/tex">Q = \set{0, 1, 0^c, 1^c, D}</script>. The number denotes the value of <script type="math/tex">a_{i-1}</script> and superscript <script type="math/tex">c</script> denotes the presence of a carry bit. <script type="math/tex">D</script> is the dead state.
+Then the following is a DFA <script type="math/tex">M</script> that accepts <script type="math/tex">L^R</script></p>
+<div class="math-figure"><img src="/assets/math_solutions/sipser/e1-33_1.svg" width="400"/></div>
+
+<p>Then <script type="math/tex">L^R</script> is regular and <script type="math/tex">L</script> is also regular (by 1.31).</p>
+ 
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <script type="text/javascript" src="/js/mathjax_config.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+</body>
+
+</html>

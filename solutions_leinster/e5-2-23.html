@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title> Exercise 5.2.23 |  Chase Meadors</title>
+<meta name="description" content=" Characterizing maps that are epic but not surjective in some categories ">
+  <link rel="stylesheet" href="/styles/main.css">
+  
+  
+</head>
+
+<body class="math-body">
+  <div class="container">
+    <div class="columns">
+      <div class="column">
+        <div class="math-container">
+          <h4 class="title is-3">Exercise 5.2.23</h4>
+          <div class="content">
+             <p>We demonstrate categories with maps that are epic but <em>not</em> surjective:</p>
+<p><strong>Theorem</strong>:
+In the category of monoids <script type="math/tex">\mathbf{Mon}</script>, the inclusion <script type="math/tex">(\mathbb{N}, +, 0) \xrightarrow{i} (\mathbb{Z}, +, 0)</script> is epic</p>
+<p><em>Proof</em>:
+Suppose we have maps <script type="math/tex">(\mathbb{Z}, +, 0) \xrightarrow{f, g} (M, \cdot, e)</script> and <script type="math/tex">f \circ i = g \circ i</script>.
+This essentially means that <script type="math/tex">f</script> and <script type="math/tex">g</script> are identical on positive integers.
+We show that this implies that they&#39;re also identical on negative integers.
+Indeed, let <script type="math/tex">n < 0</script>.
+Then,</p>
+<script type="math/tex; mode=display">
+f(n) = f(n) \cdot e = f(n) \cdot g(0) = f(n) \cdot g(-n + n) = f(n) \cdot g(-n) \cdot g(n) = \ldots</script><p>then, since <script type="math/tex">-n > 0</script>, we have <script type="math/tex">g(-n) = f(-n)</script>:</p>
+<script type="math/tex; mode=display">
+\ldots = f(n) \cdot f(-n) \cdot g(n) = f(-n + n) \cdot g(n) = f(0) \cdot g(n) = e \cdot g(n) = g(n)</script><p>as desired.
+Since <script type="math/tex">f</script> and <script type="math/tex">g</script> are clearly identical on <script type="math/tex">0</script>, we have <script type="math/tex">f(n) = g(n)</script> for all <script type="math/tex">n \in \mathbb{Z}</script>, so <script type="math/tex">f = g</script>.</p>
+<p><strong>Theorem</strong>:
+In the category of rings <script type="math/tex">\mathbf{Rng}</script>, the inclusion <script type="math/tex">\mathbb{Z} \xrightarrow{i} \mathbb{Q}</script> is epic.</p>
+<p><em>Proof</em>:
+Suppose we have maps <script type="math/tex">\mathbb{Q} \xrightarrow{f,g} R</script> for some ring <script type="math/tex">R</script>, and <script type="math/tex">f \circ i = g \circ i</script>.
+This means that <script type="math/tex">f</script> and <script type="math/tex">g</script> are identical on the integers.
+We show this implies they are identical on all rationals.
+Indeed, let <script type="math/tex">\dfrac{p}{q}</script> be some fully reduced rational number.
+Then, we have:</p>
+<script type="math/tex; mode=display">
+f\left(\dfrac{p}{q}\right) = f\left(\dfrac{p}{q}\right) \cdot 1 = f\left(\dfrac{p}{q}\right) \cdot g\left(1\right) = f\left(\dfrac{p}{q}\right) \cdot g\left(q \cdot \dfrac{1}{q}\right) = f\left(\dfrac{p}{q}\right) \cdot g(q) \cdot g\left(\dfrac{1}{q}\right) = \ldots</script><p>and <script type="math/tex">g(q) = f(q)</script>, so</p>
+<script type="math/tex; mode=display">
+\ldots = f\left(\dfrac{p}{q}\right) \cdot f(q) \cdot g\left(\dfrac{1}{q}\right) = f\left(\dfrac{p}{q} \cdot q\right) \cdot g\left(\dfrac{1}{q}\right) = f(p) \cdot g\left(\dfrac{1}{q}\right) = \ldots</script><p>and <script type="math/tex">f(p) = g(p)</script> so,</p>
+<script type="math/tex; mode=display">
+\ldots = g(p) \cdot g\left(\dfrac{1}{q}\right) = g\left(p \cdot \dfrac{1}{q}\right) = g\left(\dfrac{p}{q}\right)</script><p>as desired.
+So <script type="math/tex">f(q) = g(q)</script> for all rational <script type="math/tex">q</script>, and <script type="math/tex">f = g</script>.</p>
+ 
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <script type="text/javascript" src="/js/mathjax_config.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+</body>
+
+</html>

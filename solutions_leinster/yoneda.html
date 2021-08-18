@@ -1,0 +1,116 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title> Yoneda Lemma |  Chase Meadors</title>
+<meta name="description" content=" Proof of the Yoneda lemma ">
+  <link rel="stylesheet" href="/styles/main.css">
+  
+  
+</head>
+
+<body class="math-body">
+  <div class="container">
+    <div class="columns">
+      <div class="column">
+        <div class="math-container">
+          <h4 class="title is-3">Yoneda Lemma</h4>
+          <div class="content">
+             <p><script type="math/tex; mode=display">
+\newcommand{\presheaves}[1]{[{#1}^{\text{op}}, \mathbf{Set}]}
+\newcommand{\pshoms}[3]{\presheaves{#1}(H_{#2}, #3)}</script><p><strong>Theorem</strong>:
+Let <script type="math/tex">\mathbf{A}</script> be a locally small category.
+Let <script type="math/tex">H_{\bullet} : \mathbf{A} \rightarrow \presheaves{\mathbf{A}}</script> denote the Yoneda embedding.</p></p>
+<p><script type="math/tex; mode=display">
+\presheaves{\mathbf{A}}(H_A, X) \cong X(A)</script><p><em>naturally</em> in both <script type="math/tex">A</script> and <script type="math/tex">X</script>.</p></p>
+<p><em>Proof</em>:
+We start by defining a bijection between the two sets.
+To do this, we&#39;ll define functions <script type="math/tex">\overline{(\cdot)} : \presheaves{\mathbf{A}}(H_A, X) \rightarrow X(A)</script> and <script type="math/tex">\what{(\cdot)} : X(A) \rightarrow \presheaves{\mathbf{A}}(H_A, X)</script>, then show that they compose in both directions to give the identity.</p>
+<p>Given a natural transformation <script type="math/tex">\eta : H_A \rightarrow X</script>, we have a component <script type="math/tex">\eta_A : H_A(A) \rightarrow X(A)</script>.
+Note that <script type="math/tex">H_A(A)</script> is just <script type="math/tex">\mathbf{A}(A, A)</script>.
+In particular, <script type="math/tex">1_A \in H_A(A)</script>.
+So, define <script type="math/tex">\overline{\eta} = \eta_A(1_A)</script>.</p>
+<p>Given an element <script type="math/tex">x \in X(A)</script>, we need to define a natural transformation <script type="math/tex">\what{x} : H_A \rightarrow X</script>.
+We will let the components <script type="math/tex">\what{x}_B : H_A(B) \rightarrow X(B)</script> be defined as follows:
+Given an <script type="math/tex">f : B \rightarrow A</script> in <script type="math/tex">H_A(B)</script>, the functor <script type="math/tex">X</script> yields a map <script type="math/tex">X(f) : X(A) \rightarrow X(B)</script>.
+So, let <script type="math/tex">\what{x}_B(f) = X(f)(x)</script>.
+To be pedantic, let&#39;s verify that <script type="math/tex">\what{x}</script> is actually natural.
+Consider the naturality square with respect to a map <script type="math/tex">f: B \rightarrow C</script> in <script type="math/tex">\mathbf{A}</script>:</p>
+<div class="math-figure"><img src="/assets/math_solutions/leinster/yoneda_1.svg" width="385px"/></div>
+
+<p>Evaluating at arbitrary <script type="math/tex">g \in H_A(C)</script> (i.e. <script type="math/tex">g : C \rightarrow A</script>), we have (recall <script type="math/tex">H_A(f)</script> is right composition by <script type="math/tex">f</script>):</p>
+<div class="math-figure"><img src="/assets/math_solutions/leinster/yoneda_2.svg" width="385px"/></div>
+
+<p>but <script type="math/tex">X</script> is a functor and thus is associative and respects composition (switching the order due to contravariance), so the top and bottom expressions are equal.</p>
+<p>We&#39;ve defined the two functions.
+Now we must show that they compose to the identity in both directions.</p>
+<p>Take an <script type="math/tex">\eta \in \presheaves{\mathbf{A}}(H_A, X)</script>.
+We must show <script type="math/tex">\what{\overline{\eta}} = \eta</script>.
+This amounts to showing that:</p>
+<script type="math/tex; mode=display">
+\what{\overline{\eta}}_B(f) = \eta_B(f)</script><p>for all <script type="math/tex">B \in \mathbf{A}</script> and <script type="math/tex">f : B \rightarrow A</script>.
+We have:</p>
+<script type="math/tex; mode=display">
+\what{\overline{\eta}}_B(f) = \what{\eta_A(1_A)}_B(f) = X(f)(\eta_A(1_A))</script><p>Consider the naturality square of <script type="math/tex">\eta</script> with respect to the map <script type="math/tex">f</script>:</p>
+<div class="math-figure"><img src="/assets/math_solutions/leinster/yoneda_3.svg" width="385px"/></div>
+
+<p>evaluating at <script type="math/tex">1_A</script> in the upper right yields:</p>
+<div class="math-figure"><img src="/assets/math_solutions/leinster/yoneda_4.svg" width="385px"/></div>
+
+<p>which gives precisely the desired equality.</p>
+<p>Now, given an <script type="math/tex">x \in X(A)</script>, we must show <script type="math/tex">\overline{\what{x}} = x</script>.
+Indeed:</p>
+<script type="math/tex; mode=display">
+\overline{\what{x}} = \what{x}_A(1_A) = X(1_A)(x) = 1_{X(A)}(x) = x</script><p>which gives the desired equality.</p>
+<p>Now that we&#39;ve finally established the bijection, we must show that it&#39;s natural in both <script type="math/tex">A</script> and <script type="math/tex">X</script>.
+We start with <script type="math/tex">A</script>.
+To be precise, we have a functor <script type="math/tex">\presheaves{\mathbf{A}}(H_{\bullet}, X)</script>, that can realized as the compound functor <script type="math/tex">H_X \circ H_{\bullet}</script>.
+On the right we have a the functor <script type="math/tex">X</script>.
+We must show that <script type="math/tex">\overline{(\cdot)}</script> gives the components of a natural transformation between the two.
+This amounts to showing that, for a <script type="math/tex">f : A \rightarrow B</script>, the square:</p>
+<div class="math-figure"><img src="/assets/math_solutions/leinster/yoneda_5.svg" width="500px"/></div>
+
+<p>commutes.
+Evaluate at an arbitrary <script type="math/tex">\alpha : H_B \rightarrow X</script> starting from the top-right:</p>
+<div class="math-figure"><img src="/assets/math_solutions/leinster/yoneda_6.svg" width="385px"/></div>
+
+<p>We show the final expressions are equal.
+Keeping in mind that the components of <script type="math/tex">H_f</script> are given by left-composition by <script type="math/tex">f</script>,</p>
+<script type="math/tex; mode=display">
+(\alpha \circ H_f)_A(1_A) = (\alpha_A \circ (H_f)_A)(1_A) = \alpha_A(f \circ 1_A) = \alpha_A(f)</script><p>And, working backwards from equalities derived earlier:</p>
+<script type="math/tex; mode=display">
+X(f)(\alpha_B(1_B)) = \what{\alpha_B(1_B)}_A(f) = \what{\overline{\alpha}}_A(f) = \alpha_A(f)</script><p>and the square commutes.</p>
+<p>Now we show naturality in <script type="math/tex">X</script>.
+To be precise, on the left we have the functor <script type="math/tex">\presheaves{\mathbf{A}}(H_A, \dash)</script>, which is, essentially, <script type="math/tex">H^X</script>.
+On the right we have the evaluation functor <script type="math/tex">\dash(A)</script>.
+To be exceedingly clear, we clarify precisely how this is functorial by describing the behavior on maps: for a natural transformation <script type="math/tex">\varepsilon : X \rightarrow Y</script>, the functor sends <script type="math/tex">f</script> to its component <script type="math/tex">\varepsilon_A : X(A) \rightarrow Y(A)</script>.
+We must again show that <script type="math/tex">\overline{(\cdot)}</script> gives the components of a natural transformation between the two.
+That is, for arbitrary <script type="math/tex">\varepsilon : X \rightarrow Y</script>, the square:</p>
+<div class="math-figure"><img src="/assets/math_solutions/leinster/yoneda_7.svg" width="500px"/></div>
+
+<p>must commute.
+Evaluating at an arbitrary <script type="math/tex">\alpha : H_A \rightarrow X</script> in the top-left, we have:</p>
+<div class="math-figure"><img src="/assets/math_solutions/leinster/yoneda_8.svg" width="385px"/></div>
+
+<p>but these are equal because of the definition of composition of natural transformations: <script type="math/tex">(\varepsilon \circ \alpha)_A = \varepsilon_A \circ \alpha_A</script>.
+So the square commutes.</p>
+<p>Finally, we&#39;ve exhibited a family of isomorphisms that are <em>natural</em> in both <script type="math/tex">A</script> and <script type="math/tex">X</script>, completing the proof.</p>
+ 
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <script type="text/javascript" src="/js/mathjax_config.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+</body>
+
+</html>
