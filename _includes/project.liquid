@@ -1,0 +1,35 @@
+{% assign data = projects[name] %}
+
+<div class="block">
+  <nav class="level is-mobile">
+    <div class="level-left">
+      <div class="level-item">
+        <img src="{{ data.logo }}" alt="" style="width: 3em; height: 3em">
+      </div>
+      <div class="level-item {% if data.github %} is-hidden-mobile {% endif %}">
+        <h1 class="title is-4-touch-3-desktop">
+          {% if data.link %}
+          <a id="link-{{ name }}" href="{{ data.link }}">{{ data.name }}</a>
+          {% else %}
+          {{ data.name }}
+          {% endif %}
+        </h1>
+      </div>
+    </div>
+    <div class="level-right">
+      {% if data.github %}
+      <a class="github-link" href="{{ data.github }}">
+        <svg style="width: 2.5em; height: 2.5em">
+          <use href="/assets/github-brands.svg#github"></use>
+        </svg>
+      </a>
+      {% endif %}
+    </div>
+  </nav>
+  <p class="title is-4 is-hidden-tablet {% unless data.github %} is-hidden-mobile {% endunless %}"><a href="{{ data.link }}">{{ data.name }}</a></p>
+  <hr class="is-hidden-mobile">
+  <div class="content">
+    {{ data.description | markdownify }}
+  </div>
+  <hr class="is-hidden-desktop">
+</div>

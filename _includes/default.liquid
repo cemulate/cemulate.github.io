@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+
+<head>
+  {% include meta %}
+  <title>{{ title }} | {{ config.titlePostfix }}</title>
+  <meta name="description" content="{% if description %} {{ description }} {% else %} {% if auto_description %} {{ content | strip_html | strip_newlines | truncate: 160 }} {% endif %} {% endif %}">
+  <style>
+    @import "https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css";
+    .github-link {
+      fill: currentColor;
+    }
+    @media (max-width: 769px) {
+      h1.is-4-touch-3-desktop {
+        font-size: 1.5rem;
+      }
+    }
+    @media (min-width: 770px) {
+      h1.is-4-touch-3-desktop {
+        font-size: 2rem;
+      }
+    }
+  </style>
+  {% if includeCustomElements %}
+  <script type="text/javascript" src="https://unpkg.com/web-component-polyomino@3.1.1/dist/web-component-polyomino.js"></script>
+  {% endif %}
+</head>
+
+<body>
+  {{ content }}
+</body>
+
+</html>

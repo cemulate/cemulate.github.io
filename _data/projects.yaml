@@ -1,0 +1,109 @@
+---
+the-mlab: 
+  name: The mLab
+  link: https://cemulate.github.io/the-mlab/
+  github: https://github.com/cemulate/the-mlab
+  logo: /assets/nlab.svg
+  description: |
+    A satire generator making fun of the nLab, a wiki for higher mathematics and category theory.
+    Read about [syntactically reflective presheaves](https://cemulate.github.io/the-mlab/#vchk-syntactically+reflective+presheaf)
+    or [co-normally virtual limits](https://cemulate.github.io/the-mlab/#X9HC-co-normally+virtual+limit), and follow links for more!
+
+    The main functionality is implemented in a standalone package **[nearley-generator](https://github.com/cemulate/nearley-generator)**
+    which turns a [Nearley parser grammar](https://nearley.js.org/) description into an efficient and customizable fake text generator.  
+
+polyomino-solver:
+  name: Polyomino Solver
+  link: https://cemulate.github.io/polyomino-solver
+  github: https://github.com/cemulate/polyomino-solver
+  logo: /assets/poly.svg
+  description: |
+    Solves arbitrary polyomino tiling problems, using different algorithms.
+    The fastest such algorithm reduces the problem to [exact cover](https://en.wikipedia.org/wiki/Exact_cover) and applies [Algorithm X](https://en.wikipedia.org/wiki/Knuth%27s_Algorithm_X), which only finds exact solutions.
+    Otherwise, there are methods to convert to [SAT](https://en.wikipedia.org/wiki/Boolean_satisfiability_problem) and solve via either a [JavaScript SAT solver](https://www.npmjs.com/package/boolean-sat) or a WebAssembly build of the [Z3 Theorem Prover](https://github.com/Z3Prover/z3).
+    The main UI functionality here is implemented as a web component **[web-component-polyomino](https://www.npmjs.com/package/web-component-polyomino)**.
+    
+oracles-randomizer: 
+  name: Oracles Randomizer &ndash; Web
+  link: https://cemulate.github.io/oracles-randomizer-web
+  github: https://github.com/cemulate/oracles-randomizer-web
+  logo: /assets/link1.svg
+  description: |
+    A web interface to the [randomizer](https://arstechnica.com/gaming/2019/12/how-randomizers-are-breathing-new-life-into-old-games/)(s) for *Legend of Zelda: Oracle of Seasons/Ages*, which are originally command line programs written in Go.
+    This web app runs the randomizer programs entirely in the browser by compiling them to WebAssembly and "emulating" a filesystem layer, as detailed [here](https://github.com/cemulate/oracles-randomizer-web#technical-details).
+    This app provides access to three commonly used verisons of the randomizer in one location, by maintaining WASM binaries of all three.
+
+manufactoria-editor:
+  name: Manufactoria Editor
+  link: https://cemulate.github.io/manufactoria-editor
+  github: https://github.com/cemulate/manufactoria-editor
+  logo: /assets/manu.svg
+  description: |
+    A modern re-skinned editor for levels in the classic flash game [Manufactoria](http://pleasingfungus.com/Manufactoria/).
+    Save and load programs from regular Manufactoria share URLs, and automate the verification of your programs running them against a test battery.
+    Built in conjunction with [@wkevina](https://github.com/wkevina).
+
+just-track:
+  name: Just Track
+  link: https://cemulate.github.io/just-track
+  github: https://github.io/cemulate/just-track
+  logo: /assets/clock.svg
+  description: |
+    A simple, offline, client-only time tracking app.
+    Records and saves data locally in the browser, and past data can be viewed any time.
+    Simple keyboard interface that supports assigning hotkeys and colors to tasks, with the currently tracked task being shown in the browser tab.
+
+genki-db:
+  name: Genki DB
+  link: https://cemulate.github.io/genki-db
+  github: https://github.io/cemulate/genki-db
+  logo: /assets/go.svg
+  description: |
+    A small app to browser and filter over all the vocabulary and Kanji covered in the popular introductory Japanese textbooks, Genki I and II.
+    Full offline support via PWA (progressive web app) functionality.
+
+web-components:
+  name: Web Components
+  link: null
+  github: null
+  logo: /assets/wc.svg
+  description: |
+    None
+
+lean:
+  name: Leanprover
+  link: https://leanprover.github.io/
+  github: null
+  logo: /assets/forall.svg
+  description: |
+    [Lean](https://leanprover.github.io/) is a programming language and interactive theorem prover out of Microsoft Research.
+    I've contributed a few features to [Lean's library of formalized mathematics](https://leanprover-community.github.io/mathlib_docs/):
+
+    * A collection of results on lattice theory and order theory: [#5825](https://github.com/leanprover-community/mathlib/pull/5825), [#5871](https://github.com/leanprover-community/mathlib/pull/5871), [#5942](https://github.com/leanprover-community/mathlib/pull/5942)
+    * A refactoring and simplification of existing proofs using the above results: [#6082](https://github.com/leanprover-community/mathlib/pull/6082) 
+
+sagemath:
+  name: SageMath
+  link: https://www.sagemath.org/
+  github: null
+  logo: /assets/sage.svg
+  description: |
+    SageMath is an open source mathematics software system.
+    In some projects with [Tianyuan Xu](https://math.colorado.edu/~tixu6187/), we contributed some substantial features to SageMath:
+
+    * [A module](https://doc.sagemath.org/html/en/reference/combinat/sage/combinat/fully_commutative_elements.html) for working with fully commutative elements in Coxeter systems ([#30243](https://trac.sagemath.org/ticket/30243)).
+    * A new implementation of the [Kazhdan&ndash;Lusztig basis of an Iwahori&ndash;Hecke algebra](https://doc.sagemath.org/html/en/reference/algebras/sage/algebras/iwahori_hecke_algebra.html#sage.algebras.iwahori_hecke_algebra.IwahoriHeckeAlgebra.Cp) that allows computations that were previously slow or infeasible ([#32352](https://trac.sagemath.org/ticket/32352)).
+
+    In the future we also hope to contribute features for certain **[diagram algebras](https://math.colorado.edu/~chme3268/diagrams/#/involution/b4)**, which this small demo provides some pictures of.
+
+other:
+  name: Other Small Stuff
+  link: null
+  github: null
+  logo: /assets/ellipsis.svg
+  description: |
+    A collection of things too small for their own section:
+
+    * A **[playground and test-bed](https://cemulate.github.io/project-euler-208)** for [Project Euler 208](https://projecteuler.net/problem=208)
+    * A **[schedule planner and visualizer](https://cemulate.github.io/schedule-visualizer)** for college schedules; create a link to share the schedule with others.
+    * A **[web component](https://codepen.io/cemulate/pen/RzRjaQ)** for displaying [Smith charts](https://en.wikipedia.org/wiki/Smith_chart).
