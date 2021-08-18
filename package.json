@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "ELEVENTY_ENV=production eleventy",
     "watch": "ELEVENTY_ENV=development eleventy --serve",
-    "publish": "gh-pages -d _site"
+    "publish": "gh-pages --dotfiles -d _site"
   },
   "keywords": [],
   "author": "",
