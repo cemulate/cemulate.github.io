@@ -1,0 +1,2 @@
+<title>{% if title %} {{ title }} | {% endif %} {{ config.titlePostfix }}</title>
+<meta name="description" content="{% if description %} {{ description }} {% else %} {% if auto_description %} {{ content | strip_html | strip_newlines | truncate: 160 }} {% endif %} {% endif %}">

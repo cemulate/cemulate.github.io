@@ -1,11 +1,13 @@
 const yaml = require('js-yaml');
 
-const markdownIt = require('markdown-it');
-const markdownRender = new markdownIt();
+const kramed = require('kramed');
 
 module.exports = function(eleventyConfig) {
+    eleventyConfig.setLibrary('md', { render: kramed });
+
     eleventyConfig.addPassthroughCopy('styles');
     eleventyConfig.addPassthroughCopy('assets');
+    eleventyConfig.addPassthroughCopy('js');
     eleventyConfig.addDataExtension('yaml', contents => yaml.safeLoad(contents));
 
     eleventyConfig.addFilter('find_data', (arr, attr, value) => {
@@ -14,5 +16,7 @@ module.exports = function(eleventyConfig) {
     eleventyConfig.addFilter('where_data', (arr, attr, value) => {
         return arr.filter(x => x.data[attr] == value);
     });
-    eleventyConfig.addFilter('markdownify', str => markdownRender.render(str));
+    eleventyConfig.addFilter('markdownify', str => kramed(str));
+
+    return { htmlTemplateEngine: false };
 };

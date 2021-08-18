@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+
+<head>
+  {% include meta %}
+  {% include title %}
+  <link rel="stylesheet" href="/styles/main.css">
+  {% if tex4ht %} <link rel="stylesheet" type="text/css" href="/styles/tex4ht.css"/> {% endif %}
+  {% if tex4ht %} <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script> {% endif %}
+</head>
+
+<body class="math-body">
+  <div class="container">
+    <div class="columns">
+      <div class="column">
+        <div class="math-container">
+          <h4 class="title is-3">{{ title }}</h4>
+          <div class="content">
+            {% if tex4ht %} {{ content }} {% else %} {{ content | markdownify }} {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {% if hasMath %} {% unless tex4ht %} {% include mathjax %} {% endunless %} {% endif %}
+</body>
+
+</html>
