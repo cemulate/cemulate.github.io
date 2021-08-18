@@ -5,6 +5,7 @@ const kramed = require('kramed');
 module.exports = function(eleventyConfig) {
     eleventyConfig.setLibrary('md', { render: kramed });
 
+    eleventyConfig.addPassthroughCopy('.nojekyll');
     eleventyConfig.addPassthroughCopy('styles');
     eleventyConfig.addPassthroughCopy('assets');
     eleventyConfig.addPassthroughCopy('js');

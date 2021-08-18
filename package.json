@@ -6,13 +6,15 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "ELEVENTY_ENV=production eleventy",
-    "watch": "ELEVENTY_ENV=development eleventy --serve"
+    "watch": "ELEVENTY_ENV=development eleventy --serve",
+    "publish": "gh-pages -d _site"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@11ty/eleventy": "^0.12.1",
+    "gh-pages": "^3.2.3",
     "js-yaml": "^3.14.1",
     "kramed": "^0.5.6"
   }
