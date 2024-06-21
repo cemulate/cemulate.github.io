@@ -43,6 +43,15 @@ manufactoria-editor:
     Save and load programs from regular Manufactoria share URLs, and automate the verification of your programs running them against a test battery.
     Built in conjunction with [@wkevina](https://github.com/wkevina).
 
+ootmmr-checklist:
+  name: OoTMM Checklist Tracker
+  link: https://cemulate.github.io/ootmmr-checklist
+  github: https://github.com/cemulate/ootmmr-checklist
+  logo: /assets/bombers.webp
+  description: |
+    A co-op capable checklist tracker for the [OoTMM randomizer](https://ootmm.com/), that randomizes *Legend of Zelda: Ocarina of Time* and *Majora's Mask* together.
+    Through WebRTC peer-to-peer connections, you and your co-op partners can keep track of all the checks and locations across both games, collaboratively editing the same checklist.
+
 just-track:
   name: Just Track
   link: https://cemulate.github.io/just-track
