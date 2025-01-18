@@ -1,44 +1,30 @@
 ---
-layout: default
+layout: main
 title: Projects
 description: Sites, apps, web components, open source contributions
 includeCustomElements: true
 ---
 
 <section class="section">
-  <div class="columns">
-    <div class="column is-narrow is-hidden-mobile" style="height:90vh; position: sticky; top: 3.2rem">
-      <aside class="menu">
-        <ul class="menu-list">
-          <li class="mb-4"><a class="toc-link" href="#link-the-mlab">Sites and Apps</a></li>
-          <li class="mb-4"><a class="toc-link" href="#link-lean">Contributions</a></li>
-          <li class="mb-4"><a class="toc-link" href="#link-other">Other Small Stuff</a></li>
-        </ul>
-      </aside>
-    </div>
-    <div class="column"></div>
-    <div class="column is-8">
-      {% include project with { name: 'the-mlab' } %}
-      {% include project with { name: 'polyomino-solver' } %}
-      <div class="content">
-        <details>
-          <summary><small><em>Expand to see an example of a polyomino web component</em></small></summary>
-          <polyomino-control style="display: block; padding: 5px; width: 250px; height: 250px" size="5" mode="create" value="[[1,1],[1,2],[1,3],[2,2]]"></polyomino-control>
-          See the <a href="https://codepen.io/cemulate/pen/dExpJw">codepen demo</a> for more!
+  {% include project with { name: 'the-mlab' } %}
+  {% include project with { name: 'polyomino-solver' } %}
+  <div class="content">
+    <details>
+      <summary><small><em>Expand to see an example of a polyomino web component</em></small></summary>
+      <polyomino-control style="display: block; padding: 5px; width: 250px; height: 250px" size="5" mode="create" value="[[1,1],[1,2],[1,3],[2,2]]"></polyomino-control>
+      See the <a href="https://codepen.io/cemulate/pen/dExpJw">codepen demo</a> for more!
 
-        </details>
-      </div>
-      {% include project with { name: 'oracles-randomizer' } %}
-      {% include project with { name: 'ootmmr-checklist' } %}
-      {% include project with { name: 'manufactoria-editor' } %}
-      {% include project with { name: 'just-track' } %}
-      {% include project with { name: 'genki-db' } %}
-
-      {% include project with { name: 'lean' } %}
-      {% include project with { name: 'sagemath' } %}
-
-      {% include project with { name: 'other' } %}
-    </div>
-    <div class="column"></div>
+    </details>
   </div>
+  {% include project with { name: 'my-note-server' } %}
+  {% include project with { name: 'oracles-randomizer' } %}
+  {% include project with { name: 'ootmmr-checklist' } %}
+  {% include project with { name: 'manufactoria-editor' } %}
+  {% include project with { name: 'just-track' } %}
+  {% include project with { name: 'genki-db' } %}
+
+  {% include project with { name: 'lean' } %}
+  {% include project with { name: 'sagemath' } %}
+
+  {% include project with { name: 'other' } %}
 </section>

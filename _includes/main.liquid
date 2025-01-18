@@ -1,0 +1,33 @@
+---
+layout: default
+---
+
+<nav class="navbar">
+    <div class="navbar-brand">
+        <a href="/" class="navbar-item">
+            <img src="/assets/logo.svg" alt="">
+        </a>
+        <a class="navbar-burger" role="button" onclick="() => { console.log('hey') }">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </a>
+    </div>
+    <div class="navbar-menu">
+        <div class="navbar-start">
+            <a href="/projects" class="navbar-item">Software</a>
+            <a target="_blank" href="https://math.colorado.edu/~chme3268/research/" class="navbar-item">Math</a>
+            <a href="/music" class="navbar-item">Music</a>
+        </div>
+    </div>
+</nav>
+
+<div class="container is-fullscreen">
+    {{ content }}
+</div>
+
+<script>
+    document.querySelector('.navbar-burger').addEventListener('click', () => {
+        for (const el of document.querySelectorAll('.navbar-burger, .navbar-menu')) el.classList.toggle('is-active');
+    });
+</script>

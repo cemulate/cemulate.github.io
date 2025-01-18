@@ -22,7 +22,20 @@ polyomino-solver:
     The fastest such algorithm reduces the problem to [exact cover](https://en.wikipedia.org/wiki/Exact_cover) and applies [Algorithm X](https://en.wikipedia.org/wiki/Knuth%27s_Algorithm_X), which only finds exact solutions.
     Otherwise, there are methods to convert to [SAT](https://en.wikipedia.org/wiki/Boolean_satisfiability_problem) and solve via either a [JavaScript SAT solver](https://www.npmjs.com/package/boolean-sat) or a WebAssembly build of the [Z3 Theorem Prover](https://github.com/Z3Prover/z3).
     The main UI functionality here is implemented as a web component **[web-component-polyomino](https://www.npmjs.com/package/web-component-polyomino)**.
-    
+
+my-note-server:
+  name: My Note Server
+  link: https://cemulate.github.io/mynoteserver/app/
+  github: https://github.com/cemulate/mynoteserver
+  logo: /assets/dollar.svg
+  description: |
+    A simple, self-hosted, note-taking and slide-making solution.
+    A well-tread problem space, but still a fun project to tweak over the years for my particular set of needs.
+    Features primarly Markdown content with extensive math support, and the ability to include hand-drawn images.
+    File management is extremely transparent, with all content saved in plain Markdown files and images stored directly in the Markdown file,
+    avoiding asset management.
+    Visit the link for a mocked-out demo of the editor.
+
 oracles-randomizer: 
   name: Oracles Randomizer &ndash; Web
   link: https://cemulate.github.io/oracles-randomizer-web

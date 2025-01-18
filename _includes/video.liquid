@@ -1,0 +1,27 @@
+{% assign data = videos[name] %}
+
+<div class="columns">
+    <div class="column">
+        <iframe class="youtube-embed" src="{{ data.embedlink }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+    <div class="column is-7">
+        <div class="content">
+            <h4>{{ data.name }}</h4>
+            <p>{{ data.description | markdownify }}</p>
+        </div>
+    </div>
+</div>
+
+{% comment %} <article class="media">
+    <figure class="media-left">
+        <p class="image">
+        <iframe width="560" height="315" src="{{ data.embedlink }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </p>
+    </figure>
+    <div class="media-content">
+        <div class="content">
+            <h4>{{ data.name }}</h4>
+            <p>{{ data.description | markdownify }}</p>
+        </div>
+    </div>
+</article> {% endcomment %}
