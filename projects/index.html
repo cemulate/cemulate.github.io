@@ -3,9 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="chrome=1">
-<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
+<link rel="icon" href="/assets/logo.svg">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title> Projects |  Chase Meadors</title>
@@ -19,36 +17,46 @@
 
 <body>
   
-<section class="section">
-  <div class="columns">
-    <div class="column is-narrow is-hidden-mobile" style="height:90vh; position: sticky; top: 3.2rem">
-      <aside class="menu">
-        <ul class="menu-list">
-          <li class="mb-4"><a class="toc-link" href="#link-the-mlab">Sites and Apps</a></li>
-          <li class="mb-4"><a class="toc-link" href="#link-lean">Contributions</a></li>
-          <li class="mb-4"><a class="toc-link" href="#link-other">Other Small Stuff</a></li>
-        </ul>
-      </aside>
+<nav class="navbar">
+    <div class="navbar-brand">
+        <a href="/" class="navbar-item">
+            <img src="/assets/logo.svg" alt="">
+        </a>
+        <a class="navbar-burger" role="button" onclick="() => { console.log('hey') }">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </a>
     </div>
-    <div class="column"></div>
-    <div class="column is-8">
-      
+    <div class="navbar-menu">
+        <div class="navbar-start">
+            <a href="/projects" class="navbar-item">Software</a>
+            <a target="_blank" href="https://math.colorado.edu/~chme3268/research/" class="navbar-item">Math</a>
+            <a href="/music" class="navbar-item">Music</a>
+        </div>
+    </div>
+</nav>
+
+<div class="container is-fullscreen">
+    
+<section class="section">
+  
 
 <div class="block">
-  <nav class="level is-mobile">
+  <nav class="level is-hidden-mobile">
     <div class="level-left">
       <div class="level-item">
         <img src="/assets/nlab.svg" alt="" style="width: 3em; height: 3em">
       </div>
-      <div class="level-item  is-hidden-mobile ">
-        <h1 class="title is-4-touch-3-desktop">
+      <div class="level-item">
+        <h1 class="title">
           
           <a id="link-the-mlab" href="https://cemulate.github.io/the-mlab/">The mLab</a>
           
         </h1>
       </div>
     </div>
-    <div class="level-right">
+    <div class="level-right is-hidden-mobile">
       
       <a class="github-link" href="https://github.com/cemulate/the-mlab">
         <svg style="width: 2.5em; height: 2.5em">
@@ -58,35 +66,57 @@
       
     </div>
   </nav>
-  <p class="title is-4 is-hidden-tablet "><a href="https://cemulate.github.io/the-mlab/">The mLab</a></p>
   <hr class="is-hidden-mobile">
-  <div class="content">
-    <p>A satire generator making fun of the nLab, a wiki for higher mathematics and category theory.
+  <div class="columns is-mobile">
+    <div class="column is-narrow is-hidden-tablet">
+      <div>
+        <img src="/assets/nlab.svg" alt="" style="width: 2em; height: 2em">
+      </div>
+      
+      <div class="mt-2">
+        <a class="github-link" href="https://github.com/cemulate/the-mlab">
+          <svg style="width: 2em; height: 2em">
+            <use href="/assets/github-brands.svg#github"></use>
+          </svg>
+        </a>
+      </div>
+      
+    </div>
+    <div class="column">
+      <div class="content">
+        <h1 class="title is-4 is-hidden-tablet">
+          
+          <a id="link-the-mlab" href="https://cemulate.github.io/the-mlab/">The mLab</a>
+          
+        </h1>
+        <p>A satire generator making fun of the nLab, a wiki for higher mathematics and category theory.
 Read about <a href="https://cemulate.github.io/the-mlab/#vchk-syntactically+reflective+presheaf">syntactically reflective presheaves</a>
 or <a href="https://cemulate.github.io/the-mlab/#X9HC-co-normally+virtual+limit">co-normally virtual limits</a>, and follow links for more!</p>
 <p>The main functionality is implemented in a standalone package <strong><a href="https://github.com/cemulate/nearley-generator">nearley-generator</a></strong>
 which turns a <a href="https://nearley.js.org/">Nearley parser grammar</a> description into an efficient and customizable fake text generator.  </p>
 
+      </div>
+    </div>
   </div>
   <hr class="is-hidden-desktop">
 </div>
-      
+  
 
 <div class="block">
-  <nav class="level is-mobile">
+  <nav class="level is-hidden-mobile">
     <div class="level-left">
       <div class="level-item">
         <img src="/assets/poly.svg" alt="" style="width: 3em; height: 3em">
       </div>
-      <div class="level-item  is-hidden-mobile ">
-        <h1 class="title is-4-touch-3-desktop">
+      <div class="level-item">
+        <h1 class="title">
           
           <a id="link-polyomino-solver" href="https://cemulate.github.io/polyomino-solver">Polyomino Solver</a>
           
         </h1>
       </div>
     </div>
-    <div class="level-right">
+    <div class="level-right is-hidden-mobile">
       
       <a class="github-link" href="https://github.com/cemulate/polyomino-solver">
         <svg style="width: 2.5em; height: 2.5em">
@@ -96,42 +126,125 @@ which turns a <a href="https://nearley.js.org/">Nearley parser grammar</a> descr
       
     </div>
   </nav>
-  <p class="title is-4 is-hidden-tablet "><a href="https://cemulate.github.io/polyomino-solver">Polyomino Solver</a></p>
   <hr class="is-hidden-mobile">
-  <div class="content">
-    <p>Solves arbitrary polyomino tiling problems, using different algorithms.
+  <div class="columns is-mobile">
+    <div class="column is-narrow is-hidden-tablet">
+      <div>
+        <img src="/assets/poly.svg" alt="" style="width: 2em; height: 2em">
+      </div>
+      
+      <div class="mt-2">
+        <a class="github-link" href="https://github.com/cemulate/polyomino-solver">
+          <svg style="width: 2em; height: 2em">
+            <use href="/assets/github-brands.svg#github"></use>
+          </svg>
+        </a>
+      </div>
+      
+    </div>
+    <div class="column">
+      <div class="content">
+        <h1 class="title is-4 is-hidden-tablet">
+          
+          <a id="link-polyomino-solver" href="https://cemulate.github.io/polyomino-solver">Polyomino Solver</a>
+          
+        </h1>
+        <p>Solves arbitrary polyomino tiling problems, using different algorithms.
 The fastest such algorithm reduces the problem to <a href="https://en.wikipedia.org/wiki/Exact_cover">exact cover</a> and applies <a href="https://en.wikipedia.org/wiki/Knuth%27s_Algorithm_X">Algorithm X</a>, which only finds exact solutions.
 Otherwise, there are methods to convert to <a href="https://en.wikipedia.org/wiki/Boolean_satisfiability_problem">SAT</a> and solve via either a <a href="https://www.npmjs.com/package/boolean-sat">JavaScript SAT solver</a> or a WebAssembly build of the <a href="https://github.com/Z3Prover/z3">Z3 Theorem Prover</a>.
 The main UI functionality here is implemented as a web component <strong><a href="https://www.npmjs.com/package/web-component-polyomino">web-component-polyomino</a></strong>.</p>
 
+      </div>
+    </div>
   </div>
   <hr class="is-hidden-desktop">
 </div>
-      <div class="content">
-        <details>
-          <summary><small><em>Expand to see an example of a polyomino web component</em></small></summary>
-          <polyomino-control style="display: block; padding: 5px; width: 250px; height: 250px" size="5" mode="create" value="[[1,1],[1,2],[1,3],[2,2]]"></polyomino-control>
-          See the <a href="https://codepen.io/cemulate/pen/dExpJw">codepen demo</a> for more!
+  <div class="content">
+    <details>
+      <summary><small><em>Expand to see an example of a polyomino web component</em></small></summary>
+      <polyomino-control style="display: block; padding: 5px; width: 250px; height: 250px" size="5" mode="create" value="[[1,1],[1,2],[1,3],[2,2]]"></polyomino-control>
+      See the <a href="https://codepen.io/cemulate/pen/dExpJw">codepen demo</a> for more!
 
-        </details>
-      </div>
-      
+    </details>
+  </div>
+  
 
 <div class="block">
-  <nav class="level is-mobile">
+  <nav class="level is-hidden-mobile">
+    <div class="level-left">
+      <div class="level-item">
+        <img src="/assets/dollar.svg" alt="" style="width: 3em; height: 3em">
+      </div>
+      <div class="level-item">
+        <h1 class="title">
+          
+          <a id="link-my-note-server" href="https://cemulate.github.io/mynoteserver/app/">My Note Server</a>
+          
+        </h1>
+      </div>
+    </div>
+    <div class="level-right is-hidden-mobile">
+      
+      <a class="github-link" href="https://github.com/cemulate/mynoteserver">
+        <svg style="width: 2.5em; height: 2.5em">
+          <use href="/assets/github-brands.svg#github"></use>
+        </svg>
+      </a>
+      
+    </div>
+  </nav>
+  <hr class="is-hidden-mobile">
+  <div class="columns is-mobile">
+    <div class="column is-narrow is-hidden-tablet">
+      <div>
+        <img src="/assets/dollar.svg" alt="" style="width: 2em; height: 2em">
+      </div>
+      
+      <div class="mt-2">
+        <a class="github-link" href="https://github.com/cemulate/mynoteserver">
+          <svg style="width: 2em; height: 2em">
+            <use href="/assets/github-brands.svg#github"></use>
+          </svg>
+        </a>
+      </div>
+      
+    </div>
+    <div class="column">
+      <div class="content">
+        <h1 class="title is-4 is-hidden-tablet">
+          
+          <a id="link-my-note-server" href="https://cemulate.github.io/mynoteserver/app/">My Note Server</a>
+          
+        </h1>
+        <p>A simple, self-hosted, note-taking and slide-making solution.
+A well-tread problem space, but still a fun project to tweak over the years for my particular set of needs.
+Features primarly Markdown content with extensive math support, and the ability to include hand-drawn images.
+File management is extremely transparent, with all content saved in plain Markdown files and images stored directly in the Markdown file,
+avoiding asset management.
+Visit the link for a mocked-out demo of the editor.</p>
+
+      </div>
+    </div>
+  </div>
+  <hr class="is-hidden-desktop">
+</div>
+  
+
+<div class="block">
+  <nav class="level is-hidden-mobile">
     <div class="level-left">
       <div class="level-item">
         <img src="/assets/link1.svg" alt="" style="width: 3em; height: 3em">
       </div>
-      <div class="level-item  is-hidden-mobile ">
-        <h1 class="title is-4-touch-3-desktop">
+      <div class="level-item">
+        <h1 class="title">
           
           <a id="link-oracles-randomizer" href="https://cemulate.github.io/oracles-randomizer-web">Oracles Randomizer &ndash; Web</a>
           
         </h1>
       </div>
     </div>
-    <div class="level-right">
+    <div class="level-right is-hidden-mobile">
       
       <a class="github-link" href="https://github.com/cemulate/oracles-randomizer-web">
         <svg style="width: 2.5em; height: 2.5em">
@@ -141,33 +254,55 @@ The main UI functionality here is implemented as a web component <strong><a href
       
     </div>
   </nav>
-  <p class="title is-4 is-hidden-tablet "><a href="https://cemulate.github.io/oracles-randomizer-web">Oracles Randomizer &ndash; Web</a></p>
   <hr class="is-hidden-mobile">
-  <div class="content">
-    <p>A web interface to the <a href="https://arstechnica.com/gaming/2019/12/how-randomizers-are-breathing-new-life-into-old-games/">randomizer</a>(s) for <em>Legend of Zelda: Oracle of Seasons/Ages</em>, which are originally command line programs written in Go.
+  <div class="columns is-mobile">
+    <div class="column is-narrow is-hidden-tablet">
+      <div>
+        <img src="/assets/link1.svg" alt="" style="width: 2em; height: 2em">
+      </div>
+      
+      <div class="mt-2">
+        <a class="github-link" href="https://github.com/cemulate/oracles-randomizer-web">
+          <svg style="width: 2em; height: 2em">
+            <use href="/assets/github-brands.svg#github"></use>
+          </svg>
+        </a>
+      </div>
+      
+    </div>
+    <div class="column">
+      <div class="content">
+        <h1 class="title is-4 is-hidden-tablet">
+          
+          <a id="link-oracles-randomizer" href="https://cemulate.github.io/oracles-randomizer-web">Oracles Randomizer &ndash; Web</a>
+          
+        </h1>
+        <p>A web interface to the <a href="https://arstechnica.com/gaming/2019/12/how-randomizers-are-breathing-new-life-into-old-games/">randomizer</a>(s) for <em>Legend of Zelda: Oracle of Seasons/Ages</em>, which are originally command line programs written in Go.
 This web app runs the randomizer programs entirely in the browser by compiling them to WebAssembly and &quot;emulating&quot; a filesystem layer, as detailed <a href="https://github.com/cemulate/oracles-randomizer-web#technical-details">here</a>.
 This app provides access to three commonly used verisons of the randomizer in one location, by maintaining WASM binaries of all three.</p>
 
+      </div>
+    </div>
   </div>
   <hr class="is-hidden-desktop">
 </div>
-      
+  
 
 <div class="block">
-  <nav class="level is-mobile">
+  <nav class="level is-hidden-mobile">
     <div class="level-left">
       <div class="level-item">
         <img src="/assets/bombers.webp" alt="" style="width: 3em; height: 3em">
       </div>
-      <div class="level-item  is-hidden-mobile ">
-        <h1 class="title is-4-touch-3-desktop">
+      <div class="level-item">
+        <h1 class="title">
           
           <a id="link-ootmmr-checklist" href="https://cemulate.github.io/ootmmr-checklist">OoTMM Checklist Tracker</a>
           
         </h1>
       </div>
     </div>
-    <div class="level-right">
+    <div class="level-right is-hidden-mobile">
       
       <a class="github-link" href="https://github.com/cemulate/ootmmr-checklist">
         <svg style="width: 2.5em; height: 2.5em">
@@ -177,32 +312,54 @@ This app provides access to three commonly used verisons of the randomizer in on
       
     </div>
   </nav>
-  <p class="title is-4 is-hidden-tablet "><a href="https://cemulate.github.io/ootmmr-checklist">OoTMM Checklist Tracker</a></p>
   <hr class="is-hidden-mobile">
-  <div class="content">
-    <p>A co-op capable checklist tracker for the <a href="https://ootmm.com/">OoTMM randomizer</a>, that randomizes <em>Legend of Zelda: Ocarina of Time</em> and <em>Majora&#39;s Mask</em> together.
+  <div class="columns is-mobile">
+    <div class="column is-narrow is-hidden-tablet">
+      <div>
+        <img src="/assets/bombers.webp" alt="" style="width: 2em; height: 2em">
+      </div>
+      
+      <div class="mt-2">
+        <a class="github-link" href="https://github.com/cemulate/ootmmr-checklist">
+          <svg style="width: 2em; height: 2em">
+            <use href="/assets/github-brands.svg#github"></use>
+          </svg>
+        </a>
+      </div>
+      
+    </div>
+    <div class="column">
+      <div class="content">
+        <h1 class="title is-4 is-hidden-tablet">
+          
+          <a id="link-ootmmr-checklist" href="https://cemulate.github.io/ootmmr-checklist">OoTMM Checklist Tracker</a>
+          
+        </h1>
+        <p>A co-op capable checklist tracker for the <a href="https://ootmm.com/">OoTMM randomizer</a>, that randomizes <em>Legend of Zelda: Ocarina of Time</em> and <em>Majora&#39;s Mask</em> together.
 Through WebRTC peer-to-peer connections, you and your co-op partners can keep track of all the checks and locations across both games, collaboratively editing the same checklist.</p>
 
+      </div>
+    </div>
   </div>
   <hr class="is-hidden-desktop">
 </div>
-      
+  
 
 <div class="block">
-  <nav class="level is-mobile">
+  <nav class="level is-hidden-mobile">
     <div class="level-left">
       <div class="level-item">
         <img src="/assets/manu.svg" alt="" style="width: 3em; height: 3em">
       </div>
-      <div class="level-item  is-hidden-mobile ">
-        <h1 class="title is-4-touch-3-desktop">
+      <div class="level-item">
+        <h1 class="title">
           
           <a id="link-manufactoria-editor" href="https://cemulate.github.io/manufactoria-editor">Manufactoria Editor</a>
           
         </h1>
       </div>
     </div>
-    <div class="level-right">
+    <div class="level-right is-hidden-mobile">
       
       <a class="github-link" href="https://github.com/cemulate/manufactoria-editor">
         <svg style="width: 2.5em; height: 2.5em">
@@ -212,33 +369,55 @@ Through WebRTC peer-to-peer connections, you and your co-op partners can keep tr
       
     </div>
   </nav>
-  <p class="title is-4 is-hidden-tablet "><a href="https://cemulate.github.io/manufactoria-editor">Manufactoria Editor</a></p>
   <hr class="is-hidden-mobile">
-  <div class="content">
-    <p>A modern re-skinned editor for levels in the classic flash game <a href="http://pleasingfungus.com/Manufactoria/">Manufactoria</a>.
+  <div class="columns is-mobile">
+    <div class="column is-narrow is-hidden-tablet">
+      <div>
+        <img src="/assets/manu.svg" alt="" style="width: 2em; height: 2em">
+      </div>
+      
+      <div class="mt-2">
+        <a class="github-link" href="https://github.com/cemulate/manufactoria-editor">
+          <svg style="width: 2em; height: 2em">
+            <use href="/assets/github-brands.svg#github"></use>
+          </svg>
+        </a>
+      </div>
+      
+    </div>
+    <div class="column">
+      <div class="content">
+        <h1 class="title is-4 is-hidden-tablet">
+          
+          <a id="link-manufactoria-editor" href="https://cemulate.github.io/manufactoria-editor">Manufactoria Editor</a>
+          
+        </h1>
+        <p>A modern re-skinned editor for levels in the classic flash game <a href="http://pleasingfungus.com/Manufactoria/">Manufactoria</a>.
 Save and load programs from regular Manufactoria share URLs, and automate the verification of your programs running them against a test battery.
 Built in conjunction with <a href="https://github.com/wkevina">@wkevina</a>.</p>
 
+      </div>
+    </div>
   </div>
   <hr class="is-hidden-desktop">
 </div>
-      
+  
 
 <div class="block">
-  <nav class="level is-mobile">
+  <nav class="level is-hidden-mobile">
     <div class="level-left">
       <div class="level-item">
         <img src="/assets/clock.svg" alt="" style="width: 3em; height: 3em">
       </div>
-      <div class="level-item  is-hidden-mobile ">
-        <h1 class="title is-4-touch-3-desktop">
+      <div class="level-item">
+        <h1 class="title">
           
           <a id="link-just-track" href="https://cemulate.github.io/just-track">Just Track</a>
           
         </h1>
       </div>
     </div>
-    <div class="level-right">
+    <div class="level-right is-hidden-mobile">
       
       <a class="github-link" href="https://github.io/cemulate/just-track">
         <svg style="width: 2.5em; height: 2.5em">
@@ -248,33 +427,55 @@ Built in conjunction with <a href="https://github.com/wkevina">@wkevina</a>.</p>
       
     </div>
   </nav>
-  <p class="title is-4 is-hidden-tablet "><a href="https://cemulate.github.io/just-track">Just Track</a></p>
   <hr class="is-hidden-mobile">
-  <div class="content">
-    <p>A simple, offline, client-only time tracking app.
+  <div class="columns is-mobile">
+    <div class="column is-narrow is-hidden-tablet">
+      <div>
+        <img src="/assets/clock.svg" alt="" style="width: 2em; height: 2em">
+      </div>
+      
+      <div class="mt-2">
+        <a class="github-link" href="https://github.io/cemulate/just-track">
+          <svg style="width: 2em; height: 2em">
+            <use href="/assets/github-brands.svg#github"></use>
+          </svg>
+        </a>
+      </div>
+      
+    </div>
+    <div class="column">
+      <div class="content">
+        <h1 class="title is-4 is-hidden-tablet">
+          
+          <a id="link-just-track" href="https://cemulate.github.io/just-track">Just Track</a>
+          
+        </h1>
+        <p>A simple, offline, client-only time tracking app.
 Records and saves data locally in the browser, and past data can be viewed any time.
 Simple keyboard interface that supports assigning hotkeys and colors to tasks, with the currently tracked task being shown in the browser tab.</p>
 
+      </div>
+    </div>
   </div>
   <hr class="is-hidden-desktop">
 </div>
-      
+  
 
 <div class="block">
-  <nav class="level is-mobile">
+  <nav class="level is-hidden-mobile">
     <div class="level-left">
       <div class="level-item">
         <img src="/assets/go.svg" alt="" style="width: 3em; height: 3em">
       </div>
-      <div class="level-item  is-hidden-mobile ">
-        <h1 class="title is-4-touch-3-desktop">
+      <div class="level-item">
+        <h1 class="title">
           
           <a id="link-genki-db" href="https://cemulate.github.io/genki-db">Genki DB</a>
           
         </h1>
       </div>
     </div>
-    <div class="level-right">
+    <div class="level-right is-hidden-mobile">
       
       <a class="github-link" href="https://github.io/cemulate/genki-db">
         <svg style="width: 2.5em; height: 2.5em">
@@ -284,73 +485,121 @@ Simple keyboard interface that supports assigning hotkeys and colors to tasks, w
       
     </div>
   </nav>
-  <p class="title is-4 is-hidden-tablet "><a href="https://cemulate.github.io/genki-db">Genki DB</a></p>
   <hr class="is-hidden-mobile">
-  <div class="content">
-    <p>A small app to browser and filter over all the vocabulary and Kanji covered in the popular introductory Japanese textbooks, Genki I and II.
+  <div class="columns is-mobile">
+    <div class="column is-narrow is-hidden-tablet">
+      <div>
+        <img src="/assets/go.svg" alt="" style="width: 2em; height: 2em">
+      </div>
+      
+      <div class="mt-2">
+        <a class="github-link" href="https://github.io/cemulate/genki-db">
+          <svg style="width: 2em; height: 2em">
+            <use href="/assets/github-brands.svg#github"></use>
+          </svg>
+        </a>
+      </div>
+      
+    </div>
+    <div class="column">
+      <div class="content">
+        <h1 class="title is-4 is-hidden-tablet">
+          
+          <a id="link-genki-db" href="https://cemulate.github.io/genki-db">Genki DB</a>
+          
+        </h1>
+        <p>A small app to browser and filter over all the vocabulary and Kanji covered in the popular introductory Japanese textbooks, Genki I and II.
 Full offline support via PWA (progressive web app) functionality.</p>
 
+      </div>
+    </div>
   </div>
   <hr class="is-hidden-desktop">
 </div>
 
-      
+  
 
 <div class="block">
-  <nav class="level is-mobile">
+  <nav class="level is-hidden-mobile">
     <div class="level-left">
       <div class="level-item">
         <img src="/assets/forall.svg" alt="" style="width: 3em; height: 3em">
       </div>
-      <div class="level-item ">
-        <h1 class="title is-4-touch-3-desktop">
+      <div class="level-item">
+        <h1 class="title">
           
           <a id="link-lean" href="https://leanprover.github.io/">Leanprover</a>
           
         </h1>
       </div>
     </div>
-    <div class="level-right">
+    <div class="level-right is-hidden-mobile">
       
     </div>
   </nav>
-  <p class="title is-4 is-hidden-tablet  is-hidden-mobile "><a href="https://leanprover.github.io/">Leanprover</a></p>
   <hr class="is-hidden-mobile">
-  <div class="content">
-    <p><a href="https://leanprover.github.io/">Lean</a> is a programming language and interactive theorem prover out of Microsoft Research.
+  <div class="columns is-mobile">
+    <div class="column is-narrow is-hidden-tablet">
+      <div>
+        <img src="/assets/forall.svg" alt="" style="width: 2em; height: 2em">
+      </div>
+      
+    </div>
+    <div class="column">
+      <div class="content">
+        <h1 class="title is-4 is-hidden-tablet">
+          
+          <a id="link-lean" href="https://leanprover.github.io/">Leanprover</a>
+          
+        </h1>
+        <p><a href="https://leanprover.github.io/">Lean</a> is a programming language and interactive theorem prover out of Microsoft Research.
 I&#39;ve contributed a few features to <a href="https://leanprover-community.github.io/mathlib_docs/">Lean&#39;s library of formalized mathematics</a>:</p>
 <ul>
 <li>A collection of results on lattice theory and order theory: <a href="https://github.com/leanprover-community/mathlib/pull/5825">#5825</a>, <a href="https://github.com/leanprover-community/mathlib/pull/5871">#5871</a>, <a href="https://github.com/leanprover-community/mathlib/pull/5942">#5942</a></li>
 <li>A refactoring and simplification of existing proofs using the above results: <a href="https://github.com/leanprover-community/mathlib/pull/6082">#6082</a> </li>
 </ul>
 
+      </div>
+    </div>
   </div>
   <hr class="is-hidden-desktop">
 </div>
-      
+  
 
 <div class="block">
-  <nav class="level is-mobile">
+  <nav class="level is-hidden-mobile">
     <div class="level-left">
       <div class="level-item">
         <img src="/assets/sage.svg" alt="" style="width: 3em; height: 3em">
       </div>
-      <div class="level-item ">
-        <h1 class="title is-4-touch-3-desktop">
+      <div class="level-item">
+        <h1 class="title">
           
           <a id="link-sagemath" href="https://www.sagemath.org/">SageMath</a>
           
         </h1>
       </div>
     </div>
-    <div class="level-right">
+    <div class="level-right is-hidden-mobile">
       
     </div>
   </nav>
-  <p class="title is-4 is-hidden-tablet  is-hidden-mobile "><a href="https://www.sagemath.org/">SageMath</a></p>
   <hr class="is-hidden-mobile">
-  <div class="content">
-    <p>SageMath is an open source mathematics software system.
+  <div class="columns is-mobile">
+    <div class="column is-narrow is-hidden-tablet">
+      <div>
+        <img src="/assets/sage.svg" alt="" style="width: 2em; height: 2em">
+      </div>
+      
+    </div>
+    <div class="column">
+      <div class="content">
+        <h1 class="title is-4 is-hidden-tablet">
+          
+          <a id="link-sagemath" href="https://www.sagemath.org/">SageMath</a>
+          
+        </h1>
+        <p>SageMath is an open source mathematics software system.
 In some projects with <a href="https://math.colorado.edu/~tixu6187/">Tianyuan Xu</a>, we contributed some substantial features to SageMath:</p>
 <ul>
 <li><a href="https://doc.sagemath.org/html/en/reference/combinat/sage/combinat/fully_commutative_elements.html">A module</a> for working with fully commutative elements in Coxeter systems (<a href="https://trac.sagemath.org/ticket/30243">#30243</a>).</li>
@@ -358,48 +607,68 @@ In some projects with <a href="https://math.colorado.edu/~tixu6187/">Tianyuan Xu
 </ul>
 <p>In the future we also hope to contribute features for certain <strong><a href="https://math.colorado.edu/~chme3268/diagrams/#/involution/b4">diagram algebras</a></strong>, which this small demo provides some pictures of.</p>
 
+      </div>
+    </div>
   </div>
   <hr class="is-hidden-desktop">
 </div>
 
-      
+  
 
 <div class="block">
-  <nav class="level is-mobile">
+  <nav class="level is-hidden-mobile">
     <div class="level-left">
       <div class="level-item">
         <img src="/assets/ellipsis.svg" alt="" style="width: 3em; height: 3em">
       </div>
-      <div class="level-item ">
-        <h1 class="title is-4-touch-3-desktop">
+      <div class="level-item">
+        <h1 class="title">
           
           Other Small Stuff
           
         </h1>
       </div>
     </div>
-    <div class="level-right">
+    <div class="level-right is-hidden-mobile">
       
     </div>
   </nav>
-  <p class="title is-4 is-hidden-tablet  is-hidden-mobile "><a href="null">Other Small Stuff</a></p>
   <hr class="is-hidden-mobile">
-  <div class="content">
-    <p>A collection of things too small for their own section:</p>
+  <div class="columns is-mobile">
+    <div class="column is-narrow is-hidden-tablet">
+      <div>
+        <img src="/assets/ellipsis.svg" alt="" style="width: 2em; height: 2em">
+      </div>
+      
+    </div>
+    <div class="column">
+      <div class="content">
+        <h1 class="title is-4 is-hidden-tablet">
+          
+          Other Small Stuff
+          
+        </h1>
+        <p>A collection of things too small for their own section:</p>
 <ul>
 <li>A <strong><a href="https://cemulate.github.io/project-euler-208">playground and test-bed</a></strong> for <a href="https://projecteuler.net/problem=208">Project Euler 208</a></li>
 <li>A <strong><a href="https://cemulate.github.io/schedule-visualizer">schedule planner and visualizer</a></strong> for college schedules; create a link to share the schedule with others.</li>
 <li>A <strong><a href="https://codepen.io/cemulate/pen/RzRjaQ">web component</a></strong> for displaying <a href="https://en.wikipedia.org/wiki/Smith_chart">Smith charts</a>.</li>
 </ul>
 
+      </div>
+    </div>
   </div>
   <hr class="is-hidden-desktop">
 </div>
-    </div>
-    <div class="column"></div>
-  </div>
 </section>
 
+</div>
+
+<script>
+    document.querySelector('.navbar-burger').addEventListener('click', () => {
+        for (const el of document.querySelectorAll('.navbar-burger, .navbar-menu')) el.classList.toggle('is-active');
+    });
+</script>
 </body>
 
 </html>
