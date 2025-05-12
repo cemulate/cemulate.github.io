@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* Basic reset */
+body, h1, h2, h3, p, ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+ul.bulleted {
+    list-style: disc;
+    margin-left: 20px;
+    > li + li {
+        margin-top: 0.15em;
+    }
+}
+
+a {
+    text-decoration: none;
+}
+
+.indented {
+    margin-left: 1em;
+}
+
+div.block:not(:first-child) {
+    margin-top: 1em;
+}
+
+body {
+    font-family: serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f9;
+    padding: 20px;
+}
+
+.resume-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    @media screen {
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+}
+
+.icon-phrase {
+    display: inline-flex;
+    align-content: center;
+}
+
+header {
+    font-size: 1.1rem;
+    margin-bottom: 1em;
+    display: flex;
+    > *:not(:first-child) {
+        margin-left: 1em;
+    }
+    p {
+        margin-bottom: 0.3rem;    
+    }
+}
+
+.profile-picture {
+    width: 9rem;
+    aspect-ratio: 4/5;
+    border: 2px solid #ccc;
+    border-radius: 5%;
+}
+
+section {
+    margin-bottom: 1.4em;
+}
+
+h2 {
+    font-size: 1.5em;
+    color: #333;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+
+.work-item {
+    margin-bottom: 0.3rem;
+    > h3 {
+        font-size: 1.2em;
+        color: #444;
+        margin-bottom: 5px;
+    }
+    > p {
+        font-size: 0.9em;
+        color: #666;
+        margin-bottom: 10px;
+    }
+}
+
+@media print {
+    .print-page-break {
+        page-break-before: always;
+    }
+}
+
