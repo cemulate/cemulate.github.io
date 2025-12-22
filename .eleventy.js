@@ -5,6 +5,8 @@ const kramed = require('kramed');
 module.exports = function(eleventyConfig) {
     eleventyConfig.setLibrary('md', { render: kramed });
 
+    // Build output of academic website repo
+    eleventyConfig.addPassthroughCopy({ '_math_website_site': 'math' });
     eleventyConfig.addPassthroughCopy('.nojekyll');
     eleventyConfig.addPassthroughCopy('styles');
     eleventyConfig.addPassthroughCopy('assets');
