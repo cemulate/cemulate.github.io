@@ -1,4 +1,16 @@
 ---
+choral-chambers:
+  name: Choral Chambers
+  embedlink: https://www.youtube.com/embed/GhFeyTmXQUY?si=V81z1lJ2VZ5eL6ei
+  description: |
+    Theme of the Choral Chambers from *Hollow Knight: Silksong* for trombone choir and piano.
+
+farthest-tree:
+  name: The Tree at the Farthest End
+  embedlink: https://www.youtube.com/embed/y2lO1T0kkrY?si=YEEl1HYj4Z5040Dt
+  description: |
+    Final dungeon theme from Trails to Azure
+
 bound-by-fate: 
   name: Bound By Fate
   embedlink: https://www.youtube.com/embed/ZQ--93DBJnc?si=tHtYCXjsxLtQuIhr
